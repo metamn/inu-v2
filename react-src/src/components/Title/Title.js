@@ -15,7 +15,6 @@ const H1 = styled.h1`
   margin: 0;
   padding: 0;
   font-size: 1.5em;
-  padding-top: 1.45833em;
   font-weight: normal;
 `;
 

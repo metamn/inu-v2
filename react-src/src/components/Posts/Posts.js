@@ -1,6 +1,8 @@
 import React from "react";
+import styled from "styled-components";
 import gql from "graphql-tag";
 import useQuery from "./../../hooks";
+
 import Post from "../Post";
 import List from "../List";
 
@@ -21,6 +23,10 @@ const query = gql`
   }
 `;
 
+const List2 = styled(List)`
+  width: 100%;
+`;
+
 const markup = data => {
   const itemsWithImage = data.posts.edges.filter(
     edge => edge.node.featuredImage
@@ -32,7 +38,7 @@ const markup = data => {
     </li>
   ));
 
-  return <List>{items}</List>;
+  return <List2>{items}</List2>;
 };
 
 const Posts = () => {
