@@ -12,8 +12,6 @@ const query = gql`
 `;
 
 const H2 = styled.h2`
-  margin: 0;
-  padding: 0;
   font-size: 100%;
   font-weight: normal;
   color: #666;

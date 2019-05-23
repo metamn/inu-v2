@@ -2,6 +2,8 @@ import React from "react";
 import WebFont from "webfontloader";
 import styled from "styled-components";
 
+import Reset from "../Reset";
+import TypographicGrid from "../TypographicGrid";
 import Logo from "../Logo";
 import Line from "../Line";
 import Categories from "../Categories";
@@ -21,12 +23,19 @@ const Container = styled.div`
 
 const Home = () => {
   return (
-    <Container>
-      <Logo />
-      <Line />
-      <Categories />
-      <Posts />
-    </Container>
+    <>
+      <Reset />
+      <TypographicGrid
+        displayVerticalRhytm={false}
+        displayHorizontalRhytm={false}
+      />
+      <Container>
+        <Logo />
+        <Line />
+        <Categories />
+        <Posts />
+      </Container>
+    </>
   );
 };
 

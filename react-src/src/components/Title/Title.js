@@ -12,8 +12,6 @@ const query = gql`
 `;
 
 const H1 = styled.h1`
-  margin: 0;
-  padding: 0;
   font-size: 1.5em;
   font-weight: normal;
 `;
