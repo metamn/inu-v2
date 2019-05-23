@@ -266,7 +266,9 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var pimg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! pimg */ "./node_modules/pimg/dist/pimg.es.js");
 var _jsxFileName = "/home/cs/work/inu-v2/react-src/src/components/Post/Post.js";
+
 
 
 const Post = node => {
@@ -274,20 +276,21 @@ const Post = node => {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("article", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 6
+      lineNumber: 7
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 7
+      lineNumber: 8
     },
     __self: undefined
-  }, node.node.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+  }, node.node.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(pimg__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    fetchOnDemand: true,
     src: node.node.featuredImage.sourceUrl,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 8
+      lineNumber: 9
     },
     __self: undefined
   }));
@@ -680,5 +683,5 @@ module.exports = __webpack_require__(/*! /home/cs/work/inu-v2/react-src/src/inde
 
 /***/ })
 
-},[[0,"runtime~main",1]]]);
+},[[0,"runtime~main",0]]]);
 //# sourceMappingURL=main.chunk.js.map

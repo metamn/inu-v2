@@ -1,11 +1,12 @@
 import React from "react";
+import Image from "pimg";
 
 const Post = node => {
   console.log("node:" + JSON.stringify(node));
   return (
     <article>
       <h3>{node.node.title}</h3>
-      <img src={node.node.featuredImage.sourceUrl} />
+      <Image fetchOnDemand src={node.node.featuredImage.sourceUrl} />
     </article>
   );
 };
