@@ -1,4 +1,5 @@
 import React from "react";
+import styled from "styled-components";
 import gql from "graphql-tag";
 import useQuery from "./../../hooks";
 import List from "../List";
@@ -17,9 +18,13 @@ const query = gql`
   }
 `;
 
+const ListItem = styled.li`
+  font-size: 1.333em;
+`;
+
 const markup = data => {
   const items = data.categories.edges.map(edge => (
-    <li key={edge.node.id}>{edge.node.name}</li>
+    <ListItem key={edge.node.id}>{edge.node.name}</ListItem>
   ));
   return <List>{items}</List>;
 };

@@ -7,8 +7,8 @@ const placeholder = (
 );
 
 const Img = styled.img`
-  max-width: 700px;
-  max-height: 500px;
+  max-width: 80vw;
+  max-height: 80vh;
   width: auto;
   height: auto;
 `;

@@ -4,6 +4,7 @@ import styled from "styled-components";
 
 import Title from "../Title";
 import Description from "../Description";
+import Line from "../Line";
 import Categories from "../Categories";
 import Posts from "../Posts";
 
@@ -15,6 +16,8 @@ WebFont.load({
 
 const Container = styled.div`
   font-family: "Quicksand", sans-serif;
+  display: flex;
+  flex-wrap: wrap;
 `;
 
 const Home = () => {
@@ -22,6 +25,7 @@ const Home = () => {
     <Container>
       <Title />
       <Description />
+      <Line />
       <Categories />
       <Posts />
     </Container>
