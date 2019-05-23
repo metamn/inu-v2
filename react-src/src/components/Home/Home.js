@@ -26,8 +26,11 @@ const Home = () => {
     <>
       <Reset />
       <TypographicGrid
-        displayVerticalRhytm={false}
-        displayHorizontalRhytm={false}
+        displayVerticalRhytm={true}
+        displayHorizontalRhytm={true}
+        numberOfHorizontalLines={100}
+        numberOfVerticalLines={100}
+        lineColor="#666"
       />
       <Container>
         <Logo />
