@@ -1,6 +1,7 @@
 import React from "react";
 import gql from "graphql-tag";
 import useQuery from "./../../hooks";
+import Post from "../Post";
 
 const query = gql`
   query posts($first: Int) {
@@ -9,7 +10,10 @@ const query = gql`
         node {
           id
           title
-          date
+          featuredImage {
+            id
+            sourceUrl
+          }
         }
       }
     }
@@ -17,14 +21,21 @@ const query = gql`
 `;
 
 const markup = data => {
-  const items = data.posts.edges.map(edge => (
-    <li key={edge.node.id}>{edge.node.title}</li>
+  const itemsWithImage = data.posts.edges.filter(
+    edge => edge.node.featuredImage
+  );
+
+  const items = itemsWithImage.map(edge => (
+    <li key={edge.node.id}>
+      <Post node={edge.node} />
+    </li>
   ));
+
   return <ul>{items}</ul>;
 };
 
 const Posts = () => {
-  const variables = { first: 3 };
+  const variables = { first: 10 };
   return useQuery(query, markup, variables);
 };
 
