@@ -1,6 +1,7 @@
 import React from "react";
 import gql from "graphql-tag";
 import useQuery from "./../../hooks";
+import List from "../List";
 
 const query = gql`
   query Categories {
@@ -20,7 +21,7 @@ const markup = data => {
   const items = data.categories.edges.map(edge => (
     <li key={edge.node.id}>{edge.node.name}</li>
   ));
-  return <ul>{items}</ul>;
+  return <List>{items}</List>;
 };
 
 const Categories = () => {

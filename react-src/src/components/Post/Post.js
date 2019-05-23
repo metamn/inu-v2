@@ -1,5 +1,10 @@
 import React from "react";
+import styled from "styled-components";
 import Image from "../Image";
+
+const Title = styled.h3`
+  display: none;
+`;
 
 const Post = node => {
   const props = {
@@ -10,7 +15,7 @@ const Post = node => {
 
   return (
     <article>
-      <h3>{title}</h3>
+      <Title>{title}</Title>
       <Image props={props} />
     </article>
   );

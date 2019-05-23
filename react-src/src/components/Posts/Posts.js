@@ -2,6 +2,7 @@ import React from "react";
 import gql from "graphql-tag";
 import useQuery from "./../../hooks";
 import Post from "../Post";
+import List from "../List";
 
 const query = gql`
   query posts($first: Int) {
@@ -31,7 +32,7 @@ const markup = data => {
     </li>
   ));
 
-  return <ul>{items}</ul>;
+  return <List>{items}</List>;
 };
 
 const Posts = () => {

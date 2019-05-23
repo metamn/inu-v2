@@ -1,4 +1,5 @@
 import React from "react";
+import styled from "styled-components";
 import gql from "graphql-tag";
 import useQuery from "./../../hooks";
 
@@ -10,9 +11,17 @@ const query = gql`
   }
 `;
 
+const H2 = styled.h2`
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  font-weight: normal;
+  color: #666;
+`;
+
 const markup = data => {
   const description = data.generalSettings.description;
-  return <h2>{description}</h2>;
+  return <H2>{description}</H2>;
 };
 
 const Description = () => {
