@@ -274,7 +274,7 @@ __webpack_require__.r(__webpack_exports__);
 var _jsxFileName = "/home/cs/work/inu-v2/react-src/src/components/Posts/Posts.js";
 
 function _templateObject() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  query siteTitle {\n    generalSettings {\n      title\n    }\n  }\n"]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  query posts($first: Int) {\n    posts(first: $first) {\n      edges {\n        node {\n          id\n          title\n          date\n        }\n      }\n    }\n  }\n"]);
 
   _templateObject = function () {
     return data;
@@ -289,18 +289,28 @@ function _templateObject() {
 const query = graphql_tag__WEBPACK_IMPORTED_MODULE_2___default()(_templateObject());
 
 const markup = data => {
-  const title = data.generalSettings.title;
-  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h1", {
+  const items = data.posts.edges.map(edge => react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
+    key: edge.node.id,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 15
+      lineNumber: 21
     },
     __self: undefined
-  }, title);
+  }, edge.node.title));
+  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("ul", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 23
+    },
+    __self: undefined
+  }, items);
 };
 
 const Posts = () => {
-  return Object(_hooks__WEBPACK_IMPORTED_MODULE_3__["default"])(query, markup);
+  const variables = {
+    first: 3
+  };
+  return Object(_hooks__WEBPACK_IMPORTED_MODULE_3__["default"])(query, markup, variables);
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Posts);
@@ -423,8 +433,10 @@ var _jsxFileName = "/home/cs/work/inu-v2/react-src/src/hooks/useQuery.js";
 
 
 
-const useQuery = (query, markup) => {
-  const _useQueryHook = Object(react_apollo_hooks__WEBPACK_IMPORTED_MODULE_1__["useQuery"])(query),
+const useQuery = (query, markup, variables = {}) => {
+  const _useQueryHook = Object(react_apollo_hooks__WEBPACK_IMPORTED_MODULE_1__["useQuery"])(query, {
+    variables: variables
+  }),
         data = _useQueryHook.data,
         error = _useQueryHook.error,
         loading = _useQueryHook.loading;
@@ -433,7 +445,7 @@ const useQuery = (query, markup) => {
     return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 8
+        lineNumber: 10
       },
       __self: undefined
     }, "Loading...");
@@ -443,7 +455,7 @@ const useQuery = (query, markup) => {
     return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 12
+        lineNumber: 14
       },
       __self: undefined
     }, "Error! ", error.message);

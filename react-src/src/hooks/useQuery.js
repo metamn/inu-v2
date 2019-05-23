@@ -1,8 +1,10 @@
 import React from "react";
 import { useQuery as useQueryHook } from "react-apollo-hooks";
 
-const useQuery = (query, markup) => {
-  const { data, error, loading } = useQueryHook(query);
+const useQuery = (query, markup, variables = {}) => {
+  const { data, error, loading } = useQueryHook(query, {
+    variables: variables
+  });
 
   if (loading) {
     return <div>Loading...</div>;
