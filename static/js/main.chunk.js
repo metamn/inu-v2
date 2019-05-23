@@ -255,6 +255,55 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./src/components/Image/Image.js":
+/*!***************************************!*\
+  !*** ./src/components/Image/Image.js ***!
+  \***************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _jsxFileName = "/home/cs/work/inu-v2/react-src/src/components/Image/Image.js";
+
+
+const Image = props => {
+  const _props$props = props.props,
+        title = _props$props.title,
+        src = _props$props.src;
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: src,
+    alt: title,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 5
+    },
+    __self: undefined
+  });
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Image);
+
+/***/ }),
+
+/***/ "./src/components/Image/index.js":
+/*!***************************************!*\
+  !*** ./src/components/Image/index.js ***!
+  \***************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Image__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Image */ "./src/components/Image/Image.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _Image__WEBPACK_IMPORTED_MODULE_0__["default"]; });
+
+
+
+/***/ }),
+
 /***/ "./src/components/Post/Post.js":
 /*!*************************************!*\
   !*** ./src/components/Post/Post.js ***!
@@ -266,31 +315,34 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var pimg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! pimg */ "./node_modules/pimg/dist/pimg.es.js");
+/* harmony import */ var _Image__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Image */ "./src/components/Image/index.js");
 var _jsxFileName = "/home/cs/work/inu-v2/react-src/src/components/Post/Post.js";
 
 
 
 const Post = node => {
-  console.log("node:" + JSON.stringify(node));
+  const props = {
+    title: node.node.title,
+    src: node.node.featuredImage.sourceUrl
+  };
+  const title = props.title;
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("article", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 7
+      lineNumber: 12
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 8
+      lineNumber: 13
     },
     __self: undefined
-  }, node.node.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(pimg__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    fetchOnDemand: true,
-    src: node.node.featuredImage.sourceUrl,
+  }, title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Image__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    props: props,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 9
+      lineNumber: 14
     },
     __self: undefined
   }));

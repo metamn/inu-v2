@@ -1,12 +1,17 @@
 import React from "react";
-import Image from "pimg";
+import Image from "../Image";
 
 const Post = node => {
-  console.log("node:" + JSON.stringify(node));
+  const props = {
+    title: node.node.title,
+    src: node.node.featuredImage.sourceUrl
+  };
+  const { title } = props;
+
   return (
     <article>
-      <h3>{node.node.title}</h3>
-      <Image fetchOnDemand src={node.node.featuredImage.sourceUrl} />
+      <h3>{title}</h3>
+      <Image props={props} />
     </article>
   );
 };
