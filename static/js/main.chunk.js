@@ -263,7 +263,9 @@ webfontloader__WEBPACK_IMPORTED_MODULE_2___default.a.load({
     families: ["Quicksand"]
   }
 });
-const Container = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].div(_templateObject(), _Spacing__WEBPACK_IMPORTED_MODULE_6__["default"]);
+const Container = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].div(_templateObject(), Object(_Spacing__WEBPACK_IMPORTED_MODULE_6__["default"])({
+  property: "padding"
+}));
 
 const Home = () => {
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Reset__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -355,7 +357,7 @@ __webpack_require__.r(__webpack_exports__);
 var _jsxFileName = "/home/cs/work/inu-v2/react-src/src/components/Image/Image.js";
 
 function _templateObject() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  max-width: 80vw;\n  max-height: 80vh;\n  width: auto;\n  height: auto;\n"]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  max-width: 80vw;\n  max-height: 70vh;\n  width: auto;\n  height: auto;\n"]);
 
   _templateObject = function () {
     return data;
@@ -754,13 +756,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var graphql_tag__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! graphql-tag */ "./node_modules/graphql-tag/src/index.js");
 /* harmony import */ var graphql_tag__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(graphql_tag__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _hooks__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./../../hooks */ "./src/hooks/index.js");
-/* harmony import */ var _Post__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../Post */ "./src/components/Post/index.js");
-/* harmony import */ var _List__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../List */ "./src/components/List/index.js");
+/* harmony import */ var _Spacing__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../Spacing */ "./src/components/Spacing/index.js");
+/* harmony import */ var _Post__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../Post */ "./src/components/Post/index.js");
+/* harmony import */ var _List__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../List */ "./src/components/List/index.js");
 
 var _jsxFileName = "/home/cs/work/inu-v2/react-src/src/components/Posts/Posts.js";
 
+function _templateObject3() {
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  scroll-snap-align: center;\n"]);
+
+  _templateObject3 = function () {
+    return data;
+  };
+
+  return data;
+}
+
 function _templateObject2() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  width: 100%;\n"]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  width: 100%;\n\n  ", "\n\n  display: flex;\n  align-items: center;\n\n  overflow-x: auto;\n  overflow-y: hidden;\n  scroll-snap-type-x: mandatory;\n"]);
 
   _templateObject2 = function () {
     return data;
@@ -785,30 +798,34 @@ function _templateObject() {
 
 
 
+
 const query = graphql_tag__WEBPACK_IMPORTED_MODULE_3___default()(_templateObject());
-const List2 = Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["default"])(_List__WEBPACK_IMPORTED_MODULE_6__["default"])(_templateObject2());
+const List2 = Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["default"])(_List__WEBPACK_IMPORTED_MODULE_7__["default"])(_templateObject2(), Object(_Spacing__WEBPACK_IMPORTED_MODULE_5__["default"])({
+  property: "margin-top"
+}));
+const ListItem = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].li(_templateObject3());
 
 const markup = data => {
   const itemsWithImage = data.posts.edges.filter(edge => edge.node.featuredImage);
-  const items = itemsWithImage.map(edge => react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
+  const items = itemsWithImage.map(edge => react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(ListItem, {
     key: edge.node.id,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 36
+      lineNumber: 50
     },
     __self: undefined
-  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Post__WEBPACK_IMPORTED_MODULE_5__["default"], {
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Post__WEBPACK_IMPORTED_MODULE_6__["default"], {
     node: edge.node,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 37
+      lineNumber: 51
     },
     __self: undefined
   })));
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(List2, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41
+      lineNumber: 55
     },
     __self: undefined
   }, items);
@@ -966,7 +983,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function _templateObject5() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["padding: calc(var(--lem) * 4);"]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["", ": calc(var(--lem) * 4);"]);
 
   _templateObject5 = function () {
     return data;
@@ -976,7 +993,7 @@ function _templateObject5() {
 }
 
 function _templateObject4() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["padding: calc(var(--lem) * 3);"]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["", ": calc(var(--lem) * 3);"]);
 
   _templateObject4 = function () {
     return data;
@@ -986,7 +1003,7 @@ function _templateObject4() {
 }
 
 function _templateObject3() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["padding: calc(var(--lem) * 2);"]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["", ": calc(var(--lem) * 2);"]);
 
   _templateObject3 = function () {
     return data;
@@ -996,7 +1013,7 @@ function _templateObject3() {
 }
 
 function _templateObject2() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["padding: var(--lem);"]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["", ": var(--lem);"]);
 
   _templateObject2 = function () {
     return data;
@@ -1020,7 +1037,8 @@ function _templateObject() {
 
 
 const Spacing = props => {
-  return Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject(), _Media__WEBPACK_IMPORTED_MODULE_3__["default"].mobile(_templateObject2()), _Media__WEBPACK_IMPORTED_MODULE_3__["default"].tablet(_templateObject3()), _Media__WEBPACK_IMPORTED_MODULE_3__["default"].laptop(_templateObject4()), _Media__WEBPACK_IMPORTED_MODULE_3__["default"].desktop(_templateObject5()));
+  const property = props.property;
+  return Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject(), _Media__WEBPACK_IMPORTED_MODULE_3__["default"].mobile(_templateObject2(), property), _Media__WEBPACK_IMPORTED_MODULE_3__["default"].tablet(_templateObject3(), property), _Media__WEBPACK_IMPORTED_MODULE_3__["default"].laptop(_templateObject4(), property), _Media__WEBPACK_IMPORTED_MODULE_3__["default"].desktop(_templateObject5(), property));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Spacing);

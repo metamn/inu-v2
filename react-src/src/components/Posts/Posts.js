@@ -3,6 +3,7 @@ import styled from "styled-components";
 import gql from "graphql-tag";
 import useQuery from "./../../hooks";
 
+import Spacing from "../Spacing";
 import Post from "../Post";
 import List from "../List";
 
@@ -25,6 +26,19 @@ const query = gql`
 
 const List2 = styled(List)`
   width: 100%;
+
+  ${Spacing({ property: "margin-top" })}
+
+  display: flex;
+  align-items: center;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type-x: mandatory;
+`;
+
+const ListItem = styled.li`
+  scroll-snap-align: center;
 `;
 
 const markup = data => {
@@ -33,9 +47,9 @@ const markup = data => {
   );
 
   const items = itemsWithImage.map(edge => (
-    <li key={edge.node.id}>
+    <ListItem key={edge.node.id}>
       <Post node={edge.node} />
-    </li>
+    </ListItem>
   ));
 
   return <List2>{items}</List2>;

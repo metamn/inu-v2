@@ -8,7 +8,7 @@ const placeholder = (
 
 const Img = styled.img`
   max-width: 80vw;
-  max-height: 80vh;
+  max-height: 70vh;
   width: auto;
   height: auto;
 `;

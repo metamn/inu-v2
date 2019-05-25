@@ -21,7 +21,7 @@ const Container = styled.div`
   display: flex;
   flex-wrap: wrap;
 
-  ${Spacing}
+  ${Spacing({ property: "padding" })}
 `;
 
 const Home = () => {
