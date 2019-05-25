@@ -1190,7 +1190,8 @@ const Container = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].sect
 }));
 const Slides = Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["default"])(_List__WEBPACK_IMPORTED_MODULE_3__["default"])(_templateObject2(), Object(_Spacing__WEBPACK_IMPORTED_MODULE_4__["default"])({
   property: "margin-top"
-}));
+})); // try next: https://stackoverflow.com/questions/43441856/reactjs-how-to-scroll-to-an-element
+// https://github.com/fisshy/react-scroll
 
 const Slider = props => {
   const slides = props.slides,
@@ -1203,13 +1204,13 @@ const Slider = props => {
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Container, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 37
+      lineNumber: 40
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Slides, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38
+      lineNumber: 41
     },
     __self: undefined
   }, slides), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Bullets__WEBPACK_IMPORTED_MODULE_5__["default"], {
@@ -1217,7 +1218,7 @@ const Slider = props => {
     bulletClickHandler: bulletClickHandler,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 39
+      lineNumber: 42
     },
     __self: undefined
   }));

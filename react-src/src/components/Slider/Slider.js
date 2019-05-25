@@ -26,6 +26,9 @@ const Slides = styled(List)`
   -ms-overflow-style: none;
 `;
 
+// try next: https://stackoverflow.com/questions/43441856/reactjs-how-to-scroll-to-an-element
+// https://github.com/fisshy/react-scroll
+
 const Slider = props => {
   const { slides, numberOfSlides } = props;
 
