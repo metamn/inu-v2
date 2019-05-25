@@ -3,9 +3,10 @@ import styled from "styled-components";
 import gql from "graphql-tag";
 import useQuery from "./../../hooks";
 
-import Spacing from "../Spacing";
+import Slider from "../Slider";
+import Slide from "../Slide";
+import Bullet from "../Bullet";
 import Post from "../Post";
-import List from "../List";
 
 const query = gql`
   query posts($first: Int) {
@@ -24,60 +25,20 @@ const query = gql`
   }
 `;
 
-const ImageList = styled(List)`
-  width: 80vw;
-
-  ${Spacing({ property: "margin-top" })}
-
-  display: flex;
-  align-items: center;
-
-  overflow-x: auto;
-  overflow-y: hidden;
-  scroll-snap-type-x: mandatory;
-
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-`;
-
-const ImageListItem = styled.li`
-  scroll-snap-align: center;
-`;
-
-const Bullets = styled(List)`
-  display: flex;
-`;
-
-const Bullet = styled.li`
-  margin-right: var(--lem);
-`;
-
-const Button = styled.button``;
-
 const markup = data => {
   const itemsWithImage = data.posts.edges.filter(
     edge => edge.node.featuredImage
   );
 
-  const items = itemsWithImage.map(edge => (
-    <ImageListItem key={edge.node.id}>
+  const slides = itemsWithImage.map(edge => (
+    <Slide key={edge.node.id}>
       <Post node={edge.node} />
-    </ImageListItem>
+    </Slide>
   ));
 
-  const bullets = itemsWithImage.map(edge => (
-    <Bullet>
-      <Button />
-    </Bullet>
-  ));
+  const bullets = itemsWithImage.map(edge => <Bullet />);
 
-  return (
-    <>
-      <ImageList>{items}</ImageList>
-      <Bullets>{bullets}</Bullets>
-    </>
-  );
+  return <Slider slides={slides} bullets={bullets} />;
 };
 
 const Posts = () => {
