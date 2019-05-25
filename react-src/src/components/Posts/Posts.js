@@ -25,7 +25,7 @@ const query = gql`
 `;
 
 const List2 = styled(List)`
-  width: 100%;
+  width: 80vw;
 
   ${Spacing({ property: "margin-top" })}
 

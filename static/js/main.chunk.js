@@ -677,8 +677,18 @@ __webpack_require__.r(__webpack_exports__);
 
 var _jsxFileName = "/home/cs/work/inu-v2/react-src/src/components/Post/Post.js";
 
-function _templateObject() {
+function _templateObject2() {
   const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  display: none;\n"]);
+
+  _templateObject2 = function () {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject() {
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  width: 80vw;\n"]);
 
   _templateObject = function () {
     return data;
@@ -690,7 +700,8 @@ function _templateObject() {
 
 
 
-const Title = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].h3(_templateObject());
+const Article = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].article(_templateObject());
+const Title = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].h3(_templateObject2());
 
 const Post = node => {
   const props = {
@@ -698,23 +709,23 @@ const Post = node => {
     src: node.node.featuredImage.sourceUrl
   };
   const title = props.title;
-  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("article", {
+  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Article, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 17
+      lineNumber: 21
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Title, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18
+      lineNumber: 22
     },
     __self: undefined
   }, title), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Image__WEBPACK_IMPORTED_MODULE_3__["default"], {
     props: props,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19
+      lineNumber: 23
     },
     __self: undefined
   }));
@@ -773,7 +784,7 @@ function _templateObject3() {
 }
 
 function _templateObject2() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  width: 100%;\n\n  ", "\n\n  display: flex;\n  align-items: center;\n\n  overflow-x: auto;\n  overflow-y: hidden;\n  scroll-snap-type-x: mandatory;\n"]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  width: 80vw;\n\n  ", "\n\n  display: flex;\n  align-items: center;\n\n  overflow-x: auto;\n  overflow-y: hidden;\n  scroll-snap-type-x: mandatory;\n"]);
 
   _templateObject2 = function () {
     return data;
