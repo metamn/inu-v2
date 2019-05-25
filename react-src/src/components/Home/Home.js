@@ -4,6 +4,7 @@ import styled from "styled-components";
 
 import Reset from "../Reset";
 import TypographicGrid from "../TypographicGrid";
+import Spacing from "../Spacing";
 import Logo from "../Logo";
 import Line from "../Line";
 import Categories from "../Categories";
@@ -19,6 +20,8 @@ const Container = styled.div`
   font-family: "Quicksand", sans-serif;
   display: flex;
   flex-wrap: wrap;
+
+  ${Spacing}
 `;
 
 const Home = () => {
@@ -26,8 +29,8 @@ const Home = () => {
     <>
       <Reset />
       <TypographicGrid
-        displayVerticalRhytm={true}
-        displayHorizontalRhytm={true}
+        displayVerticalRhytm={false}
+        displayHorizontalRhytm={false}
         numberOfHorizontalLines={100}
         numberOfVerticalLines={100}
         lineColor="#666"
