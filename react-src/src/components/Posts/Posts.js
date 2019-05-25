@@ -24,7 +24,7 @@ const query = gql`
   }
 `;
 
-const List2 = styled(List)`
+const ImageList = styled(List)`
   width: 80vw;
 
   ${Spacing({ property: "margin-top" })}
@@ -35,11 +35,25 @@ const List2 = styled(List)`
   overflow-x: auto;
   overflow-y: hidden;
   scroll-snap-type-x: mandatory;
+
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 `;
 
-const ListItem = styled.li`
+const ImageListItem = styled.li`
   scroll-snap-align: center;
 `;
+
+const Bullets = styled(List)`
+  display: flex;
+`;
+
+const Bullet = styled.li`
+  margin-right: var(--lem);
+`;
+
+const Button = styled.button``;
 
 const markup = data => {
   const itemsWithImage = data.posts.edges.filter(
@@ -47,12 +61,23 @@ const markup = data => {
   );
 
   const items = itemsWithImage.map(edge => (
-    <ListItem key={edge.node.id}>
+    <ImageListItem key={edge.node.id}>
       <Post node={edge.node} />
-    </ListItem>
+    </ImageListItem>
   ));
 
-  return <List2>{items}</List2>;
+  const bullets = itemsWithImage.map(edge => (
+    <Bullet>
+      <Button />
+    </Bullet>
+  ));
+
+  return (
+    <>
+      <ImageList>{items}</ImageList>
+      <Bullets>{bullets}</Bullets>
+    </>
+  );
 };
 
 const Posts = () => {
