@@ -5,15 +5,9 @@ const Button = styled.button`
   margin-right: var(--lem);
 `;
 
-const scroll = () => {
-  return node.scrollTo({
-    [horizontal ? "left" : "top"]: topOrLeft,
-    behavior: "smooth"
-  });
-};
-
 const Bullet = props => {
-  return <Button onclick={scroll} />;
+  const { onClick } = props;
+  return <Button onClick={onClick} />;
 };
 
 export default Bullet;

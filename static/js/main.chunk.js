@@ -72,19 +72,13 @@ function _templateObject() {
 
 const Button = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].button(_templateObject());
 
-const scroll = () => {
-  return node.scrollTo({
-    [horizontal ? "left" : "top"]: topOrLeft,
-    behavior: "smooth"
-  });
-};
-
 const Bullet = props => {
+  const onClick = props.onClick;
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Button, {
-    onclick: scroll,
+    onClick: onClick,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16
+      lineNumber: 10
     },
     __self: undefined
   });
@@ -105,6 +99,68 @@ const Bullet = props => {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Bullet__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Bullet */ "./src/components/Bullet/Bullet.js");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _Bullet__WEBPACK_IMPORTED_MODULE_0__["default"]; });
+
+
+
+/***/ }),
+
+/***/ "./src/components/Bullets/Bullets.js":
+/*!*******************************************!*\
+  !*** ./src/components/Bullets/Bullets.js ***!
+  \*******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var _Bullet__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Bullet */ "./src/components/Bullet/index.js");
+/* harmony import */ var _Repeat__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Repeat */ "./src/components/Repeat/index.js");
+var _jsxFileName = "/home/cs/work/inu-v2/react-src/src/components/Bullets/Bullets.js";
+
+
+
+
+
+const Bullets = props => {
+  const numberOfSlides = props.numberOfSlides,
+        bulletClickHandler = props.bulletClickHandler;
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Repeat__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    numberOfTimes: numberOfSlides,
+    startAt: 0,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 11
+    },
+    __self: undefined
+  }, i => react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Bullet__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    key: i,
+    onClick: () => bulletClickHandler(i),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 12
+    },
+    __self: undefined
+  }));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Bullets);
+
+/***/ }),
+
+/***/ "./src/components/Bullets/index.js":
+/*!*****************************************!*\
+  !*** ./src/components/Bullets/index.js ***!
+  \*****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Bullets__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Bullets */ "./src/components/Bullets/Bullets.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _Bullets__WEBPACK_IMPORTED_MODULE_0__["default"]; });
 
 
 
@@ -837,8 +893,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _hooks__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./../../hooks */ "./src/hooks/index.js");
 /* harmony import */ var _Slider__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../Slider */ "./src/components/Slider/index.js");
 /* harmony import */ var _Slide__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../Slide */ "./src/components/Slide/index.js");
-/* harmony import */ var _Bullet__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../Bullet */ "./src/components/Bullet/index.js");
-/* harmony import */ var _Post__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../Post */ "./src/components/Post/index.js");
+/* harmony import */ var _Post__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../Post */ "./src/components/Post/index.js");
 
 var _jsxFileName = "/home/cs/work/inu-v2/react-src/src/components/Posts/Posts.js";
 
@@ -859,7 +914,6 @@ function _templateObject() {
 
 
 
-
 const query = graphql_tag__WEBPACK_IMPORTED_MODULE_3___default()(_templateObject());
 
 const markup = data => {
@@ -868,30 +922,24 @@ const markup = data => {
     key: edge.node.id,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 34
+      lineNumber: 33
     },
     __self: undefined
-  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Post__WEBPACK_IMPORTED_MODULE_8__["default"], {
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Post__WEBPACK_IMPORTED_MODULE_7__["default"], {
     node: edge.node,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35
+      lineNumber: 34
     },
     __self: undefined
   })));
-  const bullets = itemsWithImage.map(edge => react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Bullet__WEBPACK_IMPORTED_MODULE_7__["default"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 39
-    },
-    __self: undefined
-  }));
+  const numberOfSlides = itemsWithImage.length;
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Slider__WEBPACK_IMPORTED_MODULE_5__["default"], {
     slides: slides,
-    bullets: bullets,
+    numberOfSlides: numberOfSlides,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41
+      lineNumber: 40
     },
     __self: undefined
   });
@@ -1108,18 +1156,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 /* harmony import */ var _List__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../List */ "./src/components/List/index.js");
 /* harmony import */ var _Spacing__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../Spacing */ "./src/components/Spacing/index.js");
+/* harmony import */ var _Bullets__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../Bullets */ "./src/components/Bullets/index.js");
 
 var _jsxFileName = "/home/cs/work/inu-v2/react-src/src/components/Slider/Slider.js";
-
-function _templateObject3() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])([""]);
-
-  _templateObject3 = function () {
-    return data;
-  };
-
-  return data;
-}
 
 function _templateObject2() {
   const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  width: 80vw;\n\n  ", "\n\n  display: flex;\n  align-items: center;\n\n  overflow-x: auto;\n  overflow-y: hidden;\n  scroll-snap-type-x: mandatory;\n\n  -webkit-overflow-scrolling: touch;\n  scrollbar-width: none;\n  -ms-overflow-style: none;\n"]);
@@ -1145,36 +1184,43 @@ function _templateObject() {
 
 
 
+
 const Container = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].section(_templateObject(), Object(_Spacing__WEBPACK_IMPORTED_MODULE_4__["default"])({
   property: "margin-top"
 }));
 const Slides = Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["default"])(_List__WEBPACK_IMPORTED_MODULE_3__["default"])(_templateObject2(), Object(_Spacing__WEBPACK_IMPORTED_MODULE_4__["default"])({
   property: "margin-top"
 }));
-const Bullets = Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["default"])(_List__WEBPACK_IMPORTED_MODULE_3__["default"])(_templateObject3());
 
 const Slider = props => {
   const slides = props.slides,
-        bullets = props.bullets;
+        numberOfSlides = props.numberOfSlides;
+
+  const bulletClickHandler = index => {
+    console.log("clicked:" + index);
+  };
+
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Container, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 34
+      lineNumber: 37
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Slides, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35
+      lineNumber: 38
     },
     __self: undefined
-  }, slides), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Bullets, {
+  }, slides), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Bullets__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    numberOfSlides: numberOfSlides,
+    bulletClickHandler: bulletClickHandler,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 36
+      lineNumber: 39
     },
     __self: undefined
-  }, bullets));
+  }));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Slider);

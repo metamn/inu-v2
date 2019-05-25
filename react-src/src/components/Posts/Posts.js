@@ -3,9 +3,8 @@ import styled from "styled-components";
 import gql from "graphql-tag";
 import useQuery from "./../../hooks";
 
-import Slider from "../Slider";
+import Slider, { bulletClick } from "../Slider";
 import Slide from "../Slide";
-import Bullet from "../Bullet";
 import Post from "../Post";
 
 const query = gql`
@@ -36,9 +35,9 @@ const markup = data => {
     </Slide>
   ));
 
-  const bullets = itemsWithImage.map(edge => <Bullet />);
+  const numberOfSlides = itemsWithImage.length;
 
-  return <Slider slides={slides} bullets={bullets} />;
+  return <Slider slides={slides} numberOfSlides={numberOfSlides} />;
 };
 
 const Posts = () => {

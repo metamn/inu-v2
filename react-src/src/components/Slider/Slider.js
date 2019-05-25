@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import styled, { css } from "styled-components";
 
 import List from "../List";
 import Spacing from "../Spacing";
+import Bullets from "../Bullets";
 
 const Container = styled.section`
   ${Spacing({ property: "margin-top" })}
@@ -25,15 +26,20 @@ const Slides = styled(List)`
   -ms-overflow-style: none;
 `;
 
-const Bullets = styled(List)``;
-
 const Slider = props => {
-  const { slides, bullets } = props;
+  const { slides, numberOfSlides } = props;
+
+  const bulletClickHandler = index => {
+    console.log("clicked:" + index);
+  };
 
   return (
     <Container>
       <Slides>{slides}</Slides>
-      <Bullets>{bullets}</Bullets>
+      <Bullets
+        numberOfSlides={numberOfSlides}
+        bulletClickHandler={bulletClickHandler}
+      />
     </Container>
   );
 };
