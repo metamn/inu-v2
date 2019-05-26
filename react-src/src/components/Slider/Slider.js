@@ -11,8 +11,7 @@ const Container = styled.section`
 
 const Slides = styled(List)`
   width: 80vw;
-
-  ${Spacing({ property: "margin-top" })}
+  margin-top: var(--lem);
 
   display: flex;
   align-items: center;
