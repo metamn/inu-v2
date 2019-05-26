@@ -29,9 +29,6 @@ const Slides = styled(List)`
   -ms-overflow-style: none;
 `;
 
-// try next: https://stackoverflow.com/questions/43441856/reactjs-how-to-scroll-to-an-element
-// https://github.com/fisshy/react-scroll
-
 const query = gql`
   query posts($first: Int) {
     posts(first: $first) {
@@ -53,6 +50,8 @@ const Slider = props => {
   // We have a single state
   const [activeBullet, setActiveBullet] = useState(1);
 
+  // We can't use our own `useQuery` hook since we have a state hook
+  // And hooks can be used inside React components only
   const { data, error, loading } = useQueryApollo(query, {
     variables: { first: 10 }
   });
@@ -87,8 +86,6 @@ const Slider = props => {
   });
 
   const bulletClickHandler = index => {
-    console.log("clicked:" + index);
-    console.log("ref:" + refs[index - 1].current.offsetLeft);
     setActiveBullet(index);
     refs[index - 1].current.scrollIntoView({
       behavior: "smooth",
