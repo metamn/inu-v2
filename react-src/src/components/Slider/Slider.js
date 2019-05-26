@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import gql from "graphql-tag";
 import { useQuery as useQueryApollo } from "react-apollo-hooks";
@@ -50,6 +50,9 @@ const query = gql`
 `;
 
 const Slider = props => {
+  // We have a single state
+  const [activeBullet, setActiveBullet] = useState(1);
+
   const { data, error, loading } = useQueryApollo(query, {
     variables: { first: 10 }
   });
@@ -76,6 +79,7 @@ const Slider = props => {
 
   const bulletClickHandler = index => {
     console.log("clicked:" + index);
+    setActiveBullet(index);
     //window.scrollTo(0, refs[index].current.offsetTop);
   };
 
@@ -84,6 +88,7 @@ const Slider = props => {
       <Slides>{slides}</Slides>
       <Bullets
         numberOfSlides={numberOfSlides}
+        activeBullet={activeBullet}
         bulletClickHandler={bulletClickHandler}
       />
     </Container>

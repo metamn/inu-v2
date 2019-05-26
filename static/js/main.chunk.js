@@ -58,8 +58,18 @@ __webpack_require__.r(__webpack_exports__);
 
 var _jsxFileName = "/home/cs/work/inu-v2/react-src/src/components/Bullet/Bullet.js";
 
+function _templateObject2() {
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n      color: black;\n      background: #000;\n    "]);
+
+  _templateObject2 = function () {
+    return data;
+  };
+
+  return data;
+}
+
 function _templateObject() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  margin-right: var(--lem);\n"]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  margin-right: var(--lem);\n  cursor: pointer;\n\n  ", "\n"]);
 
   _templateObject = function () {
     return data;
@@ -70,15 +80,17 @@ function _templateObject() {
 
 
 
-const Button = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].button(_templateObject());
+const Button = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].button(_templateObject(), props => props.className === "active" && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject2()));
 
 const Bullet = props => {
-  const onClick = props.onClick;
+  const className = props.className,
+        onClick = props.onClick;
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Button, {
+    className: className,
     onClick: onClick,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 10
+      lineNumber: 18
     },
     __self: undefined
   });
@@ -124,21 +136,28 @@ var _jsxFileName = "/home/cs/work/inu-v2/react-src/src/components/Bullets/Bullet
 
 const Bullets = props => {
   const numberOfSlides = props.numberOfSlides,
+        activeBullet = props.activeBullet,
         bulletClickHandler = props.bulletClickHandler;
+
+  const setClassName = index => {
+    return index === activeBullet ? "active" : "inactive";
+  };
+
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Repeat__WEBPACK_IMPORTED_MODULE_2__["default"], {
     numberOfTimes: numberOfSlides,
-    startAt: 0,
+    startAt: 1,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 10
+      lineNumber: 14
     },
     __self: undefined
   }, i => react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Bullet__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    className: setClassName(i),
     key: i,
     onClick: () => bulletClickHandler(i),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 11
+      lineNumber: 16
     },
     __self: undefined
   }));
@@ -1044,23 +1063,25 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/esm/taggedTemplateLiteral */ "./node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/esm/taggedTemplateLiteral.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-/* harmony import */ var graphql_tag__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! graphql-tag */ "./node_modules/graphql-tag/src/index.js");
-/* harmony import */ var graphql_tag__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(graphql_tag__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var react_apollo_hooks__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-apollo-hooks */ "./node_modules/react-apollo-hooks/es/index.js");
-/* harmony import */ var _Spacing__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../Spacing */ "./src/components/Spacing/index.js");
-/* harmony import */ var _List__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../List */ "./src/components/List/index.js");
-/* harmony import */ var _Slide__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../Slide */ "./src/components/Slide/index.js");
-/* harmony import */ var _Post__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../Post */ "./src/components/Post/index.js");
-/* harmony import */ var _Bullets__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../Bullets */ "./src/components/Bullets/index.js");
+/* harmony import */ var _home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/esm/slicedToArray */ "./node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/esm/slicedToArray.js");
+/* harmony import */ var _home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/esm/taggedTemplateLiteral */ "./node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/esm/taggedTemplateLiteral.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var graphql_tag__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! graphql-tag */ "./node_modules/graphql-tag/src/index.js");
+/* harmony import */ var graphql_tag__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(graphql_tag__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var react_apollo_hooks__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-apollo-hooks */ "./node_modules/react-apollo-hooks/es/index.js");
+/* harmony import */ var _Spacing__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../Spacing */ "./src/components/Spacing/index.js");
+/* harmony import */ var _List__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../List */ "./src/components/List/index.js");
+/* harmony import */ var _Slide__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../Slide */ "./src/components/Slide/index.js");
+/* harmony import */ var _Post__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../Post */ "./src/components/Post/index.js");
+/* harmony import */ var _Bullets__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../Bullets */ "./src/components/Bullets/index.js");
+
 
 var _jsxFileName = "/home/cs/work/inu-v2/react-src/src/components/Slider/Slider.js";
 
 function _templateObject3() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  query posts($first: Int) {\n    posts(first: $first) {\n      edges {\n        node {\n          id\n          title\n          featuredImage {\n            id\n            sourceUrl\n          }\n        }\n      }\n    }\n  }\n"]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_1__["default"])(["\n  query posts($first: Int) {\n    posts(first: $first) {\n      edges {\n        node {\n          id\n          title\n          featuredImage {\n            id\n            sourceUrl\n          }\n        }\n      }\n    }\n  }\n"]);
 
   _templateObject3 = function () {
     return data;
@@ -1070,7 +1091,7 @@ function _templateObject3() {
 }
 
 function _templateObject2() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  width: 80vw;\n  margin-top: var(--lem);\n\n  display: flex;\n  align-items: center;\n\n  overflow-x: auto;\n  overflow-y: hidden;\n  scroll-snap-type-x: mandatory;\n\n  -webkit-overflow-scrolling: touch;\n  scrollbar-width: none;\n  -ms-overflow-style: none;\n"]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_1__["default"])(["\n  width: 80vw;\n  margin-top: var(--lem);\n\n  display: flex;\n  align-items: center;\n\n  overflow-x: auto;\n  overflow-y: hidden;\n  scroll-snap-type-x: mandatory;\n\n  -webkit-overflow-scrolling: touch;\n  scrollbar-width: none;\n  -ms-overflow-style: none;\n"]);
 
   _templateObject2 = function () {
     return data;
@@ -1080,7 +1101,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  ", "\n"]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_1__["default"])(["\n  ", "\n"]);
 
   _templateObject = function () {
     return data;
@@ -1098,16 +1119,22 @@ function _templateObject() {
 
 
 
-const Container = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].section(_templateObject(), Object(_Spacing__WEBPACK_IMPORTED_MODULE_5__["default"])({
+const Container = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].section(_templateObject(), Object(_Spacing__WEBPACK_IMPORTED_MODULE_6__["default"])({
   property: "margin-top"
 }));
-const Slides = Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["default"])(_List__WEBPACK_IMPORTED_MODULE_6__["default"])(_templateObject2()); // try next: https://stackoverflow.com/questions/43441856/reactjs-how-to-scroll-to-an-element
+const Slides = Object(styled_components__WEBPACK_IMPORTED_MODULE_3__["default"])(_List__WEBPACK_IMPORTED_MODULE_7__["default"])(_templateObject2()); // try next: https://stackoverflow.com/questions/43441856/reactjs-how-to-scroll-to-an-element
 // https://github.com/fisshy/react-scroll
 
-const query = graphql_tag__WEBPACK_IMPORTED_MODULE_3___default()(_templateObject3());
+const query = graphql_tag__WEBPACK_IMPORTED_MODULE_4___default()(_templateObject3());
 
 const Slider = props => {
-  const _useQueryApollo = Object(react_apollo_hooks__WEBPACK_IMPORTED_MODULE_4__["useQuery"])(query, {
+  // We have a single state
+  const _useState = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])(1),
+        _useState2 = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_useState, 2),
+        activeBullet = _useState2[0],
+        setActiveBullet = _useState2[1];
+
+  const _useQueryApollo = Object(react_apollo_hooks__WEBPACK_IMPORTED_MODULE_5__["useQuery"])(query, {
     variables: {
       first: 10
     }
@@ -1117,20 +1144,20 @@ const Slider = props => {
         loading = _useQueryApollo.loading;
 
   if (loading) {
-    return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 58
+        lineNumber: 61
       },
       __self: undefined
     }, "Loading...");
   }
 
   if (error) {
-    return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 62
+        lineNumber: 65
       },
       __self: undefined
     }, "Error! ", error.message);
@@ -1138,44 +1165,46 @@ const Slider = props => {
 
   const itemsWithImage = data.posts.edges.filter(edge => edge.node.featuredImage);
   const numberOfSlides = itemsWithImage.length;
-  const slides = itemsWithImage.map((edge, index) => react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Slide__WEBPACK_IMPORTED_MODULE_7__["default"], {
+  const slides = itemsWithImage.map((edge, index) => react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Slide__WEBPACK_IMPORTED_MODULE_8__["default"], {
     key: edge.node.id,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 72
+      lineNumber: 75
     },
     __self: undefined
-  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Post__WEBPACK_IMPORTED_MODULE_8__["default"], {
+  }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Post__WEBPACK_IMPORTED_MODULE_9__["default"], {
     node: edge.node,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 73
+      lineNumber: 76
     },
     __self: undefined
   })));
 
   const bulletClickHandler = index => {
-    console.log("clicked:" + index); //window.scrollTo(0, refs[index].current.offsetTop);
+    console.log("clicked:" + index);
+    setActiveBullet(index); //window.scrollTo(0, refs[index].current.offsetTop);
   };
 
-  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Container, {
+  return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Container, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 83
+      lineNumber: 87
     },
     __self: undefined
-  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Slides, {
+  }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Slides, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 84
+      lineNumber: 88
     },
     __self: undefined
-  }, slides), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Bullets__WEBPACK_IMPORTED_MODULE_9__["default"], {
+  }, slides), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Bullets__WEBPACK_IMPORTED_MODULE_10__["default"], {
     numberOfSlides: numberOfSlides,
+    activeBullet: activeBullet,
     bulletClickHandler: bulletClickHandler,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 85
+      lineNumber: 89
     },
     __self: undefined
   }));
