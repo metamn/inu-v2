@@ -1,12 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import styled, { css } from "styled-components";
 import gql from "graphql-tag";
-import useQuery from "./../../hooks";
+import { useQuery as useQueryApollo } from "react-apollo-hooks";
 
 import Spacing from "../Spacing";
+import List from "../List";
 import Slide from "../Slide";
 import Post from "../Post";
-import List from "../List";
 import Bullets from "../Bullets";
 
 const Container = styled.section`
@@ -49,20 +49,39 @@ const query = gql`
   }
 `;
 
-const markup = data => {
+const Slider = props => {
+  const [slideVisible, setSlideVisible] = useState([]);
+
+  const markSlideVisible = index => {
+    window.scrollTo(0, this.myRef.current.offsetTop);
+  };
+
+  const { data, error, loading } = useQueryApollo(query, {
+    variables: { first: 10 }
+  });
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>Error! {error.message}</div>;
+  }
+
   const itemsWithImage = data.posts.edges.filter(
     edge => edge.node.featuredImage
   );
 
+  const numberOfSlides = itemsWithImage.length;
+
   const slides = itemsWithImage.map(edge => (
-    <Slide key={edge.node.id}>
+    <Slide key={edge.node.id} ref={useRef()}>
       <Post node={edge.node} />
     </Slide>
   ));
 
-  const numberOfSlides = itemsWithImage.length;
-
   const bulletClickHandler = index => {
+    setSlideVisible(slideVisible[index]);
     console.log("clicked:" + index);
   };
 
@@ -75,11 +94,6 @@ const markup = data => {
       />
     </Container>
   );
-};
-
-const Slider = props => {
-  const variables = { first: 10 };
-  return useQuery(query, markup, variables);
 };
 
 export default Slider;
