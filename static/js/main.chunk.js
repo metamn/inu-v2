@@ -1020,20 +1020,17 @@ function _templateObject() {
 
 
 const Container = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].li(_templateObject());
-
-const Slide = props => {
-  const ref = Object(react__WEBPACK_IMPORTED_MODULE_1__["useRef"])();
+const Slide = react__WEBPACK_IMPORTED_MODULE_1___default.a.forwardRef((props, ref) => {
   const children = props.children;
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Container, {
     ref: ref,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 12
+      lineNumber: 11
     },
     __self: undefined
   }, children);
-};
-
+});
 /* harmony default export */ __webpack_exports__["default"] = (Slide);
 
 /***/ }),
@@ -1164,38 +1161,51 @@ const Slider = props => {
   }
 
   const itemsWithImage = data.posts.edges.filter(edge => edge.node.featuredImage);
-  const numberOfSlides = itemsWithImage.length;
-  const slides = itemsWithImage.map((edge, index) => react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Slide__WEBPACK_IMPORTED_MODULE_8__["default"], {
-    key: edge.node.id,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 75
-    },
-    __self: undefined
-  }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Post__WEBPACK_IMPORTED_MODULE_9__["default"], {
-    node: edge.node,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 76
-    },
-    __self: undefined
-  })));
+  const numberOfSlides = itemsWithImage.length; // We need to know the ref of each slide
+  // in order to scroll to it
+
+  const refs = Array(numberOfSlides).fill(null);
+  const slides = itemsWithImage.map((edge, index) => {
+    const ref = react__WEBPACK_IMPORTED_MODULE_2___default.a.createRef();
+    refs[index] = ref;
+    return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Slide__WEBPACK_IMPORTED_MODULE_8__["default"], {
+      key: edge.node.id,
+      ref: ref,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 83
+      },
+      __self: undefined
+    }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Post__WEBPACK_IMPORTED_MODULE_9__["default"], {
+      node: edge.node,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 84
+      },
+      __self: undefined
+    }));
+  });
 
   const bulletClickHandler = index => {
     console.log("clicked:" + index);
-    setActiveBullet(index); //window.scrollTo(0, refs[index].current.offsetTop);
+    console.log("ref:" + refs[index - 1].current.offsetLeft);
+    setActiveBullet(index);
+    refs[index - 1].current.scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    });
   };
 
   return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Container, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 87
+      lineNumber: 100
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Slides, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 88
+      lineNumber: 101
     },
     __self: undefined
   }, slides), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Bullets__WEBPACK_IMPORTED_MODULE_10__["default"], {
@@ -1204,7 +1214,7 @@ const Slider = props => {
     bulletClickHandler: bulletClickHandler,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 89
+      lineNumber: 102
     },
     __self: undefined
   }));

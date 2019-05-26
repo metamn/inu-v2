@@ -71,16 +71,29 @@ const Slider = props => {
 
   const numberOfSlides = itemsWithImage.length;
 
-  const slides = itemsWithImage.map((edge, index) => (
-    <Slide key={edge.node.id}>
-      <Post node={edge.node} />
-    </Slide>
-  ));
+  // We need to know the ref of each slide
+  // in order to scroll to it
+  const refs = Array(numberOfSlides).fill(null);
+
+  const slides = itemsWithImage.map((edge, index) => {
+    const ref = React.createRef();
+    refs[index] = ref;
+
+    return (
+      <Slide key={edge.node.id} ref={ref}>
+        <Post node={edge.node} />
+      </Slide>
+    );
+  });
 
   const bulletClickHandler = index => {
     console.log("clicked:" + index);
+    console.log("ref:" + refs[index - 1].current.offsetLeft);
     setActiveBullet(index);
-    //window.scrollTo(0, refs[index].current.offsetTop);
+    refs[index - 1].current.scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    });
   };
 
   return (
