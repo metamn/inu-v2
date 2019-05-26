@@ -57,11 +57,17 @@ const Slider = props => {
   // We have a single state
   const [activeBullet, setActiveBullet] = useState(1);
 
-  // Hooks must be first amongst the other declarations ...
+  // We have keyboard navigation
+  //
+  // - Hooks must be first amongst the other declarations ...
+  // - This put after hooks would cause an error
   const ArrowRightPress = useKeyPress("ArrowRight");
 
-  // We can't use our own `useQuery` hook since we have a state hook
-  // And hooks can be used inside React components only
+  // We can't use our own `useQuery` hook
+  //
+  // - The data returned is handled by a Javascript function not a React component
+  // - And we have a state hook which can be used inside a React component only
+  // - Therefore we must handle the returned data inside this React component
   const { data, error, loading } = useQueryApollo(query, {
     variables: { first: 10 }
   });
@@ -98,7 +104,16 @@ const Slider = props => {
   const bulletClickHandler = index => {
     console.log("index:" + index);
     setActiveBullet(index);
-    refs[index - 1].current.scrollIntoView({
+    slideTo();
+  };
+
+  const arrowRightHandler = () => {
+    setActiveBullet(activeBullet + 1);
+    slideTo();
+  };
+
+  const slideTo = () => {
+    refs[activeBullet].current.scrollIntoView({
       behavior: "smooth",
       block: "start"
     });
@@ -112,7 +127,7 @@ const Slider = props => {
         activeBullet={activeBullet}
         bulletClickHandler={bulletClickHandler}
       />
-      {ArrowRightPress && bulletClickHandler(activeBullet + 1)}
+      {ArrowRightPress && arrowRightHandler()}
     </Container>
   );
 };

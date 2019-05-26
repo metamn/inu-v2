@@ -1131,11 +1131,17 @@ const Slider = props => {
   const _useState = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])(1),
         _useState2 = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_useState, 2),
         activeBullet = _useState2[0],
-        setActiveBullet = _useState2[1]; // Hooks must be first amongst the other declarations ...
+        setActiveBullet = _useState2[1]; // We have keyboard navigation
+  //
+  // - Hooks must be first amongst the other declarations ...
+  // - This put after hooks would cause an error
 
 
-  const ArrowRightPress = Object(_hooks__WEBPACK_IMPORTED_MODULE_6__["useKeyPress"])("ArrowRight"); // We can't use our own `useQuery` hook since we have a state hook
-  // And hooks can be used inside React components only
+  const ArrowRightPress = Object(_hooks__WEBPACK_IMPORTED_MODULE_6__["useKeyPress"])("ArrowRight"); // We can't use our own `useQuery` hook
+  //
+  // - The data returned is handled by a Javascript function not a React component
+  // - And we have a state hook which can be used inside a React component only
+  // - Therefore we must handle the returned data inside this React component
 
   const _useQueryApollo = Object(react_apollo_hooks__WEBPACK_IMPORTED_MODULE_5__["useQuery"])(query, {
     variables: {
@@ -1150,7 +1156,7 @@ const Slider = props => {
     return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 70
+        lineNumber: 76
       },
       __self: undefined
     }, "Loading...");
@@ -1160,7 +1166,7 @@ const Slider = props => {
     return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 74
+        lineNumber: 80
       },
       __self: undefined
     }, "Error! ", error.message);
@@ -1179,14 +1185,14 @@ const Slider = props => {
       ref: ref,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 92
+        lineNumber: 98
       },
       __self: undefined
     }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Post__WEBPACK_IMPORTED_MODULE_10__["default"], {
       node: edge.node,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 93
+        lineNumber: 99
       },
       __self: undefined
     }));
@@ -1195,7 +1201,16 @@ const Slider = props => {
   const bulletClickHandler = index => {
     console.log("index:" + index);
     setActiveBullet(index);
-    refs[index - 1].current.scrollIntoView({
+    slideTo();
+  };
+
+  const arrowRightHandler = () => {
+    setActiveBullet(activeBullet + 1);
+    slideTo();
+  };
+
+  const slideTo = () => {
+    refs[activeBullet].current.scrollIntoView({
       behavior: "smooth",
       block: "start"
     });
@@ -1204,13 +1219,13 @@ const Slider = props => {
   return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Container, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 108
+      lineNumber: 123
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Slides, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 109
+      lineNumber: 124
     },
     __self: undefined
   }, slides), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Bullets__WEBPACK_IMPORTED_MODULE_11__["default"], {
@@ -1219,10 +1234,10 @@ const Slider = props => {
     bulletClickHandler: bulletClickHandler,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 110
+      lineNumber: 125
     },
     __self: undefined
-  }), ArrowRightPress && bulletClickHandler(activeBullet + 1));
+  }), ArrowRightPress && arrowRightHandler());
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Slider);
@@ -1890,5 +1905,5 @@ module.exports = __webpack_require__(/*! /home/cs/work/inu-v2/react-src/src/inde
 
 /***/ })
 
-},[[0,"runtime~main",1]]]);
+},[[0,"runtime~main",0]]]);
 //# sourceMappingURL=main.chunk.js.map
