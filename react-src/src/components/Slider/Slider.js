@@ -13,6 +13,8 @@ const Container = styled.section`
   ${Spacing({ property: "margin-top" })}
 `;
 
+// Original idea:
+// - https://nolanlawson.com/2019/02/10/building-a-modern-carousel-with-css-scroll-snap-smooth-scrolling-and-pinch-zoom/
 const Slides = styled(List)`
   width: 80vw;
   margin-top: var(--lem);

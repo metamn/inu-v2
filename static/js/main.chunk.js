@@ -1118,7 +1118,9 @@ function _templateObject() {
 
 const Container = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].section(_templateObject(), Object(_Spacing__WEBPACK_IMPORTED_MODULE_6__["default"])({
   property: "margin-top"
-}));
+})); // Original idea:
+// - https://nolanlawson.com/2019/02/10/building-a-modern-carousel-with-css-scroll-snap-smooth-scrolling-and-pinch-zoom/
+
 const Slides = Object(styled_components__WEBPACK_IMPORTED_MODULE_3__["default"])(_List__WEBPACK_IMPORTED_MODULE_7__["default"])(_templateObject2());
 const query = graphql_tag__WEBPACK_IMPORTED_MODULE_4___default()(_templateObject3());
 
@@ -1144,7 +1146,7 @@ const Slider = props => {
     return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 64
+        lineNumber: 66
       },
       __self: undefined
     }, "Loading...");
@@ -1154,7 +1156,7 @@ const Slider = props => {
     return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 68
+        lineNumber: 70
       },
       __self: undefined
     }, "Error! ", error.message);
@@ -1173,14 +1175,14 @@ const Slider = props => {
       ref: ref,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 86
+        lineNumber: 88
       },
       __self: undefined
     }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Post__WEBPACK_IMPORTED_MODULE_9__["default"], {
       node: edge.node,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 87
+        lineNumber: 89
       },
       __self: undefined
     }));
@@ -1197,13 +1199,13 @@ const Slider = props => {
   return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Container, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 101
+      lineNumber: 103
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Slides, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 102
+      lineNumber: 104
     },
     __self: undefined
   }, slides), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Bullets__WEBPACK_IMPORTED_MODULE_10__["default"], {
@@ -1212,7 +1214,7 @@ const Slider = props => {
     bulletClickHandler: bulletClickHandler,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 103
+      lineNumber: 105
     },
     __self: undefined
   }));
