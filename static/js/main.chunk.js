@@ -1209,8 +1209,7 @@ const Slider = props => {
 
 
   const arrowRightHandler = () => {
-    console.log("arrow right index:" + activeBullet);
-    setActiveBullet(activeBullet + 1);
+    console.log("arrow right index:" + activeBullet); //setActiveBullet(activeBullet + 1);
   };
 
   return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Container, {

@@ -125,7 +125,7 @@ const Slider = props => {
   // TODO: Here we got an infinite loop
   const arrowRightHandler = () => {
     console.log("arrow right index:" + activeBullet);
-    setActiveBullet(activeBullet + 1);
+    //setActiveBullet(activeBullet + 1);
   };
 
   return (
