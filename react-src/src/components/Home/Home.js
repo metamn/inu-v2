@@ -8,7 +8,7 @@ import Spacing from "../Spacing";
 import Logo from "../Logo";
 import Line from "../Line";
 import Categories from "../Categories";
-import Posts from "../Posts";
+import Slider from "../Slider";
 
 WebFont.load({
   google: {
@@ -39,7 +39,7 @@ const Home = () => {
         <Logo />
         <Line />
         <Categories />
-        <Posts />
+        <Slider />
       </Container>
     </>
   );
