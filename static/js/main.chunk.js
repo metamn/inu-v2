@@ -1118,7 +1118,6 @@ function _templateObject() {
 
 
 
-
 const Container = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].section(_templateObject(), Object(_Spacing__WEBPACK_IMPORTED_MODULE_6__["default"])({
   property: "margin-top"
 })); // Original idea:
@@ -1141,14 +1140,14 @@ const markup = data => {
       ref: ref,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 72
+        lineNumber: 71
       },
       __self: undefined
     }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Post__WEBPACK_IMPORTED_MODULE_9__["default"], {
       node: edge.node,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 73
+        lineNumber: 72
       },
       __self: undefined
     }));
@@ -1161,6 +1160,7 @@ const markup = data => {
 };
 
 const Slider = props => {
+  // The data hook comes first
   const variables = {
     first: 10
   };
@@ -1168,14 +1168,18 @@ const Slider = props => {
   const _useQuery = Object(_hooks__WEBPACK_IMPORTED_MODULE_5__["useQuery"])(query, markup, variables),
         slides = _useQuery.slides,
         refs = _useQuery.refs,
-        numberOfSlides = _useQuery.numberOfSlides; // We have a single state
+        numberOfSlides = _useQuery.numberOfSlides; // State hooks are coming next
 
 
   const _useState = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])(0),
         _useState2 = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_useState, 2),
         activeBullet = _useState2[0],
-        setActiveBullet = _useState2[1]; // Without useEffect we can't have access to `activeBullet`
-  // - see: https://reactjs.org/docs/hooks-effect.html
+        setActiveBullet = _useState2[1]; // Without `useEffect` we can't properly have access to `activeBullet`
+  // Even more when state changes this handles the event
+  //
+  // - `useEffect` is associated to state, so it should immediately follow in code
+  // - Otherwise and error message will be shown
+  // - See: https://reactjs.org/docs/hooks-effect.html
 
 
   Object(react__WEBPACK_IMPORTED_MODULE_2__["useEffect"])(() => {
@@ -1187,33 +1191,38 @@ const Slider = props => {
         block: "start"
       });
     }
-  }); // We have keyboard navigation
+  }, [activeBullet, refs]); // We have a keyboard navigation hook
   //
   // - Hooks must be first amongst the other declarations ...
   // - This put after hooks would cause an error
 
-  const ArrowRightPress = Object(_hooks__WEBPACK_IMPORTED_MODULE_5__["useKeyPress"])("ArrowRight");
+  const ArrowRightPress = Object(_hooks__WEBPACK_IMPORTED_MODULE_5__["useKeyPress"])("ArrowRight"); //
+  // After hooks comes the regular stuff
+  //
+  // The click handler
 
   const bulletClickHandler = index => {
     console.log("click index:" + index);
     setActiveBullet(index);
-  };
+  }; // The keypress handlers
+  // TODO: Here we got an infinite loop
+
 
   const arrowRightHandler = () => {
-    console.log("activeBullet:" + activeBullet);
+    console.log("arrow right index:" + activeBullet);
     setActiveBullet(activeBullet + 1);
   };
 
   return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Container, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 117
+      lineNumber: 132
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Slides, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 118
+      lineNumber: 133
     },
     __self: undefined
   }, slides), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Bullets__WEBPACK_IMPORTED_MODULE_10__["default"], {
@@ -1222,7 +1231,7 @@ const Slider = props => {
     bulletClickHandler: bulletClickHandler,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 119
+      lineNumber: 134
     },
     __self: undefined
   }), ArrowRightPress && arrowRightHandler());
