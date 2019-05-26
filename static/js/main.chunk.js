@@ -1161,6 +1161,7 @@ const markup = data => {
 
 const Slider = props => {
   // The data hook comes first
+  // - It contains data (`refs`) the state hook will need later
   const variables = {
     first: 10
   };
@@ -1175,7 +1176,8 @@ const Slider = props => {
         _useState2 = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_useState, 2),
         activeBullet = _useState2[0],
         setActiveBullet = _useState2[1]; // Without `useEffect` we can't properly have access to `activeBullet`
-  // Even more when state changes this handles the event
+  // Even more when state changes this handles the
+  // Perhaps every state hook has and effect hook associated
   //
   // - `useEffect` is associated to state, so it should immediately follow in code
   // - Otherwise and error message will be shown
@@ -1185,7 +1187,7 @@ const Slider = props => {
   Object(react__WEBPACK_IMPORTED_MODULE_2__["useEffect"])(() => {
     console.log("activeBullet:" + activeBullet);
 
-    if (refs) {
+    if (refs && refs[activeBullet]) {
       refs[activeBullet].current.scrollIntoView({
         behavior: "smooth",
         block: "start"
@@ -1215,13 +1217,13 @@ const Slider = props => {
   return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Container, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 132
+      lineNumber: 134
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Slides, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 133
+      lineNumber: 135
     },
     __self: undefined
   }, slides), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Bullets__WEBPACK_IMPORTED_MODULE_10__["default"], {
@@ -1230,7 +1232,7 @@ const Slider = props => {
     bulletClickHandler: bulletClickHandler,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 134
+      lineNumber: 136
     },
     __self: undefined
   }), ArrowRightPress && arrowRightHandler());
@@ -1901,5 +1903,5 @@ module.exports = __webpack_require__(/*! /home/cs/work/inu-v2/react-src/src/inde
 
 /***/ })
 
-},[[0,"runtime~main",1]]]);
+},[[0,"runtime~main",0]]]);
 //# sourceMappingURL=main.chunk.js.map

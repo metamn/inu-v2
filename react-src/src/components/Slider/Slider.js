@@ -79,6 +79,7 @@ const markup = data => {
 
 const Slider = props => {
   // The data hook comes first
+  // - It contains data (`refs`) the state hook will need later
   const variables = { first: 10 };
   const { slides, refs, numberOfSlides } = useQuery(query, markup, variables);
 
@@ -86,7 +87,8 @@ const Slider = props => {
   const [activeBullet, setActiveBullet] = useState(0);
 
   // Without `useEffect` we can't properly have access to `activeBullet`
-  // Even more when state changes this handles the event
+  // Even more when state changes this handles the
+  // Perhaps every state hook has and effect hook associated
   //
   // - `useEffect` is associated to state, so it should immediately follow in code
   // - Otherwise and error message will be shown
@@ -95,7 +97,7 @@ const Slider = props => {
     () => {
       console.log("activeBullet:" + activeBullet);
 
-      if (refs) {
+      if (refs && refs[activeBullet]) {
         refs[activeBullet].current.scrollIntoView({
           behavior: "smooth",
           block: "start"
