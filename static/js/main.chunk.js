@@ -146,7 +146,7 @@ const Bullets = props => {
 
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Repeat__WEBPACK_IMPORTED_MODULE_2__["default"], {
     numberOfTimes: numberOfSlides,
-    startAt: 1,
+    startAt: 0,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 14
@@ -1171,10 +1171,12 @@ const Slider = props => {
         numberOfSlides = _useQuery.numberOfSlides; // We have a single state
 
 
-  const _useState = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])(1),
+  const _useState = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])(0),
         _useState2 = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_useState, 2),
         activeBullet = _useState2[0],
-        setActiveBullet = _useState2[1];
+        setActiveBullet = _useState2[1]; // Without useEffect we can't have access to `activeBullet`
+  // - see: https://reactjs.org/docs/hooks-effect.html
+
 
   Object(react__WEBPACK_IMPORTED_MODULE_2__["useEffect"])(() => {
     console.log("activeBullet:" + activeBullet);
@@ -1205,13 +1207,13 @@ const Slider = props => {
   return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Container, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 115
+      lineNumber: 117
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Slides, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 116
+      lineNumber: 118
     },
     __self: undefined
   }, slides), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Bullets__WEBPACK_IMPORTED_MODULE_10__["default"], {
@@ -1220,7 +1222,7 @@ const Slider = props => {
     bulletClickHandler: bulletClickHandler,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 117
+      lineNumber: 119
     },
     __self: undefined
   }), ArrowRightPress && arrowRightHandler());

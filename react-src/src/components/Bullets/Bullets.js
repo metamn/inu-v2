@@ -11,7 +11,7 @@ const Bullets = props => {
   };
 
   return (
-    <Repeat numberOfTimes={numberOfSlides} startAt={1}>
+    <Repeat numberOfTimes={numberOfSlides} startAt={0}>
       {i => (
         <Bullet
           className={setClassName(i)}

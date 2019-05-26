@@ -83,8 +83,10 @@ const Slider = props => {
   const { slides, refs, numberOfSlides } = useQuery(query, markup, variables);
 
   // We have a single state
-  const [activeBullet, setActiveBullet] = useState(1);
+  const [activeBullet, setActiveBullet] = useState(0);
 
+  // Without useEffect we can't have access to `activeBullet`
+  // - see: https://reactjs.org/docs/hooks-effect.html
   useEffect(() => {
     console.log("activeBullet:" + activeBullet);
     if (refs) {
