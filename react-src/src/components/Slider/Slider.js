@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import gql from "graphql-tag";
-import { useQuery as useQueryApollo } from "react-apollo-hooks";
+import { useQuery } from "../../hooks";
 import { useKeyPress } from "../../hooks";
 
 import Spacing from "../Spacing";
@@ -53,33 +53,7 @@ const query = gql`
   }
 `;
 
-const Slider = props => {
-  // We have a single state
-  const [activeBullet, setActiveBullet] = useState(1);
-
-  // We have keyboard navigation
-  //
-  // - Hooks must be first amongst the other declarations ...
-  // - This put after hooks would cause an error
-  const ArrowRightPress = useKeyPress("ArrowRight");
-
-  // We can't use our own `useQuery` hook
-  //
-  // - The data returned is handled by a Javascript function not a React component
-  // - And we have a state hook which can be used inside a React component only
-  // - Therefore we must handle the returned data inside this React component
-  const { data, error, loading } = useQueryApollo(query, {
-    variables: { first: 10 }
-  });
-
-  if (loading) {
-    return <div>Loading...</div>;
-  }
-
-  if (error) {
-    return <div>Error! {error.message}</div>;
-  }
-
+const markup = data => {
   const itemsWithImage = data.posts.edges.filter(
     edge => edge.node.featuredImage
   );
@@ -101,23 +75,40 @@ const Slider = props => {
     );
   });
 
+  return { slides, refs, numberOfSlides };
+};
+
+const Slider = props => {
+  const variables = { first: 10 };
+  const { slides, refs, numberOfSlides } = useQuery(query, markup, variables);
+
+  // We have a single state
+  const [activeBullet, setActiveBullet] = useState(1);
+
+  useEffect(() => {
+    console.log("activeBullet:" + activeBullet);
+    if (refs) {
+      refs[activeBullet].current.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    }
+  });
+
+  // We have keyboard navigation
+  //
+  // - Hooks must be first amongst the other declarations ...
+  // - This put after hooks would cause an error
+  const ArrowRightPress = useKeyPress("ArrowRight");
+
   const bulletClickHandler = index => {
-    console.log("index:" + index);
+    console.log("click index:" + index);
     setActiveBullet(index);
-    slideTo();
   };
 
   const arrowRightHandler = () => {
-    setActiveBullet(activeBullet + 1);
-    slideTo();
-  };
-
-  const slideTo = () => {
     console.log("activeBullet:" + activeBullet);
-    refs[activeBullet].current.scrollIntoView({
-      behavior: "smooth",
-      block: "start"
-    });
+    setActiveBullet(activeBullet + 1);
   };
 
   return (

@@ -14,8 +14,10 @@ const Button = styled.button`
 `;
 
 const Bullet = props => {
-  const { className, onClick } = props;
-  return <Button className={className} onClick={onClick} />;
+  const { className, bulletClickHandler, index } = props;
+  return (
+    <Button className={className} onClick={() => bulletClickHandler(index)} />
+  );
 };
 
 export default Bullet;

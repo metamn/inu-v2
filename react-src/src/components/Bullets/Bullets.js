@@ -16,7 +16,8 @@ const Bullets = props => {
         <Bullet
           className={setClassName(i)}
           key={i}
-          onClick={() => bulletClickHandler(i)}
+          index={i}
+          bulletClickHandler={bulletClickHandler}
         />
       )}
     </Repeat>

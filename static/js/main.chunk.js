@@ -84,13 +84,14 @@ const Button = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].button(
 
 const Bullet = props => {
   const className = props.className,
-        onClick = props.onClick;
+        bulletClickHandler = props.bulletClickHandler,
+        index = props.index;
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Button, {
     className: className,
-    onClick: onClick,
+    onClick: () => bulletClickHandler(index),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18
+      lineNumber: 19
     },
     __self: undefined
   });
@@ -154,7 +155,8 @@ const Bullets = props => {
   }, i => react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Bullet__WEBPACK_IMPORTED_MODULE_1__["default"], {
     className: setClassName(i),
     key: i,
-    onClick: () => bulletClickHandler(i),
+    index: i,
+    bulletClickHandler: bulletClickHandler,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 16
@@ -1067,13 +1069,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 /* harmony import */ var graphql_tag__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! graphql-tag */ "./node_modules/graphql-tag/src/index.js");
 /* harmony import */ var graphql_tag__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(graphql_tag__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var react_apollo_hooks__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-apollo-hooks */ "./node_modules/react-apollo-hooks/es/index.js");
-/* harmony import */ var _hooks__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../hooks */ "./src/hooks/index.js");
-/* harmony import */ var _Spacing__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../Spacing */ "./src/components/Spacing/index.js");
-/* harmony import */ var _List__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../List */ "./src/components/List/index.js");
-/* harmony import */ var _Slide__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../Slide */ "./src/components/Slide/index.js");
-/* harmony import */ var _Post__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../Post */ "./src/components/Post/index.js");
-/* harmony import */ var _Bullets__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../Bullets */ "./src/components/Bullets/index.js");
+/* harmony import */ var _hooks__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../hooks */ "./src/hooks/index.js");
+/* harmony import */ var _Spacing__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../Spacing */ "./src/components/Spacing/index.js");
+/* harmony import */ var _List__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../List */ "./src/components/List/index.js");
+/* harmony import */ var _Slide__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../Slide */ "./src/components/Slide/index.js");
+/* harmony import */ var _Post__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../Post */ "./src/components/Post/index.js");
+/* harmony import */ var _Bullets__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../Bullets */ "./src/components/Bullets/index.js");
 
 
 var _jsxFileName = "/home/cs/work/inu-v2/react-src/src/components/Slider/Slider.js";
@@ -1118,60 +1119,15 @@ function _templateObject() {
 
 
 
-const Container = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].section(_templateObject(), Object(_Spacing__WEBPACK_IMPORTED_MODULE_7__["default"])({
+const Container = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].section(_templateObject(), Object(_Spacing__WEBPACK_IMPORTED_MODULE_6__["default"])({
   property: "margin-top"
 })); // Original idea:
 // - https://nolanlawson.com/2019/02/10/building-a-modern-carousel-with-css-scroll-snap-smooth-scrolling-and-pinch-zoom/
 
-const Slides = Object(styled_components__WEBPACK_IMPORTED_MODULE_3__["default"])(_List__WEBPACK_IMPORTED_MODULE_8__["default"])(_templateObject2());
+const Slides = Object(styled_components__WEBPACK_IMPORTED_MODULE_3__["default"])(_List__WEBPACK_IMPORTED_MODULE_7__["default"])(_templateObject2());
 const query = graphql_tag__WEBPACK_IMPORTED_MODULE_4___default()(_templateObject3());
 
-const Slider = props => {
-  // We have a single state
-  const _useState = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])(1),
-        _useState2 = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_useState, 2),
-        activeBullet = _useState2[0],
-        setActiveBullet = _useState2[1]; // We have keyboard navigation
-  //
-  // - Hooks must be first amongst the other declarations ...
-  // - This put after hooks would cause an error
-
-
-  const ArrowRightPress = Object(_hooks__WEBPACK_IMPORTED_MODULE_6__["useKeyPress"])("ArrowRight"); // We can't use our own `useQuery` hook
-  //
-  // - The data returned is handled by a Javascript function not a React component
-  // - And we have a state hook which can be used inside a React component only
-  // - Therefore we must handle the returned data inside this React component
-
-  const _useQueryApollo = Object(react_apollo_hooks__WEBPACK_IMPORTED_MODULE_5__["useQuery"])(query, {
-    variables: {
-      first: 10
-    }
-  }),
-        data = _useQueryApollo.data,
-        error = _useQueryApollo.error,
-        loading = _useQueryApollo.loading;
-
-  if (loading) {
-    return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 76
-      },
-      __self: undefined
-    }, "Loading...");
-  }
-
-  if (error) {
-    return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 80
-      },
-      __self: undefined
-    }, "Error! ", error.message);
-  }
-
+const markup = data => {
   const itemsWithImage = data.posts.edges.filter(edge => edge.node.featuredImage);
   const numberOfSlides = itemsWithImage.length; // We need to know the ref of each slide
   // in order to scroll to it
@@ -1180,62 +1136,91 @@ const Slider = props => {
   const slides = itemsWithImage.map((edge, index) => {
     const ref = react__WEBPACK_IMPORTED_MODULE_2___default.a.createRef();
     refs[index] = ref;
-    return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Slide__WEBPACK_IMPORTED_MODULE_9__["default"], {
+    return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Slide__WEBPACK_IMPORTED_MODULE_8__["default"], {
       key: edge.node.id,
       ref: ref,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 98
+        lineNumber: 72
       },
       __self: undefined
-    }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Post__WEBPACK_IMPORTED_MODULE_10__["default"], {
+    }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Post__WEBPACK_IMPORTED_MODULE_9__["default"], {
       node: edge.node,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 99
+        lineNumber: 73
       },
       __self: undefined
     }));
   });
+  return {
+    slides,
+    refs,
+    numberOfSlides
+  };
+};
+
+const Slider = props => {
+  const variables = {
+    first: 10
+  };
+
+  const _useQuery = Object(_hooks__WEBPACK_IMPORTED_MODULE_5__["useQuery"])(query, markup, variables),
+        slides = _useQuery.slides,
+        refs = _useQuery.refs,
+        numberOfSlides = _useQuery.numberOfSlides; // We have a single state
+
+
+  const _useState = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])(1),
+        _useState2 = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_useState, 2),
+        activeBullet = _useState2[0],
+        setActiveBullet = _useState2[1];
+
+  Object(react__WEBPACK_IMPORTED_MODULE_2__["useEffect"])(() => {
+    console.log("activeBullet:" + activeBullet);
+
+    if (refs) {
+      refs[activeBullet].current.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    }
+  }); // We have keyboard navigation
+  //
+  // - Hooks must be first amongst the other declarations ...
+  // - This put after hooks would cause an error
+
+  const ArrowRightPress = Object(_hooks__WEBPACK_IMPORTED_MODULE_5__["useKeyPress"])("ArrowRight");
 
   const bulletClickHandler = index => {
-    console.log("index:" + index);
+    console.log("click index:" + index);
     setActiveBullet(index);
-    slideTo();
   };
 
   const arrowRightHandler = () => {
-    setActiveBullet(activeBullet + 1);
-    slideTo();
-  };
-
-  const slideTo = () => {
     console.log("activeBullet:" + activeBullet);
-    refs[activeBullet].current.scrollIntoView({
-      behavior: "smooth",
-      block: "start"
-    });
+    setActiveBullet(activeBullet + 1);
   };
 
   return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Container, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 124
+      lineNumber: 115
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Slides, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 125
+      lineNumber: 116
     },
     __self: undefined
-  }, slides), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Bullets__WEBPACK_IMPORTED_MODULE_11__["default"], {
+  }, slides), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Bullets__WEBPACK_IMPORTED_MODULE_10__["default"], {
     numberOfSlides: numberOfSlides,
     activeBullet: activeBullet,
     bulletClickHandler: bulletClickHandler,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 126
+      lineNumber: 117
     },
     __self: undefined
   }), ArrowRightPress && arrowRightHandler());
@@ -1906,5 +1891,5 @@ module.exports = __webpack_require__(/*! /home/cs/work/inu-v2/react-src/src/inde
 
 /***/ })
 
-},[[0,"runtime~main",0]]]);
+},[[0,"runtime~main",1]]]);
 //# sourceMappingURL=main.chunk.js.map
