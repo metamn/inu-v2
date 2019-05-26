@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import gql from "graphql-tag";
 import { useQuery as useQueryApollo } from "react-apollo-hooks";
+import { useKeyPress } from "../../hooks";
 
 import Spacing from "../Spacing";
 import List from "../List";
@@ -56,6 +57,9 @@ const Slider = props => {
   // We have a single state
   const [activeBullet, setActiveBullet] = useState(1);
 
+  // Hooks must be first amongst the other declarations ...
+  const ArrowRightPress = useKeyPress("ArrowRight");
+
   // We can't use our own `useQuery` hook since we have a state hook
   // And hooks can be used inside React components only
   const { data, error, loading } = useQueryApollo(query, {
@@ -92,6 +96,7 @@ const Slider = props => {
   });
 
   const bulletClickHandler = index => {
+    console.log("index:" + index);
     setActiveBullet(index);
     refs[index - 1].current.scrollIntoView({
       behavior: "smooth",
@@ -107,6 +112,7 @@ const Slider = props => {
         activeBullet={activeBullet}
         bulletClickHandler={bulletClickHandler}
       />
+      {ArrowRightPress && bulletClickHandler(activeBullet + 1)}
     </Container>
   );
 };

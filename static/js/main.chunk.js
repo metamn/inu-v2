@@ -250,7 +250,7 @@ const markup = data => {
 };
 
 const Categories = () => {
-  return Object(_hooks__WEBPACK_IMPORTED_MODULE_4__["default"])(query, markup);
+  return Object(_hooks__WEBPACK_IMPORTED_MODULE_4__["useQuery"])(query, markup);
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Categories);
@@ -331,7 +331,7 @@ const markup = data => {
 };
 
 const Description = () => {
-  return Object(_hooks__WEBPACK_IMPORTED_MODULE_4__["default"])(query, markup);
+  return Object(_hooks__WEBPACK_IMPORTED_MODULE_4__["useQuery"])(query, markup);
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Description);
@@ -1068,11 +1068,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var graphql_tag__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! graphql-tag */ "./node_modules/graphql-tag/src/index.js");
 /* harmony import */ var graphql_tag__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(graphql_tag__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var react_apollo_hooks__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-apollo-hooks */ "./node_modules/react-apollo-hooks/es/index.js");
-/* harmony import */ var _Spacing__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../Spacing */ "./src/components/Spacing/index.js");
-/* harmony import */ var _List__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../List */ "./src/components/List/index.js");
-/* harmony import */ var _Slide__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../Slide */ "./src/components/Slide/index.js");
-/* harmony import */ var _Post__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../Post */ "./src/components/Post/index.js");
-/* harmony import */ var _Bullets__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../Bullets */ "./src/components/Bullets/index.js");
+/* harmony import */ var _hooks__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../hooks */ "./src/hooks/index.js");
+/* harmony import */ var _Spacing__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../Spacing */ "./src/components/Spacing/index.js");
+/* harmony import */ var _List__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../List */ "./src/components/List/index.js");
+/* harmony import */ var _Slide__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../Slide */ "./src/components/Slide/index.js");
+/* harmony import */ var _Post__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../Post */ "./src/components/Post/index.js");
+/* harmony import */ var _Bullets__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../Bullets */ "./src/components/Bullets/index.js");
 
 
 var _jsxFileName = "/home/cs/work/inu-v2/react-src/src/components/Slider/Slider.js";
@@ -1116,12 +1117,13 @@ function _templateObject() {
 
 
 
-const Container = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].section(_templateObject(), Object(_Spacing__WEBPACK_IMPORTED_MODULE_6__["default"])({
+
+const Container = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].section(_templateObject(), Object(_Spacing__WEBPACK_IMPORTED_MODULE_7__["default"])({
   property: "margin-top"
 })); // Original idea:
 // - https://nolanlawson.com/2019/02/10/building-a-modern-carousel-with-css-scroll-snap-smooth-scrolling-and-pinch-zoom/
 
-const Slides = Object(styled_components__WEBPACK_IMPORTED_MODULE_3__["default"])(_List__WEBPACK_IMPORTED_MODULE_7__["default"])(_templateObject2());
+const Slides = Object(styled_components__WEBPACK_IMPORTED_MODULE_3__["default"])(_List__WEBPACK_IMPORTED_MODULE_8__["default"])(_templateObject2());
 const query = graphql_tag__WEBPACK_IMPORTED_MODULE_4___default()(_templateObject3());
 
 const Slider = props => {
@@ -1129,9 +1131,11 @@ const Slider = props => {
   const _useState = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])(1),
         _useState2 = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_useState, 2),
         activeBullet = _useState2[0],
-        setActiveBullet = _useState2[1]; // We can't use our own `useQuery` hook since we have a state hook
-  // And hooks can be used inside React components only
+        setActiveBullet = _useState2[1]; // Hooks must be first amongst the other declarations ...
 
+
+  const ArrowRightPress = Object(_hooks__WEBPACK_IMPORTED_MODULE_6__["useKeyPress"])("ArrowRight"); // We can't use our own `useQuery` hook since we have a state hook
+  // And hooks can be used inside React components only
 
   const _useQueryApollo = Object(react_apollo_hooks__WEBPACK_IMPORTED_MODULE_5__["useQuery"])(query, {
     variables: {
@@ -1146,7 +1150,7 @@ const Slider = props => {
     return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 66
+        lineNumber: 70
       },
       __self: undefined
     }, "Loading...");
@@ -1156,7 +1160,7 @@ const Slider = props => {
     return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 70
+        lineNumber: 74
       },
       __self: undefined
     }, "Error! ", error.message);
@@ -1170,25 +1174,26 @@ const Slider = props => {
   const slides = itemsWithImage.map((edge, index) => {
     const ref = react__WEBPACK_IMPORTED_MODULE_2___default.a.createRef();
     refs[index] = ref;
-    return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Slide__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Slide__WEBPACK_IMPORTED_MODULE_9__["default"], {
       key: edge.node.id,
       ref: ref,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 88
+        lineNumber: 92
       },
       __self: undefined
-    }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Post__WEBPACK_IMPORTED_MODULE_9__["default"], {
+    }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Post__WEBPACK_IMPORTED_MODULE_10__["default"], {
       node: edge.node,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 89
+        lineNumber: 93
       },
       __self: undefined
     }));
   });
 
   const bulletClickHandler = index => {
+    console.log("index:" + index);
     setActiveBullet(index);
     refs[index - 1].current.scrollIntoView({
       behavior: "smooth",
@@ -1199,25 +1204,25 @@ const Slider = props => {
   return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Container, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 103
+      lineNumber: 108
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Slides, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 104
+      lineNumber: 109
     },
     __self: undefined
-  }, slides), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Bullets__WEBPACK_IMPORTED_MODULE_10__["default"], {
+  }, slides), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Bullets__WEBPACK_IMPORTED_MODULE_11__["default"], {
     numberOfSlides: numberOfSlides,
     activeBullet: activeBullet,
     bulletClickHandler: bulletClickHandler,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 105
+      lineNumber: 110
     },
     __self: undefined
-  }));
+  }), ArrowRightPress && bulletClickHandler(activeBullet + 1));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Slider);
@@ -1390,7 +1395,7 @@ const markup = data => {
 };
 
 const Title = () => {
-  return Object(_hooks__WEBPACK_IMPORTED_MODULE_4__["default"])(query, markup);
+  return Object(_hooks__WEBPACK_IMPORTED_MODULE_4__["useQuery"])(query, markup);
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Title);
@@ -1616,15 +1621,77 @@ __webpack_require__.r(__webpack_exports__);
 /*!****************************!*\
   !*** ./src/hooks/index.js ***!
   \****************************/
-/*! exports provided: default */
+/*! exports provided: useQuery, useKeyPress */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _useQuery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./useQuery */ "./src/hooks/useQuery.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _useQuery__WEBPACK_IMPORTED_MODULE_0__["default"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "useQuery", function() { return _useQuery__WEBPACK_IMPORTED_MODULE_0__["default"]; });
+
+/* harmony import */ var _useKeyPress__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./useKeyPress */ "./src/hooks/useKeyPress.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "useKeyPress", function() { return _useKeyPress__WEBPACK_IMPORTED_MODULE_1__["default"]; });
 
 
+
+
+/***/ }),
+
+/***/ "./src/hooks/useKeyPress.js":
+/*!**********************************!*\
+  !*** ./src/hooks/useKeyPress.js ***!
+  \**********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/esm/slicedToArray */ "./node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/esm/slicedToArray.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+
+
+
+const useKeyPress = targetKey => {
+  // State for keeping track of whether key is pressed
+  const _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(false),
+        _useState2 = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_useState, 2),
+        keyPressed = _useState2[0],
+        setKeyPressed = _useState2[1]; // Add event listeners
+
+
+  Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(() => {
+    // If pressed key is our target key then set to true
+    function downHandler({
+      key
+    }) {
+      if (key === targetKey) {
+        setKeyPressed(true);
+      }
+    } // If released key is our target key then set to false
+
+
+    const upHandler = ({
+      key
+    }) => {
+      if (key === targetKey) {
+        setKeyPressed(false);
+      }
+    };
+
+    window.addEventListener("keydown", downHandler);
+    window.addEventListener("keyup", upHandler); // Remove event listeners on cleanup
+
+    return () => {
+      window.removeEventListener("keydown", downHandler);
+      window.removeEventListener("keyup", upHandler);
+    };
+  }, [targetKey]); // Empty array ensures that effect is only run on mount and unmount
+
+  return keyPressed;
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (useKeyPress);
 
 /***/ }),
 
