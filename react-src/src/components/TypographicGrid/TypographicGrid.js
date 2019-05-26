@@ -1,5 +1,5 @@
 import React from "react";
-import styled, { css, createGlobalStyle } from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
 import Repeat from "../Repeat";
 
 const GlobalStyle = createGlobalStyle`

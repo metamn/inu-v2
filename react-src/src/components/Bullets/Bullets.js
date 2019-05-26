@@ -1,5 +1,4 @@
 import React from "react";
-import styled, { css } from "styled-components";
 
 import Bullet from "../Bullet";
 import Repeat from "../Repeat";

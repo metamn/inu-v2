@@ -1,5 +1,5 @@
-import React, { useState, useRef } from "react";
-import styled, { css } from "styled-components";
+import React from "react";
+import styled from "styled-components";
 import gql from "graphql-tag";
 import { useQuery as useQueryApollo } from "react-apollo-hooks";
 
@@ -50,12 +50,6 @@ const query = gql`
 `;
 
 const Slider = props => {
-  const [slideVisible, setSlideVisible] = useState([]);
-
-  const markSlideVisible = index => {
-    window.scrollTo(0, this.myRef.current.offsetTop);
-  };
-
   const { data, error, loading } = useQueryApollo(query, {
     variables: { first: 10 }
   });
@@ -74,15 +68,15 @@ const Slider = props => {
 
   const numberOfSlides = itemsWithImage.length;
 
-  const slides = itemsWithImage.map(edge => (
-    <Slide key={edge.node.id} ref={useRef()}>
+  const slides = itemsWithImage.map((edge, index) => (
+    <Slide key={edge.node.id}>
       <Post node={edge.node} />
     </Slide>
   ));
 
   const bulletClickHandler = index => {
-    setSlideVisible(slideVisible[index]);
     console.log("clicked:" + index);
+    //window.scrollTo(0, refs[index].current.offsetTop);
   };
 
   return (

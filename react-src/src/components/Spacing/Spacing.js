@@ -1,5 +1,4 @@
-import React from "react";
-import styled, { css } from "styled-components";
+import { css } from "styled-components";
 
 import Media from "../Media";
 
