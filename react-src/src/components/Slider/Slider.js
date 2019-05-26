@@ -113,6 +113,7 @@ const Slider = props => {
   };
 
   const slideTo = () => {
+    console.log("activeBullet:" + activeBullet);
     refs[activeBullet].current.scrollIntoView({
       behavior: "smooth",
       block: "start"
