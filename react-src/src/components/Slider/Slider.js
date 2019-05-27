@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from "react";
 import styled, { css } from "styled-components";
 import gql from "graphql-tag";
-import { useQuery, useKeyPress, useEventListener } from "../../hooks";
+import { useQuery, useEventListener } from "../../hooks";
 import { stringify } from "flatted";
 
 import Spacing from "../Spacing";
@@ -189,18 +189,7 @@ const Slider = props => {
 
   //
   // 4. Other hooks
-  // - Hooks must be first amongst the other declarations ...
-  // - This put after hooks would cause an error
   //
-  // The keyboard navigation hook
-  const ArrowRightPress = useKeyPress("ArrowRight");
-
-  // The keypress handlers
-  // TODO: Here we got an infinite loop
-  const arrowRightHandler = () => {
-    console.log("arrow right click index:" + activeBullet);
-    //setActiveBullet(activeBullet + 1);
-  };
 
   //
   // 5. Regular stuff
@@ -219,7 +208,6 @@ const Slider = props => {
         activeBullet={activeBullet}
         bulletClickHandler={bulletClickHandler}
       />
-      {ArrowRightPress && arrowRightHandler()}
     </Container>
   );
 };

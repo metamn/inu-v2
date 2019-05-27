@@ -1267,18 +1267,8 @@ const Slider = props => {
         slides = _useQuery.slides,
         numberOfSlides = _useQuery.numberOfSlides; //
   // 4. Other hooks
-  // - Hooks must be first amongst the other declarations ...
-  // - This put after hooks would cause an error
   //
-  // The keyboard navigation hook
-
-
-  const ArrowRightPress = Object(_hooks__WEBPACK_IMPORTED_MODULE_5__["useKeyPress"])("ArrowRight"); // The keypress handlers
-  // TODO: Here we got an infinite loop
-
-  const arrowRightHandler = () => {
-    console.log("arrow right click index:" + activeBullet); //setActiveBullet(activeBullet + 1);
-  }; //
+  //
   // 5. Regular stuff
   //
   // The bullet click handler
@@ -1292,13 +1282,13 @@ const Slider = props => {
     width: width,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 215
+      lineNumber: 204
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Slides, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 216
+      lineNumber: 205
     },
     __self: undefined
   }, slides), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Bullets__WEBPACK_IMPORTED_MODULE_11__["default"], {
@@ -1307,10 +1297,10 @@ const Slider = props => {
     bulletClickHandler: bulletClickHandler,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 217
+      lineNumber: 206
     },
     __self: undefined
-  }), ArrowRightPress && arrowRightHandler());
+  }));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Slider);
@@ -2027,5 +2017,5 @@ module.exports = __webpack_require__(/*! /home/cs/work/inu-v2/react-src/src/inde
 
 /***/ })
 
-},[[0,"runtime~main",1]]]);
+},[[0,"runtime~main",0]]]);
 //# sourceMappingURL=main.chunk.js.map
