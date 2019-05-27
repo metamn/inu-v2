@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import styled, { css } from "styled-components";
 import gql from "graphql-tag";
-import { useQuery, useKeyPress } from "../../hooks";
+import { useQuery, useKeyPress, useEventListener } from "../../hooks";
+import { stringify } from "flatted";
 
 import Spacing from "../Spacing";
 import List from "../List";
@@ -132,6 +133,28 @@ const Slider = props => {
     },
     [activeBullet, refs]
   );
+
+  // Touch scroll event handler
+  // Attached to an event listener hook
+  const touchScrollHandler = useCallback(
+    () => {
+      const visibleRef = refs.findIndex(ref => {
+        const left = ref.current.getBoundingClientRect().left;
+        const right = ref.current.getBoundingClientRect().right;
+        return (
+          left >= -window.innerWidth / 2 &&
+          left <= window.innerWidth &&
+          right > 0 &&
+          right <= window.innerWidth * 1.5
+        );
+      });
+      setActiveBullet(visibleRef);
+    },
+    [refs]
+  );
+
+  // The event listener hook
+  useEventListener("touchend", touchScrollHandler);
 
   //
   // 3. Data hooks

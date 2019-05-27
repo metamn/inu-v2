@@ -1087,11 +1087,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var graphql_tag__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! graphql-tag */ "./node_modules/graphql-tag/src/index.js");
 /* harmony import */ var graphql_tag__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(graphql_tag__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _hooks__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../hooks */ "./src/hooks/index.js");
-/* harmony import */ var _Spacing__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../Spacing */ "./src/components/Spacing/index.js");
-/* harmony import */ var _List__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../List */ "./src/components/List/index.js");
-/* harmony import */ var _Slide__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../Slide */ "./src/components/Slide/index.js");
-/* harmony import */ var _Post__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../Post */ "./src/components/Post/index.js");
-/* harmony import */ var _Bullets__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../Bullets */ "./src/components/Bullets/index.js");
+/* harmony import */ var flatted__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! flatted */ "./node_modules/flatted/esm/index.js");
+/* harmony import */ var _Spacing__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../Spacing */ "./src/components/Spacing/index.js");
+/* harmony import */ var _List__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../List */ "./src/components/List/index.js");
+/* harmony import */ var _Slide__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../Slide */ "./src/components/Slide/index.js");
+/* harmony import */ var _Post__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../Post */ "./src/components/Post/index.js");
+/* harmony import */ var _Bullets__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../Bullets */ "./src/components/Bullets/index.js");
 
 
 var _jsxFileName = "/home/cs/work/inu-v2/react-src/src/components/Slider/Slider.js";
@@ -1145,12 +1146,13 @@ function _templateObject() {
 
 
 
-const Container = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].section(_templateObject(), Object(_Spacing__WEBPACK_IMPORTED_MODULE_6__["default"])({
+
+const Container = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].section(_templateObject(), Object(_Spacing__WEBPACK_IMPORTED_MODULE_7__["default"])({
   property: "margin-top"
 }), props => props.width && Object(styled_components__WEBPACK_IMPORTED_MODULE_3__["css"])(_templateObject2(), props.width)); // Original idea:
 // - https://nolanlawson.com/2019/02/10/building-a-modern-carousel-with-css-scroll-snap-smooth-scrolling-and-pinch-zoom/
 
-const Slides = Object(styled_components__WEBPACK_IMPORTED_MODULE_3__["default"])(_List__WEBPACK_IMPORTED_MODULE_7__["default"])(_templateObject3());
+const Slides = Object(styled_components__WEBPACK_IMPORTED_MODULE_3__["default"])(_List__WEBPACK_IMPORTED_MODULE_8__["default"])(_templateObject3());
 const query = graphql_tag__WEBPACK_IMPORTED_MODULE_4___default()(_templateObject4());
 
 const markup = (data, queryProps) => {
@@ -1162,15 +1164,15 @@ const markup = (data, queryProps) => {
   const slides = postsWithImage.map((edge, index) => {
     const ref = react__WEBPACK_IMPORTED_MODULE_2___default.a.createRef();
     refs[index] = ref;
-    return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Slide__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Slide__WEBPACK_IMPORTED_MODULE_9__["default"], {
       key: edge.node.id,
       ref: ref,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 85
+        lineNumber: 86
       },
       __self: undefined
-    }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Post__WEBPACK_IMPORTED_MODULE_9__["default"], {
+    }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Post__WEBPACK_IMPORTED_MODULE_10__["default"], {
       node: edge.node // Click handling **MUST** go down to the smallest component, ie <img/>
       ,
       index: index,
@@ -1179,7 +1181,7 @@ const markup = (data, queryProps) => {
       width: width,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 86
+        lineNumber: 87
       },
       __self: undefined
     }));
@@ -1221,7 +1223,19 @@ const Slider = props => {
         block: "start"
       });
     }
-  }, [activeBullet, refs]); //
+  }, [activeBullet, refs]); // Touch scroll event handler
+  // Attached to an event listener hook
+
+  const touchScrollHandler = Object(react__WEBPACK_IMPORTED_MODULE_2__["useCallback"])(() => {
+    const visibleRef = refs.findIndex(ref => {
+      const left = ref.current.getBoundingClientRect().left;
+      const right = ref.current.getBoundingClientRect().right;
+      return left >= -window.innerWidth / 2 && left <= window.innerWidth && right > 0 && right <= window.innerWidth * 1.5;
+    });
+    setActiveBullet(visibleRef);
+  }, [refs]); // The event listener hook
+
+  Object(_hooks__WEBPACK_IMPORTED_MODULE_5__["useEventListener"])("touchend", touchScrollHandler); //
   // 3. Data hooks
   //
   // The image needs to be clicked so it comes after the state hook and before the data hook
@@ -1278,22 +1292,22 @@ const Slider = props => {
     width: width,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 192
+      lineNumber: 215
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Slides, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 193
+      lineNumber: 216
     },
     __self: undefined
-  }, slides), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Bullets__WEBPACK_IMPORTED_MODULE_10__["default"], {
+  }, slides), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Bullets__WEBPACK_IMPORTED_MODULE_11__["default"], {
     numberOfSlides: numberOfSlides,
     activeBullet: activeBullet,
     bulletClickHandler: bulletClickHandler,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 194
+      lineNumber: 217
     },
     __self: undefined
   }), ArrowRightPress && arrowRightHandler());
@@ -1695,7 +1709,7 @@ __webpack_require__.r(__webpack_exports__);
 /*!****************************!*\
   !*** ./src/hooks/index.js ***!
   \****************************/
-/*! exports provided: useQuery, useKeyPress */
+/*! exports provided: useQuery, useKeyPress, useEventListener */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1706,8 +1720,57 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _useKeyPress__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./useKeyPress */ "./src/hooks/useKeyPress.js");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "useKeyPress", function() { return _useKeyPress__WEBPACK_IMPORTED_MODULE_1__["default"]; });
 
+/* harmony import */ var _useEventListener__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./useEventListener */ "./src/hooks/useEventListener.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "useEventListener", function() { return _useEventListener__WEBPACK_IMPORTED_MODULE_2__["default"]; });
 
 
+
+
+
+/***/ }),
+
+/***/ "./src/hooks/useEventListener.js":
+/*!***************************************!*\
+  !*** ./src/hooks/useEventListener.js ***!
+  \***************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* WEBPACK VAR INJECTION */(function(global) {/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+function useEventListener(eventName, handler, element = global) {
+  // Create a ref that stores handler
+  const savedHandler = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(); // Update ref.current value if handler changes.
+  // This allows our effect below to always get latest handler ...
+  // ... without us needing to pass it in effect deps array ...
+  // ... and potentially cause effect to re-run every render.
+
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
+    savedHandler.current = handler;
+  }, [handler]);
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
+    // Make sure element supports addEventListener
+    const isSupported = element && element.addEventListener;
+    if (!isSupported) return; // Create event listener that calls handler function stored in ref
+
+    const eventListener = event => savedHandler.current(event); // Add event listener
+
+
+    element.addEventListener(eventName, eventListener); // Remove event listener on cleanup
+
+    return () => {
+      element.removeEventListener(eventName, eventListener);
+    };
+  }, [eventName, element] // Re-run if eventName or element changes
+  );
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (useEventListener);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../node_modules/webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js")))
 
 /***/ }),
 
@@ -1964,5 +2027,5 @@ module.exports = __webpack_require__(/*! /home/cs/work/inu-v2/react-src/src/inde
 
 /***/ })
 
-},[[0,"runtime~main",0]]]);
+},[[0,"runtime~main",1]]]);
 //# sourceMappingURL=main.chunk.js.map
