@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 const Container = styled.li`
   scroll-snap-align: center;
+  margin-right: 80vw;
 `;
 
 const Slide = React.forwardRef((props, ref) => {
