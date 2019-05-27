@@ -69,9 +69,10 @@ const markup = (data, queryProps) => {
       <Slide key={edge.node.id} ref={ref}>
         <Post
           node={edge.node}
-          index={index}
           // Click handling **MUST** go down to the smallest component, ie <img/>
+          index={index}
           imageClickHandler={imageClickHandler}
+          numberOfSlides={numberOfSlides}
         />
       </Slide>
     );
@@ -103,8 +104,6 @@ const Slider = props => {
   // - See: https://reactjs.org/docs/hooks-effect.html
   useEffect(
     () => {
-      console.log("activeBullet:" + activeBullet);
-
       if (refs && refs[activeBullet] && refs[activeBullet].current) {
         refs[activeBullet].current.scrollIntoView({
           behavior: "smooth",
@@ -118,12 +117,15 @@ const Slider = props => {
   //
   // 3. Data hooks
   //
-  // The image needs to be clicked so it comes after the state hook
+  // The image needs to be clicked so it comes after the state hook and before the data hook
   //
   // The image click handler
-  const imageClickHandler = index => {
-    console.log("image click index:" + index);
-    setActiveBullet(index + 1);
+  const imageClickHandler = (index, numberOfSlides) => {
+    if (index + 1 < numberOfSlides) {
+      setActiveBullet(index + 1);
+    } else {
+      setActiveBullet(0);
+    }
   };
 
   // The data hook
@@ -160,7 +162,6 @@ const Slider = props => {
 
   // The bullet click handler
   const bulletClickHandler = index => {
-    console.log("bullet click index:" + index);
     setActiveBullet(index);
   };
 

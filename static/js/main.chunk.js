@@ -500,7 +500,7 @@ __webpack_require__.r(__webpack_exports__);
 var _jsxFileName = "/home/cs/work/inu-v2/react-src/src/components/Image/Image.js";
 
 function _templateObject() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  max-width: 80vw;\n  max-height: 70vh;\n  width: auto;\n  height: auto;\n"]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  max-width: 80vw;\n  max-height: 70vh;\n  width: auto;\n  height: auto;\n  cursor: pointer;\n"]);
 
   _templateObject = function () {
     return data;
@@ -531,23 +531,24 @@ const Image = props => {
         src = props.src;
   const _props$props = props.props,
         imageClickHandler = _props$props.imageClickHandler,
-        index = _props$props.index;
+        index = _props$props.index,
+        numberOfSlides = _props$props.numberOfSlides;
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_progressive_image__WEBPACK_IMPORTED_MODULE_2___default.a, {
     src: src,
     placeholder: "",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20
+      lineNumber: 21
     },
     __self: undefined
   }, (src, loading) => {
     return loading ? placeholder : react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Img, {
       src: src,
       alt: title,
-      onClick: () => imageClickHandler(index),
+      onClick: () => imageClickHandler(index, numberOfSlides),
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 25
+        lineNumber: 26
       },
       __self: undefined
     });
@@ -1013,7 +1014,7 @@ __webpack_require__.r(__webpack_exports__);
 var _jsxFileName = "/home/cs/work/inu-v2/react-src/src/components/Slide/Slide.js";
 
 function _templateObject() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  scroll-snap-align: center;\n  cursor: pointer;\n"]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  scroll-snap-align: center;\n"]);
 
   _templateObject = function () {
     return data;
@@ -1031,7 +1032,7 @@ const Slide = react__WEBPACK_IMPORTED_MODULE_1___default.a.forwardRef((props, re
     ref: ref,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 12
+      lineNumber: 11
     },
     __self: undefined
   }, children);
@@ -1146,10 +1147,11 @@ const markup = (data, queryProps) => {
       },
       __self: undefined
     }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Post__WEBPACK_IMPORTED_MODULE_9__["default"], {
-      node: edge.node,
-      index: index // Click handling **MUST** go down to the smallest component, ie <img/>
+      node: edge.node // Click handling **MUST** go down to the smallest component, ie <img/>
       ,
+      index: index,
       imageClickHandler: imageClickHandler,
+      numberOfSlides: numberOfSlides,
       __source: {
         fileName: _jsxFileName,
         lineNumber: 70
@@ -1187,8 +1189,6 @@ const Slider = props => {
 
 
   Object(react__WEBPACK_IMPORTED_MODULE_2__["useEffect"])(() => {
-    console.log("activeBullet:" + activeBullet);
-
     if (refs && refs[activeBullet] && refs[activeBullet].current) {
       refs[activeBullet].current.scrollIntoView({
         behavior: "smooth",
@@ -1198,13 +1198,16 @@ const Slider = props => {
   }, [activeBullet, refs]); //
   // 3. Data hooks
   //
-  // The image needs to be clicked so it comes after the state hook
+  // The image needs to be clicked so it comes after the state hook and before the data hook
   //
   // The image click handler
 
-  const imageClickHandler = index => {
-    console.log("image click index:" + index);
-    setActiveBullet(index + 1);
+  const imageClickHandler = (index, numberOfSlides) => {
+    if (index + 1 < numberOfSlides) {
+      setActiveBullet(index + 1);
+    } else {
+      setActiveBullet(0);
+    }
   }; // The data hook
   // - we can't return an array which later will be processed like Bullets
   // - the returned array is first empty then only later becomes populated
@@ -1241,20 +1244,19 @@ const Slider = props => {
 
 
   const bulletClickHandler = index => {
-    console.log("bullet click index:" + index);
     setActiveBullet(index);
   };
 
   return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Container, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 168
+      lineNumber: 169
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Slides, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 169
+      lineNumber: 170
     },
     __self: undefined
   }, slides), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Bullets__WEBPACK_IMPORTED_MODULE_10__["default"], {
@@ -1263,7 +1265,7 @@ const Slider = props => {
     bulletClickHandler: bulletClickHandler,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 170
+      lineNumber: 171
     },
     __self: undefined
   }), ArrowRightPress && arrowRightHandler());

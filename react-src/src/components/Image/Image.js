@@ -11,18 +11,23 @@ const Img = styled.img`
   max-height: 70vh;
   width: auto;
   height: auto;
+  cursor: pointer;
 `;
 
 const Image = props => {
   const { title, src } = props;
-  const { imageClickHandler, index } = props.props;
+  const { imageClickHandler, index, numberOfSlides } = props.props;
   return (
     <ProgressiveImage src={src} placeholder="">
       {(src, loading) => {
         return loading ? (
           placeholder
         ) : (
-          <Img src={src} alt={title} onClick={() => imageClickHandler(index)} />
+          <Img
+            src={src}
+            alt={title}
+            onClick={() => imageClickHandler(index, numberOfSlides)}
+          />
         );
       }}
     </ProgressiveImage>
