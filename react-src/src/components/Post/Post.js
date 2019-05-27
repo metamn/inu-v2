@@ -10,17 +10,15 @@ const Title = styled.h3`
   display: none;
 `;
 
-const Post = node => {
-  const props = {
-    title: node.node.title,
-    src: node.node.featuredImage.sourceUrl
-  };
-  const { title } = props;
+const Post = props => {
+  const { node } = props;
+  const title = node.title;
+  const src = node.featuredImage.sourceUrl;
 
   return (
     <Article>
       <Title>{title}</Title>
-      <Image props={props} />
+      <Image title={title} src={src} props={props} />
     </Article>
   );
 };

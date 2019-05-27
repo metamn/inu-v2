@@ -67,7 +67,12 @@ const markup = (data, queryProps) => {
 
     return (
       <Slide key={edge.node.id} ref={ref}>
-        <Post node={edge.node} onClick={() => imageClickHandler(index)} />
+        <Post
+          node={edge.node}
+          index={index}
+          // Click handling **MUST** go down to the smallest component, ie <img/>
+          imageClickHandler={imageClickHandler}
+        />
       </Slide>
     );
   });
@@ -118,10 +123,13 @@ const Slider = props => {
   // The image click handler
   const imageClickHandler = index => {
     console.log("image click index:" + index);
-    setActiveBullet(index);
+    setActiveBullet(index + 1);
   };
 
   // The data hook
+  // - we can't return an array which later will be processed like Bullets
+  // - the returned array is first empty then only later becomes populated
+  // - therefore we return the processed info inside `slides`
   const variables = { first: 10 };
   const queryProps = { refs: refs, imageClickHandler: imageClickHandler };
   const { slides, numberOfSlides } = useQuery(

@@ -527,24 +527,27 @@ const placeholder = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("
 const Img = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].img(_templateObject());
 
 const Image = props => {
+  const title = props.title,
+        src = props.src;
   const _props$props = props.props,
-        title = _props$props.title,
-        src = _props$props.src;
+        imageClickHandler = _props$props.imageClickHandler,
+        index = _props$props.index;
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_progressive_image__WEBPACK_IMPORTED_MODULE_2___default.a, {
     src: src,
     placeholder: "",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19
+      lineNumber: 20
     },
     __self: undefined
   }, (src, loading) => {
     return loading ? placeholder : react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Img, {
       src: src,
       alt: title,
+      onClick: () => imageClickHandler(index),
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 21
+        lineNumber: 25
       },
       __self: undefined
     });
@@ -837,29 +840,29 @@ function _templateObject() {
 const Article = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].article(_templateObject());
 const Title = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].h3(_templateObject2());
 
-const Post = node => {
-  const props = {
-    title: node.node.title,
-    src: node.node.featuredImage.sourceUrl
-  };
-  const title = props.title;
+const Post = props => {
+  const node = props.node;
+  const title = node.title;
+  const src = node.featuredImage.sourceUrl;
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Article, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21
+      lineNumber: 19
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Title, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22
+      lineNumber: 20
     },
     __self: undefined
   }, title), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Image__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    title: title,
+    src: src,
     props: props,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 23
+      lineNumber: 21
     },
     __self: undefined
   }));
@@ -1144,7 +1147,9 @@ const markup = (data, queryProps) => {
       __self: undefined
     }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Post__WEBPACK_IMPORTED_MODULE_9__["default"], {
       node: edge.node,
-      onClick: () => imageClickHandler(index),
+      index: index // Click handling **MUST** go down to the smallest component, ie <img/>
+      ,
+      imageClickHandler: imageClickHandler,
       __source: {
         fileName: _jsxFileName,
         lineNumber: 70
@@ -1199,8 +1204,11 @@ const Slider = props => {
 
   const imageClickHandler = index => {
     console.log("image click index:" + index);
-    setActiveBullet(index);
+    setActiveBullet(index + 1);
   }; // The data hook
+  // - we can't return an array which later will be processed like Bullets
+  // - the returned array is first empty then only later becomes populated
+  // - therefore we return the processed info inside `slides`
 
 
   const variables = {
@@ -1240,13 +1248,13 @@ const Slider = props => {
   return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Container, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 160
+      lineNumber: 168
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Slides, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 161
+      lineNumber: 169
     },
     __self: undefined
   }, slides), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Bullets__WEBPACK_IMPORTED_MODULE_10__["default"], {
@@ -1255,7 +1263,7 @@ const Slider = props => {
     bulletClickHandler: bulletClickHandler,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 162
+      lineNumber: 170
     },
     __self: undefined
   }), ArrowRightPress && arrowRightHandler());

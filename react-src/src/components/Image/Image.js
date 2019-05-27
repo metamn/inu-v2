@@ -14,11 +14,16 @@ const Img = styled.img`
 `;
 
 const Image = props => {
-  const { title, src } = props.props;
+  const { title, src } = props;
+  const { imageClickHandler, index } = props.props;
   return (
     <ProgressiveImage src={src} placeholder="">
       {(src, loading) => {
-        return loading ? placeholder : <Img src={src} alt={title} />;
+        return loading ? (
+          placeholder
+        ) : (
+          <Img src={src} alt={title} onClick={() => imageClickHandler(index)} />
+        );
       }}
     </ProgressiveImage>
   );
