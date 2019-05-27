@@ -52,38 +52,41 @@ const query = gql`
   }
 `;
 
-const markup = data => {
-  const itemsWithImage = data.posts.edges.filter(
+const markup = (data, queryProps) => {
+  const { refs, imageClickHandler } = queryProps;
+
+  const postsWithImage = data.posts.edges.filter(
     edge => edge.node.featuredImage
   );
 
-  const numberOfSlides = itemsWithImage.length;
+  const numberOfSlides = postsWithImage.length;
 
-  // We need to know the ref of each slide
-  // in order to scroll to it
-  const refs = Array(numberOfSlides).fill(null);
-
-  const slides = itemsWithImage.map((edge, index) => {
+  const slides = postsWithImage.map((edge, index) => {
     const ref = React.createRef();
     refs[index] = ref;
 
     return (
-      <Slide key={edge.node.id} ref={ref}>
+      <Slide key={edge.node.id} ref={ref} onClick={imageClickHandler}>
         <Post node={edge.node} />
       </Slide>
     );
   });
 
-  return { slides, refs, numberOfSlides };
+  return { slides, numberOfSlides };
 };
 
 const Slider = props => {
-  // The data hook comes first
-  // - It contains data (`refs`) the state hook will need later
-  const variables = { first: 10 };
-  const { slides, refs, numberOfSlides } = useQuery(query, markup, variables);
+  //
+  // 1. Vars needed by all below
+  //
+  // We need to have a `ref` associated which each slide to be able to scroll to
+  let refs = [];
 
-  // State hooks are coming next
+  //
+  // 2. Hooks
+  //
+  // State hooks are first.
+  // All things below need to know abut `activeBullet`
   const [activeBullet, setActiveBullet] = useState(0);
 
   // Without `useEffect` we can't properly have access to `activeBullet`
@@ -97,7 +100,7 @@ const Slider = props => {
     () => {
       console.log("activeBullet:" + activeBullet);
 
-      if (refs && refs[activeBullet]) {
+      if (refs && refs[activeBullet] && refs[activeBullet].current) {
         refs[activeBullet].current.scrollIntoView({
           behavior: "smooth",
           block: "start"
@@ -107,26 +110,49 @@ const Slider = props => {
     [activeBullet, refs]
   );
 
-  // We have a keyboard navigation hook
   //
+  // 3. Data hooks
+  //
+  // The image needs to be clicked so it comes after the state hook
+  //
+  // The image click handler
+  const imageClickHandler = index => {
+    console.log("image click index:" + index);
+    setActiveBullet(index);
+  };
+
+  // The data hook
+  const variables = { first: 10 };
+  const queryProps = { refs: refs, imageClickHandler: imageClickHandler };
+  const { slides, numberOfSlides } = useQuery(
+    query,
+    markup,
+    variables,
+    queryProps
+  );
+
+  //
+  // 4. Other hooks
   // - Hooks must be first amongst the other declarations ...
   // - This put after hooks would cause an error
+  //
+  // The keyboard navigation hook
   const ArrowRightPress = useKeyPress("ArrowRight");
 
   //
-  // After hooks comes the regular stuff
+  // 5. Regular stuff
   //
 
-  // The click handler
+  // The bullet click handler
   const bulletClickHandler = index => {
-    console.log("click index:" + index);
+    console.log("bullet click index:" + index);
     setActiveBullet(index);
   };
 
   // The keypress handlers
   // TODO: Here we got an infinite loop
   const arrowRightHandler = () => {
-    console.log("arrow right index:" + activeBullet);
+    console.log("arrow right click index:" + activeBullet);
     //setActiveBullet(activeBullet + 1);
   };
 

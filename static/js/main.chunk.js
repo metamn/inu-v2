@@ -1126,51 +1126,48 @@ const Container = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].sect
 const Slides = Object(styled_components__WEBPACK_IMPORTED_MODULE_3__["default"])(_List__WEBPACK_IMPORTED_MODULE_7__["default"])(_templateObject2());
 const query = graphql_tag__WEBPACK_IMPORTED_MODULE_4___default()(_templateObject3());
 
-const markup = data => {
-  const itemsWithImage = data.posts.edges.filter(edge => edge.node.featuredImage);
-  const numberOfSlides = itemsWithImage.length; // We need to know the ref of each slide
-  // in order to scroll to it
-
-  const refs = Array(numberOfSlides).fill(null);
-  const slides = itemsWithImage.map((edge, index) => {
+const markup = (data, queryProps) => {
+  const refs = queryProps.refs,
+        imageClickHandler = queryProps.imageClickHandler;
+  const postsWithImage = data.posts.edges.filter(edge => edge.node.featuredImage);
+  const numberOfSlides = postsWithImage.length;
+  const slides = postsWithImage.map((edge, index) => {
     const ref = react__WEBPACK_IMPORTED_MODULE_2___default.a.createRef();
     refs[index] = ref;
     return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Slide__WEBPACK_IMPORTED_MODULE_8__["default"], {
       key: edge.node.id,
       ref: ref,
+      onClick: imageClickHandler,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 71
+        lineNumber: 69
       },
       __self: undefined
     }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Post__WEBPACK_IMPORTED_MODULE_9__["default"], {
       node: edge.node,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 72
+        lineNumber: 70
       },
       __self: undefined
     }));
   });
   return {
     slides,
-    refs,
     numberOfSlides
   };
 };
 
 const Slider = props => {
-  // The data hook comes first
-  // - It contains data (`refs`) the state hook will need later
-  const variables = {
-    first: 10
-  };
-
-  const _useQuery = Object(_hooks__WEBPACK_IMPORTED_MODULE_5__["useQuery"])(query, markup, variables),
-        slides = _useQuery.slides,
-        refs = _useQuery.refs,
-        numberOfSlides = _useQuery.numberOfSlides; // State hooks are coming next
-
+  //
+  // 1. Vars needed by all below
+  //
+  // We need to have a `ref` associated which each slide to be able to scroll to
+  let refs = []; //
+  // 2. Hooks
+  //
+  // State hooks are first.
+  // All things below need to know abut `activeBullet`
 
   const _useState = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])(0),
         _useState2 = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_useState, 2),
@@ -1187,43 +1184,69 @@ const Slider = props => {
   Object(react__WEBPACK_IMPORTED_MODULE_2__["useEffect"])(() => {
     console.log("activeBullet:" + activeBullet);
 
-    if (refs && refs[activeBullet]) {
+    if (refs && refs[activeBullet] && refs[activeBullet].current) {
       refs[activeBullet].current.scrollIntoView({
         behavior: "smooth",
         block: "start"
       });
     }
-  }, [activeBullet, refs]); // We have a keyboard navigation hook
+  }, [activeBullet, refs]); //
+  // 3. Data hooks
   //
+  // The image needs to be clicked so it comes after the state hook
+  //
+  // The image click handler
+
+  const imageClickHandler = index => {
+    console.log("image click index:" + index);
+    setActiveBullet(index);
+  }; // The data hook
+
+
+  const variables = {
+    first: 10
+  };
+  const queryProps = {
+    refs: refs,
+    imageClickHandler: imageClickHandler
+  };
+
+  const _useQuery = Object(_hooks__WEBPACK_IMPORTED_MODULE_5__["useQuery"])(query, markup, variables, queryProps),
+        slides = _useQuery.slides,
+        numberOfSlides = _useQuery.numberOfSlides; //
+  // 4. Other hooks
   // - Hooks must be first amongst the other declarations ...
   // - This put after hooks would cause an error
+  //
+  // The keyboard navigation hook
+
 
   const ArrowRightPress = Object(_hooks__WEBPACK_IMPORTED_MODULE_5__["useKeyPress"])("ArrowRight"); //
-  // After hooks comes the regular stuff
+  // 5. Regular stuff
   //
-  // The click handler
+  // The bullet click handler
 
   const bulletClickHandler = index => {
-    console.log("click index:" + index);
+    console.log("bullet click index:" + index);
     setActiveBullet(index);
   }; // The keypress handlers
   // TODO: Here we got an infinite loop
 
 
   const arrowRightHandler = () => {
-    console.log("arrow right index:" + activeBullet); //setActiveBullet(activeBullet + 1);
+    console.log("arrow right click index:" + activeBullet); //setActiveBullet(activeBullet + 1);
   };
 
   return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Container, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 134
+      lineNumber: 160
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Slides, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 135
+      lineNumber: 161
     },
     __self: undefined
   }, slides), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Bullets__WEBPACK_IMPORTED_MODULE_10__["default"], {
@@ -1232,7 +1255,7 @@ const Slider = props => {
     bulletClickHandler: bulletClickHandler,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 136
+      lineNumber: 162
     },
     __self: undefined
   }), ArrowRightPress && arrowRightHandler());
@@ -1724,7 +1747,7 @@ var _jsxFileName = "/home/cs/work/inu-v2/react-src/src/hooks/useQuery.js";
 
 
 
-const useQuery = (query, markup, variables = {}) => {
+const useQuery = (query, markup, variables = {}, queryProps = {}) => {
   const _useQueryApollo = Object(react_apollo_hooks__WEBPACK_IMPORTED_MODULE_1__["useQuery"])(query, {
     variables: variables
   }),
@@ -1753,7 +1776,7 @@ const useQuery = (query, markup, variables = {}) => {
   } //console.log("useQuery:" + JSON.stringify(data));
 
 
-  return markup(data);
+  return markup(data, queryProps);
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (useQuery);
