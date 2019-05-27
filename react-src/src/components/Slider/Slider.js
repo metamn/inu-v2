@@ -66,8 +66,8 @@ const markup = (data, queryProps) => {
     refs[index] = ref;
 
     return (
-      <Slide key={edge.node.id} ref={ref} onClick={imageClickHandler}>
-        <Post node={edge.node} />
+      <Slide key={edge.node.id} ref={ref}>
+        <Post node={edge.node} onClick={() => imageClickHandler(index)} />
       </Slide>
     );
   });
@@ -77,7 +77,7 @@ const markup = (data, queryProps) => {
 
 const Slider = props => {
   //
-  // 1. Vars needed by all below
+  // 1. Vars needed by all yhings below
   //
   // We need to have a `ref` associated which each slide to be able to scroll to
   let refs = [];
@@ -139,6 +139,13 @@ const Slider = props => {
   // The keyboard navigation hook
   const ArrowRightPress = useKeyPress("ArrowRight");
 
+  // The keypress handlers
+  // TODO: Here we got an infinite loop
+  const arrowRightHandler = () => {
+    console.log("arrow right click index:" + activeBullet);
+    //setActiveBullet(activeBullet + 1);
+  };
+
   //
   // 5. Regular stuff
   //
@@ -147,13 +154,6 @@ const Slider = props => {
   const bulletClickHandler = index => {
     console.log("bullet click index:" + index);
     setActiveBullet(index);
-  };
-
-  // The keypress handlers
-  // TODO: Here we got an infinite loop
-  const arrowRightHandler = () => {
-    console.log("arrow right click index:" + activeBullet);
-    //setActiveBullet(activeBullet + 1);
   };
 
   return (

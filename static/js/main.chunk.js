@@ -1010,7 +1010,7 @@ __webpack_require__.r(__webpack_exports__);
 var _jsxFileName = "/home/cs/work/inu-v2/react-src/src/components/Slide/Slide.js";
 
 function _templateObject() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  scroll-snap-align: center;\n"]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  scroll-snap-align: center;\n  cursor: pointer;\n"]);
 
   _templateObject = function () {
     return data;
@@ -1028,7 +1028,7 @@ const Slide = react__WEBPACK_IMPORTED_MODULE_1___default.a.forwardRef((props, re
     ref: ref,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 11
+      lineNumber: 12
     },
     __self: undefined
   }, children);
@@ -1137,7 +1137,6 @@ const markup = (data, queryProps) => {
     return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Slide__WEBPACK_IMPORTED_MODULE_8__["default"], {
       key: edge.node.id,
       ref: ref,
-      onClick: imageClickHandler,
       __source: {
         fileName: _jsxFileName,
         lineNumber: 69
@@ -1145,6 +1144,7 @@ const markup = (data, queryProps) => {
       __self: undefined
     }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Post__WEBPACK_IMPORTED_MODULE_9__["default"], {
       node: edge.node,
+      onClick: () => imageClickHandler(index),
       __source: {
         fileName: _jsxFileName,
         lineNumber: 70
@@ -1160,7 +1160,7 @@ const markup = (data, queryProps) => {
 
 const Slider = props => {
   //
-  // 1. Vars needed by all below
+  // 1. Vars needed by all yhings below
   //
   // We need to have a `ref` associated which each slide to be able to scroll to
   let refs = []; //
@@ -1221,20 +1221,20 @@ const Slider = props => {
   // The keyboard navigation hook
 
 
-  const ArrowRightPress = Object(_hooks__WEBPACK_IMPORTED_MODULE_5__["useKeyPress"])("ArrowRight"); //
+  const ArrowRightPress = Object(_hooks__WEBPACK_IMPORTED_MODULE_5__["useKeyPress"])("ArrowRight"); // The keypress handlers
+  // TODO: Here we got an infinite loop
+
+  const arrowRightHandler = () => {
+    console.log("arrow right click index:" + activeBullet); //setActiveBullet(activeBullet + 1);
+  }; //
   // 5. Regular stuff
   //
   // The bullet click handler
 
+
   const bulletClickHandler = index => {
     console.log("bullet click index:" + index);
     setActiveBullet(index);
-  }; // The keypress handlers
-  // TODO: Here we got an infinite loop
-
-
-  const arrowRightHandler = () => {
-    console.log("arrow right click index:" + activeBullet); //setActiveBullet(activeBullet + 1);
   };
 
   return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Container, {
