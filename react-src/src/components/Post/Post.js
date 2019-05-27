@@ -1,9 +1,13 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import Image from "../Image";
 
 const Article = styled.article`
-  width: 80vw;
+  ${props =>
+    props.width &&
+    css`
+      width: ${props.width};
+    `}
 `;
 
 const Title = styled.h3`
@@ -11,12 +15,12 @@ const Title = styled.h3`
 `;
 
 const Post = props => {
-  const { node } = props;
+  const { node, width } = props;
   const title = node.title;
   const src = node.featuredImage.sourceUrl;
 
   return (
-    <Article>
+    <Article width={width}>
       <Title>{title}</Title>
       <Image title={title} src={src} props={props} />
     </Article>

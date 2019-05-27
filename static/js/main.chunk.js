@@ -453,6 +453,7 @@ const Home = () => {
     },
     __self: undefined
   }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Slider__WEBPACK_IMPORTED_MODULE_10__["default"], {
+    width: "90vw",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 42
@@ -815,8 +816,18 @@ __webpack_require__.r(__webpack_exports__);
 
 var _jsxFileName = "/home/cs/work/inu-v2/react-src/src/components/Post/Post.js";
 
-function _templateObject2() {
+function _templateObject3() {
   const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  display: none;\n"]);
+
+  _templateObject3 = function () {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject2() {
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n      width: ", ";\n    "]);
 
   _templateObject2 = function () {
     return data;
@@ -826,7 +837,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  width: 80vw;\n"]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  ", "\n"]);
 
   _templateObject = function () {
     return data;
@@ -838,23 +849,25 @@ function _templateObject() {
 
 
 
-const Article = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].article(_templateObject());
-const Title = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].h3(_templateObject2());
+const Article = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].article(_templateObject(), props => props.width && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject2(), props.width));
+const Title = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].h3(_templateObject3());
 
 const Post = props => {
-  const node = props.node;
+  const node = props.node,
+        width = props.width;
   const title = node.title;
   const src = node.featuredImage.sourceUrl;
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Article, {
+    width: width,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19
+      lineNumber: 23
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Title, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20
+      lineNumber: 24
     },
     __self: undefined
   }, title), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Image__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -863,7 +876,7 @@ const Post = props => {
     props: props,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21
+      lineNumber: 25
     },
     __self: undefined
   }));
@@ -1014,7 +1027,7 @@ __webpack_require__.r(__webpack_exports__);
 var _jsxFileName = "/home/cs/work/inu-v2/react-src/src/components/Slide/Slide.js";
 
 function _templateObject() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  scroll-snap-align: center;\n  margin-right: 80vw;\n"]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  width: 100%;\n\n  @supports (scroll-snap-align: start) {\n    /* modern scroll snap points */\n    scroll-snap-align: center;\n  }\n\n  @supports not (scroll-snap-align: start) {\n    /* old scroll snap points spec */\n    scroll-snap-coordinate: 0 0;\n  }\n"]);
 
   _templateObject = function () {
     return data;
@@ -1032,7 +1045,7 @@ const Slide = react__WEBPACK_IMPORTED_MODULE_1___default.a.forwardRef((props, re
     ref: ref,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 12
+      lineNumber: 21
     },
     __self: undefined
   }, children);
@@ -1083,8 +1096,18 @@ __webpack_require__.r(__webpack_exports__);
 
 var _jsxFileName = "/home/cs/work/inu-v2/react-src/src/components/Slider/Slider.js";
 
-function _templateObject3() {
+function _templateObject4() {
   const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_1__["default"])(["\n  query posts($first: Int) {\n    posts(first: $first) {\n      edges {\n        node {\n          id\n          title\n          featuredImage {\n            id\n            sourceUrl\n          }\n        }\n      }\n    }\n  }\n"]);
+
+  _templateObject4 = function () {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject3() {
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_1__["default"])(["\n  width: 100%;\n  margin-top: var(--lem);\n\n  display: flex;\n  align-items: center;\n\n  overflow-x: auto;\n  overflow-y: hidden;\n\n  -webkit-overflow-scrolling: touch;\n  scrollbar-width: none;\n  -ms-overflow-style: none;\n\n  &::-webkit-scrollbar {\n    display: none;\n  }\n\n  @supports (scroll-snap-align: start) {\n    /* modern scroll snap points */\n    scroll-snap-type: x mandatory;\n  }\n\n  @supports not (scroll-snap-align: start) {\n    /* old scroll snap points spec */\n    scroll-snap-type: mandatory;\n    scroll-snap-destination: 0% center;\n    scroll-snap-points-x: repeat(100%);\n  }\n"]);
 
   _templateObject3 = function () {
     return data;
@@ -1094,7 +1117,7 @@ function _templateObject3() {
 }
 
 function _templateObject2() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_1__["default"])(["\n  width: 80vw;\n  margin-top: var(--lem);\n\n  display: flex;\n  align-items: center;\n\n  overflow-x: auto;\n  overflow-y: hidden;\n  scroll-snap-type-x: mandatory;\n\n  -webkit-overflow-scrolling: touch;\n  scrollbar-width: none;\n  -ms-overflow-style: none;\n\n  &::-webkit-scrollbar {\n    display: none;\n  }\n"]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_1__["default"])(["\n      width: ", ";\n    "]);
 
   _templateObject2 = function () {
     return data;
@@ -1104,7 +1127,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_1__["default"])(["\n  ", "\n"]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_1__["default"])(["\n  ", "\n  ", "\n"]);
 
   _templateObject = function () {
     return data;
@@ -1124,15 +1147,16 @@ function _templateObject() {
 
 const Container = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].section(_templateObject(), Object(_Spacing__WEBPACK_IMPORTED_MODULE_6__["default"])({
   property: "margin-top"
-})); // Original idea:
+}), props => props.width && Object(styled_components__WEBPACK_IMPORTED_MODULE_3__["css"])(_templateObject2(), props.width)); // Original idea:
 // - https://nolanlawson.com/2019/02/10/building-a-modern-carousel-with-css-scroll-snap-smooth-scrolling-and-pinch-zoom/
 
-const Slides = Object(styled_components__WEBPACK_IMPORTED_MODULE_3__["default"])(_List__WEBPACK_IMPORTED_MODULE_7__["default"])(_templateObject2());
-const query = graphql_tag__WEBPACK_IMPORTED_MODULE_4___default()(_templateObject3());
+const Slides = Object(styled_components__WEBPACK_IMPORTED_MODULE_3__["default"])(_List__WEBPACK_IMPORTED_MODULE_7__["default"])(_templateObject3());
+const query = graphql_tag__WEBPACK_IMPORTED_MODULE_4___default()(_templateObject4());
 
 const markup = (data, queryProps) => {
   const refs = queryProps.refs,
-        imageClickHandler = queryProps.imageClickHandler;
+        imageClickHandler = queryProps.imageClickHandler,
+        width = queryProps.width;
   const postsWithImage = data.posts.edges.filter(edge => edge.node.featuredImage);
   const numberOfSlides = postsWithImage.length;
   const slides = postsWithImage.map((edge, index) => {
@@ -1143,7 +1167,7 @@ const markup = (data, queryProps) => {
       ref: ref,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 69
+        lineNumber: 85
       },
       __self: undefined
     }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Post__WEBPACK_IMPORTED_MODULE_9__["default"], {
@@ -1152,9 +1176,10 @@ const markup = (data, queryProps) => {
       index: index,
       imageClickHandler: imageClickHandler,
       numberOfSlides: numberOfSlides,
+      width: width,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 70
+        lineNumber: 86
       },
       __self: undefined
     }));
@@ -1166,10 +1191,11 @@ const markup = (data, queryProps) => {
 };
 
 const Slider = props => {
-  //
-  // 1. Vars needed by all yhings below
+  const width = props.width; //
+  // 1. Vars needed by all things below
   //
   // We need to have a `ref` associated which each slide to be able to scroll to
+
   let refs = []; //
   // 2. Hooks
   //
@@ -1219,7 +1245,8 @@ const Slider = props => {
   };
   const queryProps = {
     refs: refs,
-    imageClickHandler: imageClickHandler
+    imageClickHandler: imageClickHandler,
+    width: width
   };
 
   const _useQuery = Object(_hooks__WEBPACK_IMPORTED_MODULE_5__["useQuery"])(query, markup, variables, queryProps),
@@ -1248,15 +1275,16 @@ const Slider = props => {
   };
 
   return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Container, {
+    width: width,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 169
+      lineNumber: 192
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Slides, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 170
+      lineNumber: 193
     },
     __self: undefined
   }, slides), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Bullets__WEBPACK_IMPORTED_MODULE_10__["default"], {
@@ -1265,7 +1293,7 @@ const Slider = props => {
     bulletClickHandler: bulletClickHandler,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 171
+      lineNumber: 194
     },
     __self: undefined
   }), ArrowRightPress && arrowRightHandler());
@@ -1936,5 +1964,5 @@ module.exports = __webpack_require__(/*! /home/cs/work/inu-v2/react-src/src/inde
 
 /***/ })
 
-},[[0,"runtime~main",1]]]);
+},[[0,"runtime~main",0]]]);
 //# sourceMappingURL=main.chunk.js.map

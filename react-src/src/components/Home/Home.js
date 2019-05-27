@@ -39,7 +39,7 @@ const Home = () => {
         <Logo />
         <Line />
         <Categories />
-        <Slider />
+        <Slider width="90vw" />
       </Container>
     </>
   );

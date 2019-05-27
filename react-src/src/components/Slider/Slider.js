@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import gql from "graphql-tag";
 import { useQuery, useKeyPress } from "../../hooks";
 
@@ -11,12 +11,17 @@ import Bullets from "../Bullets";
 
 const Container = styled.section`
   ${Spacing({ property: "margin-top" })}
+  ${props =>
+    props.width &&
+    css`
+      width: ${props.width};
+    `}
 `;
 
 // Original idea:
 // - https://nolanlawson.com/2019/02/10/building-a-modern-carousel-with-css-scroll-snap-smooth-scrolling-and-pinch-zoom/
 const Slides = styled(List)`
-  width: 80vw;
+  width: 100%;
   margin-top: var(--lem);
 
   display: flex;
@@ -24,7 +29,6 @@ const Slides = styled(List)`
 
   overflow-x: auto;
   overflow-y: hidden;
-  scroll-snap-type-x: mandatory;
 
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
@@ -32,6 +36,18 @@ const Slides = styled(List)`
 
   &::-webkit-scrollbar {
     display: none;
+  }
+
+  @supports (scroll-snap-align: start) {
+    /* modern scroll snap points */
+    scroll-snap-type: x mandatory;
+  }
+
+  @supports not (scroll-snap-align: start) {
+    /* old scroll snap points spec */
+    scroll-snap-type: mandatory;
+    scroll-snap-destination: 0% center;
+    scroll-snap-points-x: repeat(100%);
   }
 `;
 
@@ -53,7 +69,7 @@ const query = gql`
 `;
 
 const markup = (data, queryProps) => {
-  const { refs, imageClickHandler } = queryProps;
+  const { refs, imageClickHandler, width } = queryProps;
 
   const postsWithImage = data.posts.edges.filter(
     edge => edge.node.featuredImage
@@ -73,6 +89,7 @@ const markup = (data, queryProps) => {
           index={index}
           imageClickHandler={imageClickHandler}
           numberOfSlides={numberOfSlides}
+          width={width}
         />
       </Slide>
     );
@@ -82,8 +99,10 @@ const markup = (data, queryProps) => {
 };
 
 const Slider = props => {
+  const { width } = props;
+
   //
-  // 1. Vars needed by all yhings below
+  // 1. Vars needed by all things below
   //
   // We need to have a `ref` associated which each slide to be able to scroll to
   let refs = [];
@@ -133,7 +152,11 @@ const Slider = props => {
   // - the returned array is first empty then only later becomes populated
   // - therefore we return the processed info inside `slides`
   const variables = { first: 10 };
-  const queryProps = { refs: refs, imageClickHandler: imageClickHandler };
+  const queryProps = {
+    refs: refs,
+    imageClickHandler: imageClickHandler,
+    width: width
+  };
   const { slides, numberOfSlides } = useQuery(
     query,
     markup,
@@ -166,7 +189,7 @@ const Slider = props => {
   };
 
   return (
-    <Container>
+    <Container width={width}>
       <Slides>{slides}</Slides>
       <Bullets
         numberOfSlides={numberOfSlides}
