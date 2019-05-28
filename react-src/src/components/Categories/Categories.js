@@ -26,6 +26,7 @@ const markup = data => {
   const items = data.categories.edges.map(edge => (
     <ListItem key={edge.node.id}>{edge.node.name}</ListItem>
   ));
+
   return <List>{items}</List>;
 };
 
@@ -33,4 +34,19 @@ const Categories = () => {
   return useQuery(query, markup);
 };
 
+// Which category to display at the Homepage
+
+const getFirstCategory = data => {
+  try {
+    return data.categories.edges[0].node.categoryId;
+  } catch (error) {
+    return null;
+  }
+};
+
+const getCategoryForHome = () => {
+  return useQuery(query, getFirstCategory);
+};
+
 export default Categories;
+export { getCategoryForHome };

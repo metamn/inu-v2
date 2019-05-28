@@ -1,13 +1,14 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import WebFont from "webfontloader";
 import styled from "styled-components";
+import { stringify } from "flatted";
 
 import Reset from "../Reset";
 import TypographicGrid from "../TypographicGrid";
 import Spacing from "../Spacing";
 import Logo from "../Logo";
 import Line from "../Line";
-import Categories from "../Categories";
+import { Categories, getCategoryForHome } from "../Categories";
 import Slider from "../Slider";
 
 WebFont.load({
@@ -25,6 +26,9 @@ const Container = styled.div`
 `;
 
 const Home = () => {
+  const categoryForHome = getCategoryForHome();
+  const [activeCategory, setActiveCategory] = useState(categoryForHome);
+
   return (
     <>
       <Reset />
