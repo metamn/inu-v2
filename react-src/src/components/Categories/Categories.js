@@ -48,6 +48,11 @@ const markup = (data, props) => {
     </ListItem>
   ));
 
+  // Make sure the first category is marked active at the first load
+  if (activeCategory === 0) {
+    categoryClickHandler(data.categories.edges[0].node.categoryId);
+  }
+
   return <List>{items}</List>;
 };
 

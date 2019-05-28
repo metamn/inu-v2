@@ -301,11 +301,16 @@ const markup = (data, props) => {
       lineNumber: 39
     },
     __self: undefined
-  }, edge.node.name));
+  }, edge.node.name)); // Make sure the first category is marked active at the first load
+
+  if (activeCategory === 0) {
+    categoryClickHandler(data.categories.edges[0].node.categoryId);
+  }
+
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_List__WEBPACK_IMPORTED_MODULE_6__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 51
+      lineNumber: 56
     },
     __self: undefined
   }, items);
@@ -2140,5 +2145,5 @@ module.exports = __webpack_require__(/*! /home/cs/work/inu-v2/react-src/src/inde
 
 /***/ })
 
-},[[0,"runtime~main",1]]]);
+},[[0,"runtime~main",0]]]);
 //# sourceMappingURL=main.chunk.js.map
