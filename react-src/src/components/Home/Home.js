@@ -1,14 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import WebFont from "webfontloader";
 import styled from "styled-components";
-import { stringify } from "flatted";
 
 import Reset from "../Reset";
 import TypographicGrid from "../TypographicGrid";
 import Spacing from "../Spacing";
-import Logo from "../Logo";
-import Line from "../Line";
-import Categories from "../Categories";
+
+import Header from "../Header";
 import Slider from "../Slider";
 
 WebFont.load({
@@ -51,9 +49,7 @@ const Home = () => {
         lineColor="#666"
       />
       <Container>
-        <Logo />
-        <Line />
-        <Categories
+        <Header
           activeCategory={activeCategory}
           categoryClickHandler={categoryClickHandler}
           activeCategoryIcon={activeCategoryIcon}
