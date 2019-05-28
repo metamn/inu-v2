@@ -28,10 +28,16 @@ const Container = styled.div`
 const Home = () => {
   const [activeCategory, setActiveCategory] = useState(0);
   const [activeBullet, setActiveBullet] = useState(0);
+  const [activeCategoryIcon, setActiveCategoryIcon] = useState(true);
 
   const categoryClickHandler = index => {
     setActiveCategory(index);
     setActiveBullet(0);
+    setActiveCategoryIcon(true);
+  };
+
+  const categoryIconClickHandler = () => {
+    setActiveCategoryIcon(!activeCategoryIcon);
   };
 
   return (
@@ -50,6 +56,8 @@ const Home = () => {
         <Categories
           activeCategory={activeCategory}
           categoryClickHandler={categoryClickHandler}
+          activeCategoryIcon={activeCategoryIcon}
+          categoryIconClickHandler={categoryIconClickHandler}
         />
         <Slider
           width="90vw"

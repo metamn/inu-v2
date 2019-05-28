@@ -89,11 +89,15 @@ const markup = (data, props) => {
   const {
     activeCategory,
     categoryClickHandler,
-    chevronDownClicked,
-    chevronDownVisible,
-    chevronUpClicked,
-    chevronUpVisible
+    activeCategoryIcon,
+    categoryIconClickHandler
   } = props;
+
+  // Icon and menu statuses
+  const hideInactive = setClassName({
+    target: true,
+    index: activeCategoryIcon
+  });
 
   // Parse categories into a list
   const items = data.categories.edges.map(edge => (
@@ -103,7 +107,7 @@ const markup = (data, props) => {
         target: activeCategory,
         index: edge.node.categoryId
       })}
-      hideInactive={setClassName({ target: true, index: chevronDownVisible })}
+      hideInactive={hideInactive}
       onClick={() => categoryClickHandler(edge.node.categoryId)}
     >
       {edge.node.name}
@@ -119,15 +123,13 @@ const markup = (data, props) => {
     <Container>
       <ListContainer>{items}</ListContainer>
       <Icons>
-        <Icon
-          className={setClassName({ target: true, index: chevronDownVisible })}
-        >
-          <FaChevronDown onClick={() => chevronDownClicked()} />
+        <Icon className={hideInactive}>
+          <FaChevronDown onClick={() => categoryIconClickHandler()} />
         </Icon>
         <Icon
-          className={setClassName({ target: true, index: chevronUpVisible })}
+          className={setClassName({ target: false, index: activeCategoryIcon })}
         >
-          <FaChevronUp onClick={() => chevronUpClicked()} />
+          <FaChevronUp onClick={() => categoryIconClickHandler()} />
         </Icon>
       </Icons>
     </Container>
@@ -135,29 +137,8 @@ const markup = (data, props) => {
 };
 
 const Categories = props => {
-  const [chevronDownVisible, setChevronDownVisible] = useState(true);
-  const [chevronUpVisible, setChevronUpVisible] = useState(false);
-
-  const chevronDownClicked = () => {
-    console.log("chevronDownClicked");
-    setChevronDownVisible(!chevronDownVisible);
-    setChevronUpVisible(!chevronUpVisible);
-  };
-
-  const chevronUpClicked = () => {
-    console.log("chevronUpClicked");
-    setChevronDownVisible(!chevronDownVisible);
-    setChevronUpVisible(!chevronUpVisible);
-  };
-
   const variables = { hideEmpty: true };
-  const newProps = {
-    chevronDownVisible: chevronDownVisible,
-    chevronDownClicked: chevronDownClicked,
-    chevronUpVisible: chevronUpVisible,
-    chevronUpClicked: chevronUpClicked
-  };
-  return useQuery(query, markup, variables, { ...props, ...newProps });
+  return useQuery(query, markup, variables, props);
 };
 
 export default Categories;

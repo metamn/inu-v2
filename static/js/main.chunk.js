@@ -235,25 +235,21 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/esm/objectSpread */ "./node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/esm/objectSpread.js");
-/* harmony import */ var _home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/esm/slicedToArray */ "./node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/esm/slicedToArray.js");
-/* harmony import */ var _home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/esm/taggedTemplateLiteral */ "./node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/esm/taggedTemplateLiteral.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-/* harmony import */ var graphql_tag__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! graphql-tag */ "./node_modules/graphql-tag/src/index.js");
-/* harmony import */ var graphql_tag__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(graphql_tag__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var react_icons_fa__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-icons/fa */ "./node_modules/react-icons/fa/index.esm.js");
-/* harmony import */ var _hooks__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./../../hooks */ "./src/hooks/index.js");
-/* harmony import */ var _helpers__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../helpers */ "./src/helpers/index.js");
-/* harmony import */ var _List__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../List */ "./src/components/List/index.js");
-
-
+/* harmony import */ var _home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/esm/taggedTemplateLiteral */ "./node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/esm/taggedTemplateLiteral.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var graphql_tag__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! graphql-tag */ "./node_modules/graphql-tag/src/index.js");
+/* harmony import */ var graphql_tag__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(graphql_tag__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var react_icons_fa__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-icons/fa */ "./node_modules/react-icons/fa/index.esm.js");
+/* harmony import */ var _hooks__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./../../hooks */ "./src/hooks/index.js");
+/* harmony import */ var _helpers__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../helpers */ "./src/helpers/index.js");
+/* harmony import */ var _List__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../List */ "./src/components/List/index.js");
 
 var _jsxFileName = "/home/cs/work/inu-v2/react-src/src/components/Categories/Categories.js";
 
 function _templateObject11() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_2__["default"])(["\n  query Categories($hideEmpty: Boolean) {\n    categories(where: { hideEmpty: $hideEmpty }) {\n      edges {\n        node {\n          id\n          categoryId\n          name\n        }\n      }\n    }\n  }\n"]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  query Categories($hideEmpty: Boolean) {\n    categories(where: { hideEmpty: $hideEmpty }) {\n      edges {\n        node {\n          id\n          categoryId\n          name\n        }\n      }\n    }\n  }\n"]);
 
   _templateObject11 = function () {
     return data;
@@ -263,7 +259,7 @@ function _templateObject11() {
 }
 
 function _templateObject10() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_2__["default"])(["\n      display: flex;\n    "]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n      display: flex;\n    "]);
 
   _templateObject10 = function () {
     return data;
@@ -273,7 +269,7 @@ function _templateObject10() {
 }
 
 function _templateObject9() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_2__["default"])(["\n  display: none;\n  align-items: center;\n  cursor: pointer;\n\n  ", ";\n"]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  display: none;\n  align-items: center;\n  cursor: pointer;\n\n  ", ";\n"]);
 
   _templateObject9 = function () {
     return data;
@@ -283,7 +279,7 @@ function _templateObject9() {
 }
 
 function _templateObject8() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_2__["default"])(["\n  margin-left: var(--lem);\n  margin-top: calc(var(--lem) / 3);\n"]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  margin-left: var(--lem);\n  margin-top: calc(var(--lem) / 3);\n"]);
 
   _templateObject8 = function () {
     return data;
@@ -293,7 +289,7 @@ function _templateObject8() {
 }
 
 function _templateObject7() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_2__["default"])(["\n      font-style: italic;\n    "]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n      font-style: italic;\n    "]);
 
   _templateObject7 = function () {
     return data;
@@ -303,7 +299,7 @@ function _templateObject7() {
 }
 
 function _templateObject6() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_2__["default"])(["\n      margin-bottom: calc(var(--lem) / 2);\n      border-bottom: 1px solid lightgray;\n\n      &:hover {\n        font-style: italic;\n      }\n    "]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n      margin-bottom: calc(var(--lem) / 2);\n      border-bottom: 1px solid lightgray;\n\n      &:hover {\n        font-style: italic;\n      }\n    "]);
 
   _templateObject6 = function () {
     return data;
@@ -313,7 +309,7 @@ function _templateObject6() {
 }
 
 function _templateObject5() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_2__["default"])(["\n      display: flex;\n      cursor: default;\n    "]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n      display: flex;\n      cursor: default;\n    "]);
 
   _templateObject5 = function () {
     return data;
@@ -323,7 +319,7 @@ function _templateObject5() {
 }
 
 function _templateObject4() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_2__["default"])(["\n      display: none;\n    "]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n      display: none;\n    "]);
 
   _templateObject4 = function () {
     return data;
@@ -333,7 +329,7 @@ function _templateObject4() {
 }
 
 function _templateObject3() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_2__["default"])(["\n  font-size: 1.333em;\n  cursor: pointer;\n  width: 100%;\n\n  // Only the active item is displayed\n  ", ";\n\n  // The style of the active item\n  ", ";\n\n  // All items are displayed\n  ", ";\n\n  // The style of the active item when all items are displayed\n  ", ";\n"]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  font-size: 1.333em;\n  cursor: pointer;\n  width: 100%;\n\n  // Only the active item is displayed\n  ", ";\n\n  // The style of the active item\n  ", ";\n\n  // All items are displayed\n  ", ";\n\n  // The style of the active item when all items are displayed\n  ", ";\n"]);
 
   _templateObject3 = function () {
     return data;
@@ -343,7 +339,7 @@ function _templateObject3() {
 }
 
 function _templateObject2() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_2__["default"])([""]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])([""]);
 
   _templateObject2 = function () {
     return data;
@@ -353,7 +349,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_2__["default"])(["\n  display: flex;\n"]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  display: flex;\n"]);
 
   _templateObject = function () {
     return data;
@@ -369,35 +365,35 @@ function _templateObject() {
 
 
 
-const Container = styled_components__WEBPACK_IMPORTED_MODULE_4__["default"].nav(_templateObject());
-const ListContainer = Object(styled_components__WEBPACK_IMPORTED_MODULE_4__["default"])(_List__WEBPACK_IMPORTED_MODULE_9__["default"])(_templateObject2());
-const ListItem = styled_components__WEBPACK_IMPORTED_MODULE_4__["default"].li(_templateObject3(), props => props.hideInactive === "active" && Object(styled_components__WEBPACK_IMPORTED_MODULE_4__["css"])(_templateObject4()), props => props.className === "active" && Object(styled_components__WEBPACK_IMPORTED_MODULE_4__["css"])(_templateObject5()), props => props.hideInactive === "inactive" && Object(styled_components__WEBPACK_IMPORTED_MODULE_4__["css"])(_templateObject6()), props => props.hideInactive === "inactive" && props.className === "active" && Object(styled_components__WEBPACK_IMPORTED_MODULE_4__["css"])(_templateObject7()));
-const Icons = styled_components__WEBPACK_IMPORTED_MODULE_4__["default"].div(_templateObject8());
-const Icon = styled_components__WEBPACK_IMPORTED_MODULE_4__["default"].div(_templateObject9(), props => props.className === "active" && Object(styled_components__WEBPACK_IMPORTED_MODULE_4__["css"])(_templateObject10()));
-const query = graphql_tag__WEBPACK_IMPORTED_MODULE_5___default()(_templateObject11());
+const Container = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].nav(_templateObject());
+const ListContainer = Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["default"])(_List__WEBPACK_IMPORTED_MODULE_7__["default"])(_templateObject2());
+const ListItem = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].li(_templateObject3(), props => props.hideInactive === "active" && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject4()), props => props.className === "active" && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject5()), props => props.hideInactive === "inactive" && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject6()), props => props.hideInactive === "inactive" && props.className === "active" && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject7()));
+const Icons = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject8());
+const Icon = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject9(), props => props.className === "active" && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject10()));
+const query = graphql_tag__WEBPACK_IMPORTED_MODULE_3___default()(_templateObject11());
 
 const markup = (data, props) => {
   const activeCategory = props.activeCategory,
         categoryClickHandler = props.categoryClickHandler,
-        chevronDownClicked = props.chevronDownClicked,
-        chevronDownVisible = props.chevronDownVisible,
-        chevronUpClicked = props.chevronUpClicked,
-        chevronUpVisible = props.chevronUpVisible; // Parse categories into a list
+        activeCategoryIcon = props.activeCategoryIcon,
+        categoryIconClickHandler = props.categoryIconClickHandler; // Icon and menu statuses
 
-  const items = data.categories.edges.map(edge => react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(ListItem, {
+  const hideInactive = Object(_helpers__WEBPACK_IMPORTED_MODULE_6__["setClassName"])({
+    target: true,
+    index: activeCategoryIcon
+  }); // Parse categories into a list
+
+  const items = data.categories.edges.map(edge => react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(ListItem, {
     key: edge.node.id,
-    className: Object(_helpers__WEBPACK_IMPORTED_MODULE_8__["setClassName"])({
+    className: Object(_helpers__WEBPACK_IMPORTED_MODULE_6__["setClassName"])({
       target: activeCategory,
       index: edge.node.categoryId
     }),
-    hideInactive: Object(_helpers__WEBPACK_IMPORTED_MODULE_8__["setClassName"])({
-      target: true,
-      index: chevronDownVisible
-    }),
+    hideInactive: hideInactive,
     onClick: () => categoryClickHandler(edge.node.categoryId),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 100
+      lineNumber: 104
     },
     __self: undefined
   }, edge.node.name)); // Make sure the first category is marked active at the first load
@@ -406,94 +402,63 @@ const markup = (data, props) => {
     categoryClickHandler(data.categories.edges[0].node.categoryId);
   }
 
-  return react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(Container, {
+  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Container, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 119
+      lineNumber: 123
     },
     __self: undefined
-  }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(ListContainer, {
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(ListContainer, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 120
+      lineNumber: 124
     },
     __self: undefined
-  }, items), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(Icons, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 121
-    },
-    __self: undefined
-  }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(Icon, {
-    className: Object(_helpers__WEBPACK_IMPORTED_MODULE_8__["setClassName"])({
-      target: true,
-      index: chevronDownVisible
-    }),
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 122
-    },
-    __self: undefined
-  }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(react_icons_fa__WEBPACK_IMPORTED_MODULE_6__["FaChevronDown"], {
-    onClick: () => chevronDownClicked(),
+  }, items), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Icons, {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 125
     },
     __self: undefined
-  })), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(Icon, {
-    className: Object(_helpers__WEBPACK_IMPORTED_MODULE_8__["setClassName"])({
-      target: true,
-      index: chevronUpVisible
-    }),
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Icon, {
+    className: hideInactive,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 126
+    },
+    __self: undefined
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_icons_fa__WEBPACK_IMPORTED_MODULE_4__["FaChevronDown"], {
+    onClick: () => categoryIconClickHandler(),
     __source: {
       fileName: _jsxFileName,
       lineNumber: 127
     },
     __self: undefined
-  }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(react_icons_fa__WEBPACK_IMPORTED_MODULE_6__["FaChevronUp"], {
-    onClick: () => chevronUpClicked(),
+  })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Icon, {
+    className: Object(_helpers__WEBPACK_IMPORTED_MODULE_6__["setClassName"])({
+      target: false,
+      index: activeCategoryIcon
+    }),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 130
+      lineNumber: 129
+    },
+    __self: undefined
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_icons_fa__WEBPACK_IMPORTED_MODULE_4__["FaChevronUp"], {
+    onClick: () => categoryIconClickHandler(),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 132
     },
     __self: undefined
   }))));
 };
 
 const Categories = props => {
-  const _useState = Object(react__WEBPACK_IMPORTED_MODULE_3__["useState"])(true),
-        _useState2 = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_1__["default"])(_useState, 2),
-        chevronDownVisible = _useState2[0],
-        setChevronDownVisible = _useState2[1];
-
-  const _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_3__["useState"])(false),
-        _useState4 = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_1__["default"])(_useState3, 2),
-        chevronUpVisible = _useState4[0],
-        setChevronUpVisible = _useState4[1];
-
-  const chevronDownClicked = () => {
-    console.log("chevronDownClicked");
-    setChevronDownVisible(!chevronDownVisible);
-    setChevronUpVisible(!chevronUpVisible);
-  };
-
-  const chevronUpClicked = () => {
-    console.log("chevronUpClicked");
-    setChevronDownVisible(!chevronDownVisible);
-    setChevronUpVisible(!chevronUpVisible);
-  };
-
   const variables = {
     hideEmpty: true
   };
-  const newProps = {
-    chevronDownVisible: chevronDownVisible,
-    chevronDownClicked: chevronDownClicked,
-    chevronUpVisible: chevronUpVisible,
-    chevronUpClicked: chevronUpClicked
-  };
-  return Object(_hooks__WEBPACK_IMPORTED_MODULE_7__["useQuery"])(query, markup, variables, Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, props, newProps));
+  return Object(_hooks__WEBPACK_IMPORTED_MODULE_5__["useQuery"])(query, markup, variables, props);
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Categories);
@@ -666,15 +631,25 @@ const Home = () => {
         activeBullet = _useState4[0],
         setActiveBullet = _useState4[1];
 
+  const _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])(true),
+        _useState6 = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_useState5, 2),
+        activeCategoryIcon = _useState6[0],
+        setActiveCategoryIcon = _useState6[1];
+
   const categoryClickHandler = index => {
     setActiveCategory(index);
     setActiveBullet(0);
+    setActiveCategoryIcon(true);
+  };
+
+  const categoryIconClickHandler = () => {
+    setActiveCategoryIcon(!activeCategoryIcon);
   };
 
   return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_2___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Reset__WEBPACK_IMPORTED_MODULE_6__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 39
+      lineNumber: 45
     },
     __self: undefined
   }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_TypographicGrid__WEBPACK_IMPORTED_MODULE_7__["default"], {
@@ -685,33 +660,35 @@ const Home = () => {
     lineColor: "#666",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 40
+      lineNumber: 46
     },
     __self: undefined
   }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Container, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 47
+      lineNumber: 53
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Logo__WEBPACK_IMPORTED_MODULE_9__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 48
+      lineNumber: 54
     },
     __self: undefined
   }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Line__WEBPACK_IMPORTED_MODULE_10__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 49
+      lineNumber: 55
     },
     __self: undefined
   }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Categories__WEBPACK_IMPORTED_MODULE_11__["default"], {
     activeCategory: activeCategory,
     categoryClickHandler: categoryClickHandler,
+    activeCategoryIcon: activeCategoryIcon,
+    categoryIconClickHandler: categoryIconClickHandler,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 50
+      lineNumber: 56
     },
     __self: undefined
   }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Slider__WEBPACK_IMPORTED_MODULE_12__["default"], {
@@ -721,7 +698,7 @@ const Home = () => {
     setActiveBullet: setActiveBullet,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54
+      lineNumber: 62
     },
     __self: undefined
   })));
@@ -2318,5 +2295,5 @@ module.exports = __webpack_require__(/*! /home/cs/work/inu-v2/react-src/src/inde
 
 /***/ })
 
-},[[0,"runtime~main",0]]]);
+},[[0,"runtime~main",1]]]);
 //# sourceMappingURL=main.chunk.js.map
