@@ -252,8 +252,38 @@ __webpack_require__.r(__webpack_exports__);
 
 var _jsxFileName = "/home/cs/work/inu-v2/react-src/src/components/Categories/Categories.js";
 
-function _templateObject7() {
+function _templateObject10() {
   const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_2__["default"])(["\n  query Categories($hideEmpty: Boolean) {\n    categories(where: { hideEmpty: $hideEmpty }) {\n      edges {\n        node {\n          id\n          categoryId\n          name\n        }\n      }\n    }\n  }\n"]);
+
+  _templateObject10 = function () {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject9() {
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_2__["default"])(["\n      display: flex;\n    "]);
+
+  _templateObject9 = function () {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject8() {
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_2__["default"])(["\n  display: none;\n  align-items: center;\n  cursor: pointer;\n\n  ", ";\n"]);
+
+  _templateObject8 = function () {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject7() {
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_2__["default"])(["\n  margin-left: var(--lem);\n"]);
 
   _templateObject7 = function () {
     return data;
@@ -263,7 +293,7 @@ function _templateObject7() {
 }
 
 function _templateObject6() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_2__["default"])(["\n      display: flex;\n      cursor: default;\n    "]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_2__["default"])(["\n      display: flex;\n      cursor: default;\n      border-bottom: none;\n      margin-bottom: none;\n    "]);
 
   _templateObject6 = function () {
     return data;
@@ -273,7 +303,7 @@ function _templateObject6() {
 }
 
 function _templateObject5() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_2__["default"])(["\n  font-size: 1.333em;\n  cursor: pointer;\n  display: none;\n\n  ", ";\n"]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_2__["default"])(["\n      font-style: italic;\n    "]);
 
   _templateObject5 = function () {
     return data;
@@ -283,7 +313,7 @@ function _templateObject5() {
 }
 
 function _templateObject4() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_2__["default"])(["\n      display: flex;\n    "]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_2__["default"])(["\n      display: none;\n    "]);
 
   _templateObject4 = function () {
     return data;
@@ -293,7 +323,7 @@ function _templateObject4() {
 }
 
 function _templateObject3() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_2__["default"])(["\n  display: none;\n  align-items: center;\n  cursor: pointer;\n\n  ", ";\n"]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_2__["default"])(["\n  font-size: 1.333em;\n  cursor: pointer;\n  border-bottom: 1px solid lightgray;\n  margin-bottom: calc(var(--lem) / 2);\n\n  &:hover {\n    font-style: italic;\n  }\n\n  ", ";\n\n  ", ";\n\n  ", ";\n"]);
 
   _templateObject3 = function () {
     return data;
@@ -303,7 +333,7 @@ function _templateObject3() {
 }
 
 function _templateObject2() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_2__["default"])(["\n  margin-left: var(--lem);\n"]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_2__["default"])([""]);
 
   _templateObject2 = function () {
     return data;
@@ -330,10 +360,11 @@ function _templateObject() {
 
 
 const Container = styled_components__WEBPACK_IMPORTED_MODULE_4__["default"].nav(_templateObject());
-const Icons = styled_components__WEBPACK_IMPORTED_MODULE_4__["default"].div(_templateObject2());
-const Icon = styled_components__WEBPACK_IMPORTED_MODULE_4__["default"].div(_templateObject3(), props => props.className === "active" && Object(styled_components__WEBPACK_IMPORTED_MODULE_4__["css"])(_templateObject4()));
-const ListItem = styled_components__WEBPACK_IMPORTED_MODULE_4__["default"].li(_templateObject5(), props => props.className === "active" && Object(styled_components__WEBPACK_IMPORTED_MODULE_4__["css"])(_templateObject6()));
-const query = graphql_tag__WEBPACK_IMPORTED_MODULE_5___default()(_templateObject7());
+const ListContainer = Object(styled_components__WEBPACK_IMPORTED_MODULE_4__["default"])(_List__WEBPACK_IMPORTED_MODULE_9__["default"])(_templateObject2());
+const ListItem = styled_components__WEBPACK_IMPORTED_MODULE_4__["default"].li(_templateObject3(), props => props.hideInactive === "active" && Object(styled_components__WEBPACK_IMPORTED_MODULE_4__["css"])(_templateObject4()), props => props.hideInactive === "inactive" && props.className === "active" && Object(styled_components__WEBPACK_IMPORTED_MODULE_4__["css"])(_templateObject5()), props => props.className === "active" && Object(styled_components__WEBPACK_IMPORTED_MODULE_4__["css"])(_templateObject6()));
+const Icons = styled_components__WEBPACK_IMPORTED_MODULE_4__["default"].div(_templateObject7());
+const Icon = styled_components__WEBPACK_IMPORTED_MODULE_4__["default"].div(_templateObject8(), props => props.className === "active" && Object(styled_components__WEBPACK_IMPORTED_MODULE_4__["css"])(_templateObject9()));
+const query = graphql_tag__WEBPACK_IMPORTED_MODULE_5___default()(_templateObject10());
 
 const markup = (data, props) => {
   const activeCategory = props.activeCategory,
@@ -349,10 +380,14 @@ const markup = (data, props) => {
       target: activeCategory,
       index: edge.node.categoryId
     }),
+    hideInactive: Object(_helpers__WEBPACK_IMPORTED_MODULE_8__["setClassName"])({
+      target: true,
+      index: chevronDownVisible
+    }),
     onClick: () => categoryClickHandler(edge.node.categoryId),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 70
+      lineNumber: 92
     },
     __self: undefined
   }, edge.node.name)); // Make sure the first category is marked active at the first load
@@ -364,19 +399,19 @@ const markup = (data, props) => {
   return react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(Container, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 88
+      lineNumber: 111
     },
     __self: undefined
-  }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_List__WEBPACK_IMPORTED_MODULE_9__["default"], {
+  }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(ListContainer, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 89
+      lineNumber: 112
     },
     __self: undefined
   }, items), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(Icons, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 90
+      lineNumber: 113
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(Icon, {
@@ -386,14 +421,14 @@ const markup = (data, props) => {
     }),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 91
+      lineNumber: 114
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(react_icons_fa__WEBPACK_IMPORTED_MODULE_6__["FaChevronDown"], {
     onClick: () => chevronDownClicked(),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 94
+      lineNumber: 117
     },
     __self: undefined
   })), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(Icon, {
@@ -403,14 +438,14 @@ const markup = (data, props) => {
     }),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 96
+      lineNumber: 119
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(react_icons_fa__WEBPACK_IMPORTED_MODULE_6__["FaChevronUp"], {
     onClick: () => chevronUpClicked(),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 99
+      lineNumber: 122
     },
     __self: undefined
   }))));

@@ -12,6 +12,41 @@ const Container = styled.nav`
   align-items: center;
 `;
 
+const ListContainer = styled(List)``;
+
+const ListItem = styled.li`
+  font-size: 1.333em;
+  cursor: pointer;
+  border-bottom: 1px solid lightgray;
+  margin-bottom: calc(var(--lem) / 2);
+
+  &:hover {
+    font-style: italic;
+  }
+
+  ${props =>
+    props.hideInactive === "active" &&
+    css`
+      display: none;
+    `};
+
+  ${props =>
+    props.hideInactive === "inactive" &&
+    props.className === "active" &&
+    css`
+      font-style: italic;
+    `};
+
+  ${props =>
+    props.className === "active" &&
+    css`
+      display: flex;
+      cursor: default;
+      border-bottom: none;
+      margin-bottom: none;
+    `};
+`;
+
 const Icons = styled.div`
   margin-left: var(--lem);
 `;
@@ -25,19 +60,6 @@ const Icon = styled.div`
     props.className === "active" &&
     css`
       display: flex;
-    `};
-`;
-
-const ListItem = styled.li`
-  font-size: 1.333em;
-  cursor: pointer;
-  display: none;
-
-  ${props =>
-    props.className === "active" &&
-    css`
-      display: flex;
-      cursor: default;
     `};
 `;
 
@@ -73,6 +95,7 @@ const markup = (data, props) => {
         target: activeCategory,
         index: edge.node.categoryId
       })}
+      hideInactive={setClassName({ target: true, index: chevronDownVisible })}
       onClick={() => categoryClickHandler(edge.node.categoryId)}
     >
       {edge.node.name}
@@ -86,7 +109,7 @@ const markup = (data, props) => {
 
   return (
     <Container>
-      <List>{items}</List>
+      <ListContainer>{items}</ListContainer>
       <Icons>
         <Icon
           className={setClassName({ target: true, index: chevronDownVisible })}
