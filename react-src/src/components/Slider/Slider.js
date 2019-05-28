@@ -100,7 +100,7 @@ const markup = (data, queryProps) => {
 };
 
 const Slider = props => {
-  const { width, category } = props;
+  const { width, category, activeBullet, setActiveBullet } = props;
 
   //
   // 1. Vars needed by all things below
@@ -113,7 +113,10 @@ const Slider = props => {
   //
   // State hooks are first.
   // All things below need to know abut `activeBullet`
-  const [activeBullet, setActiveBullet] = useState(0);
+  //const [activeBullet, setActiveBullet] = useState(0);
+  //
+  // `activeBullet` state was lifted up to be reset when a new category is clicked
+  // This was the only way to make it work
 
   // Without `useEffect` we can't properly have access to `activeBullet`
   // Even more when state changes this handles the
@@ -150,7 +153,7 @@ const Slider = props => {
       });
       setActiveBullet(visibleRef);
     },
-    [refs]
+    [refs, setActiveBullet]
   );
 
   // The event listener hook

@@ -27,9 +27,11 @@ const Container = styled.div`
 
 const Home = () => {
   const [activeCategory, setActiveCategory] = useState(0);
+  const [activeBullet, setActiveBullet] = useState(0);
 
   const categoryClickHandler = index => {
     setActiveCategory(index);
+    setActiveBullet(0);
   };
 
   return (
@@ -49,7 +51,12 @@ const Home = () => {
           activeCategory={activeCategory}
           categoryClickHandler={categoryClickHandler}
         />
-        <Slider width="90vw" category={activeCategory} />
+        <Slider
+          width="90vw"
+          category={activeCategory}
+          activeBullet={activeBullet}
+          setActiveBullet={setActiveBullet}
+        />
       </Container>
     </>
   );
