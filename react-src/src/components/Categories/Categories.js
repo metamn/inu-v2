@@ -37,11 +37,11 @@ const markup = (data, props) => {
     return index === activeCategory ? "active" : "inactive";
   };
 
-  const items = data.categories.edges.map((edge, index) => (
+  const items = data.categories.edges.map(edge => (
     <ListItem
       key={edge.node.id}
-      className={setClassName(index)}
-      onClick={() => categoryClickHandler(index)}
+      className={setClassName(edge.node.categoryId)}
+      onClick={() => categoryClickHandler(edge.node.categoryId)}
     >
       {edge.node.name}
     </ListItem>
@@ -59,10 +59,8 @@ const Categories = props => {
 
 const getFirstCategory = data => {
   try {
-    console.log("return ok");
     return data.categories.edges[0].node.categoryId;
   } catch (error) {
-    console.log("return null");
     return null;
   }
 };

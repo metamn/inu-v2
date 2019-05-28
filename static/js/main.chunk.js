@@ -252,10 +252,10 @@ const markup = (data, props) => {
     return index === activeCategory ? "active" : "inactive";
   };
 
-  const items = data.categories.edges.map((edge, index) => react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(ListItem, {
+  const items = data.categories.edges.map(edge => react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(ListItem, {
     key: edge.node.id,
-    className: setClassName(index),
-    onClick: () => categoryClickHandler(index),
+    className: setClassName(edge.node.categoryId),
+    onClick: () => categoryClickHandler(edge.node.categoryId),
     __source: {
       fileName: _jsxFileName,
       lineNumber: 41
@@ -279,10 +279,8 @@ const Categories = props => {
 
 const getFirstCategory = data => {
   try {
-    console.log("return ok");
     return data.categories.edges[0].node.categoryId;
   } catch (error) {
-    console.log("return null");
     return null;
   }
 };
@@ -457,20 +455,19 @@ const Container = styled_components__WEBPACK_IMPORTED_MODULE_4__["default"].div(
 const Home = () => {
   const categoryForHome = Object(_Categories__WEBPACK_IMPORTED_MODULE_11__["getCategoryForHome"])();
 
-  const _useState = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])(1),
+  const _useState = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])(0),
         _useState2 = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_useState, 2),
         activeCategory = _useState2[0],
         setActiveCategory = _useState2[1];
 
   const categoryClickHandler = index => {
-    console.log("clicked");
     setActiveCategory(index);
   };
 
   return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_2___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Reset__WEBPACK_IMPORTED_MODULE_6__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 39
+      lineNumber: 38
     },
     __self: undefined
   }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_TypographicGrid__WEBPACK_IMPORTED_MODULE_7__["default"], {
@@ -481,25 +478,25 @@ const Home = () => {
     lineColor: "#666",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 40
+      lineNumber: 39
     },
     __self: undefined
   }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Container, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 47
+      lineNumber: 46
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Logo__WEBPACK_IMPORTED_MODULE_9__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 48
+      lineNumber: 47
     },
     __self: undefined
   }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Line__WEBPACK_IMPORTED_MODULE_10__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 49
+      lineNumber: 48
     },
     __self: undefined
   }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Categories__WEBPACK_IMPORTED_MODULE_11__["Categories"], {
@@ -507,7 +504,7 @@ const Home = () => {
     categoryClickHandler: categoryClickHandler,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 50
+      lineNumber: 49
     },
     __self: undefined
   }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Slider__WEBPACK_IMPORTED_MODULE_12__["default"], {
@@ -515,7 +512,7 @@ const Home = () => {
     category: activeCategory,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54
+      lineNumber: 53
     },
     __self: undefined
   })));
@@ -2078,5 +2075,5 @@ module.exports = __webpack_require__(/*! /home/cs/work/inu-v2/react-src/src/inde
 
 /***/ })
 
-},[[0,"runtime~main",1]]]);
+},[[0,"runtime~main",0]]]);
 //# sourceMappingURL=main.chunk.js.map

@@ -27,10 +27,9 @@ const Container = styled.div`
 
 const Home = () => {
   const categoryForHome = getCategoryForHome();
-  const [activeCategory, setActiveCategory] = useState(1);
+  const [activeCategory, setActiveCategory] = useState(0);
 
   const categoryClickHandler = index => {
-    console.log("clicked");
     setActiveCategory(index);
   };
 
