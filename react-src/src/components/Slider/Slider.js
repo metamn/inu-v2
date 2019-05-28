@@ -11,7 +11,8 @@ import Post from "../Post";
 import Bullets from "../Bullets";
 
 const Container = styled.section`
-  ${Spacing({ property: "margin-top" })}
+  margin-top: calc(var(--lem) * 2);
+
   ${props =>
     props.width &&
     css`

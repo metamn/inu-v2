@@ -6,11 +6,14 @@ import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 import { useQuery } from "./../../hooks";
 import { setClassName } from "../../helpers";
 
+import Media from "../Media";
 import List from "../List";
 import Icon from "../Icon";
 
 const Container = styled.nav`
   display: flex;
+
+  ${Media.tablet`margin-top: calc(var(--lem) * 3);`}
 `;
 
 const ListContainer = styled(List)``;

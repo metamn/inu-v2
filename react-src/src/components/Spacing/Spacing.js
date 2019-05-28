@@ -7,8 +7,8 @@ const Spacing = props => {
   return css`
     ${Media.mobile`${property}: var(--lem);`}
     ${Media.tablet`${property}: calc(var(--lem) * 2);`}
-	${Media.laptop`${property}: calc(var(--lem) * 3);`}
-	${Media.desktop`${property}: calc(var(--lem) * 4);`}
+	${Media.laptop`${property}: calc(var(--lem) * 2) 10%;`}
+	${Media.desktop`${property}: calc(var(--lem) * 2) 10%;`}
   `;
 };
 

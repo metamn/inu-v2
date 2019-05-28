@@ -12,6 +12,7 @@ import Media from "../Media";
 
 const Container = styled.header`
   display: flex;
+  align-items: flex-start;
 
   ${Media.mobile`flex-direction: column;`}
   ${Media.tablet`flex-direction: row`}
@@ -19,6 +20,8 @@ const Container = styled.header`
 
 const HeaderIcon = styled(Icon)`
   margin-left: var(--lem);
+
+  ${Media.tablet`margin-top: calc(var(--lem) * 3);`}
 `;
 
 const Header = props => {
