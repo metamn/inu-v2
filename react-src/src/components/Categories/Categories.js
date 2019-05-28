@@ -55,19 +55,4 @@ const Categories = props => {
   return useQuery(query, markup, variables, props);
 };
 
-// Which category to display at the Homepage
-
-const getFirstCategory = data => {
-  try {
-    return data.categories.edges[0].node.categoryId;
-  } catch (error) {
-    return null;
-  }
-};
-
-const getCategoryForHome = () => {
-  return useQuery(query, getFirstCategory);
-};
-
 export default Categories;
-export { getCategoryForHome };

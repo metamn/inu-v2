@@ -8,7 +8,7 @@ import TypographicGrid from "../TypographicGrid";
 import Spacing from "../Spacing";
 import Logo from "../Logo";
 import Line from "../Line";
-import { Categories, getCategoryForHome } from "../Categories";
+import Categories from "../Categories";
 import Slider from "../Slider";
 
 WebFont.load({
@@ -26,7 +26,6 @@ const Container = styled.div`
 `;
 
 const Home = () => {
-  const categoryForHome = getCategoryForHome();
   const [activeCategory, setActiveCategory] = useState(0);
 
   const categoryClickHandler = index => {

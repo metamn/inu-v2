@@ -189,12 +189,11 @@ __webpack_require__.r(__webpack_exports__);
 /*!*************************************************!*\
   !*** ./src/components/Categories/Categories.js ***!
   \*************************************************/
-/*! exports provided: default, getCategoryForHome */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getCategoryForHome", function() { return getCategoryForHome; });
 /* harmony import */ var _home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/esm/taggedTemplateLiteral */ "./node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/esm/taggedTemplateLiteral.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
@@ -274,23 +273,9 @@ const markup = (data, props) => {
 const Categories = props => {
   const variables = {};
   return Object(_hooks__WEBPACK_IMPORTED_MODULE_4__["useQuery"])(query, markup, variables, props);
-}; // Which category to display at the Homepage
-
-
-const getFirstCategory = data => {
-  try {
-    return data.categories.edges[0].node.categoryId;
-  } catch (error) {
-    return null;
-  }
-};
-
-const getCategoryForHome = () => {
-  return Object(_hooks__WEBPACK_IMPORTED_MODULE_4__["useQuery"])(query, getFirstCategory);
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Categories);
-
 
 /***/ }),
 
@@ -298,16 +283,13 @@ const getCategoryForHome = () => {
 /*!********************************************!*\
   !*** ./src/components/Categories/index.js ***!
   \********************************************/
-/*! exports provided: Categories, getCategoryForHome */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Categories__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Categories */ "./src/components/Categories/Categories.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Categories", function() { return _Categories__WEBPACK_IMPORTED_MODULE_0__["default"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "getCategoryForHome", function() { return _Categories__WEBPACK_IMPORTED_MODULE_0__["getCategoryForHome"]; });
-
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _Categories__WEBPACK_IMPORTED_MODULE_0__["default"]; });
 
 
 
@@ -453,8 +435,6 @@ const Container = styled_components__WEBPACK_IMPORTED_MODULE_4__["default"].div(
 }));
 
 const Home = () => {
-  const categoryForHome = Object(_Categories__WEBPACK_IMPORTED_MODULE_11__["getCategoryForHome"])();
-
   const _useState = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])(0),
         _useState2 = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_useState, 2),
         activeCategory = _useState2[0],
@@ -467,7 +447,7 @@ const Home = () => {
   return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_2___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Reset__WEBPACK_IMPORTED_MODULE_6__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38
+      lineNumber: 37
     },
     __self: undefined
   }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_TypographicGrid__WEBPACK_IMPORTED_MODULE_7__["default"], {
@@ -478,33 +458,33 @@ const Home = () => {
     lineColor: "#666",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 39
+      lineNumber: 38
     },
     __self: undefined
   }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Container, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 46
+      lineNumber: 45
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Logo__WEBPACK_IMPORTED_MODULE_9__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 47
+      lineNumber: 46
     },
     __self: undefined
   }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Line__WEBPACK_IMPORTED_MODULE_10__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 48
+      lineNumber: 47
     },
     __self: undefined
-  }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Categories__WEBPACK_IMPORTED_MODULE_11__["Categories"], {
+  }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Categories__WEBPACK_IMPORTED_MODULE_11__["default"], {
     activeCategory: activeCategory,
     categoryClickHandler: categoryClickHandler,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 49
+      lineNumber: 48
     },
     __self: undefined
   }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Slider__WEBPACK_IMPORTED_MODULE_12__["default"], {
@@ -512,7 +492,7 @@ const Home = () => {
     category: activeCategory,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 53
+      lineNumber: 52
     },
     __self: undefined
   })));
