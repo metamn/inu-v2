@@ -74,16 +74,8 @@ const Icons = styled.div`
   margin-top: calc(var(--lem) / 3);
 `;
 
-const Icon2 = styled(Icon)`
-  display: none;
+const ChevronIcon = css`
   align-items: center;
-  cursor: pointer;
-
-  ${props =>
-    props.className === "active" &&
-    css`
-      display: flex;
-    `};
 `;
 
 const query = gql`
@@ -113,6 +105,7 @@ const markup = (data, props) => {
     target: true,
     index: activeCategoryIcon
   });
+  console.log("i:" + hideInactive);
 
   // Parse categories into a list
   const items = data.categories.edges.map(edge => (
@@ -138,14 +131,15 @@ const markup = (data, props) => {
     <Container>
       <ListContainer>{items}</ListContainer>
       <Icons>
-        <Icon2 className={hideInactive}>
+        <Icon as={ChevronIcon} className={hideInactive}>
           <FiChevronDown onClick={() => categoryIconClickHandler()} />
-        </Icon2>
-        <Icon2
+        </Icon>
+        <Icon
+          as={ChevronIcon}
           className={setClassName({ target: false, index: activeCategoryIcon })}
         >
           <FiChevronUp onClick={() => categoryIconClickHandler()} />
-        </Icon2>
+        </Icon>
       </Icons>
     </Container>
   );

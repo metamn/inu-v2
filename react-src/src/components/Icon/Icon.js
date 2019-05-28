@@ -1,11 +1,26 @@
-import React, { useState, useEffect } from "react";
-import styled from "styled-components";
+import React from "react";
+import styled, { css } from "styled-components";
+import { stringify } from "flatted";
 
-const Container = styled.div``;
+const Container = styled.div`
+  cursor: pointer;
+
+  ${props =>
+    props.className === "active" &&
+    css`
+      display: flex;
+    `};
+
+  ${props =>
+    props.className === "inactive" &&
+    css`
+      display: none;
+    `};
+`;
 
 const Icon = props => {
-  const { children } = props;
-  return <Container>{children}</Container>;
+  const { children, className } = props;
+  return <Container className={className}>{children}</Container>;
 };
 
 export default Icon;

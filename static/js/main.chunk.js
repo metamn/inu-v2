@@ -249,18 +249,8 @@ __webpack_require__.r(__webpack_exports__);
 
 var _jsxFileName = "/home/cs/work/inu-v2/react-src/src/components/Categories/Categories.js";
 
-function _templateObject15() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  query Categories($hideEmpty: Boolean) {\n    categories(where: { hideEmpty: $hideEmpty }) {\n      edges {\n        node {\n          id\n          categoryId\n          name\n        }\n      }\n    }\n  }\n"]);
-
-  _templateObject15 = function () {
-    return data;
-  };
-
-  return data;
-}
-
 function _templateObject14() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n      display: flex;\n    "]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  query Categories($hideEmpty: Boolean) {\n    categories(where: { hideEmpty: $hideEmpty }) {\n      edges {\n        node {\n          id\n          categoryId\n          name\n        }\n      }\n    }\n  }\n"]);
 
   _templateObject14 = function () {
     return data;
@@ -270,7 +260,7 @@ function _templateObject14() {
 }
 
 function _templateObject13() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  display: none;\n  align-items: center;\n  cursor: pointer;\n\n  ", ";\n"]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  align-items: center;\n"]);
 
   _templateObject13 = function () {
     return data;
@@ -419,8 +409,8 @@ const ListItemShowInactive = Object(styled_components__WEBPACK_IMPORTED_MODULE_2
 const ListItemStyleActiveWhenShowInactive = Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject9(), props => props.hideInactive === "inactive" && props.className === "active" && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject10()));
 const ListItem = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].li(_templateObject11(), ListItemHideInactive, ListItemStyleActive, ListItemShowInactive, ListItemStyleActiveWhenShowInactive);
 const Icons = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject12());
-const Icon2 = Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["default"])(_Icon__WEBPACK_IMPORTED_MODULE_8__["default"])(_templateObject13(), props => props.className === "active" && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject14()));
-const query = graphql_tag__WEBPACK_IMPORTED_MODULE_3___default()(_templateObject15());
+const ChevronIcon = Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject13());
+const query = graphql_tag__WEBPACK_IMPORTED_MODULE_3___default()(_templateObject14());
 
 const markup = (data, props) => {
   const activeCategory = props.activeCategory,
@@ -431,7 +421,8 @@ const markup = (data, props) => {
   const hideInactive = Object(_helpers__WEBPACK_IMPORTED_MODULE_6__["setClassName"])({
     target: true,
     index: activeCategoryIcon
-  }); // Parse categories into a list
+  });
+  console.log("i:" + hideInactive); // Parse categories into a list
 
   const items = data.categories.edges.map(edge => react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(ListItem, {
     key: edge.node.id,
@@ -443,7 +434,7 @@ const markup = (data, props) => {
     onClick: () => categoryClickHandler(edge.node.categoryId),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 119
+      lineNumber: 112
     },
     __self: undefined
   }, edge.node.name)); // Make sure the first category is marked active at the first load
@@ -455,50 +446,52 @@ const markup = (data, props) => {
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Container, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 138
+      lineNumber: 131
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(ListContainer, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 139
+      lineNumber: 132
     },
     __self: undefined
   }, items), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Icons, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 140
+      lineNumber: 133
     },
     __self: undefined
-  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Icon2, {
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Icon__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    as: ChevronIcon,
     className: hideInactive,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 141
+      lineNumber: 134
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_icons_fi__WEBPACK_IMPORTED_MODULE_4__["FiChevronDown"], {
     onClick: () => categoryIconClickHandler(),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 142
+      lineNumber: 135
     },
     __self: undefined
-  })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Icon2, {
+  })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Icon__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    as: ChevronIcon,
     className: Object(_helpers__WEBPACK_IMPORTED_MODULE_6__["setClassName"])({
       target: false,
       index: activeCategoryIcon
     }),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 144
+      lineNumber: 137
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_icons_fi__WEBPACK_IMPORTED_MODULE_4__["FiChevronUp"], {
     onClick: () => categoryIconClickHandler(),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 147
+      lineNumber: 141
     },
     __self: undefined
   }))));
@@ -631,11 +624,52 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Line__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../Line */ "./src/components/Line/index.js");
 /* harmony import */ var _Categories__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../Categories */ "./src/components/Categories/index.js");
 /* harmony import */ var _Icon__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../Icon */ "./src/components/Icon/index.js");
+/* harmony import */ var _Media__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../Media */ "./src/components/Media/index.js");
 
 var _jsxFileName = "/home/cs/work/inu-v2/react-src/src/components/Header/Header.js";
 
+function _templateObject5() {
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["", ""]);
+
+  _templateObject5 = function () {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject4() {
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["", ""]);
+
+  _templateObject4 = function () {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject3() {
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  display: flex;\n\n  ", "\n  ", "\n"]);
+
+  _templateObject3 = function () {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject2() {
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  flex-direction: row;\n"]);
+
+  _templateObject2 = function () {
+    return data;
+  };
+
+  return data;
+}
+
 function _templateObject() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])([""]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  flex-direction: column;\n"]);
 
   _templateObject = function () {
     return data;
@@ -652,55 +686,58 @@ function _templateObject() {
 
 
 
-const Container = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].header(_templateObject());
+
+const ContainerVertical = Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject());
+const ContainerHorizontal = Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject2());
+const Container = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].header(_templateObject3(), _Media__WEBPACK_IMPORTED_MODULE_9__["default"].mobile(_templateObject4(), ContainerVertical), _Media__WEBPACK_IMPORTED_MODULE_9__["default"].tablet(_templateObject5(), ContainerHorizontal));
 
 const Header = props => {
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Container, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16
+      lineNumber: 30
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Logo__WEBPACK_IMPORTED_MODULE_5__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 17
+      lineNumber: 31
     },
     __self: undefined
   }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Line__WEBPACK_IMPORTED_MODULE_6__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18
+      lineNumber: 32
     },
     __self: undefined
   }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Categories__WEBPACK_IMPORTED_MODULE_7__["default"], Object.assign({}, props, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19
+      lineNumber: 33
     },
     __self: undefined
   })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Icon__WEBPACK_IMPORTED_MODULE_8__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20
+      lineNumber: 34
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_icons_fi__WEBPACK_IMPORTED_MODULE_3__["FiList"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21
+      lineNumber: 35
     },
     __self: undefined
   })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Icon__WEBPACK_IMPORTED_MODULE_8__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 23
+      lineNumber: 37
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_icons_fi__WEBPACK_IMPORTED_MODULE_3__["FiSun"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 24
+      lineNumber: 38
     },
     __self: undefined
   })));
@@ -883,11 +920,32 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var flatted__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! flatted */ "./node_modules/flatted/esm/index.js");
 
 var _jsxFileName = "/home/cs/work/inu-v2/react-src/src/components/Icon/Icon.js";
 
+function _templateObject3() {
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n      display: none;\n    "]);
+
+  _templateObject3 = function () {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject2() {
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n      display: flex;\n    "]);
+
+  _templateObject2 = function () {
+    return data;
+  };
+
+  return data;
+}
+
 function _templateObject() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])([""]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  cursor: pointer;\n\n  ", ";\n\n  ", ";\n"]);
 
   _templateObject = function () {
     return data;
@@ -898,14 +956,17 @@ function _templateObject() {
 
 
 
-const Container = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject());
+
+const Container = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject(), props => props.className === "active" && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject2()), props => props.className === "inactive" && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject3()));
 
 const Icon = props => {
-  const children = props.children;
+  const children = props.children,
+        className = props.className;
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Container, {
+    className: className,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 8
+      lineNumber: 23
     },
     __self: undefined
   }, children);
@@ -2502,5 +2563,5 @@ module.exports = __webpack_require__(/*! /home/cs/work/inu-v2/react-src/src/inde
 
 /***/ })
 
-},[[0,"runtime~main",0]]]);
+},[[0,"runtime~main",1]]]);
 //# sourceMappingURL=main.chunk.js.map
