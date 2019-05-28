@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled, { css } from "styled-components";
 import gql from "graphql-tag";
-import { FaChevronDown, FaChevronUp } from "react-icons/fa";
+import { FiChevronDown, FiChevronUp, FiList, FiSun } from "react-icons/fi";
 
 import { useQuery } from "./../../hooks";
 import { setClassName } from "../../helpers";
@@ -124,14 +124,16 @@ const markup = (data, props) => {
       <ListContainer>{items}</ListContainer>
       <Icons>
         <Icon className={hideInactive}>
-          <FaChevronDown onClick={() => categoryIconClickHandler()} />
+          <FiChevronDown onClick={() => categoryIconClickHandler()} />
         </Icon>
         <Icon
           className={setClassName({ target: false, index: activeCategoryIcon })}
         >
-          <FaChevronUp onClick={() => categoryIconClickHandler()} />
+          <FiChevronUp onClick={() => categoryIconClickHandler()} />
         </Icon>
       </Icons>
+      <FiList />
+      <FiSun />
     </Container>
   );
 };
