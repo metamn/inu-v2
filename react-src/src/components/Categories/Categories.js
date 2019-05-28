@@ -71,11 +71,11 @@ const ListItem = styled.li`
 
 const Icons = styled.div`
   margin-left: var(--lem);
-  margin-top: calc(var(--lem) / 3);
 `;
 
 const ChevronIcon = css`
   align-items: center;
+  background: red;
 `;
 
 const query = gql`

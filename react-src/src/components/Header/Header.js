@@ -10,19 +10,15 @@ import Categories from "../Categories";
 import Icon from "../Icon";
 import Media from "../Media";
 
-const ContainerVertical = css`
-  flex-direction: column;
-`;
-
-const ContainerHorizontal = css`
-  flex-direction: row;
-`;
-
 const Container = styled.header`
   display: flex;
 
-  ${Media.mobile`${ContainerVertical}`}
-  ${Media.tablet`${ContainerHorizontal}`}
+  ${Media.mobile`flex-direction: column;`}
+  ${Media.tablet`flex-direction: row`}
+`;
+
+const HeaderIcon = styled(Icon)`
+  margin-left: var(--lem);
 `;
 
 const Header = props => {
@@ -31,12 +27,12 @@ const Header = props => {
       <Logo />
       <Line />
       <Categories {...props} />
-      <Icon>
+      <HeaderIcon size={1.25}>
         <FiList />
-      </Icon>
-      <Icon>
+      </HeaderIcon>
+      <HeaderIcon size={1.25}>
         <FiSun />
-      </Icon>
+      </HeaderIcon>
     </Container>
   );
 };

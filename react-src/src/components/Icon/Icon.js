@@ -6,6 +6,17 @@ const Container = styled.div`
   cursor: pointer;
 
   ${props =>
+    props.size &&
+    css`
+      width: calc(var(--lem) * ${props.size});
+      height: calc(var(--lem) * ${props.size});
+
+      svg {
+        font-size: calc(var(--lem) * ${props.size});
+      }
+    `}
+
+  ${props =>
     props.className === "active" &&
     css`
       display: flex;
@@ -19,8 +30,14 @@ const Container = styled.div`
 `;
 
 const Icon = props => {
-  const { children, className } = props;
-  return <Container className={className}>{children}</Container>;
+  const defaults = { size: 1.5, ...props };
+  const { children, className, size } = defaults;
+
+  return (
+    <Container size={size} className={className}>
+      {children}
+    </Container>
+  );
 };
 
 export default Icon;
