@@ -8,6 +8,7 @@ import { setClassName } from "../../helpers";
 
 const Container = styled(List)`
   display: flex;
+  margin-top: var(--lem);
 `;
 
 const Bullets = props => {
