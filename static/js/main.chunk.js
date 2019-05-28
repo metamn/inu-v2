@@ -206,8 +206,18 @@ __webpack_require__.r(__webpack_exports__);
 
 var _jsxFileName = "/home/cs/work/inu-v2/react-src/src/components/Categories/Categories.js";
 
+function _templateObject3() {
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n      color: white;\n      background: black;\n    "]);
+
+  _templateObject3 = function () {
+    return data;
+  };
+
+  return data;
+}
+
 function _templateObject2() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  font-size: 1.333em;\n"]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  font-size: 1.333em;\n  cursor: pointer;\n\n  ", ";\n"]);
 
   _templateObject2 = function () {
     return data;
@@ -232,35 +242,47 @@ function _templateObject() {
 
 
 const query = graphql_tag__WEBPACK_IMPORTED_MODULE_3___default()(_templateObject());
-const ListItem = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].li(_templateObject2());
+const ListItem = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].li(_templateObject2(), props => props.className === "active" && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject3()));
 
-const markup = data => {
-  const items = data.categories.edges.map(edge => react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(ListItem, {
+const markup = (data, props) => {
+  const activeCategory = props.activeCategory,
+        categoryClickHandler = props.categoryClickHandler;
+
+  const setClassName = index => {
+    return index === activeCategory ? "active" : "inactive";
+  };
+
+  const items = data.categories.edges.map((edge, index) => react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(ListItem, {
     key: edge.node.id,
+    className: setClassName(index),
+    onClick: () => categoryClickHandler(index),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 27
+      lineNumber: 41
     },
     __self: undefined
   }, edge.node.name));
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_List__WEBPACK_IMPORTED_MODULE_5__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 30
+      lineNumber: 50
     },
     __self: undefined
   }, items);
 };
 
-const Categories = () => {
-  return Object(_hooks__WEBPACK_IMPORTED_MODULE_4__["useQuery"])(query, markup);
+const Categories = props => {
+  const variables = {};
+  return Object(_hooks__WEBPACK_IMPORTED_MODULE_4__["useQuery"])(query, markup, variables, props);
 }; // Which category to display at the Homepage
 
 
 const getFirstCategory = data => {
   try {
+    console.log("return ok");
     return data.categories.edges[0].node.categoryId;
   } catch (error) {
+    console.log("return null");
     return null;
   }
 };
@@ -435,15 +457,20 @@ const Container = styled_components__WEBPACK_IMPORTED_MODULE_4__["default"].div(
 const Home = () => {
   const categoryForHome = Object(_Categories__WEBPACK_IMPORTED_MODULE_11__["getCategoryForHome"])();
 
-  const _useState = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])(categoryForHome),
+  const _useState = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])(1),
         _useState2 = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_useState, 2),
         activeCategory = _useState2[0],
         setActiveCategory = _useState2[1];
 
+  const categoryClickHandler = index => {
+    console.log("clicked");
+    setActiveCategory(index);
+  };
+
   return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_2___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Reset__WEBPACK_IMPORTED_MODULE_6__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 34
+      lineNumber: 39
     },
     __self: undefined
   }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_TypographicGrid__WEBPACK_IMPORTED_MODULE_7__["default"], {
@@ -454,38 +481,41 @@ const Home = () => {
     lineColor: "#666",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35
+      lineNumber: 40
     },
     __self: undefined
   }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Container, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 42
+      lineNumber: 47
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Logo__WEBPACK_IMPORTED_MODULE_9__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 43
+      lineNumber: 48
     },
     __self: undefined
   }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Line__WEBPACK_IMPORTED_MODULE_10__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 44
+      lineNumber: 49
     },
     __self: undefined
   }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Categories__WEBPACK_IMPORTED_MODULE_11__["Categories"], {
+    activeCategory: activeCategory,
+    categoryClickHandler: categoryClickHandler,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45
+      lineNumber: 50
     },
     __self: undefined
   }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Slider__WEBPACK_IMPORTED_MODULE_12__["default"], {
     width: "90vw",
+    category: activeCategory,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 46
+      lineNumber: 54
     },
     __self: undefined
   })));
@@ -1127,7 +1157,7 @@ __webpack_require__.r(__webpack_exports__);
 var _jsxFileName = "/home/cs/work/inu-v2/react-src/src/components/Slider/Slider.js";
 
 function _templateObject4() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_1__["default"])(["\n  query posts($first: Int) {\n    posts(first: $first) {\n      edges {\n        node {\n          id\n          title\n          featuredImage {\n            id\n            sourceUrl\n          }\n        }\n      }\n    }\n  }\n"]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_1__["default"])(["\n  query posts($first: Int, $category: Int) {\n    posts(first: $first, where: { categoryId: $category }) {\n      edges {\n        node {\n          id\n          title\n          featuredImage {\n            id\n            sourceUrl\n          }\n        }\n      }\n    }\n  }\n"]);
 
   _templateObject4 = function () {
     return data;
@@ -1222,7 +1252,8 @@ const markup = (data, queryProps) => {
 };
 
 const Slider = props => {
-  const width = props.width; //
+  const width = props.width,
+        category = props.category; //
   // 1. Vars needed by all things below
   //
   // We need to have a `ref` associated which each slide to be able to scroll to
@@ -1284,7 +1315,8 @@ const Slider = props => {
 
 
   const variables = {
-    first: 10
+    first: 10,
+    category: category
   };
   const queryProps = {
     refs: refs,
@@ -2046,5 +2078,5 @@ module.exports = __webpack_require__(/*! /home/cs/work/inu-v2/react-src/src/inde
 
 /***/ })
 
-},[[0,"runtime~main",0]]]);
+},[[0,"runtime~main",1]]]);
 //# sourceMappingURL=main.chunk.js.map

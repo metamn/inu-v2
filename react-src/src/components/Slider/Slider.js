@@ -53,8 +53,8 @@ const Slides = styled(List)`
 `;
 
 const query = gql`
-  query posts($first: Int) {
-    posts(first: $first) {
+  query posts($first: Int, $category: Int) {
+    posts(first: $first, where: { categoryId: $category }) {
       edges {
         node {
           id
@@ -100,7 +100,7 @@ const markup = (data, queryProps) => {
 };
 
 const Slider = props => {
-  const { width } = props;
+  const { width, category } = props;
 
   //
   // 1. Vars needed by all things below
@@ -174,7 +174,7 @@ const Slider = props => {
   // - we can't return an array which later will be processed like Bullets
   // - the returned array is first empty then only later becomes populated
   // - therefore we return the processed info inside `slides`
-  const variables = { first: 10 };
+  const variables = { first: 10, category: category };
   const queryProps = {
     refs: refs,
     imageClickHandler: imageClickHandler,

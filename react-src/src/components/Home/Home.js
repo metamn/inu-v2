@@ -27,7 +27,12 @@ const Container = styled.div`
 
 const Home = () => {
   const categoryForHome = getCategoryForHome();
-  const [activeCategory, setActiveCategory] = useState(categoryForHome);
+  const [activeCategory, setActiveCategory] = useState(1);
+
+  const categoryClickHandler = index => {
+    console.log("clicked");
+    setActiveCategory(index);
+  };
 
   return (
     <>
@@ -42,8 +47,11 @@ const Home = () => {
       <Container>
         <Logo />
         <Line />
-        <Categories />
-        <Slider width="90vw" />
+        <Categories
+          activeCategory={activeCategory}
+          categoryClickHandler={categoryClickHandler}
+        />
+        <Slider width="90vw" category={activeCategory} />
       </Container>
     </>
   );
