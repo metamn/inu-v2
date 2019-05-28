@@ -13,27 +13,27 @@ const Container = styled.nav`
 
 const ListContainer = styled(List)``;
 
-const ListItem = styled.li`
-  font-size: 1.333em;
-  cursor: pointer;
-  width: 100%;
-
-  // Only the active item is displayed
+// Hide inactive items
+const ListItemHideInactive = css`
   ${props =>
     props.hideInactive === "active" &&
     css`
       display: none;
     `};
+`;
 
-  // The style of the active item
+// Style the active item
+const ListItemStyleActive = css`
   ${props =>
     props.className === "active" &&
     css`
       display: flex;
       cursor: default;
     `};
+`;
 
-  // All items are displayed
+// The style of items when all of them are displayed
+const ListItemShowInactive = css`
   ${props =>
     props.hideInactive === "inactive" &&
     css`
@@ -44,14 +44,27 @@ const ListItem = styled.li`
         font-style: italic;
       }
     `};
+`;
 
-  // The style of the active item when all items are displayed
+// The style of the active item when all items are displayed
+const ListItemStyleActiveWhenShowInactive = css`
   ${props =>
     props.hideInactive === "inactive" &&
     props.className === "active" &&
     css`
       font-style: italic;
     `};
+`;
+
+const ListItem = styled.li`
+  font-size: 1.333em;
+  cursor: pointer;
+  width: 100%;
+
+  ${ListItemHideInactive}
+  ${ListItemStyleActive}
+  ${ListItemShowInactive}
+  ${ListItemStyleActiveWhenShowInactive}
 `;
 
 const Icons = styled.div`
