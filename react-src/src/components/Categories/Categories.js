@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import styled, { css } from "styled-components";
 import gql from "graphql-tag";
-import { FiChevronDown, FiChevronUp, FiList, FiSun } from "react-icons/fi";
+import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 
 import { useQuery } from "./../../hooks";
 import { setClassName } from "../../helpers";
+
 import List from "../List";
+import Icon from "../Icon";
 
 const Container = styled.nav`
   display: flex;
@@ -72,7 +74,7 @@ const Icons = styled.div`
   margin-top: calc(var(--lem) / 3);
 `;
 
-const Icon = styled.div`
+const Icon2 = styled(Icon)`
   display: none;
   align-items: center;
   cursor: pointer;
@@ -136,17 +138,15 @@ const markup = (data, props) => {
     <Container>
       <ListContainer>{items}</ListContainer>
       <Icons>
-        <Icon className={hideInactive}>
+        <Icon2 className={hideInactive}>
           <FiChevronDown onClick={() => categoryIconClickHandler()} />
-        </Icon>
-        <Icon
+        </Icon2>
+        <Icon2
           className={setClassName({ target: false, index: activeCategoryIcon })}
         >
           <FiChevronUp onClick={() => categoryIconClickHandler()} />
-        </Icon>
+        </Icon2>
       </Icons>
-      <FiList />
-      <FiSun />
     </Container>
   );
 };

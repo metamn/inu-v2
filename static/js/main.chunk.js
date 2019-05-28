@@ -245,6 +245,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _hooks__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./../../hooks */ "./src/hooks/index.js");
 /* harmony import */ var _helpers__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../helpers */ "./src/helpers/index.js");
 /* harmony import */ var _List__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../List */ "./src/components/List/index.js");
+/* harmony import */ var _Icon__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../Icon */ "./src/components/Icon/index.js");
 
 var _jsxFileName = "/home/cs/work/inu-v2/react-src/src/components/Categories/Categories.js";
 
@@ -405,6 +406,7 @@ function _templateObject() {
 
 
 
+
 const Container = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].nav(_templateObject());
 const ListContainer = Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["default"])(_List__WEBPACK_IMPORTED_MODULE_7__["default"])(_templateObject2()); // Hide inactive items
 
@@ -417,7 +419,7 @@ const ListItemShowInactive = Object(styled_components__WEBPACK_IMPORTED_MODULE_2
 const ListItemStyleActiveWhenShowInactive = Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject9(), props => props.hideInactive === "inactive" && props.className === "active" && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject10()));
 const ListItem = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].li(_templateObject11(), ListItemHideInactive, ListItemStyleActive, ListItemShowInactive, ListItemStyleActiveWhenShowInactive);
 const Icons = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject12());
-const Icon = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject13(), props => props.className === "active" && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject14()));
+const Icon2 = Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["default"])(_Icon__WEBPACK_IMPORTED_MODULE_8__["default"])(_templateObject13(), props => props.className === "active" && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject14()));
 const query = graphql_tag__WEBPACK_IMPORTED_MODULE_3___default()(_templateObject15());
 
 const markup = (data, props) => {
@@ -441,7 +443,7 @@ const markup = (data, props) => {
     onClick: () => categoryClickHandler(edge.node.categoryId),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 117
+      lineNumber: 119
     },
     __self: undefined
   }, edge.node.name)); // Make sure the first category is marked active at the first load
@@ -453,65 +455,53 @@ const markup = (data, props) => {
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Container, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 136
+      lineNumber: 138
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(ListContainer, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 137
+      lineNumber: 139
     },
     __self: undefined
   }, items), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Icons, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 138
+      lineNumber: 140
     },
     __self: undefined
-  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Icon, {
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Icon2, {
     className: hideInactive,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 139
+      lineNumber: 141
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_icons_fi__WEBPACK_IMPORTED_MODULE_4__["FiChevronDown"], {
     onClick: () => categoryIconClickHandler(),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 140
+      lineNumber: 142
     },
     __self: undefined
-  })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Icon, {
+  })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Icon2, {
     className: Object(_helpers__WEBPACK_IMPORTED_MODULE_6__["setClassName"])({
       target: false,
       index: activeCategoryIcon
     }),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 142
+      lineNumber: 144
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_icons_fi__WEBPACK_IMPORTED_MODULE_4__["FiChevronUp"], {
     onClick: () => categoryIconClickHandler(),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 145
+      lineNumber: 147
     },
     __self: undefined
-  }))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_icons_fi__WEBPACK_IMPORTED_MODULE_4__["FiList"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 148
-    },
-    __self: undefined
-  }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_icons_fi__WEBPACK_IMPORTED_MODULE_4__["FiSun"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 149
-    },
-    __self: undefined
-  }));
+  }))));
 };
 
 const Categories = props => {
@@ -635,10 +625,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-/* harmony import */ var _Spacing__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Spacing */ "./src/components/Spacing/index.js");
-/* harmony import */ var _Logo__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../Logo */ "./src/components/Logo/index.js");
-/* harmony import */ var _Line__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../Line */ "./src/components/Line/index.js");
-/* harmony import */ var _Categories__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../Categories */ "./src/components/Categories/index.js");
+/* harmony import */ var react_icons_fi__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-icons/fi */ "./node_modules/react-icons/fi/index.esm.js");
+/* harmony import */ var _Spacing__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../Spacing */ "./src/components/Spacing/index.js");
+/* harmony import */ var _Logo__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../Logo */ "./src/components/Logo/index.js");
+/* harmony import */ var _Line__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../Line */ "./src/components/Line/index.js");
+/* harmony import */ var _Categories__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../Categories */ "./src/components/Categories/index.js");
+/* harmony import */ var _Icon__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../Icon */ "./src/components/Icon/index.js");
 
 var _jsxFileName = "/home/cs/work/inu-v2/react-src/src/components/Header/Header.js";
 
@@ -658,31 +650,57 @@ function _templateObject() {
 
 
 
+
+
 const Container = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].header(_templateObject());
 
 const Header = props => {
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Container, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 13
-    },
-    __self: undefined
-  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Logo__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 14
-    },
-    __self: undefined
-  }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Line__WEBPACK_IMPORTED_MODULE_5__["default"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 15
-    },
-    __self: undefined
-  }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Categories__WEBPACK_IMPORTED_MODULE_6__["default"], Object.assign({}, props, {
-    __source: {
-      fileName: _jsxFileName,
       lineNumber: 16
+    },
+    __self: undefined
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Logo__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 17
+    },
+    __self: undefined
+  }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Line__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 18
+    },
+    __self: undefined
+  }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Categories__WEBPACK_IMPORTED_MODULE_7__["default"], Object.assign({}, props, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 19
+    },
+    __self: undefined
+  })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Icon__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 20
+    },
+    __self: undefined
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_icons_fi__WEBPACK_IMPORTED_MODULE_3__["FiList"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 21
+    },
+    __self: undefined
+  })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Icon__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 23
+    },
+    __self: undefined
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_icons_fi__WEBPACK_IMPORTED_MODULE_3__["FiSun"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 24
     },
     __self: undefined
   })));
@@ -847,6 +865,67 @@ const Home = () => {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Home__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Home */ "./src/components/Home/Home.js");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _Home__WEBPACK_IMPORTED_MODULE_0__["default"]; });
+
+
+
+/***/ }),
+
+/***/ "./src/components/Icon/Icon.js":
+/*!*************************************!*\
+  !*** ./src/components/Icon/Icon.js ***!
+  \*************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/esm/taggedTemplateLiteral */ "./node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/esm/taggedTemplateLiteral.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+
+var _jsxFileName = "/home/cs/work/inu-v2/react-src/src/components/Icon/Icon.js";
+
+function _templateObject() {
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])([""]);
+
+  _templateObject = function () {
+    return data;
+  };
+
+  return data;
+}
+
+
+
+const Container = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject());
+
+const Icon = props => {
+  const children = props.children;
+  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Container, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 8
+    },
+    __self: undefined
+  }, children);
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Icon);
+
+/***/ }),
+
+/***/ "./src/components/Icon/index.js":
+/*!**************************************!*\
+  !*** ./src/components/Icon/index.js ***!
+  \**************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Icon__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Icon */ "./src/components/Icon/Icon.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _Icon__WEBPACK_IMPORTED_MODULE_0__["default"]; });
 
 
 
