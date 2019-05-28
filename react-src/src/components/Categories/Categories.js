@@ -5,8 +5,8 @@ import { useQuery } from "./../../hooks";
 import List from "../List";
 
 const query = gql`
-  query Categories {
-    categories {
+  query Categories($hideEmpty: Boolean) {
+    categories(where: { hideEmpty: $hideEmpty }) {
       edges {
         node {
           id
@@ -51,7 +51,7 @@ const markup = (data, props) => {
 };
 
 const Categories = props => {
-  const variables = {};
+  const variables = { hideEmpty: true };
   return useQuery(query, markup, variables, props);
 };
 
