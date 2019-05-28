@@ -1,7 +1,9 @@
 import React from "react";
 import styled, { css } from "styled-components";
 import gql from "graphql-tag";
+
 import { useQuery } from "./../../hooks";
+import { setClassName } from "../../helpers";
 import List from "../List";
 
 const query = gql`
@@ -33,14 +35,13 @@ const ListItem = styled.li`
 const markup = (data, props) => {
   const { activeCategory, categoryClickHandler } = props;
 
-  const setClassName = index => {
-    return index === activeCategory ? "active" : "inactive";
-  };
-
   const items = data.categories.edges.map(edge => (
     <ListItem
       key={edge.node.id}
-      className={setClassName(edge.node.categoryId)}
+      className={setClassName({
+        target: activeCategory,
+        index: edge.node.categoryId
+      })}
       onClick={() => categoryClickHandler(edge.node.categoryId)}
     >
       {edge.node.name}

@@ -58,8 +58,18 @@ __webpack_require__.r(__webpack_exports__);
 
 var _jsxFileName = "/home/cs/work/inu-v2/react-src/src/components/Bullet/Bullet.js";
 
+function _templateObject3() {
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n      border-color: black;\n    "]);
+
+  _templateObject3 = function () {
+    return data;
+  };
+
+  return data;
+}
+
 function _templateObject2() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n      color: black;\n      background: #000;\n    "]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  border: none;\n  margin: 0;\n  padding: 0;\n  background-color: transparent;\n\n  width: calc(var(--lem) * 2);\n  height: calc(var(--lem) / 3);\n  border-bottom: calc(var(--lem) / 3) solid lightgrey;\n\n  margin-right: var(--lem);\n  cursor: pointer;\n\n  ", ";\n"]);
 
   _templateObject2 = function () {
     return data;
@@ -69,7 +79,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  margin-right: var(--lem);\n  cursor: pointer;\n\n  ", "\n"]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])([""]);
 
   _templateObject = function () {
     return data;
@@ -80,21 +90,28 @@ function _templateObject() {
 
 
 
-const Button = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].button(_templateObject(), props => props.className === "active" && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject2()));
+const Container = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].li(_templateObject());
+const Button = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].button(_templateObject2(), props => props.className === "active" && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject3()));
 
 const Bullet = props => {
   const className = props.className,
         bulletClickHandler = props.bulletClickHandler,
         index = props.index;
-  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Button, {
+  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Container, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 29
+    },
+    __self: undefined
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Button, {
     className: className,
     onClick: () => bulletClickHandler(index),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19
+      lineNumber: 30
     },
     __self: undefined
-  });
+  }, "\xA0"));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Bullet);
@@ -126,43 +143,67 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _Bullet__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Bullet */ "./src/components/Bullet/index.js");
-/* harmony import */ var _Repeat__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Repeat */ "./src/components/Repeat/index.js");
+/* harmony import */ var _home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/esm/taggedTemplateLiteral */ "./node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/esm/taggedTemplateLiteral.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var _Bullet__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Bullet */ "./src/components/Bullet/index.js");
+/* harmony import */ var _Repeat__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../Repeat */ "./src/components/Repeat/index.js");
+/* harmony import */ var _List__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../List */ "./src/components/List/index.js");
+/* harmony import */ var _helpers__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../helpers */ "./src/helpers/index.js");
+
 var _jsxFileName = "/home/cs/work/inu-v2/react-src/src/components/Bullets/Bullets.js";
 
+function _templateObject() {
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  display: flex;\n"]);
+
+  _templateObject = function () {
+    return data;
+  };
+
+  return data;
+}
 
 
+
+
+
+
+
+const Container = Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["default"])(_List__WEBPACK_IMPORTED_MODULE_5__["default"])(_templateObject());
 
 const Bullets = props => {
   const numberOfSlides = props.numberOfSlides,
         activeBullet = props.activeBullet,
         bulletClickHandler = props.bulletClickHandler;
-
-  const setClassName = index => {
-    return index === activeBullet ? "active" : "inactive";
-  };
-
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Repeat__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Container, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 17
+    },
+    __self: undefined
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Repeat__WEBPACK_IMPORTED_MODULE_4__["default"], {
     numberOfTimes: numberOfSlides,
     startAt: 0,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 14
+      lineNumber: 18
     },
     __self: undefined
-  }, i => react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Bullet__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    className: setClassName(i),
+  }, i => react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Bullet__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    className: Object(_helpers__WEBPACK_IMPORTED_MODULE_6__["setClassName"])({
+      target: activeBullet,
+      index: i
+    }),
     key: i,
     index: i,
     bulletClickHandler: bulletClickHandler,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16
+      lineNumber: 20
     },
     __self: undefined
-  }));
+  })));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Bullets);
@@ -201,7 +242,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var graphql_tag__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! graphql-tag */ "./node_modules/graphql-tag/src/index.js");
 /* harmony import */ var graphql_tag__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(graphql_tag__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _hooks__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./../../hooks */ "./src/hooks/index.js");
-/* harmony import */ var _List__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../List */ "./src/components/List/index.js");
+/* harmony import */ var _helpers__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../helpers */ "./src/helpers/index.js");
+/* harmony import */ var _List__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../List */ "./src/components/List/index.js");
 
 var _jsxFileName = "/home/cs/work/inu-v2/react-src/src/components/Categories/Categories.js";
 
@@ -240,31 +282,30 @@ function _templateObject() {
 
 
 
+
 const query = graphql_tag__WEBPACK_IMPORTED_MODULE_3___default()(_templateObject());
 const ListItem = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].li(_templateObject2(), props => props.className === "active" && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject3()));
 
 const markup = (data, props) => {
   const activeCategory = props.activeCategory,
         categoryClickHandler = props.categoryClickHandler;
-
-  const setClassName = index => {
-    return index === activeCategory ? "active" : "inactive";
-  };
-
   const items = data.categories.edges.map(edge => react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(ListItem, {
     key: edge.node.id,
-    className: setClassName(edge.node.categoryId),
+    className: Object(_helpers__WEBPACK_IMPORTED_MODULE_5__["setClassName"])({
+      target: activeCategory,
+      index: edge.node.categoryId
+    }),
     onClick: () => categoryClickHandler(edge.node.categoryId),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41
+      lineNumber: 39
     },
     __self: undefined
   }, edge.node.name));
-  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_List__WEBPACK_IMPORTED_MODULE_5__["default"], {
+  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_List__WEBPACK_IMPORTED_MODULE_6__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 50
+      lineNumber: 51
     },
     __self: undefined
   }, items);
@@ -1735,6 +1776,41 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./src/helpers/index.js":
+/*!******************************!*\
+  !*** ./src/helpers/index.js ***!
+  \******************************/
+/*! exports provided: setClassName */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _setClassName__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./setClassName */ "./src/helpers/setClassName.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "setClassName", function() { return _setClassName__WEBPACK_IMPORTED_MODULE_0__["default"]; });
+
+
+
+/***/ }),
+
+/***/ "./src/helpers/setClassName.js":
+/*!*************************************!*\
+  !*** ./src/helpers/setClassName.js ***!
+  \*************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+const setClassName = props => {
+  const target = props.target,
+        index = props.index;
+  return index === target ? "active" : "inactive";
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (setClassName);
+
+/***/ }),
+
 /***/ "./src/hooks/index.js":
 /*!****************************!*\
   !*** ./src/hooks/index.js ***!
@@ -2057,5 +2133,5 @@ module.exports = __webpack_require__(/*! /home/cs/work/inu-v2/react-src/src/inde
 
 /***/ })
 
-},[[0,"runtime~main",1]]]);
+},[[0,"runtime~main",0]]]);
 //# sourceMappingURL=main.chunk.js.map
