@@ -1,8 +1,18 @@
 import React from "react";
 import gql from "graphql-tag";
+import styled, { css } from "styled-components";
+
 import { useQuery } from "../../hooks";
 
 import Post from "../Post";
+
+const Container = styled.section`
+  width: 100%;
+  margin-top: calc(var(--lem) * 2);
+
+  display: flex;
+  flex-wrap: wrap;
+`;
 
 const query = gql`
   query posts($first: Int, $category: Int) {
@@ -41,7 +51,7 @@ const Thumbs = props => {
   const queryProps = { postType: "thumb" };
   const { posts } = useQuery(query, markup, variables, queryProps);
 
-  return <>{posts}</>;
+  return <Container>{posts}</Container>;
 };
 
 export default Thumbs;

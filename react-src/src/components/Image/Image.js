@@ -4,7 +4,7 @@ import styled, { css } from "styled-components";
 
 const placeholder = props => {
   const Placeholder = styled.div`
-    background-color: #000;
+    background-color: white;
     width: 500px;
     height: 300px;
 
@@ -30,6 +30,10 @@ const placeholder = props => {
   return <Placeholder {...props} />;
 };
 
+const placeholder2 = (
+  <div style={{ backgroundColor: "white", height: 300, width: 500 }} />
+);
+
 const Img = styled.img`
   max-width: 80vw;
   max-height: 70vh;
@@ -39,7 +43,7 @@ const Img = styled.img`
 `;
 
 const ImgThumb = styled.img`
-  max-width: 10em;
+  max-width: calc(var(--lem) * 15);
   width: 100%;
   height: auto;
 `;
@@ -61,7 +65,7 @@ const Image = props => {
           <ProgressiveImage src={src} placeholder="">
             {(src, loading) => {
               return loading ? (
-                placeholder({ width: "10em", height: "auto" })
+                placeholder({ width: "calc(var(--lem) * 15)", height: "auto" })
               ) : (
                 <ImgThumb src={src} alt={title} />
               );
@@ -74,7 +78,7 @@ const Image = props => {
           <ProgressiveImage src={src} placeholder="">
             {(src, loading) => {
               return loading ? (
-                placeholder
+                placeholder2
               ) : (
                 <Img
                   src={src}

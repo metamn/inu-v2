@@ -1135,7 +1135,7 @@ __webpack_require__.r(__webpack_exports__);
 var _jsxFileName = "/home/cs/work/inu-v2/react-src/src/components/Image/Image.js";
 
 function _templateObject6() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  max-width: 10em;\n  width: 100%;\n  height: auto;\n"]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  max-width: calc(var(--lem) * 15);\n  width: 100%;\n  height: auto;\n"]);
 
   _templateObject6 = function () {
     return data;
@@ -1185,7 +1185,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n    background-color: #000;\n    width: 500px;\n    height: 300px;\n\n    ", ";\n\n    ", ";\n\n    ", ";\n  "]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n    background-color: white;\n    width: 500px;\n    height: 300px;\n\n    ", ";\n\n    ", ";\n\n    ", ";\n  "]);
 
   _templateObject = function () {
     return data;
@@ -1209,6 +1209,18 @@ const placeholder = props => {
   }));
 };
 
+const placeholder2 = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+  style: {
+    backgroundColor: "white",
+    height: 300,
+    width: 500
+  },
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 34
+  },
+  __self: undefined
+});
 const Img = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].img(_templateObject5());
 const ImgThumb = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].img(_templateObject6());
 
@@ -1228,19 +1240,19 @@ const Image = props => {
           placeholder: "",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 61
+            lineNumber: 65
           },
           __self: undefined
         }, (src, loading) => {
           return loading ? placeholder({
-            width: "10em",
+            width: "calc(var(--lem) * 15)",
             height: "auto"
           }) : react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(ImgThumb, {
             src: src,
             alt: title,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 66
+              lineNumber: 70
             },
             __self: undefined
           });
@@ -1253,17 +1265,17 @@ const Image = props => {
           placeholder: "",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 74
+            lineNumber: 78
           },
           __self: undefined
         }, (src, loading) => {
-          return loading ? placeholder : react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Img, {
+          return loading ? placeholder2 : react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Img, {
             src: src,
             alt: title,
             onClick: () => imageClickHandler(index, numberOfSlides),
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 79
+              lineNumber: 83
             },
             __self: undefined
           });
@@ -1274,7 +1286,7 @@ const Image = props => {
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Display, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 91
+      lineNumber: 95
     },
     __self: undefined
   });
@@ -1540,8 +1552,28 @@ __webpack_require__.r(__webpack_exports__);
 
 var _jsxFileName = "/home/cs/work/inu-v2/react-src/src/components/Post/Post.js";
 
-function _templateObject3() {
+function _templateObject5() {
   const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  display: none;\n"]);
+
+  _templateObject5 = function () {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject4() {
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n      width: ", ";\n    "]);
+
+  _templateObject4 = function () {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject3() {
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  ", "\n\n  ", "\n"]);
 
   _templateObject3 = function () {
     return data;
@@ -1551,7 +1583,7 @@ function _templateObject3() {
 }
 
 function _templateObject2() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n      width: ", ";\n    "]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n      margin-right: var(--lem);\n      margin-bottom: var(--lem);\n    "]);
 
   _templateObject2 = function () {
     return data;
@@ -1573,8 +1605,9 @@ function _templateObject() {
 
 
 
-const Article = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].article(_templateObject(), props => props.width && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject2(), props.width));
-const Title = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].h3(_templateObject3());
+const ArticleThumb = Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject(), props => props.postType === "thumb" && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject2()));
+const Article = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].article(_templateObject3(), props => props.width && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject4(), props.width), ArticleThumb);
+const Title = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].h3(_templateObject5());
 
 const Post = props => {
   const node = props.node,
@@ -1595,15 +1628,16 @@ const Post = props => {
 
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Article, {
     width: width,
+    postType: postType,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 33
+      lineNumber: 44
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Title, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 34
+      lineNumber: 45
     },
     __self: undefined
   }, title), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Image__WEBPACK_IMPORTED_MODULE_3__["default"], Object.assign({
@@ -1613,7 +1647,7 @@ const Post = props => {
   }, props, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35
+      lineNumber: 46
     },
     __self: undefined
   })));
@@ -2165,13 +2199,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var graphql_tag__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! graphql-tag */ "./node_modules/graphql-tag/src/index.js");
 /* harmony import */ var graphql_tag__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(graphql_tag__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _hooks__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../hooks */ "./src/hooks/index.js");
-/* harmony import */ var _Post__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../Post */ "./src/components/Post/index.js");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var _hooks__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../hooks */ "./src/hooks/index.js");
+/* harmony import */ var _Post__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../Post */ "./src/components/Post/index.js");
 
 var _jsxFileName = "/home/cs/work/inu-v2/react-src/src/components/Thumbs/Thumbs.js";
 
-function _templateObject() {
+function _templateObject2() {
   const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  query posts($first: Int, $category: Int) {\n    posts(first: $first, where: { categoryId: $category }) {\n      edges {\n        node {\n          id\n          title\n          featuredImage {\n            id\n            sourceUrl\n          }\n        }\n      }\n    }\n  }\n"]);
+
+  _templateObject2 = function () {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject() {
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  width: 100%;\n  margin-top: calc(var(--lem) * 2);\n\n  display: flex;\n  flex-wrap: wrap;\n"]);
 
   _templateObject = function () {
     return data;
@@ -2184,18 +2229,20 @@ function _templateObject() {
 
 
 
-const query = graphql_tag__WEBPACK_IMPORTED_MODULE_2___default()(_templateObject());
+
+const Container = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].section(_templateObject());
+const query = graphql_tag__WEBPACK_IMPORTED_MODULE_2___default()(_templateObject2());
 
 const markup = (data, queryProps) => {
   const postType = queryProps.postType;
   const postsWithImage = data.posts.edges.filter(edge => edge.node.featuredImage);
   const posts = postsWithImage.map((edge, index) => {
-    return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Post__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Post__WEBPACK_IMPORTED_MODULE_5__["default"], {
       node: edge.node,
       postType: postType,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 31
+        lineNumber: 41
       },
       __self: undefined
     });
@@ -2215,10 +2262,16 @@ const Thumbs = props => {
     postType: "thumb"
   };
 
-  const _useQuery = Object(_hooks__WEBPACK_IMPORTED_MODULE_3__["useQuery"])(query, markup, variables, queryProps),
+  const _useQuery = Object(_hooks__WEBPACK_IMPORTED_MODULE_4__["useQuery"])(query, markup, variables, queryProps),
         posts = _useQuery.posts;
 
-  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, posts);
+  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Container, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 54
+    },
+    __self: undefined
+  }, posts);
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Thumbs);
@@ -2878,5 +2931,5 @@ module.exports = __webpack_require__(/*! /home/cs/work/inu-v2/react-src/src/inde
 
 /***/ })
 
-},[[0,"runtime~main",0]]]);
+},[[0,"runtime~main",1]]]);
 //# sourceMappingURL=main.chunk.js.map

@@ -2,12 +2,23 @@ import React from "react";
 import styled, { css } from "styled-components";
 import Image from "../Image";
 
+const ArticleThumb = css`
+  ${props =>
+    props.postType === "thumb" &&
+    css`
+      margin-right: var(--lem);
+      margin-bottom: var(--lem);
+    `}
+`;
+
 const Article = styled.article`
   ${props =>
     props.width &&
     css`
       width: ${props.width};
     `}
+
+  ${ArticleThumb}
 `;
 
 const Title = styled.h3`
@@ -30,7 +41,7 @@ const Post = props => {
   }
 
   return (
-    <Article width={width}>
+    <Article width={width} postType={postType}>
       <Title>{title}</Title>
       <Image title={title} src={src} imageType={imageType} {...props} />
     </Article>
