@@ -101,7 +101,7 @@ const markup = (data, queryProps) => {
 };
 
 const Slider = props => {
-  const { width, category, activeBullet, setActiveBullet, displayMode } = props;
+  const { width, category, activeBullet, setActiveBullet } = props;
 
   //
   // 1. Vars needed by all things below

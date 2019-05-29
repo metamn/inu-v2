@@ -63,12 +63,11 @@ const Home = () => {
             category={activeCategory}
             activeBullet={activeBullet}
             setActiveBullet={setActiveBullet}
-            displayMode={displayMode}
           />
         );
         break;
       case 1:
-        return <Thumbs />;
+        return <Thumbs category={activeCategory} />;
       case 2:
       default:
         return <Blank />;
