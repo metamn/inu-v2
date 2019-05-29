@@ -30,6 +30,7 @@ const placeholder = props => {
   return <Placeholder {...props} />;
 };
 
+// Without this the slider is not working ...
 const placeholder2 = (
   <div style={{ backgroundColor: "white", width: "80vw", height: "70vh" }} />
 );

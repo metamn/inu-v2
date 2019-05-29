@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import WebFont from "webfontloader";
 import styled from "styled-components";
 
+import { useDarkMode } from "../../hooks";
+
 import Reset from "../Reset";
 import TypographicGrid from "../TypographicGrid";
 import Spacing from "../Spacing";
@@ -37,6 +39,9 @@ const Home = () => {
 
   // How to display images
   const [displayMode, setDisplayMode] = useState(0);
+
+  // Set dark mode
+  const [darkMode, setDarkMode] = useDarkMode();
 
   const categoryClickHandler = index => {
     setActiveCategory(index);
@@ -91,6 +96,8 @@ const Home = () => {
           activeCategoryIcon={activeCategoryIcon}
           categoryIconClickHandler={categoryIconClickHandler}
           thumbIconClickHandler={thumbIconClickHandler}
+          darkMode={darkMode}
+          setDarkMode={setDarkMode}
         />
         <Display />
       </Container>
