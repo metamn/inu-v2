@@ -25,7 +25,7 @@ const HeaderIcon = styled(Icon)`
 `;
 
 const Header = props => {
-  const { thumbIconClickHandler, setDarkMode } = props;
+  const { thumbIconClickHandler, darkMode, setDarkMode } = props;
 
   return (
     <Container>
@@ -36,7 +36,7 @@ const Header = props => {
         <FiList onClick={() => thumbIconClickHandler()} />
       </HeaderIcon>
       <HeaderIcon size={1.25}>
-        <FiSun onClick={() => setDarkMode()} />
+        <FiSun onClick={() => setDarkMode(!darkMode)} />
       </HeaderIcon>
     </Container>
   );

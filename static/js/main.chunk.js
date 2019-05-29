@@ -741,6 +741,7 @@ const HeaderIcon = Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["defaul
 
 const Header = props => {
   const thumbIconClickHandler = props.thumbIconClickHandler,
+        darkMode = props.darkMode,
         setDarkMode = props.setDarkMode;
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Container, {
     __source: {
@@ -788,7 +789,7 @@ const Header = props => {
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_icons_fi__WEBPACK_IMPORTED_MODULE_3__["FiSun"], {
-    onClick: () => setDarkMode(),
+    onClick: () => setDarkMode(!darkMode),
     __source: {
       fileName: _jsxFileName,
       lineNumber: 39
