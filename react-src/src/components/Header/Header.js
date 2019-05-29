@@ -25,13 +25,15 @@ const HeaderIcon = styled(Icon)`
 `;
 
 const Header = props => {
+  const { thumbIconClickHandler } = props;
+
   return (
     <Container>
       <Logo />
       <Line />
       <Categories {...props} />
       <HeaderIcon size={1.25}>
-        <FiList />
+        <FiList onClick={() => thumbIconClickHandler()} />
       </HeaderIcon>
       <HeaderIcon size={1.25}>
         <FiSun />

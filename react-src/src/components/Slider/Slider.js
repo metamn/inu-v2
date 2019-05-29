@@ -101,7 +101,7 @@ const markup = (data, queryProps) => {
 };
 
 const Slider = props => {
-  const { width, category, activeBullet, setActiveBullet } = props;
+  const { width, category, activeBullet, setActiveBullet, displayMode } = props;
 
   //
   // 1. Vars needed by all things below
@@ -178,7 +178,7 @@ const Slider = props => {
   // - we can't return an array which later will be processed like Bullets
   // - the returned array is first empty then only later becomes populated
   // - therefore we return the processed info inside `slides`
-  const variables = { first: 10, category: category };
+  const variables = { first: 1000, category: category };
   const queryProps = {
     refs: refs,
     imageClickHandler: imageClickHandler,

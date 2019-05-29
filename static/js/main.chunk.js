@@ -42,6 +42,43 @@ const App = () => react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(rea
 
 /***/ }),
 
+/***/ "./src/components/Blank/Blank.js":
+/*!***************************************!*\
+  !*** ./src/components/Blank/Blank.js ***!
+  \***************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+const Blank = () => {
+  return "";
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Blank);
+
+/***/ }),
+
+/***/ "./src/components/Blank/index.js":
+/*!***************************************!*\
+  !*** ./src/components/Blank/index.js ***!
+  \***************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Blank__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Blank */ "./src/components/Blank/Blank.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _Blank__WEBPACK_IMPORTED_MODULE_0__["default"]; });
+
+
+
+/***/ }),
+
 /***/ "./src/components/Bullet/Bullet.js":
 /*!*****************************************!*\
   !*** ./src/components/Bullet/Bullet.js ***!
@@ -703,38 +740,26 @@ const Container = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].head
 const HeaderIcon = Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["default"])(_Icon__WEBPACK_IMPORTED_MODULE_8__["default"])(_templateObject4(), _Media__WEBPACK_IMPORTED_MODULE_9__["default"].tablet(_templateObject5()));
 
 const Header = props => {
+  const thumbIconClickHandler = props.thumbIconClickHandler;
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Container, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 29
-    },
-    __self: undefined
-  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Logo__WEBPACK_IMPORTED_MODULE_5__["default"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 30
-    },
-    __self: undefined
-  }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Line__WEBPACK_IMPORTED_MODULE_6__["default"], {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 31
     },
     __self: undefined
-  }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Categories__WEBPACK_IMPORTED_MODULE_7__["default"], Object.assign({}, props, {
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Logo__WEBPACK_IMPORTED_MODULE_5__["default"], {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 32
     },
     __self: undefined
-  })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(HeaderIcon, {
-    size: 1.25,
+  }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Line__WEBPACK_IMPORTED_MODULE_6__["default"], {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 33
     },
     __self: undefined
-  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_icons_fi__WEBPACK_IMPORTED_MODULE_3__["FiList"], {
+  }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Categories__WEBPACK_IMPORTED_MODULE_7__["default"], Object.assign({}, props, {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 34
@@ -744,13 +769,27 @@ const Header = props => {
     size: 1.25,
     __source: {
       fileName: _jsxFileName,
+      lineNumber: 35
+    },
+    __self: undefined
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_icons_fi__WEBPACK_IMPORTED_MODULE_3__["FiList"], {
+    onClick: () => thumbIconClickHandler(),
+    __source: {
+      fileName: _jsxFileName,
       lineNumber: 36
+    },
+    __self: undefined
+  })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(HeaderIcon, {
+    size: 1.25,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 38
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_icons_fi__WEBPACK_IMPORTED_MODULE_3__["FiSun"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 37
+      lineNumber: 39
     },
     __self: undefined
   })));
@@ -797,6 +836,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Spacing__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../Spacing */ "./src/components/Spacing/index.js");
 /* harmony import */ var _Header__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../Header */ "./src/components/Header/index.js");
 /* harmony import */ var _Slider__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../Slider */ "./src/components/Slider/index.js");
+/* harmony import */ var _Thumbs__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../Thumbs */ "./src/components/Thumbs/index.js");
+/* harmony import */ var _Blank__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../Blank */ "./src/components/Blank/index.js");
 
 
 var _jsxFileName = "/home/cs/work/inu-v2/react-src/src/components/Home/Home.js";
@@ -819,6 +860,8 @@ function _templateObject() {
 
 
 
+
+
 webfontloader__WEBPACK_IMPORTED_MODULE_3___default.a.load({
   google: {
     families: ["Quicksand"]
@@ -829,35 +872,88 @@ const Container = styled_components__WEBPACK_IMPORTED_MODULE_4__["default"].div(
 }));
 
 const Home = () => {
+  // Which category to display
   const _useState = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])(0),
         _useState2 = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_useState, 2),
         activeCategory = _useState2[0],
-        setActiveCategory = _useState2[1];
+        setActiveCategory = _useState2[1]; // Which bullet is active
+
 
   const _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])(0),
         _useState4 = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_useState3, 2),
         activeBullet = _useState4[0],
-        setActiveBullet = _useState4[1];
+        setActiveBullet = _useState4[1]; // The status of the category dropdown icons
+
 
   const _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])(true),
         _useState6 = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_useState5, 2),
         activeCategoryIcon = _useState6[0],
-        setActiveCategoryIcon = _useState6[1];
+        setActiveCategoryIcon = _useState6[1]; // How to display images
+
+
+  const _useState7 = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])(0),
+        _useState8 = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_useState7, 2),
+        displayMode = _useState8[0],
+        setDisplayMode = _useState8[1];
 
   const categoryClickHandler = index => {
     setActiveCategory(index);
     setActiveBullet(0);
     setActiveCategoryIcon(true);
+    setDisplayMode(0);
   };
 
   const categoryIconClickHandler = () => {
     setActiveCategoryIcon(!activeCategoryIcon);
+    setDisplayMode(2);
+  };
+
+  const thumbIconClickHandler = () => {
+    displayMode === 1 ? setDisplayMode(0) : setDisplayMode(1);
+  };
+
+  const Display = () => {
+    switch (displayMode) {
+      case 0:
+        return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Slider__WEBPACK_IMPORTED_MODULE_9__["default"], {
+          width: "90vw",
+          category: activeCategory,
+          activeBullet: activeBullet,
+          setActiveBullet: setActiveBullet,
+          displayMode: displayMode,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 61
+          },
+          __self: undefined
+        });
+        break;
+
+      case 1:
+        return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Thumbs__WEBPACK_IMPORTED_MODULE_10__["default"], {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 71
+          },
+          __self: undefined
+        });
+
+      case 2:
+      default:
+        return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Blank__WEBPACK_IMPORTED_MODULE_11__["default"], {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 74
+          },
+          __self: undefined
+        });
+    }
   };
 
   return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_2___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Reset__WEBPACK_IMPORTED_MODULE_5__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 43
+      lineNumber: 80
     },
     __self: undefined
   }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_TypographicGrid__WEBPACK_IMPORTED_MODULE_6__["default"], {
@@ -868,13 +964,13 @@ const Home = () => {
     lineColor: "#666",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 44
+      lineNumber: 81
     },
     __self: undefined
   }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Container, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 51
+      lineNumber: 88
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Header__WEBPACK_IMPORTED_MODULE_8__["default"], {
@@ -882,19 +978,16 @@ const Home = () => {
     categoryClickHandler: categoryClickHandler,
     activeCategoryIcon: activeCategoryIcon,
     categoryIconClickHandler: categoryIconClickHandler,
+    thumbIconClickHandler: thumbIconClickHandler,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 52
+      lineNumber: 89
     },
     __self: undefined
-  }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Slider__WEBPACK_IMPORTED_MODULE_9__["default"], {
-    width: "90vw",
-    category: activeCategory,
-    activeBullet: activeBullet,
-    setActiveBullet: setActiveBullet,
+  }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Display, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 58
+      lineNumber: 96
     },
     __self: undefined
   })));
@@ -1733,7 +1826,8 @@ const Slider = props => {
   const width = props.width,
         category = props.category,
         activeBullet = props.activeBullet,
-        setActiveBullet = props.setActiveBullet; //
+        setActiveBullet = props.setActiveBullet,
+        displayMode = props.displayMode; //
   // 1. Vars needed by all things below
   //
   // We need to have a `ref` associated which each slide to be able to scroll to
@@ -1794,7 +1888,7 @@ const Slider = props => {
 
 
   const variables = {
-    first: 10,
+    first: 1000,
     category: category
   };
   const queryProps = {
@@ -1950,6 +2044,43 @@ const Spacing = props => {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Spacing__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Spacing */ "./src/components/Spacing/Spacing.js");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _Spacing__WEBPACK_IMPORTED_MODULE_0__["default"]; });
+
+
+
+/***/ }),
+
+/***/ "./src/components/Thumbs/Thumbs.js":
+/*!*****************************************!*\
+  !*** ./src/components/Thumbs/Thumbs.js ***!
+  \*****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+const Thumbs = () => {
+  return "thumbs";
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Thumbs);
+
+/***/ }),
+
+/***/ "./src/components/Thumbs/index.js":
+/*!****************************************!*\
+  !*** ./src/components/Thumbs/index.js ***!
+  \****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Thumbs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Thumbs */ "./src/components/Thumbs/Thumbs.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _Thumbs__WEBPACK_IMPORTED_MODULE_0__["default"]; });
 
 
 
@@ -2592,5 +2723,5 @@ module.exports = __webpack_require__(/*! /home/cs/work/inu-v2/react-src/src/inde
 
 /***/ })
 
-},[[0,"runtime~main",0]]]);
+},[[0,"runtime~main",1]]]);
 //# sourceMappingURL=main.chunk.js.map
