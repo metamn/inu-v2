@@ -1212,8 +1212,8 @@ const placeholder = props => {
 const placeholder2 = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
   style: {
     backgroundColor: "white",
-    height: 300,
-    width: 500
+    width: "80vw",
+    height: "70vh"
   },
   __source: {
     fileName: _jsxFileName,

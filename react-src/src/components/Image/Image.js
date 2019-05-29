@@ -31,7 +31,7 @@ const placeholder = props => {
 };
 
 const placeholder2 = (
-  <div style={{ backgroundColor: "white", height: 300, width: 500 }} />
+  <div style={{ backgroundColor: "white", width: "80vw", height: "70vh" }} />
 );
 
 const Img = styled.img`
