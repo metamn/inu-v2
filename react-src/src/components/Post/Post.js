@@ -15,14 +15,24 @@ const Title = styled.h3`
 `;
 
 const Post = props => {
-  const { node, width } = props;
+  const { node, width, postType } = props;
+
   const title = node.title;
   const src = node.featuredImage.sourceUrl;
+
+  let imageType = "";
+  switch (postType) {
+    case "thumb":
+      imageType = "thumb";
+      break;
+    default:
+      imageType = "";
+  }
 
   return (
     <Article width={width}>
       <Title>{title}</Title>
-      <Image title={title} src={src} props={props} />
+      <Image title={title} src={src} imageType={imageType} {...props} />
     </Article>
   );
 };

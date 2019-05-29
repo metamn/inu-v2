@@ -1134,8 +1134,58 @@ __webpack_require__.r(__webpack_exports__);
 
 var _jsxFileName = "/home/cs/work/inu-v2/react-src/src/components/Image/Image.js";
 
-function _templateObject() {
+function _templateObject6() {
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  max-width: 10em;\n  width: 100%;\n  height: auto;\n"]);
+
+  _templateObject6 = function () {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject5() {
   const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  max-width: 80vw;\n  max-height: 70vh;\n  width: auto;\n  height: auto;\n  cursor: pointer;\n"]);
+
+  _templateObject5 = function () {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject4() {
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n        height: height;\n      "]);
+
+  _templateObject4 = function () {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject3() {
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n        width: width;\n      "]);
+
+  _templateObject3 = function () {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject2() {
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n        background-color: backgroundColor;\n      "]);
+
+  _templateObject2 = function () {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject() {
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n    background-color: #000;\n    width: 500px;\n    height: 300px;\n\n    ", ";\n\n    ", ";\n\n    ", ";\n  "]);
 
   _templateObject = function () {
     return data;
@@ -1147,46 +1197,86 @@ function _templateObject() {
 
 
 
-const placeholder = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-  style: {
-    backgroundColor: "#000",
-    height: 300,
-    width: 500
-  },
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 6
-  },
-  __self: undefined
-});
-const Img = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].img(_templateObject());
+
+const placeholder = props => {
+  const Placeholder = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].div(_templateObject(), props => props.backgroundColor && Object(styled_components__WEBPACK_IMPORTED_MODULE_3__["css"])(_templateObject2()), props => props.width && Object(styled_components__WEBPACK_IMPORTED_MODULE_3__["css"])(_templateObject3()), props => props.height && Object(styled_components__WEBPACK_IMPORTED_MODULE_3__["css"])(_templateObject4()));
+  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Placeholder, Object.assign({}, props, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 30
+    },
+    __self: undefined
+  }));
+};
+
+const Img = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].img(_templateObject5());
+const ImgThumb = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].img(_templateObject6());
 
 const Image = props => {
   const title = props.title,
-        src = props.src;
-  const _props$props = props.props,
-        imageClickHandler = _props$props.imageClickHandler,
-        index = _props$props.index,
-        numberOfSlides = _props$props.numberOfSlides;
-  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_progressive_image__WEBPACK_IMPORTED_MODULE_2___default.a, {
-    src: src,
-    placeholder: "",
+        src = props.src,
+        imageClickHandler = props.imageClickHandler,
+        index = props.index,
+        numberOfSlides = props.numberOfSlides,
+        imageType = props.imageType;
+
+  const Display = () => {
+    switch (imageType) {
+      case "thumb":
+        return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_progressive_image__WEBPACK_IMPORTED_MODULE_2___default.a, {
+          src: src,
+          placeholder: "",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 61
+          },
+          __self: undefined
+        }, (src, loading) => {
+          return loading ? placeholder({
+            width: "10em",
+            height: "auto"
+          }) : react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(ImgThumb, {
+            src: src,
+            alt: title,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 66
+            },
+            __self: undefined
+          });
+        });
+        break;
+
+      default:
+        return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_progressive_image__WEBPACK_IMPORTED_MODULE_2___default.a, {
+          src: src,
+          placeholder: "",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 74
+          },
+          __self: undefined
+        }, (src, loading) => {
+          return loading ? placeholder : react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Img, {
+            src: src,
+            alt: title,
+            onClick: () => imageClickHandler(index, numberOfSlides),
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 79
+            },
+            __self: undefined
+          });
+        });
+    }
+  };
+
+  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Display, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21
+      lineNumber: 91
     },
     __self: undefined
-  }, (src, loading) => {
-    return loading ? placeholder : react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Img, {
-      src: src,
-      alt: title,
-      onClick: () => imageClickHandler(index, numberOfSlides),
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 26
-      },
-      __self: undefined
-    });
   });
 };
 
@@ -1488,32 +1578,45 @@ const Title = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].h3(_temp
 
 const Post = props => {
   const node = props.node,
-        width = props.width;
+        width = props.width,
+        postType = props.postType;
   const title = node.title;
   const src = node.featuredImage.sourceUrl;
+  let imageType = "";
+
+  switch (postType) {
+    case "thumb":
+      imageType = "thumb";
+      break;
+
+    default:
+      imageType = "";
+  }
+
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Article, {
     width: width,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 23
+      lineNumber: 33
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Title, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 24
+      lineNumber: 34
     },
     __self: undefined
-  }, title), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Image__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  }, title), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Image__WEBPACK_IMPORTED_MODULE_3__["default"], Object.assign({
     title: title,
     src: src,
-    props: props,
+    imageType: imageType
+  }, props, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 25
+      lineNumber: 35
     },
     __self: undefined
-  }));
+  })));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Post);
@@ -2083,14 +2186,16 @@ function _templateObject() {
 
 const query = graphql_tag__WEBPACK_IMPORTED_MODULE_2___default()(_templateObject());
 
-const markup = data => {
+const markup = (data, queryProps) => {
+  const postType = queryProps.postType;
   const postsWithImage = data.posts.edges.filter(edge => edge.node.featuredImage);
   const posts = postsWithImage.map((edge, index) => {
     return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Post__WEBPACK_IMPORTED_MODULE_4__["default"], {
       node: edge.node,
+      postType: postType,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 30
+        lineNumber: 31
       },
       __self: undefined
     });
@@ -2106,8 +2211,11 @@ const Thumbs = props => {
     first: 1000,
     category: category
   };
+  const queryProps = {
+    postType: "thumb"
+  };
 
-  const _useQuery = Object(_hooks__WEBPACK_IMPORTED_MODULE_3__["useQuery"])(query, markup, variables),
+  const _useQuery = Object(_hooks__WEBPACK_IMPORTED_MODULE_3__["useQuery"])(query, markup, variables, queryProps),
         posts = _useQuery.posts;
 
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, posts);
@@ -2770,5 +2878,5 @@ module.exports = __webpack_require__(/*! /home/cs/work/inu-v2/react-src/src/inde
 
 /***/ })
 
-},[[0,"runtime~main",1]]]);
+},[[0,"runtime~main",0]]]);
 //# sourceMappingURL=main.chunk.js.map

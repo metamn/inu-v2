@@ -21,13 +21,14 @@ const query = gql`
   }
 `;
 
-const markup = data => {
+const markup = (data, queryProps) => {
+  const { postType } = queryProps;
   const postsWithImage = data.posts.edges.filter(
     edge => edge.node.featuredImage
   );
 
   const posts = postsWithImage.map((edge, index) => {
-    return <Post node={edge.node} />;
+    return <Post node={edge.node} postType={postType} />;
   });
 
   return { posts };
@@ -37,7 +38,8 @@ const Thumbs = props => {
   const { category } = props;
 
   const variables = { first: 1000, category: category };
-  const { posts } = useQuery(query, markup, variables);
+  const queryProps = { postType: "thumb" };
+  const { posts } = useQuery(query, markup, variables, queryProps);
 
   return <>{posts}</>;
 };
