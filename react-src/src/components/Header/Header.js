@@ -14,7 +14,7 @@ const Container = styled.header`
   display: flex;
   align-items: flex-start;
 
-  ${Media.mobile`flex-direction: column;`}
+  ${Media.mobile`flex-direction: row;`}
   ${Media.tablet`flex-direction: row`}
 `;
 
