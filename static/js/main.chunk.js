@@ -846,8 +846,18 @@ __webpack_require__.r(__webpack_exports__);
 
 var _jsxFileName = "/home/cs/work/inu-v2/react-src/src/components/Home/Home.js";
 
-function _templateObject() {
+function _templateObject2() {
   const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_1__["default"])(["\n  font-family: \"Quicksand\", sans-serif;\n  display: flex;\n  flex-wrap: wrap;\n\n  ", "\n"]);
+
+  _templateObject2 = function () {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject() {
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_1__["default"])(["\n\tbody.dark-mode {\n\t\tbackground: black;\n\t\tcolor: white;\n\t}\n"]);
 
   _templateObject = function () {
     return data;
@@ -872,7 +882,8 @@ webfontloader__WEBPACK_IMPORTED_MODULE_3___default.a.load({
     families: ["Quicksand"]
   }
 });
-const Container = styled_components__WEBPACK_IMPORTED_MODULE_4__["default"].div(_templateObject(), Object(_Spacing__WEBPACK_IMPORTED_MODULE_8__["default"])({
+const DarkMode = Object(styled_components__WEBPACK_IMPORTED_MODULE_4__["createGlobalStyle"])(_templateObject());
+const Container = styled_components__WEBPACK_IMPORTED_MODULE_4__["default"].div(_templateObject2(), Object(_Spacing__WEBPACK_IMPORTED_MODULE_8__["default"])({
   property: "padding"
 }));
 
@@ -933,7 +944,7 @@ const Home = () => {
           setActiveBullet: setActiveBullet,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 66
+            lineNumber: 73
           },
           __self: undefined
         });
@@ -944,7 +955,7 @@ const Home = () => {
           category: activeCategory,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 75
+            lineNumber: 82
           },
           __self: undefined
         });
@@ -954,7 +965,7 @@ const Home = () => {
         return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Blank__WEBPACK_IMPORTED_MODULE_12__["default"], {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 78
+            lineNumber: 85
           },
           __self: undefined
         });
@@ -964,7 +975,7 @@ const Home = () => {
   return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_2___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Reset__WEBPACK_IMPORTED_MODULE_6__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 84
+      lineNumber: 91
     },
     __self: undefined
   }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_TypographicGrid__WEBPACK_IMPORTED_MODULE_7__["default"], {
@@ -975,13 +986,19 @@ const Home = () => {
     lineColor: "#666",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 85
+      lineNumber: 92
+    },
+    __self: undefined
+  }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(DarkMode, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 99
     },
     __self: undefined
   }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Container, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 92
+      lineNumber: 100
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Header__WEBPACK_IMPORTED_MODULE_9__["default"], {
@@ -994,13 +1011,13 @@ const Home = () => {
     setDarkMode: setDarkMode,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 93
+      lineNumber: 101
     },
     __self: undefined
   }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Display, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 102
+      lineNumber: 110
     },
     __self: undefined
   })));
@@ -3128,5 +3145,5 @@ module.exports = __webpack_require__(/*! /home/cs/work/inu-v2/react-src/src/inde
 
 /***/ })
 
-},[[0,"runtime~main",1]]]);
+},[[0,"runtime~main",0]]]);
 //# sourceMappingURL=main.chunk.js.map

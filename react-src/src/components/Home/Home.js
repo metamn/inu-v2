@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import WebFont from "webfontloader";
-import styled from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
 
 import { useDarkMode } from "../../hooks";
 
@@ -18,6 +18,13 @@ WebFont.load({
     families: ["Quicksand"]
   }
 });
+
+const DarkMode = createGlobalStyle`
+	body.dark-mode {
+		background: black;
+		color: white;
+	}
+`;
 
 const Container = styled.div`
   font-family: "Quicksand", sans-serif;
@@ -89,6 +96,7 @@ const Home = () => {
         numberOfVerticalLines={100}
         lineColor="#666"
       />
+      <DarkMode />
       <Container>
         <Header
           activeCategory={activeCategory}
