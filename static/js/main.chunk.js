@@ -843,7 +843,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Slider__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../Slider */ "./src/components/Slider/index.js");
 /* harmony import */ var _Thumbs__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../Thumbs */ "./src/components/Thumbs/index.js");
 /* harmony import */ var _Blank__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../Blank */ "./src/components/Blank/index.js");
-/* harmony import */ var _themes_light_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../../themes/light.js */ "./src/themes/light.js");
+/* harmony import */ var _themes_default_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../../themes/default.js */ "./src/themes/default.js");
 
 
 var _jsxFileName = "/home/cs/work/inu-v2/react-src/src/components/Home/Home.js";
@@ -994,14 +994,14 @@ const Home = () => {
     },
     __self: undefined
   }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(DarkMode, {
-    theme: _themes_light_js__WEBPACK_IMPORTED_MODULE_14__["default"],
+    theme: _themes_default_js__WEBPACK_IMPORTED_MODULE_14__["default"],
     __source: {
       fileName: _jsxFileName,
       lineNumber: 102
     },
     __self: undefined
   }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Container, {
-    theme: _themes_light_js__WEBPACK_IMPORTED_MODULE_14__["default"],
+    theme: _themes_default_js__WEBPACK_IMPORTED_MODULE_14__["default"],
     __source: {
       fileName: _jsxFileName,
       lineNumber: 103
@@ -3139,10 +3139,10 @@ function unregister() {
 
 /***/ }),
 
-/***/ "./src/themes/light.js":
-/*!*****************************!*\
-  !*** ./src/themes/light.js ***!
-  \*****************************/
+/***/ "./src/themes/default.js":
+/*!*******************************!*\
+  !*** ./src/themes/default.js ***!
+  \*******************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 

@@ -14,7 +14,7 @@ import Slider from "../Slider";
 import Thumbs from "../Thumbs";
 import Blank from "../Blank";
 
-import theme from "../../themes/light.js";
+import theme from "../../themes/default.js";
 
 WebFont.load({
   google: {
