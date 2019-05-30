@@ -92,11 +92,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var _themes_default_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../themes/default.js */ "./src/themes/default.js");
 
 var _jsxFileName = "/home/cs/work/inu-v2/react-src/src/components/Bullet/Bullet.js";
 
 function _templateObject3() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n      border-color: black;\n    "]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n      border-color: ", ";\n    "]);
 
   _templateObject3 = function () {
     return data;
@@ -106,7 +107,7 @@ function _templateObject3() {
 }
 
 function _templateObject2() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  border: none;\n  margin: 0;\n  padding: 0;\n  background-color: transparent;\n\n  width: calc(var(--lem) * 2);\n  height: calc(var(--lem) / 3);\n  border-bottom: calc(var(--lem) / 3) solid lightgrey;\n\n  margin-right: var(--lem);\n  cursor: pointer;\n\n  ", ";\n"]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  border: none;\n  margin: 0;\n  padding: 0;\n  background-color: transparent;\n\n  width: calc(var(--lem) * 2);\n  height: calc(var(--lem) / 3);\n  border-bottom: calc(var(--lem) / 3) solid ", ";\n\n  margin-right: var(--lem);\n  cursor: pointer;\n\n  ", ";\n"]);
 
   _templateObject2 = function () {
     return data;
@@ -127,8 +128,9 @@ function _templateObject() {
 
 
 
+
 const Container = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].li(_templateObject());
-const Button = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].button(_templateObject2(), props => props.className === "active" && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject3()));
+const Button = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].button(_templateObject2(), props => props.theme.colors.gray, props => props.className === "active" && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject3(), props => props.theme.colors.text));
 
 const Bullet = props => {
   const className = props.className,
@@ -137,15 +139,16 @@ const Bullet = props => {
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Container, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 29
+      lineNumber: 31
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Button, {
+    theme: _themes_default_js__WEBPACK_IMPORTED_MODULE_3__["default"],
     className: className,
     onClick: () => bulletClickHandler(index),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 30
+      lineNumber: 32
     },
     __self: undefined
   }, "\xA0"));
@@ -589,11 +592,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var graphql_tag__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! graphql-tag */ "./node_modules/graphql-tag/src/index.js");
 /* harmony import */ var graphql_tag__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(graphql_tag__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _hooks__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./../../hooks */ "./src/hooks/index.js");
+/* harmony import */ var _themes_default_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../themes/default.js */ "./src/themes/default.js");
 
 var _jsxFileName = "/home/cs/work/inu-v2/react-src/src/components/Description/Description.js";
 
 function _templateObject2() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  font-size: 100%;\n  font-weight: normal;\n  color: #666;\n"]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  font-size: 100%;\n  font-weight: normal;\n  color: ", ";\n"]);
 
   _templateObject2 = function () {
     return data;
@@ -616,15 +620,17 @@ function _templateObject() {
 
 
 
+
 const query = graphql_tag__WEBPACK_IMPORTED_MODULE_3___default()(_templateObject());
-const H2 = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].h2(_templateObject2());
+const H2 = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].h2(_templateObject2(), props => props.theme.colors.gray);
 
 const markup = data => {
   const description = data.generalSettings.description;
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(H2, {
+    theme: _themes_default_js__WEBPACK_IMPORTED_MODULE_5__["default"],
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22
+      lineNumber: 24
     },
     __self: undefined
   }, description);
@@ -3154,7 +3160,8 @@ __webpack_require__.r(__webpack_exports__);
 const theme = {
   colors: {
     text: "black",
-    background: "white"
+    background: "white",
+    gray: "#666"
   },
   fonts: {
     default: "'Quicksand', sans-serif;",
