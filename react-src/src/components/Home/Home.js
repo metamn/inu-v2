@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import WebFont from "webfontloader";
 import styled, { createGlobalStyle } from "styled-components";
+import { stringify } from "flatted";
 
 import { useDarkMode } from "../../hooks";
 
@@ -13,6 +14,8 @@ import Slider from "../Slider";
 import Thumbs from "../Thumbs";
 import Blank from "../Blank";
 
+import theme from "../../themes/light.js";
+
 WebFont.load({
   google: {
     families: ["Quicksand"]
@@ -21,13 +24,13 @@ WebFont.load({
 
 const DarkMode = createGlobalStyle`
 	body.dark-mode {
-		background: black;
-		color: white;
+		background: ${props => props.theme.colors.text};
+		color: ${props => props.theme.colors.background};
 	}
 `;
 
 const Container = styled.div`
-  font-family: "Quicksand", sans-serif;
+  font-family: ${props => props.theme.fonts.default};
   display: flex;
   flex-wrap: wrap;
 
@@ -96,8 +99,8 @@ const Home = () => {
         numberOfVerticalLines={100}
         lineColor="#666"
       />
-      <DarkMode />
-      <Container>
+      <DarkMode theme={theme} />
+      <Container theme={theme}>
         <Header
           activeCategory={activeCategory}
           categoryClickHandler={categoryClickHandler}

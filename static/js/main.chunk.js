@@ -834,20 +834,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var webfontloader__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! webfontloader */ "./node_modules/webfontloader/webfontloader.js");
 /* harmony import */ var webfontloader__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(webfontloader__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-/* harmony import */ var _hooks__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../hooks */ "./src/hooks/index.js");
-/* harmony import */ var _Reset__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../Reset */ "./src/components/Reset/index.js");
-/* harmony import */ var _TypographicGrid__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../TypographicGrid */ "./src/components/TypographicGrid/index.js");
-/* harmony import */ var _Spacing__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../Spacing */ "./src/components/Spacing/index.js");
-/* harmony import */ var _Header__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../Header */ "./src/components/Header/index.js");
-/* harmony import */ var _Slider__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../Slider */ "./src/components/Slider/index.js");
-/* harmony import */ var _Thumbs__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../Thumbs */ "./src/components/Thumbs/index.js");
-/* harmony import */ var _Blank__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../Blank */ "./src/components/Blank/index.js");
+/* harmony import */ var flatted__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! flatted */ "./node_modules/flatted/esm/index.js");
+/* harmony import */ var _hooks__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../hooks */ "./src/hooks/index.js");
+/* harmony import */ var _Reset__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../Reset */ "./src/components/Reset/index.js");
+/* harmony import */ var _TypographicGrid__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../TypographicGrid */ "./src/components/TypographicGrid/index.js");
+/* harmony import */ var _Spacing__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../Spacing */ "./src/components/Spacing/index.js");
+/* harmony import */ var _Header__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../Header */ "./src/components/Header/index.js");
+/* harmony import */ var _Slider__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../Slider */ "./src/components/Slider/index.js");
+/* harmony import */ var _Thumbs__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../Thumbs */ "./src/components/Thumbs/index.js");
+/* harmony import */ var _Blank__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../Blank */ "./src/components/Blank/index.js");
+/* harmony import */ var _themes_light_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../../themes/light.js */ "./src/themes/light.js");
 
 
 var _jsxFileName = "/home/cs/work/inu-v2/react-src/src/components/Home/Home.js";
 
 function _templateObject2() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_1__["default"])(["\n  font-family: \"Quicksand\", sans-serif;\n  display: flex;\n  flex-wrap: wrap;\n\n  ", "\n"]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_1__["default"])(["\n  font-family: ", ";\n  display: flex;\n  flex-wrap: wrap;\n\n  ", "\n"]);
 
   _templateObject2 = function () {
     return data;
@@ -857,7 +859,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_1__["default"])(["\n\tbody.dark-mode {\n\t\tbackground: black;\n\t\tcolor: white;\n\t}\n"]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_1__["default"])(["\n\tbody.dark-mode {\n\t\tbackground: ", ";\n\t\tcolor: ", ";\n\t}\n"]);
 
   _templateObject = function () {
     return data;
@@ -877,13 +879,15 @@ function _templateObject() {
 
 
 
+
+
 webfontloader__WEBPACK_IMPORTED_MODULE_3___default.a.load({
   google: {
     families: ["Quicksand"]
   }
 });
-const DarkMode = Object(styled_components__WEBPACK_IMPORTED_MODULE_4__["createGlobalStyle"])(_templateObject());
-const Container = styled_components__WEBPACK_IMPORTED_MODULE_4__["default"].div(_templateObject2(), Object(_Spacing__WEBPACK_IMPORTED_MODULE_8__["default"])({
+const DarkMode = Object(styled_components__WEBPACK_IMPORTED_MODULE_4__["createGlobalStyle"])(_templateObject(), props => props.theme.colors.text, props => props.theme.colors.background);
+const Container = styled_components__WEBPACK_IMPORTED_MODULE_4__["default"].div(_templateObject2(), props => props.theme.fonts.default, Object(_Spacing__WEBPACK_IMPORTED_MODULE_9__["default"])({
   property: "padding"
 }));
 
@@ -913,7 +917,7 @@ const Home = () => {
         setDisplayMode = _useState8[1]; // Set dark mode
 
 
-  const _useDarkMode = Object(_hooks__WEBPACK_IMPORTED_MODULE_5__["useDarkMode"])(),
+  const _useDarkMode = Object(_hooks__WEBPACK_IMPORTED_MODULE_6__["useDarkMode"])(),
         _useDarkMode2 = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_useDarkMode, 2),
         darkMode = _useDarkMode2[0],
         setDarkMode = _useDarkMode2[1];
@@ -937,48 +941,48 @@ const Home = () => {
   const Display = () => {
     switch (displayMode) {
       case 0:
-        return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Slider__WEBPACK_IMPORTED_MODULE_10__["default"], {
+        return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Slider__WEBPACK_IMPORTED_MODULE_11__["default"], {
           width: "90vw",
           category: activeCategory,
           activeBullet: activeBullet,
           setActiveBullet: setActiveBullet,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 73
+            lineNumber: 76
           },
           __self: undefined
         });
         break;
 
       case 1:
-        return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Thumbs__WEBPACK_IMPORTED_MODULE_11__["default"], {
+        return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Thumbs__WEBPACK_IMPORTED_MODULE_12__["default"], {
           category: activeCategory,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 82
-          },
-          __self: undefined
-        });
-
-      case 2:
-      default:
-        return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Blank__WEBPACK_IMPORTED_MODULE_12__["default"], {
           __source: {
             fileName: _jsxFileName,
             lineNumber: 85
           },
           __self: undefined
         });
+
+      case 2:
+      default:
+        return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Blank__WEBPACK_IMPORTED_MODULE_13__["default"], {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 88
+          },
+          __self: undefined
+        });
     }
   };
 
-  return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_2___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Reset__WEBPACK_IMPORTED_MODULE_6__["default"], {
+  return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_2___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Reset__WEBPACK_IMPORTED_MODULE_7__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 91
+      lineNumber: 94
     },
     __self: undefined
-  }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_TypographicGrid__WEBPACK_IMPORTED_MODULE_7__["default"], {
+  }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_TypographicGrid__WEBPACK_IMPORTED_MODULE_8__["default"], {
     displayVerticalRhytm: false,
     displayHorizontalRhytm: false,
     numberOfHorizontalLines: 100,
@@ -986,22 +990,24 @@ const Home = () => {
     lineColor: "#666",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 92
+      lineNumber: 95
     },
     __self: undefined
   }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(DarkMode, {
+    theme: _themes_light_js__WEBPACK_IMPORTED_MODULE_14__["default"],
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 99
+      lineNumber: 102
     },
     __self: undefined
   }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Container, {
+    theme: _themes_light_js__WEBPACK_IMPORTED_MODULE_14__["default"],
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 100
+      lineNumber: 103
     },
     __self: undefined
-  }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Header__WEBPACK_IMPORTED_MODULE_9__["default"], {
+  }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Header__WEBPACK_IMPORTED_MODULE_10__["default"], {
     activeCategory: activeCategory,
     categoryClickHandler: categoryClickHandler,
     activeCategoryIcon: activeCategoryIcon,
@@ -1011,13 +1017,13 @@ const Home = () => {
     setDarkMode: setDarkMode,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 101
+      lineNumber: 104
     },
     __self: undefined
   }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Display, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 110
+      lineNumber: 113
     },
     __self: undefined
   })));
@@ -3130,6 +3136,32 @@ function unregister() {
     });
   }
 }
+
+/***/ }),
+
+/***/ "./src/themes/light.js":
+/*!*****************************!*\
+  !*** ./src/themes/light.js ***!
+  \*****************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+const theme = {
+  colors: {
+    text: "black",
+    background: "white"
+  },
+  fonts: {
+    default: "'Quicksand', sans-serif;",
+    system: "serif"
+  }
+};
+/* harmony default export */ __webpack_exports__["default"] = (theme);
 
 /***/ }),
 
