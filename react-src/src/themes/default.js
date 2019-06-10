@@ -1,22 +1,34 @@
 import React from "react";
 
-const theme = {
-  colors: {
-    light: {
-      text: "black",
-      background: "white",
-      gray: "#666"
-    },
-    dark: {
-      text: "white",
-      background: "black",
-      gray: "#666"
-    }
+const white = "white";
+const black = "black";
+const gray = "#666";
+
+const themeColors = {
+  light: {
+    text: black,
+    background: white,
+    gray: gray
   },
-  fonts: {
-    default: "'Quicksand', sans-serif;",
-    system: "serif"
+  dark: {
+    text: white,
+    background: black,
+    gray: gray
   }
 };
 
-export default theme;
+const themes = mode => {
+  return {
+    colors: mode === "light" ? themeColors.light : themeColors.dark,
+    fonts: {
+      default: "'Quicksand', sans-serif;"
+    }
+  };
+};
+
+const ThemeContext = React.createContext({
+  theme: themes("light"),
+  toggleTheme: () => {}
+});
+
+export default ThemeContext;

@@ -107,7 +107,7 @@ function _templateObject3() {
 }
 
 function _templateObject2() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  border: none;\n  margin: 0;\n  padding: 0;\n  background-color: transparent;\n\n  width: calc(var(--lem) * 2);\n  height: calc(var(--lem) / 3);\n  border-bottom: calc(var(--lem) / 3) solid ", ";\n\n  margin-right: var(--lem);\n  cursor: pointer;\n\n  ", ";\n"]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  border: none;\n  margin: 0;\n  padding: 0;\n  background-color: transparent;\n\n  width: calc(var(--lem) * 0.25);\n  height: calc(var(--lem) / 3);\n  border-bottom: calc(var(--lem) / 3) solid ", ";\n\n  margin-right: var(--lem);\n  cursor: pointer;\n\n  ", ";\n"]);
 
   _templateObject2 = function () {
     return data;
@@ -133,22 +133,24 @@ const Container = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].li(_
 const Button = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].button(_templateObject2(), props => props.theme.colors.gray, props => props.className === "active" && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject3(), props => props.theme.colors.text));
 
 const Bullet = props => {
+  const themeContext = Object(react__WEBPACK_IMPORTED_MODULE_1__["useContext"])(_themes_default_js__WEBPACK_IMPORTED_MODULE_3__["default"]);
+  const theme = themeContext.theme;
   const className = props.className,
         bulletClickHandler = props.bulletClickHandler,
         index = props.index;
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Container, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 31
+      lineNumber: 34
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Button, {
-    theme: _themes_default_js__WEBPACK_IMPORTED_MODULE_3__["default"],
+    theme: theme,
     className: className,
     onClick: () => bulletClickHandler(index),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 32
+      lineNumber: 35
     },
     __self: undefined
   }, "\xA0"));
@@ -625,12 +627,14 @@ const query = graphql_tag__WEBPACK_IMPORTED_MODULE_3___default()(_templateObject
 const H2 = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].h2(_templateObject2(), props => props.theme.colors.gray);
 
 const markup = data => {
+  const themeContext = Object(react__WEBPACK_IMPORTED_MODULE_1__["useContext"])(_themes_default_js__WEBPACK_IMPORTED_MODULE_5__["default"]);
+  const theme = themeContext.theme;
   const description = data.generalSettings.description;
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(H2, {
-    theme: _themes_default_js__WEBPACK_IMPORTED_MODULE_5__["default"],
+    theme: theme,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 24
+      lineNumber: 27
     },
     __self: undefined
   }, description);
@@ -854,18 +858,8 @@ __webpack_require__.r(__webpack_exports__);
 
 var _jsxFileName = "/home/cs/work/inu-v2/react-src/src/components/Home/Home.js";
 
-function _templateObject2() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_1__["default"])(["\n  background: ", ";\n  color: ", ";\n  font-family: ", ";\n  display: flex;\n  flex-wrap: wrap;\n\n  ", "\n"]);
-
-  _templateObject2 = function () {
-    return data;
-  };
-
-  return data;
-}
-
 function _templateObject() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_1__["default"])(["\n\tbody.dark-mode {\n\t\tbackground: ", ";\n\t\tcolor: ", ";\n\t}\n"]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_1__["default"])(["\n  background: ", ";\n  color: ", ";\n  font-family: ", ";\n  display: flex;\n  flex-wrap: wrap;\n\n  ", "\n"]);
 
   _templateObject = function () {
     return data;
@@ -892,8 +886,7 @@ webfontloader__WEBPACK_IMPORTED_MODULE_3___default.a.load({
     families: ["Quicksand"]
   }
 });
-const DarkMode = Object(styled_components__WEBPACK_IMPORTED_MODULE_4__["createGlobalStyle"])(_templateObject(), props => props.theme.colors.dark.background, props => props.theme.colors.dark.text);
-const Container = styled_components__WEBPACK_IMPORTED_MODULE_4__["default"].div(_templateObject2(), props => props.theme.colors.light.background, props => props.theme.colors.light.text, props => props.theme.fonts.default, Object(_Spacing__WEBPACK_IMPORTED_MODULE_9__["default"])({
+const Container = styled_components__WEBPACK_IMPORTED_MODULE_4__["default"].div(_templateObject(), props => props.theme.colors.background, props => props.theme.colors.text, props => props.theme.fonts.default, Object(_Spacing__WEBPACK_IMPORTED_MODULE_9__["default"])({
   property: "padding"
 }));
 
@@ -926,7 +919,11 @@ const Home = () => {
   const _useDarkMode = Object(_hooks__WEBPACK_IMPORTED_MODULE_6__["useDarkMode"])(),
         _useDarkMode2 = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_useDarkMode, 2),
         darkMode = _useDarkMode2[0],
-        setDarkMode = _useDarkMode2[1];
+        setDarkMode = _useDarkMode2[1]; // Theming
+
+
+  const themeContext = Object(react__WEBPACK_IMPORTED_MODULE_2__["useContext"])(_themes_default_js__WEBPACK_IMPORTED_MODULE_14__["default"]);
+  const theme = themeContext.theme;
 
   const categoryClickHandler = index => {
     setActiveCategory(index);
@@ -954,7 +951,7 @@ const Home = () => {
           setActiveBullet: setActiveBullet,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 78
+            lineNumber: 75
           },
           __self: undefined
         });
@@ -965,7 +962,7 @@ const Home = () => {
           category: activeCategory,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 87
+            lineNumber: 84
           },
           __self: undefined
         });
@@ -975,7 +972,7 @@ const Home = () => {
         return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Blank__WEBPACK_IMPORTED_MODULE_13__["default"], {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 90
+            lineNumber: 87
           },
           __self: undefined
         });
@@ -985,7 +982,7 @@ const Home = () => {
   return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_2___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Reset__WEBPACK_IMPORTED_MODULE_7__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 96
+      lineNumber: 93
     },
     __self: undefined
   }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_TypographicGrid__WEBPACK_IMPORTED_MODULE_8__["default"], {
@@ -996,21 +993,14 @@ const Home = () => {
     lineColor: "#666",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 97
-    },
-    __self: undefined
-  }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(DarkMode, {
-    theme: _themes_default_js__WEBPACK_IMPORTED_MODULE_14__["default"],
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 104
+      lineNumber: 94
     },
     __self: undefined
   }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Container, {
-    theme: _themes_default_js__WEBPACK_IMPORTED_MODULE_14__["default"],
+    theme: theme,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 105
+      lineNumber: 101
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Header__WEBPACK_IMPORTED_MODULE_10__["default"], {
@@ -1023,13 +1013,13 @@ const Home = () => {
     setDarkMode: setDarkMode,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 106
+      lineNumber: 102
     },
     __self: undefined
   }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Display, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 115
+      lineNumber: 111
     },
     __self: undefined
   })));
@@ -3157,25 +3147,36 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 
-const theme = {
-  colors: {
-    light: {
-      text: "black",
-      background: "white",
-      gray: "#666"
-    },
-    dark: {
-      text: "white",
-      background: "black",
-      gray: "#666"
-    }
+const white = "white";
+const black = "black";
+const gray = "#666";
+const themeColors = {
+  light: {
+    text: black,
+    background: white,
+    gray: gray
   },
-  fonts: {
-    default: "'Quicksand', sans-serif;",
-    system: "serif"
+  dark: {
+    text: white,
+    background: black,
+    gray: gray
   }
 };
-/* harmony default export */ __webpack_exports__["default"] = (theme);
+
+const themes = mode => {
+  return {
+    colors: mode === "light" ? themeColors.light : themeColors.dark,
+    fonts: {
+      default: "'Quicksand', sans-serif;"
+    }
+  };
+};
+
+const ThemeContext = react__WEBPACK_IMPORTED_MODULE_0___default.a.createContext({
+  theme: themes("light"),
+  toggleTheme: () => {}
+});
+/* harmony default export */ __webpack_exports__["default"] = (ThemeContext);
 
 /***/ }),
 
@@ -3191,5 +3192,5 @@ module.exports = __webpack_require__(/*! /home/cs/work/inu-v2/react-src/src/inde
 
 /***/ })
 
-},[[0,"runtime~main",1]]]);
+},[[0,"runtime~main",0]]]);
 //# sourceMappingURL=main.chunk.js.map

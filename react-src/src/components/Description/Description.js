@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
 import gql from "graphql-tag";
 import { useQuery } from "./../../hooks";
 
-import theme from "../../themes/default.js";
+import ThemeContext from "../../themes/default.js";
 
 const query = gql`
   query siteDescription {
@@ -20,7 +20,10 @@ const H2 = styled.h2`
 `;
 
 const markup = data => {
+  const themeContext = useContext(ThemeContext);
+  const { theme } = themeContext;
   const description = data.generalSettings.description;
+
   return <H2 theme={theme}>{description}</H2>;
 };
 

@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled, { css } from "styled-components";
 
-import theme from "../../themes/default.js";
+import ThemeContext from "../../themes/default.js";
 
 const Container = styled.li``;
 
@@ -11,7 +11,7 @@ const Button = styled.button`
   padding: 0;
   background-color: transparent;
 
-  width: calc(var(--lem) * 2);
+  width: calc(var(--lem) * 0.25);
   height: calc(var(--lem) / 3);
   border-bottom: calc(var(--lem) / 3) solid ${props => props.theme.colors.gray};
 
@@ -26,7 +26,10 @@ const Button = styled.button`
 `;
 
 const Bullet = props => {
+  const themeContext = useContext(ThemeContext);
+  const { theme } = themeContext;
   const { className, bulletClickHandler, index } = props;
+
   return (
     <Container>
       <Button

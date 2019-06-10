@@ -14,7 +14,7 @@ import Slider from "../Slider";
 import Thumbs from "../Thumbs";
 import Blank from "../Blank";
 
-import theme from "../../themes/default.js";
+import ThemeContext from "../../themes/default.js";
 
 WebFont.load({
   google: {
@@ -22,16 +22,9 @@ WebFont.load({
   }
 });
 
-const DarkMode = createGlobalStyle`
-	body.dark-mode {
-		background: ${props => props.theme.colors.dark.background};
-		color: ${props => props.theme.colors.dark.text};
-	}
-`;
-
 const Container = styled.div`
-  background: ${props => props.theme.colors.light.background};
-  color: ${props => props.theme.colors.light.text};
+  background: ${props => props.theme.colors.background};
+  color: ${props => props.theme.colors.text};
   font-family: ${props => props.theme.fonts.default};
   display: flex;
   flex-wrap: wrap;
@@ -54,6 +47,10 @@ const Home = () => {
 
   // Set dark mode
   const [darkMode, setDarkMode] = useDarkMode();
+
+  // Theming
+  const themeContext = useContext(ThemeContext);
+  const { theme } = themeContext;
 
   const categoryClickHandler = index => {
     setActiveCategory(index);
@@ -101,7 +98,6 @@ const Home = () => {
         numberOfVerticalLines={100}
         lineColor="#666"
       />
-      <DarkMode theme={theme} />
       <Container theme={theme}>
         <Header
           activeCategory={activeCategory}
