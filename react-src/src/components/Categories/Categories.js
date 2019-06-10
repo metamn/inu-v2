@@ -83,7 +83,7 @@ const ChevronIcon = css`
 
 const query = gql`
   query Categories($hideEmpty: Boolean) {
-    categories(where: { hideEmpty: $hideEmpty }) {
+    categories(where: { hideEmpty: $hideEmpty, orderby: TERM_ORDER }) {
       edges {
         node {
           id
