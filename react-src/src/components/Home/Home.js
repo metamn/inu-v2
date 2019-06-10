@@ -24,12 +24,14 @@ WebFont.load({
 
 const DarkMode = createGlobalStyle`
 	body.dark-mode {
-		background: ${props => props.theme.colors.text};
-		color: ${props => props.theme.colors.background};
+		background: ${props => props.theme.colors.dark.background};
+		color: ${props => props.theme.colors.dark.text};
 	}
 `;
 
 const Container = styled.div`
+  background: ${props => props.theme.colors.light.background};
+  color: ${props => props.theme.colors.light.text};
   font-family: ${props => props.theme.fonts.default};
   display: flex;
   flex-wrap: wrap;

@@ -855,7 +855,7 @@ __webpack_require__.r(__webpack_exports__);
 var _jsxFileName = "/home/cs/work/inu-v2/react-src/src/components/Home/Home.js";
 
 function _templateObject2() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_1__["default"])(["\n  font-family: ", ";\n  display: flex;\n  flex-wrap: wrap;\n\n  ", "\n"]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_1__["default"])(["\n  background: ", ";\n  color: ", ";\n  font-family: ", ";\n  display: flex;\n  flex-wrap: wrap;\n\n  ", "\n"]);
 
   _templateObject2 = function () {
     return data;
@@ -892,8 +892,8 @@ webfontloader__WEBPACK_IMPORTED_MODULE_3___default.a.load({
     families: ["Quicksand"]
   }
 });
-const DarkMode = Object(styled_components__WEBPACK_IMPORTED_MODULE_4__["createGlobalStyle"])(_templateObject(), props => props.theme.colors.text, props => props.theme.colors.background);
-const Container = styled_components__WEBPACK_IMPORTED_MODULE_4__["default"].div(_templateObject2(), props => props.theme.fonts.default, Object(_Spacing__WEBPACK_IMPORTED_MODULE_9__["default"])({
+const DarkMode = Object(styled_components__WEBPACK_IMPORTED_MODULE_4__["createGlobalStyle"])(_templateObject(), props => props.theme.colors.dark.background, props => props.theme.colors.dark.text);
+const Container = styled_components__WEBPACK_IMPORTED_MODULE_4__["default"].div(_templateObject2(), props => props.theme.colors.light.background, props => props.theme.colors.light.text, props => props.theme.fonts.default, Object(_Spacing__WEBPACK_IMPORTED_MODULE_9__["default"])({
   property: "padding"
 }));
 
@@ -954,7 +954,7 @@ const Home = () => {
           setActiveBullet: setActiveBullet,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 76
+            lineNumber: 78
           },
           __self: undefined
         });
@@ -965,7 +965,7 @@ const Home = () => {
           category: activeCategory,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 85
+            lineNumber: 87
           },
           __self: undefined
         });
@@ -975,7 +975,7 @@ const Home = () => {
         return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Blank__WEBPACK_IMPORTED_MODULE_13__["default"], {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 88
+            lineNumber: 90
           },
           __self: undefined
         });
@@ -985,7 +985,7 @@ const Home = () => {
   return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_2___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Reset__WEBPACK_IMPORTED_MODULE_7__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 94
+      lineNumber: 96
     },
     __self: undefined
   }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_TypographicGrid__WEBPACK_IMPORTED_MODULE_8__["default"], {
@@ -996,21 +996,21 @@ const Home = () => {
     lineColor: "#666",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 95
+      lineNumber: 97
     },
     __self: undefined
   }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(DarkMode, {
     theme: _themes_default_js__WEBPACK_IMPORTED_MODULE_14__["default"],
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 102
+      lineNumber: 104
     },
     __self: undefined
   }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Container, {
     theme: _themes_default_js__WEBPACK_IMPORTED_MODULE_14__["default"],
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 103
+      lineNumber: 105
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Header__WEBPACK_IMPORTED_MODULE_10__["default"], {
@@ -1023,13 +1023,13 @@ const Home = () => {
     setDarkMode: setDarkMode,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 104
+      lineNumber: 106
     },
     __self: undefined
   }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Display, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 113
+      lineNumber: 115
     },
     __self: undefined
   })));
@@ -3159,9 +3159,16 @@ __webpack_require__.r(__webpack_exports__);
 
 const theme = {
   colors: {
-    text: "black",
-    background: "white",
-    gray: "#666"
+    light: {
+      text: "black",
+      background: "white",
+      gray: "#666"
+    },
+    dark: {
+      text: "white",
+      background: "black",
+      gray: "#666"
+    }
   },
   fonts: {
     default: "'Quicksand', sans-serif;",
