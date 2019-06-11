@@ -2018,10 +2018,7 @@ const Slider = props => {
 
   Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(() => {
     if (refs && refs[activeBullet] && refs[activeBullet].current) {
-      refs[activeBullet].current.scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-      });
+      refs[activeBullet].current.scrollIntoView();
     }
   }, [activeBullet, refs]); // Touch scroll event handler
   // Attached to an event listener hook
@@ -2083,13 +2080,13 @@ const Slider = props => {
     width: width,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 206
+      lineNumber: 203
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Slides, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 207
+      lineNumber: 204
     },
     __self: undefined
   }, slides), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Bullets__WEBPACK_IMPORTED_MODULE_8__["default"], {
@@ -2098,7 +2095,7 @@ const Slider = props => {
     bulletClickHandler: bulletClickHandler,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 208
+      lineNumber: 205
     },
     __self: undefined
   }));

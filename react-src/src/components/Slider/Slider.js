@@ -127,10 +127,7 @@ const Slider = props => {
   useEffect(
     () => {
       if (refs && refs[activeBullet] && refs[activeBullet].current) {
-        refs[activeBullet].current.scrollIntoView({
-          behavior: "smooth",
-          block: "start"
-        });
+        refs[activeBullet].current.scrollIntoView();
       }
     },
     [activeBullet, refs]
