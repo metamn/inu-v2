@@ -1,6 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import styled, { css } from "styled-components";
 import { FiList, FiSun } from "react-icons/fi";
+
+import { ThemeContext } from "../../themes/default.js";
 
 import Spacing from "../Spacing";
 
@@ -25,7 +27,8 @@ const HeaderIcon = styled(Icon)`
 `;
 
 const Header = props => {
-  const { thumbIconClickHandler, darkMode, setDarkMode } = props;
+  const { thumbIconClickHandler } = props;
+  const theme = useContext(ThemeContext);
 
   return (
     <Container>
@@ -36,7 +39,7 @@ const Header = props => {
         <FiList onClick={() => thumbIconClickHandler()} />
       </HeaderIcon>
       <HeaderIcon size={1.25}>
-        <FiSun onClick={() => setDarkMode(!darkMode)} />
+        <FiSun onClick={() => theme.toggleTheme()} />
       </HeaderIcon>
     </Container>
   );

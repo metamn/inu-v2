@@ -3,7 +3,7 @@ import WebFont from "webfontloader";
 import styled, { createGlobalStyle } from "styled-components";
 import { stringify } from "flatted";
 
-import { useDarkMode } from "../../hooks";
+import { getTheme, ThemeContext } from "../../themes/default.js";
 
 import Reset from "../Reset";
 import TypographicGrid from "../TypographicGrid";
@@ -13,8 +13,6 @@ import Header from "../Header";
 import Slider from "../Slider";
 import Thumbs from "../Thumbs";
 import Blank from "../Blank";
-
-import ThemeContext from "../../themes/default.js";
 
 WebFont.load({
   google: {
@@ -45,13 +43,28 @@ const Home = () => {
   // How to display images
   const [displayMode, setDisplayMode] = useState(0);
 
-  // Set dark mode
-  const [darkMode, setDarkMode] = useDarkMode();
-
   // Theming
   const themeContext = useContext(ThemeContext);
-  const { theme } = themeContext;
+  const [currentTheme, setCurrentTheme] = useState({
+    mode: themeContext.mode,
+    theme: themeContext.theme,
+    toggleTheme: () => {
+      console.log("current:" + stringify(currentTheme.mode));
+      currentTheme.mode === "light"
+        ? setCurrentTheme({
+            mode: "dark",
+            theme: getTheme("dark"),
+            toggleTheme: currentTheme.toggleTheme
+          })
+        : setCurrentTheme({
+            mode: "light",
+            theme: getTheme("light"),
+            toggleTheme: currentTheme.toggleTheme
+          });
+    }
+  });
 
+  // Click handlers
   const categoryClickHandler = index => {
     setActiveCategory(index);
     setActiveBullet(0);
@@ -98,18 +111,18 @@ const Home = () => {
         numberOfVerticalLines={100}
         lineColor="#666"
       />
-      <Container theme={theme}>
-        <Header
-          activeCategory={activeCategory}
-          categoryClickHandler={categoryClickHandler}
-          activeCategoryIcon={activeCategoryIcon}
-          categoryIconClickHandler={categoryIconClickHandler}
-          thumbIconClickHandler={thumbIconClickHandler}
-          darkMode={darkMode}
-          setDarkMode={setDarkMode}
-        />
-        <Display />
-      </Container>
+      <ThemeContext.Provider value={currentTheme}>
+        <Container theme={currentTheme.theme}>
+          <Header
+            activeCategory={activeCategory}
+            categoryClickHandler={categoryClickHandler}
+            activeCategoryIcon={activeCategoryIcon}
+            categoryIconClickHandler={categoryIconClickHandler}
+            thumbIconClickHandler={thumbIconClickHandler}
+          />
+          <Display />
+        </Container>
+      </ThemeContext.Provider>
     </>
   );
 };

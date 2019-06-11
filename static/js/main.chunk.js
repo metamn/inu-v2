@@ -133,7 +133,7 @@ const Container = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].li(_
 const Button = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].button(_templateObject2(), props => props.theme.colors.gray, props => props.className === "active" && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject3(), props => props.theme.colors.text));
 
 const Bullet = props => {
-  const themeContext = Object(react__WEBPACK_IMPORTED_MODULE_1__["useContext"])(_themes_default_js__WEBPACK_IMPORTED_MODULE_3__["default"]);
+  const themeContext = Object(react__WEBPACK_IMPORTED_MODULE_1__["useContext"])(_themes_default_js__WEBPACK_IMPORTED_MODULE_3__["ThemeContext"]);
   const theme = themeContext.theme;
   const className = props.className,
         bulletClickHandler = props.bulletClickHandler,
@@ -627,7 +627,7 @@ const query = graphql_tag__WEBPACK_IMPORTED_MODULE_3___default()(_templateObject
 const H2 = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].h2(_templateObject2(), props => props.theme.colors.gray);
 
 const markup = data => {
-  const themeContext = Object(react__WEBPACK_IMPORTED_MODULE_1__["useContext"])(_themes_default_js__WEBPACK_IMPORTED_MODULE_5__["default"]);
+  const themeContext = Object(react__WEBPACK_IMPORTED_MODULE_1__["useContext"])(_themes_default_js__WEBPACK_IMPORTED_MODULE_5__["ThemeContext"]);
   const theme = themeContext.theme;
   const description = data.generalSettings.description;
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(H2, {
@@ -678,12 +678,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 /* harmony import */ var react_icons_fi__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-icons/fi */ "./node_modules/react-icons/fi/index.esm.js");
-/* harmony import */ var _Spacing__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../Spacing */ "./src/components/Spacing/index.js");
-/* harmony import */ var _Logo__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../Logo */ "./src/components/Logo/index.js");
-/* harmony import */ var _Line__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../Line */ "./src/components/Line/index.js");
-/* harmony import */ var _Categories__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../Categories */ "./src/components/Categories/index.js");
-/* harmony import */ var _Icon__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../Icon */ "./src/components/Icon/index.js");
-/* harmony import */ var _Media__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../Media */ "./src/components/Media/index.js");
+/* harmony import */ var _themes_default_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../themes/default.js */ "./src/themes/default.js");
+/* harmony import */ var _Spacing__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../Spacing */ "./src/components/Spacing/index.js");
+/* harmony import */ var _Logo__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../Logo */ "./src/components/Logo/index.js");
+/* harmony import */ var _Line__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../Line */ "./src/components/Line/index.js");
+/* harmony import */ var _Categories__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../Categories */ "./src/components/Categories/index.js");
+/* harmony import */ var _Icon__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../Icon */ "./src/components/Icon/index.js");
+/* harmony import */ var _Media__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../Media */ "./src/components/Media/index.js");
 
 var _jsxFileName = "/home/cs/work/inu-v2/react-src/src/components/Header/Header.js";
 
@@ -746,49 +747,35 @@ function _templateObject() {
 
 
 
-const Container = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].header(_templateObject(), _Media__WEBPACK_IMPORTED_MODULE_9__["default"].mobile(_templateObject2()), _Media__WEBPACK_IMPORTED_MODULE_9__["default"].tablet(_templateObject3()));
-const HeaderIcon = Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["default"])(_Icon__WEBPACK_IMPORTED_MODULE_8__["default"])(_templateObject4(), _Media__WEBPACK_IMPORTED_MODULE_9__["default"].tablet(_templateObject5()));
+
+const Container = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].header(_templateObject(), _Media__WEBPACK_IMPORTED_MODULE_10__["default"].mobile(_templateObject2()), _Media__WEBPACK_IMPORTED_MODULE_10__["default"].tablet(_templateObject3()));
+const HeaderIcon = Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["default"])(_Icon__WEBPACK_IMPORTED_MODULE_9__["default"])(_templateObject4(), _Media__WEBPACK_IMPORTED_MODULE_10__["default"].tablet(_templateObject5()));
 
 const Header = props => {
-  const thumbIconClickHandler = props.thumbIconClickHandler,
-        darkMode = props.darkMode,
-        setDarkMode = props.setDarkMode;
+  const thumbIconClickHandler = props.thumbIconClickHandler;
+  const theme = Object(react__WEBPACK_IMPORTED_MODULE_1__["useContext"])(_themes_default_js__WEBPACK_IMPORTED_MODULE_4__["ThemeContext"]);
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Container, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 31
-    },
-    __self: undefined
-  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Logo__WEBPACK_IMPORTED_MODULE_5__["default"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 32
-    },
-    __self: undefined
-  }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Line__WEBPACK_IMPORTED_MODULE_6__["default"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 33
-    },
-    __self: undefined
-  }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Categories__WEBPACK_IMPORTED_MODULE_7__["default"], Object.assign({}, props, {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 34
     },
     __self: undefined
-  })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(HeaderIcon, {
-    size: 1.25,
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Logo__WEBPACK_IMPORTED_MODULE_6__["default"], {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 35
     },
     __self: undefined
-  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_icons_fi__WEBPACK_IMPORTED_MODULE_3__["FiList"], {
-    onClick: () => thumbIconClickHandler(),
+  }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Line__WEBPACK_IMPORTED_MODULE_7__["default"], {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 36
+    },
+    __self: undefined
+  }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Categories__WEBPACK_IMPORTED_MODULE_8__["default"], Object.assign({}, props, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 37
     },
     __self: undefined
   })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(HeaderIcon, {
@@ -798,11 +785,25 @@ const Header = props => {
       lineNumber: 38
     },
     __self: undefined
-  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_icons_fi__WEBPACK_IMPORTED_MODULE_3__["FiSun"], {
-    onClick: () => setDarkMode(!darkMode),
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_icons_fi__WEBPACK_IMPORTED_MODULE_3__["FiList"], {
+    onClick: () => thumbIconClickHandler(),
     __source: {
       fileName: _jsxFileName,
       lineNumber: 39
+    },
+    __self: undefined
+  })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(HeaderIcon, {
+    size: 1.25,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 41
+    },
+    __self: undefined
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_icons_fi__WEBPACK_IMPORTED_MODULE_3__["FiSun"], {
+    onClick: () => theme.toggleTheme(),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 42
     },
     __self: undefined
   })));
@@ -845,7 +846,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var webfontloader__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(webfontloader__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 /* harmony import */ var flatted__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! flatted */ "./node_modules/flatted/esm/index.js");
-/* harmony import */ var _hooks__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../hooks */ "./src/hooks/index.js");
+/* harmony import */ var _themes_default_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../themes/default.js */ "./src/themes/default.js");
 /* harmony import */ var _Reset__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../Reset */ "./src/components/Reset/index.js");
 /* harmony import */ var _TypographicGrid__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../TypographicGrid */ "./src/components/TypographicGrid/index.js");
 /* harmony import */ var _Spacing__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../Spacing */ "./src/components/Spacing/index.js");
@@ -853,7 +854,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Slider__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../Slider */ "./src/components/Slider/index.js");
 /* harmony import */ var _Thumbs__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../Thumbs */ "./src/components/Thumbs/index.js");
 /* harmony import */ var _Blank__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../Blank */ "./src/components/Blank/index.js");
-/* harmony import */ var _themes_default_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../../themes/default.js */ "./src/themes/default.js");
 
 
 var _jsxFileName = "/home/cs/work/inu-v2/react-src/src/components/Home/Home.js";
@@ -867,7 +867,6 @@ function _templateObject() {
 
   return data;
 }
-
 
 
 
@@ -913,17 +912,31 @@ const Home = () => {
   const _useState7 = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])(0),
         _useState8 = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_useState7, 2),
         displayMode = _useState8[0],
-        setDisplayMode = _useState8[1]; // Set dark mode
+        setDisplayMode = _useState8[1]; // Theming
 
 
-  const _useDarkMode = Object(_hooks__WEBPACK_IMPORTED_MODULE_6__["useDarkMode"])(),
-        _useDarkMode2 = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_useDarkMode, 2),
-        darkMode = _useDarkMode2[0],
-        setDarkMode = _useDarkMode2[1]; // Theming
+  const themeContext = Object(react__WEBPACK_IMPORTED_MODULE_2__["useContext"])(_themes_default_js__WEBPACK_IMPORTED_MODULE_6__["ThemeContext"]);
 
+  const _useState9 = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])({
+    mode: themeContext.mode,
+    theme: themeContext.theme,
+    toggleTheme: () => {
+      console.log("current:" + Object(flatted__WEBPACK_IMPORTED_MODULE_5__["stringify"])(currentTheme.mode));
+      currentTheme.mode === "light" ? setCurrentTheme({
+        mode: "dark",
+        theme: Object(_themes_default_js__WEBPACK_IMPORTED_MODULE_6__["getTheme"])("dark"),
+        toggleTheme: currentTheme.toggleTheme
+      }) : setCurrentTheme({
+        mode: "light",
+        theme: Object(_themes_default_js__WEBPACK_IMPORTED_MODULE_6__["getTheme"])("light"),
+        toggleTheme: currentTheme.toggleTheme
+      });
+    }
+  }),
+        _useState10 = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_useState9, 2),
+        currentTheme = _useState10[0],
+        setCurrentTheme = _useState10[1]; // Click handlers
 
-  const themeContext = Object(react__WEBPACK_IMPORTED_MODULE_2__["useContext"])(_themes_default_js__WEBPACK_IMPORTED_MODULE_14__["default"]);
-  const theme = themeContext.theme;
 
   const categoryClickHandler = index => {
     setActiveCategory(index);
@@ -951,7 +964,7 @@ const Home = () => {
           setActiveBullet: setActiveBullet,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 75
+            lineNumber: 88
           },
           __self: undefined
         });
@@ -962,7 +975,7 @@ const Home = () => {
           category: activeCategory,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 84
+            lineNumber: 97
           },
           __self: undefined
         });
@@ -972,7 +985,7 @@ const Home = () => {
         return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Blank__WEBPACK_IMPORTED_MODULE_13__["default"], {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 87
+            lineNumber: 100
           },
           __self: undefined
         });
@@ -982,7 +995,7 @@ const Home = () => {
   return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_2___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Reset__WEBPACK_IMPORTED_MODULE_7__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 93
+      lineNumber: 106
     },
     __self: undefined
   }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_TypographicGrid__WEBPACK_IMPORTED_MODULE_8__["default"], {
@@ -993,14 +1006,21 @@ const Home = () => {
     lineColor: "#666",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 94
+      lineNumber: 107
     },
     __self: undefined
-  }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Container, {
-    theme: theme,
+  }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_themes_default_js__WEBPACK_IMPORTED_MODULE_6__["ThemeContext"].Provider, {
+    value: currentTheme,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 101
+      lineNumber: 114
+    },
+    __self: undefined
+  }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Container, {
+    theme: currentTheme.theme,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 115
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Header__WEBPACK_IMPORTED_MODULE_10__["default"], {
@@ -1009,20 +1029,18 @@ const Home = () => {
     activeCategoryIcon: activeCategoryIcon,
     categoryIconClickHandler: categoryIconClickHandler,
     thumbIconClickHandler: thumbIconClickHandler,
-    darkMode: darkMode,
-    setDarkMode: setDarkMode,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 102
+      lineNumber: 116
     },
     __self: undefined
   }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Display, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 111
+      lineNumber: 123
     },
     __self: undefined
-  })));
+  }))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Home);
@@ -2713,9 +2731,6 @@ function useDarkMode() {
   const enabled = typeof enabledState !== "undefined" ? enabledState : prefersDarkMode; // Fire off effect that add/removes dark mode class
 
   Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(() => {
-    const className = "dark-mode";
-    const element = window.document.body;
-
     if (enabled) {
       element.classList.add(className);
     } else {
@@ -3139,11 +3154,13 @@ function unregister() {
 /*!*******************************!*\
   !*** ./src/themes/default.js ***!
   \*******************************/
-/*! exports provided: default */
+/*! exports provided: getTheme, ThemeContext */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTheme", function() { return getTheme; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ThemeContext", function() { return ThemeContext; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 
@@ -3163,9 +3180,11 @@ const themeColors = {
   }
 };
 
-const themes = mode => {
+const getThemeColors = mode => mode === "light" ? themeColors.light : themeColors.dark;
+
+const getTheme = mode => {
   return {
-    colors: mode === "light" ? themeColors.light : themeColors.dark,
+    colors: getThemeColors(mode),
     fonts: {
       default: "'Quicksand', sans-serif;"
     }
@@ -3173,10 +3192,11 @@ const themes = mode => {
 };
 
 const ThemeContext = react__WEBPACK_IMPORTED_MODULE_0___default.a.createContext({
-  theme: themes("light"),
+  mode: "light",
+  theme: getTheme("light"),
   toggleTheme: () => {}
 });
-/* harmony default export */ __webpack_exports__["default"] = (ThemeContext);
+
 
 /***/ }),
 
@@ -3192,5 +3212,5 @@ module.exports = __webpack_require__(/*! /home/cs/work/inu-v2/react-src/src/inde
 
 /***/ })
 
-},[[0,"runtime~main",0]]]);
+},[[0,"runtime~main",1]]]);
 //# sourceMappingURL=main.chunk.js.map

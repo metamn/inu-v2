@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import styled, { css } from "styled-components";
 
-import ThemeContext from "../../themes/default.js";
+import { ThemeContext } from "../../themes/default.js";
 
 const Container = styled.li``;
 

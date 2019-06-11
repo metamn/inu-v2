@@ -3,7 +3,7 @@ import styled from "styled-components";
 import gql from "graphql-tag";
 import { useQuery } from "./../../hooks";
 
-import ThemeContext from "../../themes/default.js";
+import { ThemeContext } from "../../themes/default.js";
 
 const query = gql`
   query siteDescription {

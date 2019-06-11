@@ -17,9 +17,12 @@ const themeColors = {
   }
 };
 
-const themes = mode => {
+const getThemeColors = mode =>
+  mode === "light" ? themeColors.light : themeColors.dark;
+
+const getTheme = mode => {
   return {
-    colors: mode === "light" ? themeColors.light : themeColors.dark,
+    colors: getThemeColors(mode),
     fonts: {
       default: "'Quicksand', sans-serif;"
     }
@@ -27,8 +30,9 @@ const themes = mode => {
 };
 
 const ThemeContext = React.createContext({
-  theme: themes("light"),
+  mode: "light",
+  theme: getTheme("light"),
   toggleTheme: () => {}
 });
 
-export default ThemeContext;
+export { getTheme, ThemeContext };

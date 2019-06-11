@@ -19,8 +19,6 @@ function useDarkMode() {
   // Fire off effect that add/removes dark mode class
   useEffect(
     () => {
-      const className = "dark-mode";
-      const element = window.document.body;
       if (enabled) {
         element.classList.add(className);
       } else {
