@@ -73,7 +73,7 @@ const Image = props => {
             }}
           </ProgressiveImage>
         );
-        break;
+
       default:
         return (
           <ProgressiveImage src={src} placeholder="">

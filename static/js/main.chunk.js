@@ -51,10 +51,6 @@ const App = () => react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(rea
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-
-
 const Blank = () => {
   return "";
 };
@@ -626,22 +622,26 @@ function _templateObject() {
 const query = graphql_tag__WEBPACK_IMPORTED_MODULE_3___default()(_templateObject());
 const H2 = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].h2(_templateObject2(), props => props.theme.colors.gray);
 
-const markup = data => {
-  const themeContext = Object(react__WEBPACK_IMPORTED_MODULE_1__["useContext"])(_themes_default_js__WEBPACK_IMPORTED_MODULE_5__["ThemeContext"]);
-  const theme = themeContext.theme;
+const markup = (data, queryProps) => {
   const description = data.generalSettings.description;
+  const theme = queryProps.theme;
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(H2, {
     theme: theme,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 27
+      lineNumber: 26
     },
     __self: undefined
   }, description);
 };
 
 const Description = () => {
-  return Object(_hooks__WEBPACK_IMPORTED_MODULE_4__["useQuery"])(query, markup);
+  const themeContext = Object(react__WEBPACK_IMPORTED_MODULE_1__["useContext"])(_themes_default_js__WEBPACK_IMPORTED_MODULE_5__["ThemeContext"]);
+  const theme = themeContext.theme;
+  const queryProps = {
+    theme: theme
+  };
+  return Object(_hooks__WEBPACK_IMPORTED_MODULE_4__["useQuery"])(query, markup, {}, queryProps);
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Description);
@@ -678,13 +678,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 /* harmony import */ var react_icons_fi__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-icons/fi */ "./node_modules/react-icons/fi/index.esm.js");
-/* harmony import */ var _themes_default_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../themes/default.js */ "./src/themes/default.js");
-/* harmony import */ var _Spacing__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../Spacing */ "./src/components/Spacing/index.js");
-/* harmony import */ var _Logo__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../Logo */ "./src/components/Logo/index.js");
-/* harmony import */ var _Line__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../Line */ "./src/components/Line/index.js");
-/* harmony import */ var _Categories__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../Categories */ "./src/components/Categories/index.js");
-/* harmony import */ var _Icon__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../Icon */ "./src/components/Icon/index.js");
-/* harmony import */ var _Media__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../Media */ "./src/components/Media/index.js");
+/* harmony import */ var _Logo__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../Logo */ "./src/components/Logo/index.js");
+/* harmony import */ var _Line__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../Line */ "./src/components/Line/index.js");
+/* harmony import */ var _Categories__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../Categories */ "./src/components/Categories/index.js");
+/* harmony import */ var _Icon__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../Icon */ "./src/components/Icon/index.js");
+/* harmony import */ var _Media__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../Media */ "./src/components/Media/index.js");
 
 var _jsxFileName = "/home/cs/work/inu-v2/react-src/src/components/Header/Header.js";
 
@@ -746,10 +744,8 @@ function _templateObject() {
 
 
 
-
-
-const Container = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].header(_templateObject(), _Media__WEBPACK_IMPORTED_MODULE_10__["default"].mobile(_templateObject2()), _Media__WEBPACK_IMPORTED_MODULE_10__["default"].tablet(_templateObject3()));
-const HeaderIcon = Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["default"])(_Icon__WEBPACK_IMPORTED_MODULE_9__["default"])(_templateObject4(), _Media__WEBPACK_IMPORTED_MODULE_10__["default"].tablet(_templateObject5()));
+const Container = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].header(_templateObject(), _Media__WEBPACK_IMPORTED_MODULE_8__["default"].mobile(_templateObject2()), _Media__WEBPACK_IMPORTED_MODULE_8__["default"].tablet(_templateObject3()));
+const HeaderIcon = Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["default"])(_Icon__WEBPACK_IMPORTED_MODULE_7__["default"])(_templateObject4(), _Media__WEBPACK_IMPORTED_MODULE_8__["default"].tablet(_templateObject5()));
 
 const Header = props => {
   const thumbIconClickHandler = props.thumbIconClickHandler,
@@ -757,53 +753,53 @@ const Header = props => {
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Container, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 33
+      lineNumber: 29
     },
     __self: undefined
-  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Logo__WEBPACK_IMPORTED_MODULE_6__["default"], {
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Logo__WEBPACK_IMPORTED_MODULE_4__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 34
+      lineNumber: 30
     },
     __self: undefined
-  }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Line__WEBPACK_IMPORTED_MODULE_7__["default"], {
+  }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Line__WEBPACK_IMPORTED_MODULE_5__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35
+      lineNumber: 31
     },
     __self: undefined
-  }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Categories__WEBPACK_IMPORTED_MODULE_8__["default"], Object.assign({}, props, {
+  }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Categories__WEBPACK_IMPORTED_MODULE_6__["default"], Object.assign({}, props, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 36
+      lineNumber: 32
     },
     __self: undefined
   })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(HeaderIcon, {
     size: 1.25,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 37
+      lineNumber: 33
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_icons_fi__WEBPACK_IMPORTED_MODULE_3__["FiList"], {
     onClick: () => thumbIconClickHandler(),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38
+      lineNumber: 34
     },
     __self: undefined
   })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(HeaderIcon, {
     size: 1.25,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 40
+      lineNumber: 36
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_icons_fi__WEBPACK_IMPORTED_MODULE_3__["FiSun"], {
     onClick: () => sunIconClickHandler(),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41
+      lineNumber: 37
     },
     __self: undefined
   })));
@@ -1068,7 +1064,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-/* harmony import */ var flatted__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! flatted */ "./node_modules/flatted/esm/index.js");
 
 
 var _jsxFileName = "/home/cs/work/inu-v2/react-src/src/components/Icon/Icon.js";
@@ -1115,7 +1110,6 @@ function _templateObject() {
 
 
 
-
 const Container = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].div(_templateObject(), props => props.size && Object(styled_components__WEBPACK_IMPORTED_MODULE_3__["css"])(_templateObject2(), props.size, props.size, props.size), props => props.className === "active" && Object(styled_components__WEBPACK_IMPORTED_MODULE_3__["css"])(_templateObject3()), props => props.className === "inactive" && Object(styled_components__WEBPACK_IMPORTED_MODULE_3__["css"])(_templateObject4()));
 
 const Icon = props => {
@@ -1131,7 +1125,7 @@ const Icon = props => {
     className: className,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 37
+      lineNumber: 36
     },
     __self: undefined
   }, children);
@@ -1299,7 +1293,6 @@ const Image = props => {
             __self: undefined
           });
         });
-        break;
 
       default:
         return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_progressive_image__WEBPACK_IMPORTED_MODULE_2___default.a, {
@@ -1899,12 +1892,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var graphql_tag__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! graphql-tag */ "./node_modules/graphql-tag/src/index.js");
 /* harmony import */ var graphql_tag__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(graphql_tag__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _hooks__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../hooks */ "./src/hooks/index.js");
-/* harmony import */ var flatted__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! flatted */ "./node_modules/flatted/esm/index.js");
-/* harmony import */ var _Spacing__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../Spacing */ "./src/components/Spacing/index.js");
-/* harmony import */ var _List__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../List */ "./src/components/List/index.js");
-/* harmony import */ var _Slide__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../Slide */ "./src/components/Slide/index.js");
-/* harmony import */ var _Post__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../Post */ "./src/components/Post/index.js");
-/* harmony import */ var _Bullets__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../Bullets */ "./src/components/Bullets/index.js");
+/* harmony import */ var _List__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../List */ "./src/components/List/index.js");
+/* harmony import */ var _Slide__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../Slide */ "./src/components/Slide/index.js");
+/* harmony import */ var _Post__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../Post */ "./src/components/Post/index.js");
+/* harmony import */ var _Bullets__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../Bullets */ "./src/components/Bullets/index.js");
 
 var _jsxFileName = "/home/cs/work/inu-v2/react-src/src/components/Slider/Slider.js";
 
@@ -1956,12 +1947,10 @@ function _templateObject() {
 
 
 
-
-
 const Container = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].section(_templateObject(), props => props.width && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject2(), props.width)); // Original idea:
 // - https://nolanlawson.com/2019/02/10/building-a-modern-carousel-with-css-scroll-snap-smooth-scrolling-and-pinch-zoom/
 
-const Slides = Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["default"])(_List__WEBPACK_IMPORTED_MODULE_7__["default"])(_templateObject3());
+const Slides = Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["default"])(_List__WEBPACK_IMPORTED_MODULE_5__["default"])(_templateObject3());
 const query = graphql_tag__WEBPACK_IMPORTED_MODULE_3___default()(_templateObject4());
 
 const markup = (data, queryProps) => {
@@ -1973,15 +1962,15 @@ const markup = (data, queryProps) => {
   const slides = postsWithImage.map((edge, index) => {
     const ref = react__WEBPACK_IMPORTED_MODULE_1___default.a.createRef();
     refs[index] = ref;
-    return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Slide__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Slide__WEBPACK_IMPORTED_MODULE_6__["default"], {
       key: edge.node.id,
       ref: ref,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 87
+        lineNumber: 85
       },
       __self: undefined
-    }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Post__WEBPACK_IMPORTED_MODULE_9__["default"], {
+    }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Post__WEBPACK_IMPORTED_MODULE_7__["default"], {
       node: edge.node // Click handling **MUST** go down to the smallest component, ie <img/>
       ,
       index: index,
@@ -1990,7 +1979,7 @@ const markup = (data, queryProps) => {
       width: width,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 88
+        lineNumber: 86
       },
       __self: undefined
     }));
@@ -2094,22 +2083,22 @@ const Slider = props => {
     width: width,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 208
+      lineNumber: 206
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Slides, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 209
+      lineNumber: 207
     },
     __self: undefined
-  }, slides), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Bullets__WEBPACK_IMPORTED_MODULE_10__["default"], {
+  }, slides), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Bullets__WEBPACK_IMPORTED_MODULE_8__["default"], {
     numberOfSlides: numberOfSlides,
     activeBullet: activeBullet,
     bulletClickHandler: bulletClickHandler,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 210
+      lineNumber: 208
     },
     __self: undefined
   }));
@@ -2655,7 +2644,7 @@ const setClassName = props => {
 /*!****************************!*\
   !*** ./src/hooks/index.js ***!
   \****************************/
-/*! exports provided: useQuery, useKeyPress, useEventListener, useDarkMode, useMedia, useLocalStorage */
+/*! exports provided: useQuery, useEventListener */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2663,86 +2652,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _useQuery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./useQuery */ "./src/hooks/useQuery.js");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "useQuery", function() { return _useQuery__WEBPACK_IMPORTED_MODULE_0__["default"]; });
 
-/* harmony import */ var _useKeyPress__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./useKeyPress */ "./src/hooks/useKeyPress.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "useKeyPress", function() { return _useKeyPress__WEBPACK_IMPORTED_MODULE_1__["default"]; });
-
-/* harmony import */ var _useEventListener__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./useEventListener */ "./src/hooks/useEventListener.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "useEventListener", function() { return _useEventListener__WEBPACK_IMPORTED_MODULE_2__["default"]; });
-
-/* harmony import */ var _useDarkMode__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./useDarkMode */ "./src/hooks/useDarkMode.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "useDarkMode", function() { return _useDarkMode__WEBPACK_IMPORTED_MODULE_3__["default"]; });
-
-/* harmony import */ var _useMedia__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./useMedia */ "./src/hooks/useMedia.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "useMedia", function() { return _useMedia__WEBPACK_IMPORTED_MODULE_4__["default"]; });
-
-/* harmony import */ var _useLocalStorage__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./useLocalStorage */ "./src/hooks/useLocalStorage.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "useLocalStorage", function() { return _useLocalStorage__WEBPACK_IMPORTED_MODULE_5__["default"]; });
+/* harmony import */ var _useEventListener__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./useEventListener */ "./src/hooks/useEventListener.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "useEventListener", function() { return _useEventListener__WEBPACK_IMPORTED_MODULE_1__["default"]; });
 
 
 
-
-
-
-
-
-/***/ }),
-
-/***/ "./src/hooks/useDarkMode.js":
-/*!**********************************!*\
-  !*** ./src/hooks/useDarkMode.js ***!
-  \**********************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/esm/slicedToArray */ "./node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/esm/slicedToArray.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _useLocalStorage__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./useLocalStorage */ "./src/hooks/useLocalStorage.js");
-/* harmony import */ var _useMedia__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./useMedia */ "./src/hooks/useMedia.js");
-
-
-
-
-
-function useDarkMode() {
-  // Use our useLocalStorage hook to persist state through a page refresh.
-  // Read the recipe for this hook to learn more: usehooks.com/useLocalStorage
-  const _useLocalStorage = Object(_useLocalStorage__WEBPACK_IMPORTED_MODULE_2__["default"])("dark-mode-enabled"),
-        _useLocalStorage2 = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_useLocalStorage, 2),
-        enabledState = _useLocalStorage2[0],
-        setEnabledState = _useLocalStorage2[1]; // See if user has set a browser or OS preference for dark mode.
-  // The usePrefersDarkMode hook composes a useMedia hook (see code below).
-
-
-  const prefersDarkMode = usePrefersDarkMode(); // If enabledState is defined use it, otherwise fallback to prefersDarkMode.
-  // This allows user to override OS level setting on our website.
-
-  const enabled = typeof enabledState !== "undefined" ? enabledState : prefersDarkMode; // Fire off effect that add/removes dark mode class
-
-  Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(() => {
-    if (enabled) {
-      element.classList.add(className);
-    } else {
-      element.classList.remove(className);
-    }
-  }, [enabled] // Only re-call effect when value changes
-  ); // Return enabled state and setter
-
-  return [enabled, setEnabledState];
-} // Compose our useMedia hook to detect dark mode preference.
-// The API for useMedia looks a bit weird, but that's because ...
-// ... it was designed to support multiple media queries and return values.
-// Thanks to hook composition we can hide away that extra complexity!
-// Read the recipe for useMedia to learn more: usehooks.com/useMedia
-
-
-function usePrefersDarkMode() {
-  return Object(_useMedia__WEBPACK_IMPORTED_MODULE_3__["default"])(["(prefers-color-scheme: dark)"], [true], false);
-}
-
-/* harmony default export */ __webpack_exports__["default"] = (useDarkMode);
 
 /***/ }),
 
@@ -2788,173 +2702,6 @@ function useEventListener(eventName, handler, element = global) {
 
 /* harmony default export */ __webpack_exports__["default"] = (useEventListener);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../node_modules/webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js")))
-
-/***/ }),
-
-/***/ "./src/hooks/useKeyPress.js":
-/*!**********************************!*\
-  !*** ./src/hooks/useKeyPress.js ***!
-  \**********************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/esm/slicedToArray */ "./node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/esm/slicedToArray.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-
-
-
-const useKeyPress = targetKey => {
-  // State for keeping track of whether key is pressed
-  const _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(false),
-        _useState2 = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_useState, 2),
-        keyPressed = _useState2[0],
-        setKeyPressed = _useState2[1]; // Add event listeners
-
-
-  Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(() => {
-    // If pressed key is our target key then set to true
-    function downHandler({
-      key
-    }) {
-      if (key === targetKey) {
-        setKeyPressed(true);
-      }
-    } // If released key is our target key then set to false
-
-
-    const upHandler = ({
-      key
-    }) => {
-      if (key === targetKey) {
-        setKeyPressed(false);
-      }
-    };
-
-    window.addEventListener("keydown", downHandler);
-    window.addEventListener("keyup", upHandler); // Remove event listeners on cleanup
-
-    return () => {
-      window.removeEventListener("keydown", downHandler);
-      window.removeEventListener("keyup", upHandler);
-    };
-  }, [targetKey]); // Empty array ensures that effect is only run on mount and unmount
-
-  return keyPressed;
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (useKeyPress);
-
-/***/ }),
-
-/***/ "./src/hooks/useLocalStorage.js":
-/*!**************************************!*\
-  !*** ./src/hooks/useLocalStorage.js ***!
-  \**************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return useLocalStorage; });
-/* harmony import */ var _home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/esm/slicedToArray */ "./node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/esm/slicedToArray.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-
- // Code from https://usehooks.com/useLocalStorage
-
-function useLocalStorage(key, initialValue) {
-  // State to store our value
-  // Pass initial state function to useState so logic is only executed once
-  const _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(() => {
-    try {
-      // Get from local storage by key
-      const item = window.localStorage.getItem(key); // Parse stored json or if none return initialValue
-
-      return item ? JSON.parse(item) : initialValue;
-    } catch (error) {
-      // If error also return initialValue
-      console.log(error);
-      return initialValue;
-    }
-  }),
-        _useState2 = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_useState, 2),
-        storedValue = _useState2[0],
-        setStoredValue = _useState2[1]; // Return a wrapped version of useState's setter function that ...
-  // ... persists the new value to localStorage.
-
-
-  const setValue = value => {
-    try {
-      // Allow value to be a function so we have same API as useState
-      const valueToStore = value instanceof Function ? value(storedValue) : value; // Save state
-
-      setStoredValue(valueToStore); // Save to local storage
-
-      window.localStorage.setItem(key, JSON.stringify(valueToStore));
-    } catch (error) {
-      // A more advanced implementation would handle the error case
-      console.log(error);
-    }
-  };
-
-  return [storedValue, setValue];
-}
-
-/***/ }),
-
-/***/ "./src/hooks/useMedia.js":
-/*!*******************************!*\
-  !*** ./src/hooks/useMedia.js ***!
-  \*******************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return useMedia; });
-/* harmony import */ var _home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/esm/slicedToArray */ "./node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/esm/slicedToArray.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-
- // Code from https://usehooks.com/useMedia
-// Alternate hook that accepts a single query
-
-function useMedia(queries, values, defaultValue) {
-  // State and setter for matched value
-  const _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(defaultValue),
-        _useState2 = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_useState, 2),
-        value = _useState2[0],
-        setValue = _useState2[1]; // Array containing a media query list for each query
-
-
-  const mediaQueryLists = queries.map(q => window.matchMedia(q)); // State update function
-
-  const getValue = () => {
-    // Get index of first media query that matches
-    const index = mediaQueryLists.findIndex(mql => mql.matches); // Return related value or defaultValue if none
-
-    return typeof values[index] !== "undefined" ? values[index] : defaultValue;
-  };
-
-  Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(() => {
-    // Set the initial value
-    setValue(getValue); // Event listener callback
-    // By defining getValue outside of useEffect we ensure that it has ...
-    // ... current values of hook args (as this hook only run on mount/dismount).
-
-    const handler = () => setValue(getValue); // Set a listener for each media query with above handler as callback.
-
-
-    mediaQueryLists.forEach(mql => mql.addListener(handler)); // Remove listeners on cleanup
-
-    return () => mediaQueryLists.forEach(mql => mql.removeListener(handler));
-  }, [getValue, mediaQueryLists] // Empty array ensures effect is only run on mount and unmount
-  );
-  return value;
-}
 
 /***/ }),
 
@@ -3210,5 +2957,5 @@ module.exports = __webpack_require__(/*! /home/cs/work/inu-v2/react-src/src/inde
 
 /***/ })
 
-},[[0,"runtime~main",0]]]);
+},[[0,"runtime~main",1]]]);
 //# sourceMappingURL=main.chunk.js.map

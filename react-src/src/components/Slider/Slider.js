@@ -1,10 +1,8 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useEffect, useCallback } from "react";
 import styled, { css } from "styled-components";
 import gql from "graphql-tag";
 import { useQuery, useEventListener } from "../../hooks";
-import { stringify } from "flatted";
 
-import Spacing from "../Spacing";
 import List from "../List";
 import Slide from "../Slide";
 import Post from "../Post";

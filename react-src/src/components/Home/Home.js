@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 import WebFont from "webfontloader";
-import styled, { createGlobalStyle } from "styled-components";
+import styled from "styled-components";
 import { stringify } from "flatted";
 
 import {

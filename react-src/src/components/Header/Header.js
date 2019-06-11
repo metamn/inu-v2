@@ -1,10 +1,6 @@
-import React, { useState, useEffect, useContext } from "react";
-import styled, { css } from "styled-components";
+import React from "react";
+import styled from "styled-components";
 import { FiList, FiSun } from "react-icons/fi";
-
-import { ThemeContext } from "../../themes/default.js";
-
-import Spacing from "../Spacing";
 
 import Logo from "../Logo";
 import Line from "../Line";

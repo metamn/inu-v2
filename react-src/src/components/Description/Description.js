@@ -19,16 +19,18 @@ const H2 = styled.h2`
   color: ${props => props.theme.colors.gray};
 `;
 
-const markup = data => {
-  const themeContext = useContext(ThemeContext);
-  const { theme } = themeContext;
+const markup = (data, queryProps) => {
   const description = data.generalSettings.description;
+  const { theme } = queryProps;
 
   return <H2 theme={theme}>{description}</H2>;
 };
 
 const Description = () => {
-  return useQuery(query, markup);
+  const themeContext = useContext(ThemeContext);
+  const { theme } = themeContext;
+  const queryProps = { theme: theme };
+  return useQuery(query, markup, {}, queryProps);
 };
 
 export default Description;

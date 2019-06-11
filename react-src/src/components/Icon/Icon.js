@@ -1,6 +1,5 @@
 import React from "react";
 import styled, { css } from "styled-components";
-import { stringify } from "flatted";
 
 const Container = styled.div`
   cursor: pointer;

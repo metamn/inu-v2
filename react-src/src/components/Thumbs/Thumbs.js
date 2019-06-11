@@ -1,6 +1,6 @@
 import React from "react";
 import gql from "graphql-tag";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 import { useQuery } from "../../hooks";
 
