@@ -752,58 +752,58 @@ const Container = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].head
 const HeaderIcon = Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["default"])(_Icon__WEBPACK_IMPORTED_MODULE_9__["default"])(_templateObject4(), _Media__WEBPACK_IMPORTED_MODULE_10__["default"].tablet(_templateObject5()));
 
 const Header = props => {
-  const thumbIconClickHandler = props.thumbIconClickHandler;
-  const theme = Object(react__WEBPACK_IMPORTED_MODULE_1__["useContext"])(_themes_default_js__WEBPACK_IMPORTED_MODULE_4__["ThemeContext"]);
+  const thumbIconClickHandler = props.thumbIconClickHandler,
+        sunIconClickHandler = props.sunIconClickHandler;
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Container, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 34
+      lineNumber: 33
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Logo__WEBPACK_IMPORTED_MODULE_6__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35
+      lineNumber: 34
     },
     __self: undefined
   }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Line__WEBPACK_IMPORTED_MODULE_7__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 36
+      lineNumber: 35
     },
     __self: undefined
   }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Categories__WEBPACK_IMPORTED_MODULE_8__["default"], Object.assign({}, props, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 37
+      lineNumber: 36
     },
     __self: undefined
   })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(HeaderIcon, {
     size: 1.25,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38
+      lineNumber: 37
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_icons_fi__WEBPACK_IMPORTED_MODULE_3__["FiList"], {
     onClick: () => thumbIconClickHandler(),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 39
+      lineNumber: 38
     },
     __self: undefined
   })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(HeaderIcon, {
     size: 1.25,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41
+      lineNumber: 40
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_icons_fi__WEBPACK_IMPORTED_MODULE_3__["FiSun"], {
-    onClick: () => theme.toggleTheme(),
+    onClick: () => sunIconClickHandler(),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 42
+      lineNumber: 41
     },
     __self: undefined
   })));
@@ -919,23 +919,21 @@ const Home = () => {
 
   const _useState9 = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])({
     mode: themeContext.mode,
-    theme: themeContext.theme,
-    toggleTheme: () => {
-      console.log("current:" + Object(flatted__WEBPACK_IMPORTED_MODULE_5__["stringify"])(currentTheme.mode));
-      currentTheme.mode === "light" ? setCurrentTheme({
-        mode: "dark",
-        theme: Object(_themes_default_js__WEBPACK_IMPORTED_MODULE_6__["getTheme"])("dark"),
-        toggleTheme: currentTheme.toggleTheme
-      }) : setCurrentTheme({
-        mode: "light",
-        theme: Object(_themes_default_js__WEBPACK_IMPORTED_MODULE_6__["getTheme"])("light"),
-        toggleTheme: currentTheme.toggleTheme
-      });
-    }
+    theme: themeContext.theme
   }),
         _useState10 = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_useState9, 2),
         currentTheme = _useState10[0],
-        setCurrentTheme = _useState10[1]; // Click handlers
+        setCurrentTheme = _useState10[1];
+
+  const toggleTheme = () => {
+    currentTheme.mode === "light" ? setCurrentTheme({
+      mode: "dark",
+      theme: Object(_themes_default_js__WEBPACK_IMPORTED_MODULE_6__["getTheme"])("dark")
+    }) : setCurrentTheme({
+      mode: "light",
+      theme: Object(_themes_default_js__WEBPACK_IMPORTED_MODULE_6__["getTheme"])("light")
+    });
+  }; // Click handlers
 
 
   const categoryClickHandler = index => {
@@ -964,7 +962,7 @@ const Home = () => {
           setActiveBullet: setActiveBullet,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 88
+            lineNumber: 86
           },
           __self: undefined
         });
@@ -975,7 +973,7 @@ const Home = () => {
           category: activeCategory,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 97
+            lineNumber: 95
           },
           __self: undefined
         });
@@ -985,7 +983,7 @@ const Home = () => {
         return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Blank__WEBPACK_IMPORTED_MODULE_13__["default"], {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 100
+            lineNumber: 98
           },
           __self: undefined
         });
@@ -995,7 +993,7 @@ const Home = () => {
   return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_2___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Reset__WEBPACK_IMPORTED_MODULE_7__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 106
+      lineNumber: 104
     },
     __self: undefined
   }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_TypographicGrid__WEBPACK_IMPORTED_MODULE_8__["default"], {
@@ -1006,21 +1004,21 @@ const Home = () => {
     lineColor: "#666",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 107
+      lineNumber: 105
     },
     __self: undefined
   }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_themes_default_js__WEBPACK_IMPORTED_MODULE_6__["ThemeContext"].Provider, {
     value: currentTheme,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 114
+      lineNumber: 112
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Container, {
     theme: currentTheme.theme,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 115
+      lineNumber: 113
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Header__WEBPACK_IMPORTED_MODULE_10__["default"], {
@@ -1029,15 +1027,16 @@ const Home = () => {
     activeCategoryIcon: activeCategoryIcon,
     categoryIconClickHandler: categoryIconClickHandler,
     thumbIconClickHandler: thumbIconClickHandler,
+    sunIconClickHandler: toggleTheme,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 116
+      lineNumber: 114
     },
     __self: undefined
   }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Display, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 123
+      lineNumber: 122
     },
     __self: undefined
   }))));
@@ -3193,8 +3192,7 @@ const getTheme = mode => {
 
 const ThemeContext = react__WEBPACK_IMPORTED_MODULE_0___default.a.createContext({
   mode: "light",
-  theme: getTheme("light"),
-  toggleTheme: () => {}
+  theme: getTheme("light")
 });
 
 

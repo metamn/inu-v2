@@ -47,22 +47,20 @@ const Home = () => {
   const themeContext = useContext(ThemeContext);
   const [currentTheme, setCurrentTheme] = useState({
     mode: themeContext.mode,
-    theme: themeContext.theme,
-    toggleTheme: () => {
-      console.log("current:" + stringify(currentTheme.mode));
-      currentTheme.mode === "light"
-        ? setCurrentTheme({
-            mode: "dark",
-            theme: getTheme("dark"),
-            toggleTheme: currentTheme.toggleTheme
-          })
-        : setCurrentTheme({
-            mode: "light",
-            theme: getTheme("light"),
-            toggleTheme: currentTheme.toggleTheme
-          });
-    }
+    theme: themeContext.theme
   });
+
+  const toggleTheme = () => {
+    currentTheme.mode === "light"
+      ? setCurrentTheme({
+          mode: "dark",
+          theme: getTheme("dark")
+        })
+      : setCurrentTheme({
+          mode: "light",
+          theme: getTheme("light")
+        });
+  };
 
   // Click handlers
   const categoryClickHandler = index => {
@@ -119,6 +117,7 @@ const Home = () => {
             activeCategoryIcon={activeCategoryIcon}
             categoryIconClickHandler={categoryIconClickHandler}
             thumbIconClickHandler={thumbIconClickHandler}
+            sunIconClickHandler={toggleTheme}
           />
           <Display />
         </Container>

@@ -27,8 +27,7 @@ const HeaderIcon = styled(Icon)`
 `;
 
 const Header = props => {
-  const { thumbIconClickHandler } = props;
-  const theme = useContext(ThemeContext);
+  const { thumbIconClickHandler, sunIconClickHandler } = props;
 
   return (
     <Container>
@@ -39,7 +38,7 @@ const Header = props => {
         <FiList onClick={() => thumbIconClickHandler()} />
       </HeaderIcon>
       <HeaderIcon size={1.25}>
-        <FiSun onClick={() => theme.toggleTheme()} />
+        <FiSun onClick={() => sunIconClickHandler()} />
       </HeaderIcon>
     </Container>
   );
