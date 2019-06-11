@@ -29,9 +29,12 @@ const getTheme = mode => {
   };
 };
 
-const ThemeContext = React.createContext({
-  mode: "light",
-  theme: getTheme("light")
-});
+const switchThemeFrom = mode => {
+  return mode === "light"
+    ? { mode: "dark", theme: getTheme("dark") }
+    : { mode: "light", theme: getTheme("light") };
+};
 
-export { getTheme, ThemeContext };
+const ThemeContext = React.createContext(switchThemeFrom("dark"));
+
+export { getTheme, switchThemeFrom, ThemeContext };

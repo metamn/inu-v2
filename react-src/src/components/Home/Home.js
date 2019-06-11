@@ -3,7 +3,11 @@ import WebFont from "webfontloader";
 import styled, { createGlobalStyle } from "styled-components";
 import { stringify } from "flatted";
 
-import { getTheme, ThemeContext } from "../../themes/default.js";
+import {
+  getTheme,
+  switchThemeFrom,
+  ThemeContext
+} from "../../themes/default.js";
 
 import Reset from "../Reset";
 import TypographicGrid from "../TypographicGrid";
@@ -45,24 +49,14 @@ const Home = () => {
 
   // Theming
   const themeContext = useContext(ThemeContext);
-  const [currentTheme, setCurrentTheme] = useState({
-    mode: themeContext.mode,
-    theme: themeContext.theme
-  });
-
-  const toggleTheme = () => {
-    currentTheme.mode === "light"
-      ? setCurrentTheme({
-          mode: "dark",
-          theme: getTheme("dark")
-        })
-      : setCurrentTheme({
-          mode: "light",
-          theme: getTheme("light")
-        });
-  };
+  const [currentTheme, setCurrentTheme] = useState(themeContext);
 
   // Click handlers
+  const toggleTheme = () => {
+    const newTheme = switchThemeFrom(currentTheme.mode);
+    setCurrentTheme(newTheme);
+  };
+
   const categoryClickHandler = index => {
     setActiveCategory(index);
     setActiveBullet(0);
