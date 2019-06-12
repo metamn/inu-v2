@@ -5,6 +5,7 @@ import styled from "styled-components";
 import { useQuery } from "../../hooks";
 
 import Post from "../Post";
+import Image from "../Image";
 
 const Container = styled.section`
   width: 100%;
@@ -24,11 +25,13 @@ const query = gql`
           featuredImage {
             id
             sourceUrl
+            ...ImageMediaDetails
           }
         }
       }
     }
   }
+  ${Image.fragments.mediaDetails}
 `;
 
 const markup = (data, queryProps) => {

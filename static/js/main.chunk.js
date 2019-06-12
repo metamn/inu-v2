@@ -1160,11 +1160,27 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _ImageThumb__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../ImageThumb */ "./src/components/ImageThumb/index.js");
-/* harmony import */ var _ImageResponsive__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../ImageResponsive */ "./src/components/ImageResponsive/index.js");
+/* harmony import */ var _home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/esm/taggedTemplateLiteral */ "./node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/esm/taggedTemplateLiteral.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var graphql_tag__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! graphql-tag */ "./node_modules/graphql-tag/src/index.js");
+/* harmony import */ var graphql_tag__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(graphql_tag__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _ImageThumb__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../ImageThumb */ "./src/components/ImageThumb/index.js");
+/* harmony import */ var _ImageResponsive__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../ImageResponsive */ "./src/components/ImageResponsive/index.js");
+
 var _jsxFileName = "/home/cs/work/inu-v2/react-src/src/components/Image/Image.js";
+
+function _templateObject() {
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n    fragment ImageMediaDetails on Posts {\n      mediaDetails {\n        file\n        height\n        width\n        sizes {\n          file\n          height\n          mimeType\n          name\n          sourceUrl\n          width\n        }\n      }\n    }\n  "]);
+
+  _templateObject = function () {
+    return data;
+  };
+
+  return data;
+}
+
+
 
 
 
@@ -1175,23 +1191,26 @@ const Image = props => {
   const Display = () => {
     switch (imageType) {
       case "thumb":
-        return Object(_ImageThumb__WEBPACK_IMPORTED_MODULE_1__["default"])(props);
+        return Object(_ImageThumb__WEBPACK_IMPORTED_MODULE_3__["default"])(props);
 
       case "responsive":
       default:
-        return Object(_ImageResponsive__WEBPACK_IMPORTED_MODULE_2__["default"])(props);
+        return Object(_ImageResponsive__WEBPACK_IMPORTED_MODULE_4__["default"])(props);
     }
   };
 
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Display, {
+  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Display, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19
+      lineNumber: 20
     },
     __self: undefined
   });
 };
 
+Image.fragments = {
+  mediaDetails: graphql_tag__WEBPACK_IMPORTED_MODULE_2___default()(_templateObject())
+};
 /* harmony default export */ __webpack_exports__["default"] = (Image);
 
 /***/ }),
@@ -2367,11 +2386,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 /* harmony import */ var _hooks__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../hooks */ "./src/hooks/index.js");
 /* harmony import */ var _Post__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../Post */ "./src/components/Post/index.js");
+/* harmony import */ var _Image__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../Image */ "./src/components/Image/index.js");
 
 var _jsxFileName = "/home/cs/work/inu-v2/react-src/src/components/Thumbs/Thumbs.js";
 
 function _templateObject2() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  query posts($first: Int, $category: Int) {\n    posts(first: $first, where: { categoryId: $category }) {\n      edges {\n        node {\n          id\n          title\n          featuredImage {\n            id\n            sourceUrl\n          }\n        }\n      }\n    }\n  }\n"]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  query posts($first: Int, $category: Int) {\n    posts(first: $first, where: { categoryId: $category }) {\n      edges {\n        node {\n          id\n          title\n          featuredImage {\n            id\n            sourceUrl\n            ...ImageMediaDetails\n          }\n        }\n      }\n    }\n  }\n  ", "\n"]);
 
   _templateObject2 = function () {
     return data;
@@ -2395,8 +2415,9 @@ function _templateObject() {
 
 
 
+
 const Container = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].section(_templateObject());
-const query = graphql_tag__WEBPACK_IMPORTED_MODULE_2___default()(_templateObject2());
+const query = graphql_tag__WEBPACK_IMPORTED_MODULE_2___default()(_templateObject2(), _Image__WEBPACK_IMPORTED_MODULE_6__["default"].fragments.mediaDetails);
 
 const markup = (data, queryProps) => {
   const postType = queryProps.postType;
@@ -2407,7 +2428,7 @@ const markup = (data, queryProps) => {
       postType: postType,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 41
+        lineNumber: 44
       },
       __self: undefined
     });
@@ -2433,7 +2454,7 @@ const Thumbs = props => {
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Container, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54
+      lineNumber: 57
     },
     __self: undefined
   }, posts);
@@ -3091,5 +3112,5 @@ module.exports = __webpack_require__(/*! /home/cs/work/inu-v2/react-src/src/inde
 
 /***/ })
 
-},[[0,"runtime~main",0]]]);
+},[[0,"runtime~main",1]]]);
 //# sourceMappingURL=main.chunk.js.map
