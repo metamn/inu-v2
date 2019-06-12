@@ -10,6 +10,7 @@ const Image = props => {
     switch (imageType) {
       case "thumb":
         return ImageThumb(props);
+      case "responsive":
       default:
         return ImageResponsive(props);
     }

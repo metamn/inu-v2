@@ -37,7 +37,7 @@ const Post = props => {
       imageType = "thumb";
       break;
     default:
-      imageType = "";
+      imageType = "responsive";
   }
 
   return (

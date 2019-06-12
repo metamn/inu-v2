@@ -1177,6 +1177,7 @@ const Image = props => {
       case "thumb":
         return Object(_ImageThumb__WEBPACK_IMPORTED_MODULE_1__["default"])(props);
 
+      case "responsive":
       default:
         return Object(_ImageResponsive__WEBPACK_IMPORTED_MODULE_2__["default"])(props);
     }
@@ -1185,7 +1186,7 @@ const Image = props => {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Display, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18
+      lineNumber: 19
     },
     __self: undefined
   });
@@ -1794,7 +1795,7 @@ const Post = props => {
       break;
 
     default:
-      imageType = "";
+      imageType = "responsive";
   }
 
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Article, {
@@ -3090,5 +3091,5 @@ module.exports = __webpack_require__(/*! /home/cs/work/inu-v2/react-src/src/inde
 
 /***/ })
 
-},[[0,"runtime~main",1]]]);
+},[[0,"runtime~main",0]]]);
 //# sourceMappingURL=main.chunk.js.map
