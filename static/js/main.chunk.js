@@ -1433,10 +1433,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/esm/taggedTemplateLiteral */ "./node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/esm/taggedTemplateLiteral.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react_progressive_image__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-progressive-image */ "./node_modules/react-progressive-image/dist.js");
-/* harmony import */ var react_progressive_image__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_progressive_image__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-/* harmony import */ var _ImagePlaceholder__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../ImagePlaceholder */ "./src/components/ImagePlaceholder/index.js");
+/* harmony import */ var graphql_tag__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! graphql-tag */ "./node_modules/graphql-tag/src/index.js");
+/* harmony import */ var graphql_tag__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(graphql_tag__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react_progressive_image__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-progressive-image */ "./node_modules/react-progressive-image/dist.js");
+/* harmony import */ var react_progressive_image__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_progressive_image__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var _ImagePlaceholder__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../ImagePlaceholder */ "./src/components/ImagePlaceholder/index.js");
 
 var _jsxFileName = "/home/cs/work/inu-v2/react-src/src/components/ImageThumb/ImageThumb.js";
 
@@ -1454,21 +1456,22 @@ function _templateObject() {
 
 
 
-const Image = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].img(_templateObject());
+
+const Image = styled_components__WEBPACK_IMPORTED_MODULE_4__["default"].img(_templateObject());
 
 const ImageThumb = props => {
   const title = props.title,
         src = props.src;
-  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_progressive_image__WEBPACK_IMPORTED_MODULE_2___default.a, {
+  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_progressive_image__WEBPACK_IMPORTED_MODULE_3___default.a, {
     src: src,
     placeholder: "",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16
+      lineNumber: 17
     },
     __self: undefined
   }, (src, loading) => {
-    return loading ? Object(_ImagePlaceholder__WEBPACK_IMPORTED_MODULE_4__["default"])({
+    return loading ? Object(_ImagePlaceholder__WEBPACK_IMPORTED_MODULE_5__["default"])({
       width: "calc(var(--lem) * 15)",
       height: "auto"
     }) : react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Image, {
@@ -1476,7 +1479,7 @@ const ImageThumb = props => {
       alt: title,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 21
+        lineNumber: 22
       },
       __self: undefined
     });

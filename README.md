@@ -10,6 +10,11 @@ The React version of inu.ro
 
 ## Caveats
 
+### GraphQL fragments
+
+- they are interesting and needed for colocation
+- however I couldn't filter them (ie. in `Thumbs` get only the image of size `thumbnail`)
+
 ### Flow
 
 - [flow](https://github.com/facebook/flow) vs TypeScript because [Facebook / React is using it internally](https://twitter.com/dan_abramov/status/1135437323888406528). It also [works out-of-the-box](https://flow.org/en/docs/tools/create-react-app/) with CRA

@@ -1,4 +1,5 @@
 import React from "react";
+import gql from "graphql-tag";
 import ProgressiveImage from "react-progressive-image";
 import styled from "styled-components";
 
