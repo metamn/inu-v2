@@ -1186,7 +1186,7 @@ const Image = props => {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Display, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19
+      lineNumber: 28
     },
     __self: undefined
   });
@@ -1445,7 +1445,7 @@ const ImageThumb = props => {
     placeholder: "",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16
+      lineNumber: 25
     },
     __self: undefined
   }, (src, loading) => {
@@ -1457,13 +1457,17 @@ const ImageThumb = props => {
       alt: title,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 21
+        lineNumber: 30
       },
       __self: undefined
     });
   });
 };
 
+ImageThumb.defaultProps = {
+  src: "",
+  title: "This photo is missing"
+};
 /* harmony default export */ __webpack_exports__["default"] = (ImageThumb);
 
 /***/ }),
@@ -1803,23 +1807,23 @@ const Post = props => {
     postType: postType,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 44
+      lineNumber: 57
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Title, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45
+      lineNumber: 58
     },
     __self: undefined
   }, title), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Image__WEBPACK_IMPORTED_MODULE_3__["default"], Object.assign({
-    title: title,
     src: src,
+    title: title,
     imageType: imageType
   }, props, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 46
+      lineNumber: 59
     },
     __self: undefined
   })));
@@ -3091,5 +3095,5 @@ module.exports = __webpack_require__(/*! /home/cs/work/inu-v2/react-src/src/inde
 
 /***/ })
 
-},[[0,"runtime~main",0]]]);
+},[[0,"runtime~main",1]]]);
 //# sourceMappingURL=main.chunk.js.map

@@ -1,6 +1,19 @@
+// @flow
+
 import React from "react";
 import styled, { css } from "styled-components";
 import Image from "../Image";
+
+type Props = {
+  postType: string,
+  width: string,
+  node: {
+    title: string,
+    featuredImage: {
+      sourceUrl: string
+    }
+  }
+};
 
 const ArticleThumb = css`
   ${props =>
@@ -25,7 +38,7 @@ const Title = styled.h3`
   display: none;
 `;
 
-const Post = props => {
+const Post = (props: Props) => {
   const { node, width, postType } = props;
 
   const title = node.title;
@@ -43,7 +56,7 @@ const Post = props => {
   return (
     <Article width={width} postType={postType}>
       <Title>{title}</Title>
-      <Image title={title} src={src} imageType={imageType} {...props} />
+      <Image src={src} title={title} imageType={imageType} {...props} />
     </Article>
   );
 };

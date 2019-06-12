@@ -1,9 +1,18 @@
+// @flow
+
 import React from "react";
 
 import ImageThumb from "../ImageThumb";
 import ImageResponsive from "../ImageResponsive";
 
-const Image = props => {
+type Props = {
+  src: string,
+  title?: string,
+  imageType?: string,
+  node: {}
+};
+
+const Image = (props: Props) => {
   const { imageType } = props;
 
   const Display = () => {

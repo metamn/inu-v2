@@ -1,8 +1,17 @@
+// @flow
+
 import React from "react";
 import ProgressiveImage from "react-progressive-image";
 import styled from "styled-components";
 
 import ImagePlaceholder from "../ImagePlaceholder";
+
+type Props = {
+  src: string,
+  title?: string,
+  width?: string,
+  height?: string
+};
 
 const Image = styled.img`
   max-width: calc(var(--lem) * 15);
@@ -10,7 +19,7 @@ const Image = styled.img`
   height: auto;
 `;
 
-const ImageThumb = props => {
+const ImageThumb = (props: Props) => {
   const { title, src } = props;
   return (
     <ProgressiveImage src={src} placeholder="">
@@ -23,6 +32,11 @@ const ImageThumb = props => {
       }}
     </ProgressiveImage>
   );
+};
+
+ImageThumb.defaultProps = {
+  src: "",
+  title: "This photo is missing"
 };
 
 export default ImageThumb;
