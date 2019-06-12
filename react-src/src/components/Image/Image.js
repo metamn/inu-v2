@@ -50,46 +50,48 @@ const ImgThumb = styled.img`
 `;
 
 const Image = props => {
-  const {
-    title,
-    src,
-    imageClickHandler,
-    index,
-    numberOfSlides,
-    imageType
-  } = props;
+  const { imageType } = props;
+
+  const Thumb = props => {
+    const { title, src } = props;
+    return (
+      <ProgressiveImage src={src} placeholder="">
+        {(src, loading) => {
+          return loading ? (
+            placeholder({ width: "calc(var(--lem) * 15)", height: "auto" })
+          ) : (
+            <ImgThumb src={src} alt={title} />
+          );
+        }}
+      </ProgressiveImage>
+    );
+  };
+
+  const Default = props => {
+    const { title, src, imageClickHandler, index, numberOfSlides } = props;
+    return (
+      <ProgressiveImage src={src} placeholder="">
+        {(src, loading) => {
+          return loading ? (
+            placeholder2
+          ) : (
+            <Img
+              src={src}
+              alt={title}
+              onClick={() => imageClickHandler(index, numberOfSlides)}
+            />
+          );
+        }}
+      </ProgressiveImage>
+    );
+  };
 
   const Display = () => {
     switch (imageType) {
       case "thumb":
-        return (
-          <ProgressiveImage src={src} placeholder="">
-            {(src, loading) => {
-              return loading ? (
-                placeholder({ width: "calc(var(--lem) * 15)", height: "auto" })
-              ) : (
-                <ImgThumb src={src} alt={title} />
-              );
-            }}
-          </ProgressiveImage>
-        );
-
+        return Thumb(props);
       default:
-        return (
-          <ProgressiveImage src={src} placeholder="">
-            {(src, loading) => {
-              return loading ? (
-                placeholder2
-              ) : (
-                <Img
-                  src={src}
-                  alt={title}
-                  onClick={() => imageClickHandler(index, numberOfSlides)}
-                />
-              );
-            }}
-          </ProgressiveImage>
-        );
+        return Default(props);
     }
   };
 

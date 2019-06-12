@@ -61,6 +61,19 @@ const query = gql`
           featuredImage {
             id
             sourceUrl
+            mediaDetails {
+              file
+              height
+              width
+              sizes {
+                file
+                height
+                mimeType
+                name
+                sourceUrl
+                width
+              }
+            }
           }
         }
       }

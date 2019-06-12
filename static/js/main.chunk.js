@@ -1261,67 +1261,77 @@ const Img = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].img(_templ
 const ImgThumb = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].img(_templateObject6());
 
 const Image = props => {
-  const title = props.title,
-        src = props.src,
-        imageClickHandler = props.imageClickHandler,
-        index = props.index,
-        numberOfSlides = props.numberOfSlides,
-        imageType = props.imageType;
+  const imageType = props.imageType;
+
+  const Thumb = props => {
+    const title = props.title,
+          src = props.src;
+    return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_progressive_image__WEBPACK_IMPORTED_MODULE_2___default.a, {
+      src: src,
+      placeholder: "",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 58
+      },
+      __self: undefined
+    }, (src, loading) => {
+      return loading ? placeholder({
+        width: "calc(var(--lem) * 15)",
+        height: "auto"
+      }) : react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(ImgThumb, {
+        src: src,
+        alt: title,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 63
+        },
+        __self: undefined
+      });
+    });
+  };
+
+  const Default = props => {
+    const title = props.title,
+          src = props.src,
+          imageClickHandler = props.imageClickHandler,
+          index = props.index,
+          numberOfSlides = props.numberOfSlides;
+    return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_progressive_image__WEBPACK_IMPORTED_MODULE_2___default.a, {
+      src: src,
+      placeholder: "",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 73
+      },
+      __self: undefined
+    }, (src, loading) => {
+      return loading ? placeholder2 : react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Img, {
+        src: src,
+        alt: title,
+        onClick: () => imageClickHandler(index, numberOfSlides),
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 78
+        },
+        __self: undefined
+      });
+    });
+  };
 
   const Display = () => {
     switch (imageType) {
       case "thumb":
-        return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_progressive_image__WEBPACK_IMPORTED_MODULE_2___default.a, {
-          src: src,
-          placeholder: "",
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 66
-          },
-          __self: undefined
-        }, (src, loading) => {
-          return loading ? placeholder({
-            width: "calc(var(--lem) * 15)",
-            height: "auto"
-          }) : react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(ImgThumb, {
-            src: src,
-            alt: title,
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 71
-            },
-            __self: undefined
-          });
-        });
+        return Thumb(props);
 
       default:
-        return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_progressive_image__WEBPACK_IMPORTED_MODULE_2___default.a, {
-          src: src,
-          placeholder: "",
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 79
-          },
-          __self: undefined
-        }, (src, loading) => {
-          return loading ? placeholder2 : react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Img, {
-            src: src,
-            alt: title,
-            onClick: () => imageClickHandler(index, numberOfSlides),
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 84
-            },
-            __self: undefined
-          });
-        });
+        return Default(props);
     }
   };
 
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Display, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 96
+      lineNumber: 98
     },
     __self: undefined
   });
@@ -1900,7 +1910,7 @@ __webpack_require__.r(__webpack_exports__);
 var _jsxFileName = "/home/cs/work/inu-v2/react-src/src/components/Slider/Slider.js";
 
 function _templateObject4() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  query posts($first: Int, $category: Int) {\n    posts(first: $first, where: { categoryId: $category }) {\n      edges {\n        node {\n          id\n          title\n          featuredImage {\n            id\n            sourceUrl\n          }\n        }\n      }\n    }\n  }\n"]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  query posts($first: Int, $category: Int) {\n    posts(first: $first, where: { categoryId: $category }) {\n      edges {\n        node {\n          id\n          title\n          featuredImage {\n            id\n            sourceUrl\n            mediaDetails {\n              file\n              height\n              width\n              sizes {\n                file\n                height\n                mimeType\n                name\n                sourceUrl\n                width\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n"]);
 
   _templateObject4 = function () {
     return data;
@@ -1967,7 +1977,7 @@ const markup = (data, queryProps) => {
       ref: ref,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 85
+        lineNumber: 98
       },
       __self: undefined
     }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Post__WEBPACK_IMPORTED_MODULE_7__["default"], {
@@ -1979,7 +1989,7 @@ const markup = (data, queryProps) => {
       width: width,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 86
+        lineNumber: 99
       },
       __self: undefined
     }));
@@ -2080,13 +2090,13 @@ const Slider = props => {
     width: width,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 203
+      lineNumber: 216
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Slides, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 204
+      lineNumber: 217
     },
     __self: undefined
   }, slides), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Bullets__WEBPACK_IMPORTED_MODULE_8__["default"], {
@@ -2095,7 +2105,7 @@ const Slider = props => {
     bulletClickHandler: bulletClickHandler,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 205
+      lineNumber: 218
     },
     __self: undefined
   }));
@@ -2954,5 +2964,5 @@ module.exports = __webpack_require__(/*! /home/cs/work/inu-v2/react-src/src/inde
 
 /***/ })
 
-},[[0,"runtime~main",1]]]);
+},[[0,"runtime~main",0]]]);
 //# sourceMappingURL=main.chunk.js.map
