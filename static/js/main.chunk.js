@@ -1166,28 +1166,126 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_progressive_image__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-progressive-image */ "./node_modules/react-progressive-image/dist.js");
 /* harmony import */ var react_progressive_image__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_progressive_image__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var _ImageThumb__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../ImageThumb */ "./src/components/ImageThumb/index.js");
 
 var _jsxFileName = "/home/cs/work/inu-v2/react-src/src/components/Image/Image.js";
 
-function _templateObject6() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  max-width: calc(var(--lem) * 15);\n  width: 100%;\n  height: auto;\n"]);
-
-  _templateObject6 = function () {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject5() {
+function _templateObject() {
   const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  max-width: 80vw;\n  max-height: 70vh;\n  width: auto;\n  height: auto;\n  cursor: pointer;\n"]);
 
-  _templateObject5 = function () {
+  _templateObject = function () {
     return data;
   };
 
   return data;
 }
+
+
+
+
+ // Without this the slider is not working ...
+
+const placeholder2 = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+  style: {
+    backgroundColor: "white",
+    width: "80vw",
+    height: "70vh"
+  },
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 9
+  },
+  __self: undefined
+});
+const Img = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].img(_templateObject());
+
+const Image = props => {
+  const imageType = props.imageType;
+
+  const Default = props => {
+    const title = props.title,
+          src = props.src,
+          imageClickHandler = props.imageClickHandler,
+          index = props.index,
+          numberOfSlides = props.numberOfSlides;
+    return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_progressive_image__WEBPACK_IMPORTED_MODULE_2___default.a, {
+      src: src,
+      placeholder: "",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 26
+      },
+      __self: undefined
+    }, (src, loading) => {
+      return loading ? placeholder2 : react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Img, {
+        src: src,
+        alt: title,
+        onClick: () => imageClickHandler(index, numberOfSlides),
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 31
+        },
+        __self: undefined
+      });
+    });
+  };
+
+  const Display = () => {
+    switch (imageType) {
+      case "thumb":
+        return Object(_ImageThumb__WEBPACK_IMPORTED_MODULE_4__["default"])(props);
+
+      default:
+        return Default(props);
+    }
+  };
+
+  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Display, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 51
+    },
+    __self: undefined
+  });
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Image);
+
+/***/ }),
+
+/***/ "./src/components/Image/index.js":
+/*!***************************************!*\
+  !*** ./src/components/Image/index.js ***!
+  \***************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Image__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Image */ "./src/components/Image/Image.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _Image__WEBPACK_IMPORTED_MODULE_0__["default"]; });
+
+
+
+/***/ }),
+
+/***/ "./src/components/ImagePlaceholder/ImagePlaceholder.js":
+/*!*************************************************************!*\
+  !*** ./src/components/ImagePlaceholder/ImagePlaceholder.js ***!
+  \*************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/esm/taggedTemplateLiteral */ "./node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/esm/taggedTemplateLiteral.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_progressive_image__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-progressive-image */ "./node_modules/react-progressive-image/dist.js");
+/* harmony import */ var react_progressive_image__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_progressive_image__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+
+var _jsxFileName = "/home/cs/work/inu-v2/react-src/src/components/ImagePlaceholder/ImagePlaceholder.js";
 
 function _templateObject4() {
   const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n        height: height;\n      "]);
@@ -1233,7 +1331,7 @@ function _templateObject() {
 
 
 
-const placeholder = props => {
+const ImagePlaceholder = props => {
   const Placeholder = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].div(_templateObject(), props => props.backgroundColor && Object(styled_components__WEBPACK_IMPORTED_MODULE_3__["css"])(_templateObject2()), props => props.width && Object(styled_components__WEBPACK_IMPORTED_MODULE_3__["css"])(_templateObject3()), props => props.height && Object(styled_components__WEBPACK_IMPORTED_MODULE_3__["css"])(_templateObject4()));
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Placeholder, Object.assign({}, props, {
     __source: {
@@ -1242,116 +1340,105 @@ const placeholder = props => {
     },
     __self: undefined
   }));
-}; // Without this the slider is not working ...
-
-
-const placeholder2 = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-  style: {
-    backgroundColor: "white",
-    width: "80vw",
-    height: "70vh"
-  },
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 35
-  },
-  __self: undefined
-});
-const Img = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].img(_templateObject5());
-const ImgThumb = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].img(_templateObject6());
-
-const Image = props => {
-  const imageType = props.imageType;
-
-  const Thumb = props => {
-    const title = props.title,
-          src = props.src;
-    return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_progressive_image__WEBPACK_IMPORTED_MODULE_2___default.a, {
-      src: src,
-      placeholder: "",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 58
-      },
-      __self: undefined
-    }, (src, loading) => {
-      return loading ? placeholder({
-        width: "calc(var(--lem) * 15)",
-        height: "auto"
-      }) : react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(ImgThumb, {
-        src: src,
-        alt: title,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 63
-        },
-        __self: undefined
-      });
-    });
-  };
-
-  const Default = props => {
-    const title = props.title,
-          src = props.src,
-          imageClickHandler = props.imageClickHandler,
-          index = props.index,
-          numberOfSlides = props.numberOfSlides;
-    return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_progressive_image__WEBPACK_IMPORTED_MODULE_2___default.a, {
-      src: src,
-      placeholder: "",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 73
-      },
-      __self: undefined
-    }, (src, loading) => {
-      return loading ? placeholder2 : react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Img, {
-        src: src,
-        alt: title,
-        onClick: () => imageClickHandler(index, numberOfSlides),
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 78
-        },
-        __self: undefined
-      });
-    });
-  };
-
-  const Display = () => {
-    switch (imageType) {
-      case "thumb":
-        return Thumb(props);
-
-      default:
-        return Default(props);
-    }
-  };
-
-  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Display, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 98
-    },
-    __self: undefined
-  });
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Image);
+/* harmony default export */ __webpack_exports__["default"] = (ImagePlaceholder);
 
 /***/ }),
 
-/***/ "./src/components/Image/index.js":
-/*!***************************************!*\
-  !*** ./src/components/Image/index.js ***!
-  \***************************************/
+/***/ "./src/components/ImagePlaceholder/index.js":
+/*!**************************************************!*\
+  !*** ./src/components/ImagePlaceholder/index.js ***!
+  \**************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _Image__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Image */ "./src/components/Image/Image.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _Image__WEBPACK_IMPORTED_MODULE_0__["default"]; });
+/* harmony import */ var _ImagePlaceholder__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ImagePlaceholder */ "./src/components/ImagePlaceholder/ImagePlaceholder.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _ImagePlaceholder__WEBPACK_IMPORTED_MODULE_0__["default"]; });
+
+
+
+/***/ }),
+
+/***/ "./src/components/ImageThumb/ImageThumb.js":
+/*!*************************************************!*\
+  !*** ./src/components/ImageThumb/ImageThumb.js ***!
+  \*************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/esm/taggedTemplateLiteral */ "./node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/esm/taggedTemplateLiteral.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_progressive_image__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-progressive-image */ "./node_modules/react-progressive-image/dist.js");
+/* harmony import */ var react_progressive_image__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_progressive_image__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var _ImagePlaceholder__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../ImagePlaceholder */ "./src/components/ImagePlaceholder/index.js");
+
+var _jsxFileName = "/home/cs/work/inu-v2/react-src/src/components/ImageThumb/ImageThumb.js";
+
+function _templateObject() {
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  max-width: calc(var(--lem) * 15);\n  width: 100%;\n  height: auto;\n"]);
+
+  _templateObject = function () {
+    return data;
+  };
+
+  return data;
+}
+
+
+
+
+
+const Image = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].img(_templateObject());
+
+const ImageThumb = props => {
+  const title = props.title,
+        src = props.src;
+  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_progressive_image__WEBPACK_IMPORTED_MODULE_2___default.a, {
+    src: src,
+    placeholder: "",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 16
+    },
+    __self: undefined
+  }, (src, loading) => {
+    return loading ? Object(_ImagePlaceholder__WEBPACK_IMPORTED_MODULE_4__["default"])({
+      width: "calc(var(--lem) * 15)",
+      height: "auto"
+    }) : react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Image, {
+      src: src,
+      alt: title,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 21
+      },
+      __self: undefined
+    });
+  });
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (ImageThumb);
+
+/***/ }),
+
+/***/ "./src/components/ImageThumb/index.js":
+/*!********************************************!*\
+  !*** ./src/components/ImageThumb/index.js ***!
+  \********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _ImageThumb__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ImageThumb */ "./src/components/ImageThumb/ImageThumb.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _ImageThumb__WEBPACK_IMPORTED_MODULE_0__["default"]; });
 
 
 
@@ -2964,5 +3051,5 @@ module.exports = __webpack_require__(/*! /home/cs/work/inu-v2/react-src/src/inde
 
 /***/ })
 
-},[[0,"runtime~main",0]]]);
+},[[0,"runtime~main",1]]]);
 //# sourceMappingURL=main.chunk.js.map

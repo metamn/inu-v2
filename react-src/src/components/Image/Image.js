@@ -2,33 +2,7 @@ import React from "react";
 import ProgressiveImage from "react-progressive-image";
 import styled, { css } from "styled-components";
 
-const placeholder = props => {
-  const Placeholder = styled.div`
-    background-color: white;
-    width: 500px;
-    height: 300px;
-
-    ${props =>
-      props.backgroundColor &&
-      css`
-        background-color: backgroundColor;
-      `};
-
-    ${props =>
-      props.width &&
-      css`
-        width: width;
-      `};
-
-    ${props =>
-      props.height &&
-      css`
-        height: height;
-      `};
-  `;
-
-  return <Placeholder {...props} />;
-};
+import ImageThumb from "../ImageThumb";
 
 // Without this the slider is not working ...
 const placeholder2 = (
@@ -43,29 +17,8 @@ const Img = styled.img`
   cursor: pointer;
 `;
 
-const ImgThumb = styled.img`
-  max-width: calc(var(--lem) * 15);
-  width: 100%;
-  height: auto;
-`;
-
 const Image = props => {
   const { imageType } = props;
-
-  const Thumb = props => {
-    const { title, src } = props;
-    return (
-      <ProgressiveImage src={src} placeholder="">
-        {(src, loading) => {
-          return loading ? (
-            placeholder({ width: "calc(var(--lem) * 15)", height: "auto" })
-          ) : (
-            <ImgThumb src={src} alt={title} />
-          );
-        }}
-      </ProgressiveImage>
-    );
-  };
 
   const Default = props => {
     const { title, src, imageClickHandler, index, numberOfSlides } = props;
@@ -89,7 +42,7 @@ const Image = props => {
   const Display = () => {
     switch (imageType) {
       case "thumb":
-        return Thumb(props);
+        return ImageThumb(props);
       default:
         return Default(props);
     }
