@@ -1383,28 +1383,33 @@ const ImageResponsive = props => {
         index = props.index,
         numberOfSlides = props.numberOfSlides,
         node = props.node;
-  const sizes = node.featuredImage.mediaDetails.sizes;
+  const featuredImage = node.featuredImage;
+  const mediaDetails = featuredImage.mediaDetails;
+  const sizes = mediaDetails.sizes;
+  let srcSet = sizes.map(item => "".concat(item.sourceUrl, " ").concat(item.width, "w"));
+  srcSet.push("".concat(featuredImage.sourceUrl, " ").concat(mediaDetails.width, "w"));
+  console.log("srcSet:" + srcSet);
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_progressive_image__WEBPACK_IMPORTED_MODULE_2___default.a, {
     src: src,
     placeholder: "",
-    delay: 150,
+    srcSetData: {
+      srcSet: srcSet
+    },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 25
+      lineNumber: 32
     },
     __self: undefined
-  }, (src, loading) => {
+  }, (src, loading, srcSetData) => {
     return loading ? //ImagePlaceholder
     placeholder2 : react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Image, {
       src: src,
+      srcSet: srcSetData.srcSet,
       alt: title,
       onClick: () => imageClickHandler(index, numberOfSlides),
-      style: {
-        opacity: loading ? 0.5 : 1
-      },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 31
+        lineNumber: 38
       },
       __self: undefined
     });

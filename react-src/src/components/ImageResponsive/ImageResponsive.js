@@ -19,20 +19,27 @@ const placeholder2 = (
 
 const ImageResponsive = props => {
   const { title, src, imageClickHandler, index, numberOfSlides, node } = props;
-  const { sizes } = node.featuredImage.mediaDetails;
+  const { featuredImage } = node;
+  const { mediaDetails } = featuredImage;
+  const { sizes } = mediaDetails;
+
+  let srcSet = sizes.map(item => `${item.sourceUrl} ${item.width}w`);
+  srcSet.push(`${featuredImage.sourceUrl} ${mediaDetails.width}w`);
+
+  console.log("srcSet:" + srcSet);
 
   return (
-    <ProgressiveImage src={src} placeholder="" delay={150}>
-      {(src, loading) => {
+    <ProgressiveImage src={src} placeholder="" srcSetData={{ srcSet: srcSet }}>
+      {(src, loading, srcSetData) => {
         return loading ? (
           //ImagePlaceholder
           placeholder2
         ) : (
           <Image
             src={src}
+            srcSet={srcSetData.srcSet}
             alt={title}
             onClick={() => imageClickHandler(index, numberOfSlides)}
-            style={{ opacity: loading ? 0.5 : 1 }}
           />
         );
       }}
