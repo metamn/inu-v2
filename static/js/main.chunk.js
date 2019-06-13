@@ -2002,7 +2002,7 @@ __webpack_require__.r(__webpack_exports__);
 var _jsxFileName = "/home/cs/work/inu-v2/react-src/src/components/Slider/Slider.js";
 
 function _templateObject4() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  query postsForSlider($first: Int, $category: Int) {\n    posts(first: $first, where: { categoryId: $category }) {\n      edges {\n        node {\n          id\n          title\n          featuredImage {\n            id\n            sourceUrl\n            ...ImageMediaDetails\n          }\n        }\n      }\n    }\n  }\n  ", "\n"]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  query postsForSlider($first: Int, $category: Int) {\n    posts(first: $first, where: { categoryId: $category }) {\n      edges {\n        node {\n          id\n          title\n          featuredImage {\n            id\n            sourceUrl\n            mediaDetails {\n              file\n              height\n              width\n              sizes {\n                file\n                height\n                mimeType\n                name\n                sourceUrl\n                width\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n"]);
 
   _templateObject4 = function () {
     return data;
@@ -2053,7 +2053,7 @@ const Container = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].sect
 // - https://nolanlawson.com/2019/02/10/building-a-modern-carousel-with-css-scroll-snap-smooth-scrolling-and-pinch-zoom/
 
 const Slides = Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["default"])(_List__WEBPACK_IMPORTED_MODULE_5__["default"])(_templateObject3());
-const query = graphql_tag__WEBPACK_IMPORTED_MODULE_3___default()(_templateObject4(), _Image__WEBPACK_IMPORTED_MODULE_8__["default"].fragments.mediaDetails);
+const query = graphql_tag__WEBPACK_IMPORTED_MODULE_3___default()(_templateObject4());
 
 const markup = (data, queryProps) => {
   const refs = queryProps.refs,
@@ -2069,7 +2069,7 @@ const markup = (data, queryProps) => {
       ref: ref,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 87
+        lineNumber: 98
       },
       __self: undefined
     }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Post__WEBPACK_IMPORTED_MODULE_7__["default"], Object.assign({
@@ -2081,7 +2081,7 @@ const markup = (data, queryProps) => {
     }, queryProps, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 88
+        lineNumber: 99
       },
       __self: undefined
     })));
@@ -2153,13 +2153,13 @@ const Slider = props => {
     width: width,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 171
+      lineNumber: 182
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Slides, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 172
+      lineNumber: 183
     },
     __self: undefined
   }, slides));

@@ -61,13 +61,24 @@ const query = gql`
           featuredImage {
             id
             sourceUrl
-            ...ImageMediaDetails
+            mediaDetails {
+              file
+              height
+              width
+              sizes {
+                file
+                height
+                mimeType
+                name
+                sourceUrl
+                width
+              }
+            }
           }
         }
       }
     }
   }
-  ${Image.fragments.mediaDetails}
 `;
 
 const markup = (data, queryProps) => {

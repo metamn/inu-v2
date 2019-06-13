@@ -8,16 +8,21 @@ The React version of inu.ro
 - [styled-components](https://www.styled-components.com/) vs Emotion. See http://metamn.io/mr-ui > Basics > Styling for details
 - [react-progressive-image](https://github.com/FormidableLabs/react-progressive-image) because is maintained by Formidable Labs
 
-## Missing
+## Limitations
+
+- WP GraphQL loads only the first 100 items: https://spectrum.chat/wpgraphql/general/best-way-to-pull-all-posts-for-next-js-static-export~fe5cd57c-3728-4e0d-b94c-c25c0099ac50
+
+## Missing features
 
 ### GraphQL fragments (Colocation)
 
 - they are interesting and needed for colocation
 - however I couldn't filter them (ie. in `Thumbs` get only the image of size `thumbnail`)
+- and couldn't reuse them: the same query from Thumbs is not working on the Slider
 
 ### GraphQL imports (Colocation)
 
-- you need a special loader && a separate `.graphql` file which is not colocation: https://stackoverflow.com/questions/49829531/how-to-import-graphql-query
+- to do that you need a special loader && a separate `.graphql` file which is not colocation: https://stackoverflow.com/questions/49829531/how-to-import-graphql-query
 
 ### Flow (Static typing)
 
