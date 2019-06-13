@@ -1308,8 +1308,28 @@ __webpack_require__.r(__webpack_exports__);
 
 var _jsxFileName = "/home/cs/work/inu-v2/react-src/src/components/ImageThumb/ImageThumb.js";
 
-function _templateObject2() {
+function _templateObject4() {
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n      ", "\n      cursor: default;\n    "]);
+
+  _templateObject4 = function () {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject3() {
   const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n      max-width: ", ";\n    "]);
+
+  _templateObject3 = function () {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject2() {
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  width: 100%;\n  height: auto;\n  cursor: pointer;\n\n  padding: calc(var(--lem) / 2);\n  border: 1px solid transparent;\n\n  ", "\n\n  &:hover {\n    ", "\n  }\n\n  ", "\n"]);
 
   _templateObject2 = function () {
     return data;
@@ -1319,7 +1339,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  width: 100%;\n  height: auto;\n  cursor: pointer;\n\n  ", "\n"]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  border: 1px solid;\n"]);
 
   _templateObject = function () {
     return data;
@@ -1332,25 +1352,28 @@ function _templateObject() {
 
 
 
-const Image = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].img(_templateObject(), props => props.maxWidth && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject2(), props.maxWidth));
+const ImageActive = Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject());
+const Image = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].img(_templateObject2(), props => props.maxWidth && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject3(), props.maxWidth), ImageActive, props => props.isActive && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject4(), ImageActive));
 
 const ImageThumb = props => {
   const title = props.title,
         src = props.src,
         node = props.node,
         thumbClickHandler = props.thumbClickHandler,
-        index = props.index;
+        index = props.index,
+        activeSlide = props.activeSlide;
   const sizes = node.featuredImage.mediaDetails.sizes;
   const thumb = sizes.find(item => item.name === "thumbnail");
   const thumbSrc = thumb.sourceUrl ? thumb.sourceUrl : src;
   const thumbWidth = thumb.width ? thumb.width + "px" : "calc(var(--lem) * 15)";
   const thumbHeight = thumb.height ? thumb.height + "px" : "auto";
+  const thumbisActive = index === activeSlide;
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_progressive_image__WEBPACK_IMPORTED_MODULE_3___default.a, {
     src: thumbSrc,
     placeholder: "",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 29
+      lineNumber: 48
     },
     __self: undefined
   }, (thumbSrc, loading) => {
@@ -1359,7 +1382,7 @@ const ImageThumb = props => {
       height: thumbHeight,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 32
+        lineNumber: 51
       },
       __self: undefined
     }) : react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Image, {
@@ -1367,9 +1390,10 @@ const ImageThumb = props => {
       alt: title,
       maxWidth: thumbWidth,
       onClick: () => thumbClickHandler(index),
+      isActive: thumbisActive,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 34
+        lineNumber: 53
       },
       __self: undefined
     });
@@ -2295,14 +2319,6 @@ const markup = (data, queryProps) => {
 };
 
 const Thumbs = props => {
-  // The image click handler
-  const setActiveSlide = props.setActiveSlide;
-
-  const imageClickHandler = index => {
-    setActiveSlide(index);
-  }; // The query
-
-
   const category = props.category;
   const variables = {
     first: 1000,
@@ -2310,8 +2326,7 @@ const Thumbs = props => {
   };
 
   const queryProps = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({
-    postType: "thumb",
-    imageClickHandler: imageClickHandler
+    postType: "thumb"
   }, props);
 
   const _useQuery = Object(_hooks__WEBPACK_IMPORTED_MODULE_5__["useQuery"])(query, markup, variables, queryProps),
@@ -2320,7 +2335,7 @@ const Thumbs = props => {
   return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Container, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 76
+      lineNumber: 68
     },
     __self: undefined
   }, posts);
@@ -2982,5 +2997,5 @@ module.exports = __webpack_require__(/*! /home/cs/work/inu-v2/react-src/src/inde
 
 /***/ })
 
-},[[0,"runtime~main",0]]]);
+},[[0,"runtime~main",1]]]);
 //# sourceMappingURL=main.chunk.js.map

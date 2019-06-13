@@ -57,18 +57,10 @@ const markup = (data, queryProps) => {
 };
 
 const Thumbs = props => {
-  // The image click handler
-  const { setActiveSlide } = props;
-  const imageClickHandler = index => {
-    setActiveSlide(index);
-  };
-
-  // The query
   const { category } = props;
   const variables = { first: 1000, category: category };
   const queryProps = {
     postType: "thumb",
-    imageClickHandler: imageClickHandler,
     ...props
   };
   const { posts } = useQuery(query, markup, variables, queryProps);
