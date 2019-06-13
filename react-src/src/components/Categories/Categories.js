@@ -108,10 +108,9 @@ const markup = (data, props) => {
     target: true,
     index: activeCategoryIcon
   });
-  console.log("i:" + hideInactive);
 
   // Parse categories into a list
-  const items = data.categories.edges.map(edge => (
+  let items = data.categories.edges.map(edge => (
     <ListItem
       key={edge.node.id}
       className={setClassName({
@@ -124,6 +123,21 @@ const markup = (data, props) => {
       {edge.node.name}
     </ListItem>
   ));
+
+  // Add `random` category
+  items.push(
+    <ListItem
+      key="-1"
+      className={setClassName({
+        target: activeCategory,
+        index: "-1"
+      })}
+      hideInactive={hideInactive}
+      onClick={() => categoryClickHandler(-1)}
+    >
+      Random
+    </ListItem>
+  );
 
   // Make sure the first category is marked active at the first load
   if (activeCategory === 0) {

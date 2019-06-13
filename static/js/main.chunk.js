@@ -282,10 +282,9 @@ const markup = (data, props) => {
   const hideInactive = Object(_helpers__WEBPACK_IMPORTED_MODULE_6__["setClassName"])({
     target: true,
     index: activeCategoryIcon
-  });
-  console.log("i:" + hideInactive); // Parse categories into a list
+  }); // Parse categories into a list
 
-  const items = data.categories.edges.map(edge => react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(ListItem, {
+  let items = data.categories.edges.map(edge => react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(ListItem, {
     key: edge.node.id,
     className: Object(_helpers__WEBPACK_IMPORTED_MODULE_6__["setClassName"])({
       target: activeCategory,
@@ -295,10 +294,25 @@ const markup = (data, props) => {
     onClick: () => categoryClickHandler(edge.node.categoryId),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 115
+      lineNumber: 114
     },
     __self: undefined
-  }, edge.node.name)); // Make sure the first category is marked active at the first load
+  }, edge.node.name)); // Add `random` category
+
+  items.push(react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(ListItem, {
+    key: "-1",
+    className: Object(_helpers__WEBPACK_IMPORTED_MODULE_6__["setClassName"])({
+      target: activeCategory,
+      index: "-1"
+    }),
+    hideInactive: hideInactive,
+    onClick: () => categoryClickHandler(-1),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 129
+    },
+    __self: undefined
+  }, "Random")); // Make sure the first category is marked active at the first load
 
   if (activeCategory === 0) {
     categoryClickHandler(data.categories.edges[0].node.categoryId);
@@ -307,19 +321,19 @@ const markup = (data, props) => {
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Container, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 134
+      lineNumber: 148
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(ListContainer, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 135
+      lineNumber: 149
     },
     __self: undefined
   }, items), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Icons, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 136
+      lineNumber: 150
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Icon__WEBPACK_IMPORTED_MODULE_9__["default"], {
@@ -327,14 +341,14 @@ const markup = (data, props) => {
     className: hideInactive,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 137
+      lineNumber: 151
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_icons_fi__WEBPACK_IMPORTED_MODULE_4__["FiChevronDown"], {
     onClick: () => categoryIconClickHandler(),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 138
+      lineNumber: 152
     },
     __self: undefined
   })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Icon__WEBPACK_IMPORTED_MODULE_9__["default"], {
@@ -345,14 +359,14 @@ const markup = (data, props) => {
     }),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 140
+      lineNumber: 154
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_icons_fi__WEBPACK_IMPORTED_MODULE_4__["FiChevronUp"], {
     onClick: () => categoryIconClickHandler(),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 144
+      lineNumber: 158
     },
     __self: undefined
   }))));
@@ -2110,7 +2124,9 @@ const Slider = props => {
   }; // The data hook
 
 
-  const variables = {
+  const variables = category === -1 ? {
+    first: 1000
+  } : {
     first: 1000,
     category: category
   };
@@ -2129,13 +2145,13 @@ const Slider = props => {
     width: width,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 180
+      lineNumber: 181
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Slides, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 181
+      lineNumber: 182
     },
     __self: undefined
   }, slides));
