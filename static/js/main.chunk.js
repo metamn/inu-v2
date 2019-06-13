@@ -110,7 +110,7 @@ function _templateObject15() {
 }
 
 function _templateObject14() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  align-items: center;\n  background: red;\n"]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  align-items: center;\n"]);
 
   _templateObject14 = function () {
     return data;
@@ -267,11 +267,14 @@ const ListItemStyleActive = Object(styled_components__WEBPACK_IMPORTED_MODULE_2_
 
 const ListItemShowInactive = Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject8(), props => props.hideInactive === "inactive" && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject9())); // The style of the active item when all items are displayed
 
-const ListItemStyleActiveWhenShowInactive = Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject10(), props => props.hideInactive === "inactive" && props.className === "active" && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject11()));
-const ListItem = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].li(_templateObject12(), ListItemHideInactive, ListItemStyleActive, ListItemShowInactive, ListItemStyleActiveWhenShowInactive);
+const ListItemStyleActiveWhenShowInactive = Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject10(), props => props.hideInactive === "inactive" && props.className === "active" && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject11())); // The style of the items
+
+const ListItem = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].li(_templateObject12(), ListItemHideInactive, ListItemStyleActive, ListItemShowInactive, ListItemStyleActiveWhenShowInactive); // The style of the category dropdown icons
+
 const Icons = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject13());
-const ChevronIcon = Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject14());
-const query = graphql_tag__WEBPACK_IMPORTED_MODULE_3___default()(_templateObject15());
+const ChevronIcon = Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject14()); // The query definition
+
+const query = graphql_tag__WEBPACK_IMPORTED_MODULE_3___default()(_templateObject15()); // Putting together the markup to be rendered
 
 const markup = (data, props) => {
   const activeCategory = props.activeCategory,
@@ -294,22 +297,22 @@ const markup = (data, props) => {
     onClick: () => categoryClickHandler(edge.node.categoryId),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 114
+      lineNumber: 117
     },
     __self: undefined
-  }, edge.node.name)); // Add `random` category
+  }, edge.node.name)); // Add a `random` category
 
   items.push(react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(ListItem, {
-    key: "-1",
+    key: "random",
     className: Object(_helpers__WEBPACK_IMPORTED_MODULE_6__["setClassName"])({
       target: activeCategory,
-      index: "-1"
+      index: -1
     }),
     hideInactive: hideInactive,
     onClick: () => categoryClickHandler(-1),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 129
+      lineNumber: 132
     },
     __self: undefined
   }, "Random")); // Make sure the first category is marked active at the first load
@@ -321,19 +324,19 @@ const markup = (data, props) => {
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Container, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 148
+      lineNumber: 151
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(ListContainer, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 149
+      lineNumber: 152
     },
     __self: undefined
   }, items), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Icons, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 150
+      lineNumber: 153
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Icon__WEBPACK_IMPORTED_MODULE_9__["default"], {
@@ -341,14 +344,14 @@ const markup = (data, props) => {
     className: hideInactive,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 151
+      lineNumber: 154
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_icons_fi__WEBPACK_IMPORTED_MODULE_4__["FiChevronDown"], {
     onClick: () => categoryIconClickHandler(),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 152
+      lineNumber: 155
     },
     __self: undefined
   })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Icon__WEBPACK_IMPORTED_MODULE_9__["default"], {
@@ -359,14 +362,14 @@ const markup = (data, props) => {
     }),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 154
+      lineNumber: 157
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_icons_fi__WEBPACK_IMPORTED_MODULE_4__["FiChevronUp"], {
     onClick: () => categoryIconClickHandler(),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 158
+      lineNumber: 161
     },
     __self: undefined
   }))));
@@ -1699,8 +1702,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/esm/taggedTemplateLiteral */ "./node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/esm/taggedTemplateLiteral.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-/* harmony import */ var _Image__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Image */ "./src/components/Image/index.js");
+/* harmony import */ var graphql_tag__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! graphql-tag */ "./node_modules/graphql-tag/src/index.js");
+/* harmony import */ var graphql_tag__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(graphql_tag__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var _Image__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../Image */ "./src/components/Image/index.js");
 
 var _jsxFileName = "/home/cs/work/inu-v2/react-src/src/components/Post/Post.js";
 
@@ -1737,8 +1742,9 @@ function _templateObject() {
 
 
 
-const Article = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].article(_templateObject(), props => props.width && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject2(), props.width));
-const Title = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].h3(_templateObject3());
+
+const Article = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].article(_templateObject(), props => props.width && Object(styled_components__WEBPACK_IMPORTED_MODULE_3__["css"])(_templateObject2(), props.width));
+const Title = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].h3(_templateObject3());
 
 const Post = props => {
   const node = props.node,
@@ -1762,23 +1768,23 @@ const Post = props => {
     postType: postType,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 33
+      lineNumber: 35
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Title, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 34
+      lineNumber: 36
     },
     __self: undefined
-  }, title), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Image__WEBPACK_IMPORTED_MODULE_3__["default"], Object.assign({
+  }, title), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Image__WEBPACK_IMPORTED_MODULE_4__["default"], Object.assign({
     title: title,
     src: src,
     imageType: imageType
   }, props, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35
+      lineNumber: 37
     },
     __self: undefined
   })));
@@ -1991,11 +1997,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _List__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../List */ "./src/components/List/index.js");
 /* harmony import */ var _Slide__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../Slide */ "./src/components/Slide/index.js");
 /* harmony import */ var _Post__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../Post */ "./src/components/Post/index.js");
+/* harmony import */ var _Image__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../Image */ "./src/components/Image/index.js");
 
 var _jsxFileName = "/home/cs/work/inu-v2/react-src/src/components/Slider/Slider.js";
 
 function _templateObject4() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  query posts($first: Int, $category: Int) {\n    posts(first: $first, where: { categoryId: $category }) {\n      edges {\n        node {\n          id\n          title\n          featuredImage {\n            id\n            sourceUrl\n            mediaDetails {\n              file\n              height\n              width\n              sizes {\n                file\n                height\n                mimeType\n                name\n                sourceUrl\n                width\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n"]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  query postsForSlider($first: Int, $category: Int) {\n    posts(first: $first, where: { categoryId: $category }) {\n      edges {\n        node {\n          id\n          title\n          featuredImage {\n            id\n            sourceUrl\n            ...ImageMediaDetails\n          }\n        }\n      }\n    }\n  }\n  ", "\n"]);
 
   _templateObject4 = function () {
     return data;
@@ -2041,11 +2048,12 @@ function _templateObject() {
 
 
 
+
 const Container = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].section(_templateObject(), props => props.width && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject2(), props.width)); // Original idea:
 // - https://nolanlawson.com/2019/02/10/building-a-modern-carousel-with-css-scroll-snap-smooth-scrolling-and-pinch-zoom/
 
 const Slides = Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["default"])(_List__WEBPACK_IMPORTED_MODULE_5__["default"])(_templateObject3());
-const query = graphql_tag__WEBPACK_IMPORTED_MODULE_3___default()(_templateObject4());
+const query = graphql_tag__WEBPACK_IMPORTED_MODULE_3___default()(_templateObject4(), _Image__WEBPACK_IMPORTED_MODULE_8__["default"].fragments.mediaDetails);
 
 const markup = (data, queryProps) => {
   const refs = queryProps.refs,
@@ -2061,7 +2069,7 @@ const markup = (data, queryProps) => {
       ref: ref,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 97
+        lineNumber: 87
       },
       __self: undefined
     }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Post__WEBPACK_IMPORTED_MODULE_7__["default"], Object.assign({
@@ -2073,7 +2081,7 @@ const markup = (data, queryProps) => {
     }, queryProps, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 98
+        lineNumber: 88
       },
       __self: undefined
     })));
@@ -2145,13 +2153,13 @@ const Slider = props => {
     width: width,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 181
+      lineNumber: 171
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Slides, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 182
+      lineNumber: 172
     },
     __self: undefined
   }, slides));
@@ -2293,7 +2301,7 @@ __webpack_require__.r(__webpack_exports__);
 var _jsxFileName = "/home/cs/work/inu-v2/react-src/src/components/Thumbs/Thumbs.js";
 
 function _templateObject2() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_1__["default"])(["\n  query posts($first: Int, $category: Int) {\n    posts(first: $first, where: { categoryId: $category }) {\n      edges {\n        node {\n          id\n          title\n          featuredImage {\n            id\n            sourceUrl\n            ...ImageMediaDetails\n          }\n        }\n      }\n    }\n  }\n  ", "\n"]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_1__["default"])(["\n  query postsForThumbs($first: Int, $category: Int) {\n    posts(first: $first, where: { categoryId: $category }) {\n      edges {\n        node {\n          id\n          title\n          featuredImage {\n            id\n            sourceUrl\n            ...ImageMediaDetails\n          }\n        }\n      }\n    }\n  }\n  ", "\n"]);
 
   _templateObject2 = function () {
     return data;
@@ -2345,7 +2353,9 @@ const markup = (data, queryProps) => {
 
 const Thumbs = props => {
   const category = props.category;
-  const variables = {
+  const variables = category === -1 ? {
+    first: 1000
+  } : {
     first: 1000,
     category: category
   };
@@ -2360,7 +2370,7 @@ const Thumbs = props => {
   return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Container, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 68
+      lineNumber: 72
     },
     __self: undefined
   }, posts);
@@ -2693,6 +2703,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+// Sets a class name either to `active` or `inactive`
 const setClassName = props => {
   const target = props.target,
         index = props.index;

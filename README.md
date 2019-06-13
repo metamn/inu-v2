@@ -15,6 +15,10 @@ The React version of inu.ro
 - they are interesting and needed for colocation
 - however I couldn't filter them (ie. in `Thumbs` get only the image of size `thumbnail`)
 
+### GraphQL imports (Colocation)
+
+- you need a special loader && a separate `.graphql` file which is not colocation: https://stackoverflow.com/questions/49829531/how-to-import-graphql-query
+
 ### Flow (Static typing)
 
 - [flow](https://github.com/facebook/flow) vs TypeScript because [Facebook / React is using it internally](https://twitter.com/dan_abramov/status/1135437323888406528). It also [works out-of-the-box](https://flow.org/en/docs/tools/create-react-app/) with CRA

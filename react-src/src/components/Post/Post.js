@@ -1,5 +1,7 @@
 import React from "react";
+import gql from "graphql-tag";
 import styled, { css } from "styled-components";
+
 import Image from "../Image";
 
 const Article = styled.article`

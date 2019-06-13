@@ -61,6 +61,7 @@ const ListItemStyleActiveWhenShowInactive = css`
     `};
 `;
 
+// The style of the items
 const ListItem = styled.li`
   font-size: 1.333em;
   cursor: pointer;
@@ -72,15 +73,16 @@ const ListItem = styled.li`
   ${ListItemStyleActiveWhenShowInactive}
 `;
 
+// The style of the category dropdown icons
 const Icons = styled.div`
   margin-left: var(--lem);
 `;
 
 const ChevronIcon = css`
   align-items: center;
-  background: red;
 `;
 
+// The query definition
 const query = gql`
   query Categories($hideEmpty: Boolean) {
     categories(where: { hideEmpty: $hideEmpty, orderby: TERM_ORDER }) {
@@ -95,6 +97,7 @@ const query = gql`
   }
 `;
 
+// Putting together the markup to be rendered
 const markup = (data, props) => {
   const {
     activeCategory,
@@ -124,13 +127,13 @@ const markup = (data, props) => {
     </ListItem>
   ));
 
-  // Add `random` category
+  // Add a `random` category
   items.push(
     <ListItem
-      key="-1"
+      key="random"
       className={setClassName({
         target: activeCategory,
-        index: "-1"
+        index: -1
       })}
       hideInactive={hideInactive}
       onClick={() => categoryClickHandler(-1)}

@@ -16,7 +16,7 @@ const Container = styled.section`
 `;
 
 const query = gql`
-  query posts($first: Int, $category: Int) {
+  query postsForThumbs($first: Int, $category: Int) {
     posts(first: $first, where: { categoryId: $category }) {
       edges {
         node {
@@ -58,11 +58,15 @@ const markup = (data, queryProps) => {
 
 const Thumbs = props => {
   const { category } = props;
-  const variables = { first: 1000, category: category };
+
+  const variables =
+    category === -1 ? { first: 1000 } : { first: 1000, category: category };
+
   const queryProps = {
     postType: "thumb",
     ...props
   };
+
   const { posts } = useQuery(query, markup, variables, queryProps);
 
   return <Container>{posts}</Container>;

@@ -6,6 +6,7 @@ import { useQuery, useEventListener } from "../../hooks";
 import List from "../List";
 import Slide from "../Slide";
 import Post from "../Post";
+import Image from "../Image";
 
 const Container = styled.section`
   margin-top: calc(var(--lem) * 2);
@@ -51,7 +52,7 @@ const Slides = styled(List)`
 `;
 
 const query = gql`
-  query posts($first: Int, $category: Int) {
+  query postsForSlider($first: Int, $category: Int) {
     posts(first: $first, where: { categoryId: $category }) {
       edges {
         node {
@@ -60,24 +61,13 @@ const query = gql`
           featuredImage {
             id
             sourceUrl
-            mediaDetails {
-              file
-              height
-              width
-              sizes {
-                file
-                height
-                mimeType
-                name
-                sourceUrl
-                width
-              }
-            }
+            ...ImageMediaDetails
           }
         }
       }
     }
   }
+  ${Image.fragments.mediaDetails}
 `;
 
 const markup = (data, queryProps) => {
