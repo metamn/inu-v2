@@ -23,11 +23,15 @@ const HeaderIcon = styled(Icon)`
 `;
 
 const Header = props => {
-  const { thumbIconClickHandler, sunIconClickHandler } = props;
+  const {
+    thumbIconClickHandler,
+    sunIconClickHandler,
+    logoClickHandler
+  } = props;
 
   return (
     <Container>
-      <Logo />
+      <Logo logoClickHandler={logoClickHandler} />
       <Line />
       <Categories {...props} />
       <HeaderIcon size={1.25}>

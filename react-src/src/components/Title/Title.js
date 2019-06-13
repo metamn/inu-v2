@@ -14,15 +14,18 @@ const query = gql`
 const H1 = styled.h1`
   font-size: 1.5em;
   font-weight: normal;
+  cursor: pointer;
 `;
 
-const markup = data => {
+const markup = (data, queryProps) => {
   const title = data.generalSettings.title;
-  return <H1>{title}</H1>;
+  const { logoClickHandler } = queryProps;
+
+  return <H1 onClick={() => logoClickHandler()}>{title}</H1>;
 };
 
-const Title = () => {
-  return useQuery(query, markup);
+const Title = props => {
+  return useQuery(query, markup, {}, props);
 };
 
 export default Title;

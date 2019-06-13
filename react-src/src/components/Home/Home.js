@@ -82,6 +82,14 @@ const Home = () => {
     setActiveSlide(index);
   };
 
+  // Click on the logo
+  const logoClickHandler = () => {
+    setActiveCategory(0);
+    setActiveSlide(0);
+    setDisplayMode(0);
+  };
+
+  // The different display modes
   const Display = () => {
     switch (displayMode) {
       case 0:
@@ -128,6 +136,7 @@ const Home = () => {
             categoryIconClickHandler={categoryIconClickHandler}
             thumbIconClickHandler={thumbIconClickHandler}
             sunIconClickHandler={toggleTheme}
+            logoClickHandler={logoClickHandler}
           />
           <Display />
         </Container>

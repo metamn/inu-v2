@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import gql from "graphql-tag";
 import { useQuery } from "./../../hooks";
 
@@ -16,20 +16,30 @@ const query = gql`
 const H2 = styled.h2`
   font-size: 100%;
   font-weight: normal;
-  color: ${props => props.theme.colors.gray};
+  cursor: pointer;
+
+  ${props =>
+    props.theme.colors.gray &&
+    css`
+      color: ${props.theme.colors.gray};
+    `};
 `;
 
 const markup = (data, queryProps) => {
   const description = data.generalSettings.description;
-  const { theme } = queryProps;
+  const { theme, logoClickHandler } = queryProps;
 
-  return <H2 theme={theme}>{description}</H2>;
+  return (
+    <H2 theme={theme} onClick={() => logoClickHandler()}>
+      {description}
+    </H2>
+  );
 };
 
-const Description = () => {
+const Description = props => {
   const themeContext = useContext(ThemeContext);
   const { theme } = themeContext;
-  const queryProps = { theme: theme };
+  const queryProps = { theme: theme, ...props };
 
   return useQuery(query, markup, {}, queryProps);
 };

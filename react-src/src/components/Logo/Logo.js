@@ -8,11 +8,13 @@ const Container = styled.div`
   flex-direction: column;
 `;
 
-const Logo = () => {
+const Logo = props => {
+  const { logoClickHandler } = props;
+
   return (
     <Container>
-      <Title />
-      <Description />
+      <Title logoClickHandler={logoClickHandler} />
+      <Description logoClickHandler={logoClickHandler} />
     </Container>
   );
 };
