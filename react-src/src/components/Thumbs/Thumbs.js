@@ -36,22 +36,41 @@ const query = gql`
 
 const markup = (data, queryProps) => {
   const { postType } = queryProps;
+
   const postsWithImage = data.posts.edges.filter(
     edge => edge.node.featuredImage
   );
 
   const posts = postsWithImage.map((edge, index) => {
-    return <Post node={edge.node} postType={postType} />;
+    return (
+      <Post
+        key={index}
+        index={index}
+        node={edge.node}
+        postType={postType}
+        {...queryProps}
+      />
+    );
   });
 
   return { posts };
 };
 
 const Thumbs = props => {
-  const { category } = props;
+  // The image click handler
+  const { setActiveSlide } = props;
+  const imageClickHandler = index => {
+    setActiveSlide(index);
+  };
 
+  // The query
+  const { category } = props;
   const variables = { first: 1000, category: category };
-  const queryProps = { postType: "thumb" };
+  const queryProps = {
+    postType: "thumb",
+    imageClickHandler: imageClickHandler,
+    ...props
+  };
   const { posts } = useQuery(query, markup, variables, queryProps);
 
   return <Container>{posts}</Container>;

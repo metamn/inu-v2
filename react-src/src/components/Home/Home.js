@@ -51,12 +51,6 @@ const Home = () => {
   const themeContext = useContext(ThemeContext);
   const [currentTheme, setCurrentTheme] = useState(themeContext);
 
-  // Click on theme icon
-  const toggleTheme = () => {
-    const newTheme = switchThemeFrom(currentTheme.mode);
-    setCurrentTheme(newTheme);
-  };
-
   // Click on a category
   const categoryClickHandler = index => {
     setActiveCategory(index);
@@ -74,6 +68,18 @@ const Home = () => {
   // Click on the thumbnails icon
   const thumbIconClickHandler = () => {
     displayMode === 1 ? setDisplayMode(0) : setDisplayMode(1);
+  };
+
+  // Click on the theme icon
+  const toggleTheme = () => {
+    const newTheme = switchThemeFrom(currentTheme.mode);
+    setCurrentTheme(newTheme);
+  };
+
+  // Click on a thumbnail
+  const thumbClickHandler = index => {
+    setDisplayMode(0);
+    setActiveSlide(index);
   };
 
   const Display = () => {
@@ -94,7 +100,7 @@ const Home = () => {
           <Thumbs
             category={activeCategory}
             activeSlide={activeSlide}
-            setActiveSlide={setActiveSlide}
+            thumbClickHandler={thumbClickHandler}
           />
         );
       case 2:

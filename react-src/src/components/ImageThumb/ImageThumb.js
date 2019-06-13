@@ -7,6 +7,7 @@ import ImagePlaceholder from "../ImagePlaceholder";
 const Image = styled.img`
   width: 100%;
   height: auto;
+  cursor: pointer;
 
   ${props =>
     props.maxWidth &&
@@ -16,7 +17,7 @@ const Image = styled.img`
 `;
 
 const ImageThumb = props => {
-  const { title, src, node } = props;
+  const { title, src, node, thumbClickHandler, index } = props;
   const { sizes } = node.featuredImage.mediaDetails;
   const thumb = sizes.find(item => item.name === "thumbnail");
 
@@ -30,7 +31,12 @@ const ImageThumb = props => {
         return loading ? (
           <ImagePlaceholder width={thumbWidth} height={thumbHeight} />
         ) : (
-          <Image src={thumbSrc} alt={title} maxWidth={thumbWidth} />
+          <Image
+            src={thumbSrc}
+            alt={title}
+            maxWidth={thumbWidth}
+            onClick={() => thumbClickHandler(index)}
+          />
         );
       }}
     </ProgressiveImage>
