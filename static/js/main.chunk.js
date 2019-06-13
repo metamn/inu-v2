@@ -945,6 +945,7 @@ const Home = () => {
       case 0:
         return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Slider__WEBPACK_IMPORTED_MODULE_11__["default"], {
           width: "90vw",
+          height: "70vh",
           category: activeCategory,
           activeBullet: activeBullet,
           setActiveBullet: setActiveBullet,
@@ -961,7 +962,7 @@ const Home = () => {
           category: activeCategory,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 89
+            lineNumber: 90
           },
           __self: undefined
         });
@@ -971,7 +972,7 @@ const Home = () => {
         return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Blank__WEBPACK_IMPORTED_MODULE_13__["default"], {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 92
+            lineNumber: 93
           },
           __self: undefined
         });
@@ -981,7 +982,7 @@ const Home = () => {
   return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_2___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Reset__WEBPACK_IMPORTED_MODULE_7__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 98
+      lineNumber: 99
     },
     __self: undefined
   }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_TypographicGrid__WEBPACK_IMPORTED_MODULE_8__["default"], {
@@ -992,21 +993,21 @@ const Home = () => {
     lineColor: "#666",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 99
+      lineNumber: 100
     },
     __self: undefined
   }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_themes_default_js__WEBPACK_IMPORTED_MODULE_6__["ThemeContext"].Provider, {
     value: currentTheme,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 106
+      lineNumber: 107
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Container, {
     theme: currentTheme.theme,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 107
+      lineNumber: 108
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Header__WEBPACK_IMPORTED_MODULE_10__["default"], {
@@ -1018,13 +1019,13 @@ const Home = () => {
     sunIconClickHandler: toggleTheme,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 108
+      lineNumber: 109
     },
     __self: undefined
   }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Display, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 116
+      lineNumber: 117
     },
     __self: undefined
   }))));
@@ -1353,8 +1354,28 @@ __webpack_require__.r(__webpack_exports__);
 
 var _jsxFileName = "/home/cs/work/inu-v2/react-src/src/components/ImageResponsive/ImageResponsive.js";
 
+function _templateObject3() {
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n      max-height: ", ";\n    "]);
+
+  _templateObject3 = function () {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject2() {
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n      max-width: ", ";\n    "]);
+
+  _templateObject2 = function () {
+    return data;
+  };
+
+  return data;
+}
+
 function _templateObject() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  max-width: 80vw;\n  max-height: 70vh;\n  width: auto;\n  height: auto;\n  cursor: pointer;\n"]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  width: auto;\n  height: auto;\n  cursor: pointer;\n\n  ", ";\n\n  ", ";\n"]);
 
   _templateObject = function () {
     return data;
@@ -1368,7 +1389,7 @@ function _templateObject() {
 
 
 
-const Image = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].img(_templateObject());
+const Image = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].img(_templateObject(), props => props.width && Object(styled_components__WEBPACK_IMPORTED_MODULE_3__["css"])(_templateObject2(), props.width), props => props.height && Object(styled_components__WEBPACK_IMPORTED_MODULE_3__["css"])(_templateObject3(), props.height));
 
 const ImageResponsive = props => {
   const title = props.title,
@@ -1376,7 +1397,9 @@ const ImageResponsive = props => {
         imageClickHandler = props.imageClickHandler,
         index = props.index,
         numberOfSlides = props.numberOfSlides,
-        node = props.node;
+        node = props.node,
+        width = props.width,
+        height = props.height;
   const featuredImage = node.featuredImage;
   const mediaDetails = featuredImage.mediaDetails;
   const sizes = mediaDetails.sizes;
@@ -1393,29 +1416,31 @@ const ImageResponsive = props => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 30
+      lineNumber: 49
     },
     __self: undefined
   }, (src, loading, srcSetData) => {
     return loading ? // The placeholder size has to be the same as the slider size.
     // Otherwise the slider won't work
     react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_ImagePlaceholder__WEBPACK_IMPORTED_MODULE_5__["default"], {
-      width: "80vw",
-      height: "70vh",
+      width: width,
+      height: height,
       backgroundColor: backgroundColor,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 35
+        lineNumber: 54
       },
       __self: undefined
     }) : react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Image, {
       src: src,
       srcSet: srcSetData.srcSet,
       alt: title,
+      width: width,
+      height: height,
       onClick: () => imageClickHandler(index, numberOfSlides),
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 41
+        lineNumber: 60
       },
       __self: undefined
     });
@@ -2169,19 +2194,19 @@ const markup = (data, queryProps) => {
         lineNumber: 98
       },
       __self: undefined
-    }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Post__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Post__WEBPACK_IMPORTED_MODULE_7__["default"], Object.assign({
       node: edge.node // Click handling **MUST** go down to the smallest component, ie <img/>
       ,
       index: index,
       imageClickHandler: imageClickHandler,
-      numberOfSlides: numberOfSlides,
-      width: width,
+      numberOfSlides: numberOfSlides
+    }, queryProps, {
       __source: {
         fileName: _jsxFileName,
         lineNumber: 99
       },
       __self: undefined
-    }));
+    })));
   });
   return {
     slides,
@@ -2191,6 +2216,7 @@ const markup = (data, queryProps) => {
 
 const Slider = props => {
   const width = props.width,
+        height = props.height,
         category = props.category,
         activeBullet = props.activeBullet,
         setActiveBullet = props.setActiveBullet; //
@@ -2257,7 +2283,8 @@ const Slider = props => {
   const queryProps = {
     refs: refs,
     imageClickHandler: imageClickHandler,
-    width: width
+    width: width,
+    height: height
   };
 
   const _useQuery = Object(_hooks__WEBPACK_IMPORTED_MODULE_4__["useQuery"])(query, markup, variables, queryProps),
@@ -2279,13 +2306,13 @@ const Slider = props => {
     width: width,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 216
+      lineNumber: 217
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Slides, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 217
+      lineNumber: 218
     },
     __self: undefined
   }, slides), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Bullets__WEBPACK_IMPORTED_MODULE_8__["default"], {
@@ -2294,7 +2321,7 @@ const Slider = props => {
     bulletClickHandler: bulletClickHandler,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 218
+      lineNumber: 219
     },
     __self: undefined
   }));

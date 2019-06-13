@@ -1,20 +1,39 @@
 import React, { useContext } from "react";
 import ProgressiveImage from "react-progressive-image";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 import { ThemeContext } from "../../themes/default.js";
 import ImagePlaceholder from "../ImagePlaceholder";
 
 const Image = styled.img`
-  max-width: 80vw;
-  max-height: 70vh;
   width: auto;
   height: auto;
   cursor: pointer;
+
+  ${props =>
+    props.width &&
+    css`
+      max-width: ${props.width};
+    `};
+
+  ${props =>
+    props.height &&
+    css`
+      max-height: ${props.height};
+    `};
 `;
 
 const ImageResponsive = props => {
-  const { title, src, imageClickHandler, index, numberOfSlides, node } = props;
+  const {
+    title,
+    src,
+    imageClickHandler,
+    index,
+    numberOfSlides,
+    node,
+    width,
+    height
+  } = props;
   const { featuredImage } = node;
   const { mediaDetails } = featuredImage;
   const { sizes } = mediaDetails;
@@ -33,8 +52,8 @@ const ImageResponsive = props => {
           // The placeholder size has to be the same as the slider size.
           // Otherwise the slider won't work
           <ImagePlaceholder
-            width="80vw"
-            height="70vh"
+            width={width}
+            height={height}
             backgroundColor={backgroundColor}
           />
         ) : (
@@ -42,6 +61,8 @@ const ImageResponsive = props => {
             src={src}
             srcSet={srcSetData.srcSet}
             alt={title}
+            width={width}
+            height={height}
             onClick={() => imageClickHandler(index, numberOfSlides)}
           />
         );

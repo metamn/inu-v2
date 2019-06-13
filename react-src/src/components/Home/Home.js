@@ -79,6 +79,7 @@ const Home = () => {
         return (
           <Slider
             width="90vw"
+            height="70vh"
             category={activeCategory}
             activeBullet={activeBullet}
             setActiveBullet={setActiveBullet}

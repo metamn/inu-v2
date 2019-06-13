@@ -102,7 +102,7 @@ const markup = (data, queryProps) => {
           index={index}
           imageClickHandler={imageClickHandler}
           numberOfSlides={numberOfSlides}
-          width={width}
+          {...queryProps}
         />
       </Slide>
     );
@@ -112,7 +112,7 @@ const markup = (data, queryProps) => {
 };
 
 const Slider = props => {
-  const { width, category, activeBullet, setActiveBullet } = props;
+  const { width, height, category, activeBullet, setActiveBullet } = props;
 
   //
   // 1. Vars needed by all things below
@@ -190,7 +190,8 @@ const Slider = props => {
   const queryProps = {
     refs: refs,
     imageClickHandler: imageClickHandler,
-    width: width
+    width: width,
+    height: height
   };
   const { slides, numberOfSlides } = useQuery(
     query,
