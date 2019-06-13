@@ -1,25 +1,36 @@
 import React from "react";
-import gql from "graphql-tag";
+import styled, { css } from "styled-components";
 import ProgressiveImage from "react-progressive-image";
-import styled from "styled-components";
 
 import ImagePlaceholder from "../ImagePlaceholder";
 
 const Image = styled.img`
-  max-width: calc(var(--lem) * 15);
   width: 100%;
   height: auto;
+
+  ${props =>
+    props.maxWidth &&
+    css`
+      max-width: ${props.maxWidth};
+    `}
 `;
 
 const ImageThumb = props => {
-  const { title, src } = props;
+  const { title, src, node } = props;
+  const { sizes } = node.featuredImage.mediaDetails;
+  const thumb = sizes.find(item => item.name === "thumbnail");
+
+  const thumbSrc = thumb.sourceUrl ? thumb.sourceUrl : src;
+  const thumbWidth = thumb.width ? thumb.width + "px" : "calc(var(--lem) * 15)";
+  const thumbHeight = thumb.height ? thumb.height + "px" : "auto";
+
   return (
-    <ProgressiveImage src={src} placeholder="">
-      {(src, loading) => {
+    <ProgressiveImage src={thumbSrc} placeholder="">
+      {(thumbSrc, loading) => {
         return loading ? (
-          ImagePlaceholder({ width: "calc(var(--lem) * 15)", height: "auto" })
+          ImagePlaceholder({ width: { thumbWidth }, height: { thumbHeight } })
         ) : (
-          <Image src={src} alt={title} />
+          <Image src={thumbSrc} alt={title} maxWidth={thumbWidth} />
         );
       }}
     </ProgressiveImage>

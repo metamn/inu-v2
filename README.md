@@ -8,14 +8,14 @@ The React version of inu.ro
 - [styled-components](https://www.styled-components.com/) vs Emotion. See http://metamn.io/mr-ui > Basics > Styling for details
 - [react-progressive-image](https://github.com/FormidableLabs/react-progressive-image) because is maintained by Formidable Labs
 
-## Caveats
+## Missing
 
-### GraphQL fragments
+### GraphQL fragments (Colocation)
 
 - they are interesting and needed for colocation
 - however I couldn't filter them (ie. in `Thumbs` get only the image of size `thumbnail`)
 
-### Flow
+### Flow (Static typing)
 
 - [flow](https://github.com/facebook/flow) vs TypeScript because [Facebook / React is using it internally](https://twitter.com/dan_abramov/status/1135437323888406528). It also [works out-of-the-box](https://flow.org/en/docs/tools/create-react-app/) with CRA
 - it's not working ... see the `v2-flow` branch
