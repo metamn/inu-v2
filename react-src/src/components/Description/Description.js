@@ -30,6 +30,7 @@ const Description = () => {
   const themeContext = useContext(ThemeContext);
   const { theme } = themeContext;
   const queryProps = { theme: theme };
+
   return useQuery(query, markup, {}, queryProps);
 };
 

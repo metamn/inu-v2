@@ -28,7 +28,7 @@ const ImageThumb = props => {
     <ProgressiveImage src={thumbSrc} placeholder="">
       {(thumbSrc, loading) => {
         return loading ? (
-          ImagePlaceholder({ width: { thumbWidth }, height: { thumbHeight } })
+          <ImagePlaceholder width={thumbWidth} height={thumbHeight} />
         ) : (
           <Image src={thumbSrc} alt={title} maxWidth={thumbWidth} />
         );

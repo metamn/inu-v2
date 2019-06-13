@@ -1,41 +1,38 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled, { css } from "styled-components";
 
+import { ThemeContext } from "../../themes/default.js";
+
 const Placeholder = styled.div`
-  background-color: white;
-  width: 500px;
-  height: 300px;
+  background-color: lightgray;
+  width: 150px;
+  height: 150px;
 
   ${props =>
     props.backgroundColor &&
     css`
-      background-color: backgroundColor;
+      background-color: ${props.backgroundColor};
     `};
 
   ${props =>
     props.width &&
     css`
-      width: width;
+      width: ${props.width};
     `};
 
   ${props =>
     props.height &&
     css`
-      height: height;
+      height: ${props.height};
     `};
 `;
 
 const ImagePlaceholder = props => {
-  const { width, height } = props;
-  const backgroundColor = "black";
+  const themeContext = useContext(ThemeContext);
+  const { theme } = themeContext;
+  const backgroundColor = theme.colors.placeholder;
 
-  return (
-    <Placeholder
-      width={width}
-      height={height}
-      backgroundColor={backgroundColor}
-    />
-  );
+  return <Placeholder {...props} backgroundColor={backgroundColor} />;
 };
 
 export default ImagePlaceholder;

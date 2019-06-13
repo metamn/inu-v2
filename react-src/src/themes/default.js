@@ -3,17 +3,20 @@ import React from "react";
 const white = "white";
 const black = "black";
 const gray = "#666";
+const lightgray = "lightgray";
 
 const themeColors = {
   light: {
     text: black,
     background: white,
-    gray: gray
+    gray: gray,
+    placeholder: lightgray
   },
   dark: {
     text: white,
     background: black,
-    gray: gray
+    gray: gray,
+    placeholder: lightgray
   }
 };
 
