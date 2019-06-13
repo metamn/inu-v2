@@ -13,7 +13,7 @@ const Image = styled.img`
   height: auto;
   cursor: pointer;
 
-  padding: calc(var(--lem) / 2);
+  padding: calc(var(--lem) / 1);
   border: 1px solid transparent;
 
   ${props =>

@@ -1329,7 +1329,7 @@ function _templateObject3() {
 }
 
 function _templateObject2() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  width: 100%;\n  height: auto;\n  cursor: pointer;\n\n  padding: calc(var(--lem) / 2);\n  border: 1px solid transparent;\n\n  ", "\n\n  &:hover {\n    ", "\n  }\n\n  ", "\n"]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  width: 100%;\n  height: auto;\n  cursor: pointer;\n\n  padding: calc(var(--lem) / 1);\n  border: 1px solid transparent;\n\n  ", "\n\n  &:hover {\n    ", "\n  }\n\n  ", "\n"]);
 
   _templateObject2 = function () {
     return data;
@@ -1660,28 +1660,8 @@ __webpack_require__.r(__webpack_exports__);
 
 var _jsxFileName = "/home/cs/work/inu-v2/react-src/src/components/Post/Post.js";
 
-function _templateObject5() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  display: none;\n"]);
-
-  _templateObject5 = function () {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject4() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n      width: ", ";\n    "]);
-
-  _templateObject4 = function () {
-    return data;
-  };
-
-  return data;
-}
-
 function _templateObject3() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  ", "\n\n  ", "\n"]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  display: none;\n"]);
 
   _templateObject3 = function () {
     return data;
@@ -1691,7 +1671,7 @@ function _templateObject3() {
 }
 
 function _templateObject2() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n      margin-right: var(--lem);\n      margin-bottom: var(--lem);\n    "]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n      width: ", ";\n    "]);
 
   _templateObject2 = function () {
     return data;
@@ -1713,9 +1693,8 @@ function _templateObject() {
 
 
 
-const ArticleThumb = Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject(), props => props.postType === "thumb" && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject2()));
-const Article = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].article(_templateObject3(), props => props.width && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject4(), props.width), ArticleThumb);
-const Title = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].h3(_templateObject5());
+const Article = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].article(_templateObject(), props => props.width && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject2(), props.width));
+const Title = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].h3(_templateObject3());
 
 const Post = props => {
   const node = props.node,
@@ -1739,13 +1718,13 @@ const Post = props => {
     postType: postType,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 44
+      lineNumber: 33
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Title, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45
+      lineNumber: 34
     },
     __self: undefined
   }, title), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Image__WEBPACK_IMPORTED_MODULE_3__["default"], Object.assign({
@@ -1755,7 +1734,7 @@ const Post = props => {
   }, props, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 46
+      lineNumber: 35
     },
     __self: undefined
   })));
@@ -2997,5 +2976,5 @@ module.exports = __webpack_require__(/*! /home/cs/work/inu-v2/react-src/src/inde
 
 /***/ })
 
-},[[0,"runtime~main",1]]]);
+},[[0,"runtime~main",0]]]);
 //# sourceMappingURL=main.chunk.js.map
