@@ -6,7 +6,6 @@ import { useQuery, useEventListener } from "../../hooks";
 import List from "../List";
 import Slide from "../Slide";
 import Post from "../Post";
-import Bullets from "../Bullets";
 
 const Container = styled.section`
   margin-top: calc(var(--lem) * 2);
@@ -112,42 +111,22 @@ const markup = (data, queryProps) => {
 };
 
 const Slider = props => {
-  const { width, height, category, activeBullet, setActiveBullet } = props;
+  const { width, height, category, activeSlide, setActiveSlide } = props;
 
-  //
-  // 1. Vars needed by all things below
-  //
-  // We need to have a `ref` associated which each slide to be able to scroll to
+  // Refs to each slide
   let refs = [];
 
-  //
-  // 2. Hooks
-  //
-  // State hooks are first.
-  // All things below need to know abut `activeBullet`
-  //const [activeBullet, setActiveBullet] = useState(0);
-  //
-  // `activeBullet` state was lifted up to be reset when a new category is clicked
-  // This was the only way to make it work
-
-  // Without `useEffect` we can't properly have access to `activeBullet`
-  // Even more when state changes this handles the
-  // Perhaps every state hook has and effect hook associated
-  //
-  // - `useEffect` is associated to state, so it should immediately follow in code
-  // - Otherwise and error message will be shown
-  // - See: https://reactjs.org/docs/hooks-effect.html
+  // Scroll the active slide into the view
   useEffect(
     () => {
-      if (refs && refs[activeBullet] && refs[activeBullet].current) {
-        refs[activeBullet].current.scrollIntoView();
+      if (refs && refs[activeSlide] && refs[activeSlide].current) {
+        refs[activeSlide].current.scrollIntoView();
       }
     },
-    [activeBullet, refs]
+    [activeSlide, refs]
   );
 
   // Touch scroll event handler
-  // Attached to an event listener hook
   const touchScrollHandler = useCallback(
     () => {
       const visibleRef = refs.findIndex(ref => {
@@ -160,32 +139,29 @@ const Slider = props => {
           right <= window.innerWidth * 1.5
         );
       });
-      setActiveBullet(visibleRef);
+      setActiveSlide(visibleRef);
     },
-    [refs, setActiveBullet]
+    [refs, setActiveSlide]
   );
 
-  // The event listener hook
+  // The touch event listener hook
   useEventListener("touchend", touchScrollHandler);
 
-  //
-  // 3. Data hooks
-  //
-  // The image needs to be clicked so it comes after the state hook and before the data hook
-  //
   // The image click handler
   const imageClickHandler = (index, numberOfSlides) => {
     if (index + 1 < numberOfSlides) {
-      setActiveBullet(index + 1);
+      setActiveSlide(index + 1);
     } else {
-      setActiveBullet(0);
+      setActiveSlide(0);
     }
   };
 
+  // The bullet click handler
+  const bulletClickHandler = index => {
+    setActiveSlide(index);
+  };
+
   // The data hook
-  // - we can't return an array which later will be processed like Bullets
-  // - the returned array is first empty then only later becomes populated
-  // - therefore we return the processed info inside `slides`
   const variables = { first: 1000, category: category };
   const queryProps = {
     refs: refs,
@@ -200,27 +176,9 @@ const Slider = props => {
     queryProps
   );
 
-  //
-  // 4. Other hooks
-  //
-
-  //
-  // 5. Regular stuff
-  //
-
-  // The bullet click handler
-  const bulletClickHandler = index => {
-    setActiveBullet(index);
-  };
-
   return (
     <Container width={width}>
       <Slides>{slides}</Slides>
-      <Bullets
-        numberOfSlides={numberOfSlides}
-        activeBullet={activeBullet}
-        bulletClickHandler={bulletClickHandler}
-      />
     </Container>
   );
 };

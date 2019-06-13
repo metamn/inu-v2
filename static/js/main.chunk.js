@@ -75,195 +75,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./src/components/Bullet/Bullet.js":
-/*!*****************************************!*\
-  !*** ./src/components/Bullet/Bullet.js ***!
-  \*****************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/esm/taggedTemplateLiteral */ "./node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/esm/taggedTemplateLiteral.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-/* harmony import */ var _themes_default_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../themes/default.js */ "./src/themes/default.js");
-
-var _jsxFileName = "/home/cs/work/inu-v2/react-src/src/components/Bullet/Bullet.js";
-
-function _templateObject3() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n      border-color: ", ";\n    "]);
-
-  _templateObject3 = function () {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject2() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  border: none;\n  margin: 0;\n  padding: 0;\n  background-color: transparent;\n\n  width: calc(var(--lem) * 0.25);\n  height: calc(var(--lem) / 3);\n  border-bottom: calc(var(--lem) / 3) solid ", ";\n\n  margin-right: var(--lem);\n  cursor: pointer;\n\n  ", ";\n"]);
-
-  _templateObject2 = function () {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])([""]);
-
-  _templateObject = function () {
-    return data;
-  };
-
-  return data;
-}
-
-
-
-
-const Container = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].li(_templateObject());
-const Button = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].button(_templateObject2(), props => props.theme.colors.gray, props => props.className === "active" && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject3(), props => props.theme.colors.text));
-
-const Bullet = props => {
-  const themeContext = Object(react__WEBPACK_IMPORTED_MODULE_1__["useContext"])(_themes_default_js__WEBPACK_IMPORTED_MODULE_3__["ThemeContext"]);
-  const theme = themeContext.theme;
-  const className = props.className,
-        bulletClickHandler = props.bulletClickHandler,
-        index = props.index;
-  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Container, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 34
-    },
-    __self: undefined
-  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Button, {
-    theme: theme,
-    className: className,
-    onClick: () => bulletClickHandler(index),
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 35
-    },
-    __self: undefined
-  }, "\xA0"));
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (Bullet);
-
-/***/ }),
-
-/***/ "./src/components/Bullet/index.js":
-/*!****************************************!*\
-  !*** ./src/components/Bullet/index.js ***!
-  \****************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _Bullet__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Bullet */ "./src/components/Bullet/Bullet.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _Bullet__WEBPACK_IMPORTED_MODULE_0__["default"]; });
-
-
-
-/***/ }),
-
-/***/ "./src/components/Bullets/Bullets.js":
-/*!*******************************************!*\
-  !*** ./src/components/Bullets/Bullets.js ***!
-  \*******************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/esm/taggedTemplateLiteral */ "./node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/esm/taggedTemplateLiteral.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-/* harmony import */ var _Bullet__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Bullet */ "./src/components/Bullet/index.js");
-/* harmony import */ var _Repeat__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../Repeat */ "./src/components/Repeat/index.js");
-/* harmony import */ var _List__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../List */ "./src/components/List/index.js");
-/* harmony import */ var _helpers__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../helpers */ "./src/helpers/index.js");
-
-var _jsxFileName = "/home/cs/work/inu-v2/react-src/src/components/Bullets/Bullets.js";
-
-function _templateObject() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  display: flex;\n  margin-top: var(--lem);\n"]);
-
-  _templateObject = function () {
-    return data;
-  };
-
-  return data;
-}
-
-
-
-
-
-
-
-const Container = Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["default"])(_List__WEBPACK_IMPORTED_MODULE_5__["default"])(_templateObject());
-
-const Bullets = props => {
-  const numberOfSlides = props.numberOfSlides,
-        activeBullet = props.activeBullet,
-        bulletClickHandler = props.bulletClickHandler;
-  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Container, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 18
-    },
-    __self: undefined
-  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Repeat__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    numberOfTimes: numberOfSlides,
-    startAt: 0,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 19
-    },
-    __self: undefined
-  }, i => react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Bullet__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    className: Object(_helpers__WEBPACK_IMPORTED_MODULE_6__["setClassName"])({
-      target: activeBullet,
-      index: i
-    }),
-    key: i,
-    index: i,
-    bulletClickHandler: bulletClickHandler,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 21
-    },
-    __self: undefined
-  })));
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (Bullets);
-
-/***/ }),
-
-/***/ "./src/components/Bullets/index.js":
-/*!*****************************************!*\
-  !*** ./src/components/Bullets/index.js ***!
-  \*****************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _Bullets__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Bullets */ "./src/components/Bullets/Bullets.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _Bullets__WEBPACK_IMPORTED_MODULE_0__["default"]; });
-
-
-
-/***/ }),
-
 /***/ "./src/components/Categories/Categories.js":
 /*!*************************************************!*\
   !*** ./src/components/Categories/Categories.js ***!
@@ -890,19 +701,19 @@ const Home = () => {
   const _useState = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])(0),
         _useState2 = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_useState, 2),
         activeCategory = _useState2[0],
-        setActiveCategory = _useState2[1]; // Which bullet is active
+        setActiveCategory = _useState2[1]; // Which category dropdown icon is active
 
 
-  const _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])(0),
+  const _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])(true),
         _useState4 = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_useState3, 2),
-        activeBullet = _useState4[0],
-        setActiveBullet = _useState4[1]; // The status of the category dropdown icons
+        activeCategoryIcon = _useState4[0],
+        setActiveCategoryIcon = _useState4[1]; // Which slide is active
 
 
-  const _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])(true),
+  const _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])(0),
         _useState6 = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_useState5, 2),
-        activeCategoryIcon = _useState6[0],
-        setActiveCategoryIcon = _useState6[1]; // How to display images
+        activeSlide = _useState6[0],
+        setActiveSlide = _useState6[1]; // How to display images
 
 
   const _useState7 = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])(0),
@@ -916,25 +727,28 @@ const Home = () => {
   const _useState9 = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])(themeContext),
         _useState10 = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_useState9, 2),
         currentTheme = _useState10[0],
-        setCurrentTheme = _useState10[1]; // Click handlers
+        setCurrentTheme = _useState10[1]; // Click on theme icon
 
 
   const toggleTheme = () => {
     const newTheme = Object(_themes_default_js__WEBPACK_IMPORTED_MODULE_6__["switchThemeFrom"])(currentTheme.mode);
     setCurrentTheme(newTheme);
-  };
+  }; // Click on a category
+
 
   const categoryClickHandler = index => {
     setActiveCategory(index);
-    setActiveBullet(0);
+    setActiveSlide(0);
     setActiveCategoryIcon(true);
     setDisplayMode(0);
-  };
+  }; // Click on the category icon
+
 
   const categoryIconClickHandler = () => {
     setActiveCategoryIcon(!activeCategoryIcon);
     setDisplayMode(2);
-  };
+  }; // Click on the thumbnails icon
+
 
   const thumbIconClickHandler = () => {
     displayMode === 1 ? setDisplayMode(0) : setDisplayMode(1);
@@ -947,11 +761,11 @@ const Home = () => {
           width: "90vw",
           height: "70vh",
           category: activeCategory,
-          activeBullet: activeBullet,
-          setActiveBullet: setActiveBullet,
+          activeSlide: activeSlide,
+          setActiveSlide: setActiveSlide,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 80
+            lineNumber: 83
           },
           __self: undefined
         });
@@ -960,9 +774,11 @@ const Home = () => {
       case 1:
         return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Thumbs__WEBPACK_IMPORTED_MODULE_12__["default"], {
           category: activeCategory,
+          activeSlide: activeSlide,
+          setActiveSlide: setActiveSlide,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 90
+            lineNumber: 94
           },
           __self: undefined
         });
@@ -972,7 +788,7 @@ const Home = () => {
         return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Blank__WEBPACK_IMPORTED_MODULE_13__["default"], {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 93
+            lineNumber: 102
           },
           __self: undefined
         });
@@ -982,7 +798,7 @@ const Home = () => {
   return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_2___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Reset__WEBPACK_IMPORTED_MODULE_7__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 99
+      lineNumber: 108
     },
     __self: undefined
   }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_TypographicGrid__WEBPACK_IMPORTED_MODULE_8__["default"], {
@@ -993,21 +809,21 @@ const Home = () => {
     lineColor: "#666",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 100
+      lineNumber: 109
     },
     __self: undefined
   }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_themes_default_js__WEBPACK_IMPORTED_MODULE_6__["ThemeContext"].Provider, {
     value: currentTheme,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 107
+      lineNumber: 116
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Container, {
     theme: currentTheme.theme,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 108
+      lineNumber: 117
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Header__WEBPACK_IMPORTED_MODULE_10__["default"], {
@@ -1019,13 +835,13 @@ const Home = () => {
     sunIconClickHandler: toggleTheme,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 109
+      lineNumber: 118
     },
     __self: undefined
   }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Display, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 117
+      lineNumber: 126
     },
     __self: undefined
   }))));
@@ -2119,7 +1935,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _List__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../List */ "./src/components/List/index.js");
 /* harmony import */ var _Slide__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../Slide */ "./src/components/Slide/index.js");
 /* harmony import */ var _Post__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../Post */ "./src/components/Post/index.js");
-/* harmony import */ var _Bullets__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../Bullets */ "./src/components/Bullets/index.js");
 
 var _jsxFileName = "/home/cs/work/inu-v2/react-src/src/components/Slider/Slider.js";
 
@@ -2170,7 +1985,6 @@ function _templateObject() {
 
 
 
-
 const Container = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].section(_templateObject(), props => props.width && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject2(), props.width)); // Original idea:
 // - https://nolanlawson.com/2019/02/10/building-a-modern-carousel-with-css-scroll-snap-smooth-scrolling-and-pinch-zoom/
 
@@ -2191,7 +2005,7 @@ const markup = (data, queryProps) => {
       ref: ref,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 98
+        lineNumber: 97
       },
       __self: undefined
     }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Post__WEBPACK_IMPORTED_MODULE_7__["default"], Object.assign({
@@ -2203,7 +2017,7 @@ const markup = (data, queryProps) => {
     }, queryProps, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 99
+        lineNumber: 98
       },
       __self: undefined
     })));
@@ -2218,35 +2032,16 @@ const Slider = props => {
   const width = props.width,
         height = props.height,
         category = props.category,
-        activeBullet = props.activeBullet,
-        setActiveBullet = props.setActiveBullet; //
-  // 1. Vars needed by all things below
-  //
-  // We need to have a `ref` associated which each slide to be able to scroll to
+        activeSlide = props.activeSlide,
+        setActiveSlide = props.setActiveSlide; // Refs to each slide
 
-  let refs = []; //
-  // 2. Hooks
-  //
-  // State hooks are first.
-  // All things below need to know abut `activeBullet`
-  //const [activeBullet, setActiveBullet] = useState(0);
-  //
-  // `activeBullet` state was lifted up to be reset when a new category is clicked
-  // This was the only way to make it work
-  // Without `useEffect` we can't properly have access to `activeBullet`
-  // Even more when state changes this handles the
-  // Perhaps every state hook has and effect hook associated
-  //
-  // - `useEffect` is associated to state, so it should immediately follow in code
-  // - Otherwise and error message will be shown
-  // - See: https://reactjs.org/docs/hooks-effect.html
+  let refs = []; // Scroll the active slide into the view
 
   Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(() => {
-    if (refs && refs[activeBullet] && refs[activeBullet].current) {
-      refs[activeBullet].current.scrollIntoView();
+    if (refs && refs[activeSlide] && refs[activeSlide].current) {
+      refs[activeSlide].current.scrollIntoView();
     }
-  }, [activeBullet, refs]); // Touch scroll event handler
-  // Attached to an event listener hook
+  }, [activeSlide, refs]); // Touch scroll event handler
 
   const touchScrollHandler = Object(react__WEBPACK_IMPORTED_MODULE_1__["useCallback"])(() => {
     const visibleRef = refs.findIndex(ref => {
@@ -2254,26 +2049,23 @@ const Slider = props => {
       const right = ref.current.getBoundingClientRect().right;
       return left >= -window.innerWidth / 2 && left <= window.innerWidth && right > 0 && right <= window.innerWidth * 1.5;
     });
-    setActiveBullet(visibleRef);
-  }, [refs, setActiveBullet]); // The event listener hook
+    setActiveSlide(visibleRef);
+  }, [refs, setActiveSlide]); // The touch event listener hook
 
-  Object(_hooks__WEBPACK_IMPORTED_MODULE_4__["useEventListener"])("touchend", touchScrollHandler); //
-  // 3. Data hooks
-  //
-  // The image needs to be clicked so it comes after the state hook and before the data hook
-  //
-  // The image click handler
+  Object(_hooks__WEBPACK_IMPORTED_MODULE_4__["useEventListener"])("touchend", touchScrollHandler); // The image click handler
 
   const imageClickHandler = (index, numberOfSlides) => {
     if (index + 1 < numberOfSlides) {
-      setActiveBullet(index + 1);
+      setActiveSlide(index + 1);
     } else {
-      setActiveBullet(0);
+      setActiveSlide(0);
     }
+  }; // The bullet click handler
+
+
+  const bulletClickHandler = index => {
+    setActiveSlide(index);
   }; // The data hook
-  // - we can't return an array which later will be processed like Bullets
-  // - the returned array is first empty then only later becomes populated
-  // - therefore we return the processed info inside `slides`
 
 
   const variables = {
@@ -2289,42 +2081,22 @@ const Slider = props => {
 
   const _useQuery = Object(_hooks__WEBPACK_IMPORTED_MODULE_4__["useQuery"])(query, markup, variables, queryProps),
         slides = _useQuery.slides,
-        numberOfSlides = _useQuery.numberOfSlides; //
-  // 4. Other hooks
-  //
-  //
-  // 5. Regular stuff
-  //
-  // The bullet click handler
-
-
-  const bulletClickHandler = index => {
-    setActiveBullet(index);
-  };
+        numberOfSlides = _useQuery.numberOfSlides;
 
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Container, {
     width: width,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 217
+      lineNumber: 180
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Slides, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 218
+      lineNumber: 181
     },
     __self: undefined
-  }, slides), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Bullets__WEBPACK_IMPORTED_MODULE_8__["default"], {
-    numberOfSlides: numberOfSlides,
-    activeBullet: activeBullet,
-    bulletClickHandler: bulletClickHandler,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 219
-    },
-    __self: undefined
-  }));
+  }, slides));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Slider);
@@ -3186,5 +2958,5 @@ module.exports = __webpack_require__(/*! /home/cs/work/inu-v2/react-src/src/inde
 
 /***/ })
 
-},[[0,"runtime~main",1]]]);
+},[[0,"runtime~main",0]]]);
 //# sourceMappingURL=main.chunk.js.map

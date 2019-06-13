@@ -38,11 +38,11 @@ const Home = () => {
   // Which category to display
   const [activeCategory, setActiveCategory] = useState(0);
 
-  // Which bullet is active
-  const [activeBullet, setActiveBullet] = useState(0);
-
-  // The status of the category dropdown icons
+  // Which category dropdown icon is active
   const [activeCategoryIcon, setActiveCategoryIcon] = useState(true);
+
+  // Which slide is active
+  const [activeSlide, setActiveSlide] = useState(0);
 
   // How to display images
   const [displayMode, setDisplayMode] = useState(0);
@@ -51,24 +51,27 @@ const Home = () => {
   const themeContext = useContext(ThemeContext);
   const [currentTheme, setCurrentTheme] = useState(themeContext);
 
-  // Click handlers
+  // Click on theme icon
   const toggleTheme = () => {
     const newTheme = switchThemeFrom(currentTheme.mode);
     setCurrentTheme(newTheme);
   };
 
+  // Click on a category
   const categoryClickHandler = index => {
     setActiveCategory(index);
-    setActiveBullet(0);
+    setActiveSlide(0);
     setActiveCategoryIcon(true);
     setDisplayMode(0);
   };
 
+  // Click on the category icon
   const categoryIconClickHandler = () => {
     setActiveCategoryIcon(!activeCategoryIcon);
     setDisplayMode(2);
   };
 
+  // Click on the thumbnails icon
   const thumbIconClickHandler = () => {
     displayMode === 1 ? setDisplayMode(0) : setDisplayMode(1);
   };
@@ -81,13 +84,19 @@ const Home = () => {
             width="90vw"
             height="70vh"
             category={activeCategory}
-            activeBullet={activeBullet}
-            setActiveBullet={setActiveBullet}
+            activeSlide={activeSlide}
+            setActiveSlide={setActiveSlide}
           />
         );
         break;
       case 1:
-        return <Thumbs category={activeCategory} />;
+        return (
+          <Thumbs
+            category={activeCategory}
+            activeSlide={activeSlide}
+            setActiveSlide={setActiveSlide}
+          />
+        );
       case 2:
       default:
         return <Blank />;
