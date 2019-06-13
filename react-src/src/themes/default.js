@@ -4,6 +4,7 @@ const white = "white";
 const black = "black";
 const gray = "#666";
 const lightgray = "lightgray";
+const darkgray = "#333";
 
 const themeColors = {
   light: {
@@ -16,7 +17,7 @@ const themeColors = {
     text: white,
     background: black,
     gray: gray,
-    placeholder: lightgray
+    placeholder: darkgray
   }
 };
 

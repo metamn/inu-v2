@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
 import ProgressiveImage from "react-progressive-image";
 import styled from "styled-components";
 
+import { ThemeContext } from "../../themes/default.js";
 import ImagePlaceholder from "../ImagePlaceholder";
 
 const Image = styled.img`
@@ -12,11 +13,6 @@ const Image = styled.img`
   cursor: pointer;
 `;
 
-// Without this the slider is not working ...
-const placeholder2 = (
-  <div style={{ backgroundColor: "black", width: "80vw", height: "70vh" }} />
-);
-
 const ImageResponsive = props => {
   const { title, src, imageClickHandler, index, numberOfSlides, node } = props;
   const { featuredImage } = node;
@@ -26,14 +22,21 @@ const ImageResponsive = props => {
   let srcSet = sizes.map(item => `${item.sourceUrl} ${item.width}w`);
   srcSet.push(`${featuredImage.sourceUrl} ${mediaDetails.width}w`);
 
-  console.log("srcSet:" + srcSet);
+  const themeContext = useContext(ThemeContext);
+  const { theme } = themeContext;
+  const backgroundColor = theme.colors.background;
 
   return (
     <ProgressiveImage src={src} placeholder="" srcSetData={{ srcSet: srcSet }}>
       {(src, loading, srcSetData) => {
         return loading ? (
-          //ImagePlaceholder
-          placeholder2
+          // The placeholder size has to be the same as the slider size.
+          // Otherwise the slider won't work
+          <ImagePlaceholder
+            width="80vw"
+            height="70vh"
+            backgroundColor={backgroundColor}
+          />
         ) : (
           <Image
             src={src}

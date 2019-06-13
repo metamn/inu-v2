@@ -1295,14 +1295,19 @@ function _templateObject() {
 const Placeholder = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject(), props => props.backgroundColor && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject2(), props.backgroundColor), props => props.width && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject3(), props.width), props => props.height && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject4(), props.height));
 
 const ImagePlaceholder = props => {
-  const themeContext = Object(react__WEBPACK_IMPORTED_MODULE_1__["useContext"])(_themes_default_js__WEBPACK_IMPORTED_MODULE_3__["ThemeContext"]);
-  const theme = themeContext.theme;
-  const backgroundColor = theme.colors.placeholder;
+  let backgroundColor = props.backgroundColor;
+
+  if (!backgroundColor) {
+    const themeContext = Object(react__WEBPACK_IMPORTED_MODULE_1__["useContext"])(_themes_default_js__WEBPACK_IMPORTED_MODULE_3__["ThemeContext"]);
+    const theme = themeContext.theme;
+    backgroundColor = theme.colors.placeholder;
+  }
+
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Placeholder, Object.assign({}, props, {
     backgroundColor: backgroundColor,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35
+      lineNumber: 39
     },
     __self: undefined
   }));
@@ -1343,7 +1348,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_progressive_image__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-progressive-image */ "./node_modules/react-progressive-image/dist.js");
 /* harmony import */ var react_progressive_image__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_progressive_image__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-/* harmony import */ var _ImagePlaceholder__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../ImagePlaceholder */ "./src/components/ImagePlaceholder/index.js");
+/* harmony import */ var _themes_default_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../themes/default.js */ "./src/themes/default.js");
+/* harmony import */ var _ImagePlaceholder__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../ImagePlaceholder */ "./src/components/ImagePlaceholder/index.js");
 
 var _jsxFileName = "/home/cs/work/inu-v2/react-src/src/components/ImageResponsive/ImageResponsive.js";
 
@@ -1361,20 +1367,8 @@ function _templateObject() {
 
 
 
-const Image = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].img(_templateObject()); // Without this the slider is not working ...
 
-const placeholder2 = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-  style: {
-    backgroundColor: "black",
-    width: "80vw",
-    height: "70vh"
-  },
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 17
-  },
-  __self: undefined
-});
+const Image = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].img(_templateObject());
 
 const ImageResponsive = props => {
   const title = props.title,
@@ -1388,7 +1382,9 @@ const ImageResponsive = props => {
   const sizes = mediaDetails.sizes;
   let srcSet = sizes.map(item => "".concat(item.sourceUrl, " ").concat(item.width, "w"));
   srcSet.push("".concat(featuredImage.sourceUrl, " ").concat(mediaDetails.width, "w"));
-  console.log("srcSet:" + srcSet);
+  const themeContext = Object(react__WEBPACK_IMPORTED_MODULE_1__["useContext"])(_themes_default_js__WEBPACK_IMPORTED_MODULE_4__["ThemeContext"]);
+  const theme = themeContext.theme;
+  const backgroundColor = theme.colors.background;
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_progressive_image__WEBPACK_IMPORTED_MODULE_2___default.a, {
     src: src,
     placeholder: "",
@@ -1397,19 +1393,29 @@ const ImageResponsive = props => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 32
+      lineNumber: 30
     },
     __self: undefined
   }, (src, loading, srcSetData) => {
-    return loading ? //ImagePlaceholder
-    placeholder2 : react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Image, {
+    return loading ? // The placeholder size has to be the same as the slider size.
+    // Otherwise the slider won't work
+    react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_ImagePlaceholder__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      width: "80vw",
+      height: "70vh",
+      backgroundColor: backgroundColor,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 35
+      },
+      __self: undefined
+    }) : react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Image, {
       src: src,
       srcSet: srcSetData.srcSet,
       alt: title,
       onClick: () => imageClickHandler(index, numberOfSlides),
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 38
+        lineNumber: 41
       },
       __self: undefined
     });
@@ -3099,6 +3105,7 @@ const white = "white";
 const black = "black";
 const gray = "#666";
 const lightgray = "lightgray";
+const darkgray = "#333";
 const themeColors = {
   light: {
     text: black,
@@ -3110,7 +3117,7 @@ const themeColors = {
     text: white,
     background: black,
     gray: gray,
-    placeholder: lightgray
+    placeholder: darkgray
   }
 };
 
@@ -3152,5 +3159,5 @@ module.exports = __webpack_require__(/*! /home/cs/work/inu-v2/react-src/src/inde
 
 /***/ })
 
-},[[0,"runtime~main",0]]]);
+},[[0,"runtime~main",1]]]);
 //# sourceMappingURL=main.chunk.js.map
