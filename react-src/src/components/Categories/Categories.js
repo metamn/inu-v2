@@ -1,7 +1,6 @@
 import React from "react";
 import styled, { css } from "styled-components";
 import gql from "graphql-tag";
-import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 
 import { useQuery } from "./../../hooks";
 import { setClassName } from "../../helpers";
@@ -9,21 +8,11 @@ import { setClassName } from "../../helpers";
 import Media from "../Media";
 import List from "../List";
 import ListItem from "../ListItem";
-import Icon from "../Icon";
 
 const Container = styled.nav`
   display: flex;
 
   ${Media.tablet`margin-top: calc(var(--lem) * 3);`}
-`;
-
-// The style of the category dropdown icons
-const Icons = styled.div`
-  margin-left: var(--lem);
-`;
-
-const ChevronIcon = css`
-  align-items: center;
 `;
 
 // The query definition
@@ -57,7 +46,7 @@ const markup = (data, props) => {
   });
 
   // Parse categories into a list
-  let items = data.categories.edges.map(edge => (
+  const items = data.categories.edges.map(edge => (
     <ListItem
       key={edge.node.id}
       className={setClassName({
@@ -79,17 +68,6 @@ const markup = (data, props) => {
   return (
     <Container>
       <List>{items}</List>
-      <Icons>
-        <Icon as={ChevronIcon} className={hideInactive}>
-          <FiChevronDown onClick={() => categoryIconClickHandler()} />
-        </Icon>
-        <Icon
-          as={ChevronIcon}
-          className={setClassName({ target: false, index: activeCategoryIcon })}
-        >
-          <FiChevronUp onClick={() => categoryIconClickHandler()} />
-        </Icon>
-      </Icons>
     </Container>
   );
 };
