@@ -4,7 +4,7 @@ import gql from "graphql-tag";
 
 import { useQuery } from "./../../hooks";
 
-const Container = styled.nav``;
+const Container = styled.section``;
 
 // The query definition
 const query = gql`
@@ -23,9 +23,9 @@ const query = gql`
 
 // Putting together the markup to be rendered
 const markup = (data, props) => {
-  const content = data.pages.edges.node.content;
+  const content = data.pages.edges[0].node.content;
 
-  return <Container>{content}</Container>;
+  return <Container dangerouslySetInnerHTML={{ __html: content }} />;
 };
 
 const Contact = props => {

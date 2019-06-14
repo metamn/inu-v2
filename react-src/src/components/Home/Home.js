@@ -17,6 +17,7 @@ import Header from "../Header";
 import Slider from "../Slider";
 import Thumbs from "../Thumbs";
 import Blank from "../Blank";
+import Contact from "../Contact";
 
 WebFont.load({
   google: {
@@ -54,9 +55,14 @@ const Home = () => {
   // Click on a category
   const categoryClickHandler = index => {
     setActiveCategory(index);
-    setActiveSlide(0);
     setActiveCategoryIcon(true);
-    setDisplayMode(0);
+
+    if (index === -2) {
+      setDisplayMode(-2);
+    } else {
+      setActiveSlide(0);
+      setDisplayMode(0);
+    }
   };
 
   // Click on the category icon
@@ -111,6 +117,8 @@ const Home = () => {
             thumbClickHandler={thumbClickHandler}
           />
         );
+      case -2:
+        return <Contact />;
       case 2:
       default:
         return <Blank />;
