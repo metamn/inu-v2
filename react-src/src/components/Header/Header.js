@@ -4,7 +4,7 @@ import { FiList, FiSun } from "react-icons/fi";
 
 import Logo from "../Logo";
 import Line from "../Line";
-import Categories from "../Categories";
+import Menu from "../Menu";
 import Icon from "../Icon";
 import Media from "../Media";
 
@@ -33,7 +33,7 @@ const Header = props => {
     <Container>
       <Logo logoClickHandler={logoClickHandler} />
       <Line />
-      <Categories {...props} />
+      <Menu {...props} />
       <HeaderIcon size={1.25}>
         <FiList onClick={() => thumbIconClickHandler()} />
       </HeaderIcon>

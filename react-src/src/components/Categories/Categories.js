@@ -8,69 +8,13 @@ import { setClassName } from "../../helpers";
 
 import Media from "../Media";
 import List from "../List";
+import ListItem from "../ListItem";
 import Icon from "../Icon";
 
 const Container = styled.nav`
   display: flex;
 
   ${Media.tablet`margin-top: calc(var(--lem) * 3);`}
-`;
-
-const ListContainer = styled(List)``;
-
-// Hide inactive items
-const ListItemHideInactive = css`
-  ${props =>
-    props.hideInactive === "active" &&
-    css`
-      display: none;
-    `};
-`;
-
-// Style the active item
-const ListItemStyleActive = css`
-  ${props =>
-    props.className === "active" &&
-    css`
-      display: flex;
-      cursor: default;
-    `};
-`;
-
-// The style of items when all of them are displayed
-const ListItemShowInactive = css`
-  ${props =>
-    props.hideInactive === "inactive" &&
-    css`
-      margin-bottom: calc(var(--lem) / 2);
-      border-bottom: 1px solid lightgray;
-
-      &:hover {
-        font-style: italic;
-      }
-    `};
-`;
-
-// The style of the active item when all items are displayed
-const ListItemStyleActiveWhenShowInactive = css`
-  ${props =>
-    props.hideInactive === "inactive" &&
-    props.className === "active" &&
-    css`
-      font-style: italic;
-    `};
-`;
-
-// The style of the items
-const ListItem = styled.li`
-  font-size: 1.333em;
-  cursor: pointer;
-  width: 100%;
-
-  ${ListItemHideInactive}
-  ${ListItemStyleActive}
-  ${ListItemShowInactive}
-  ${ListItemStyleActiveWhenShowInactive}
 `;
 
 // The style of the category dropdown icons
@@ -127,21 +71,6 @@ const markup = (data, props) => {
     </ListItem>
   ));
 
-  // Add a `random` category
-  items.push(
-    <ListItem
-      key="random"
-      className={setClassName({
-        target: activeCategory,
-        index: -1
-      })}
-      hideInactive={hideInactive}
-      onClick={() => categoryClickHandler(-1)}
-    >
-      Random
-    </ListItem>
-  );
-
   // Make sure the first category is marked active at the first load
   if (activeCategory === 0) {
     categoryClickHandler(data.categories.edges[0].node.categoryId);
@@ -149,7 +78,7 @@ const markup = (data, props) => {
 
   return (
     <Container>
-      <ListContainer>{items}</ListContainer>
+      <List>{items}</List>
       <Icons>
         <Icon as={ChevronIcon} className={hideInactive}>
           <FiChevronDown onClick={() => categoryIconClickHandler()} />
