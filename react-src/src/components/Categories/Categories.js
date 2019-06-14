@@ -5,15 +5,10 @@ import gql from "graphql-tag";
 import { useQuery } from "./../../hooks";
 import { setClassName } from "../../helpers";
 
-import Media from "../Media";
 import List from "../List";
 import ListItem from "../ListItem";
 
-const Container = styled.nav`
-  display: flex;
-
-  ${Media.tablet`margin-top: calc(var(--lem) * 3);`}
-`;
+const Container = styled.nav``;
 
 // The query definition
 const query = gql`

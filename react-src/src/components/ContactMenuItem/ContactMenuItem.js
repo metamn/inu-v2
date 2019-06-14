@@ -7,7 +7,7 @@ import { setClassName } from "../../helpers";
 
 const Container = styled.nav``;
 
-const Random = props => {
+const ContactMenuItem = props => {
   const { activeCategory, activeCategoryIcon, categoryClickHandler } = props;
 
   // Icon and menu statuses
@@ -23,16 +23,16 @@ const Random = props => {
           key="random"
           className={setClassName({
             target: activeCategory,
-            index: -1
+            index: -2
           })}
           hideInactive={hideInactive}
-          onClick={() => categoryClickHandler(-1)}
+          onClick={() => categoryClickHandler(-2)}
         >
-          Random
+          Contact
         </ListItem>
       </List>
     </Container>
   );
 };
 
-export default Random;
+export default ContactMenuItem;

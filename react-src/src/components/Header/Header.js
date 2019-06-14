@@ -18,6 +18,7 @@ const Container = styled.header`
 
 const HeaderIcon = styled(Icon)`
   margin-left: var(--lem);
+  display: none;
 
   ${Media.tablet`margin-top: calc(var(--lem) * 3);`}
 `;

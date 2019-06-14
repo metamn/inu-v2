@@ -4,10 +4,15 @@ import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 
 import Categories from "../Categories";
 import Random from "../Random";
+import ContactMenuItem from "../ContactMenuItem";
 import Icon from "../Icon";
 import { setClassName } from "../../helpers";
 
-const Container = styled.section``;
+const Container = styled.section`
+  display: flex;
+  flex-wrap: nowrap;
+`;
+
 const MenuItems = styled.section``;
 const MenuItemsIcons = styled.section`
   margin-left: var(--lem);
@@ -31,6 +36,7 @@ const Menu = props => {
       <MenuItems>
         <Categories {...props} />
         <Random {...props} />
+        <ContactMenuItem {...props} />
       </MenuItems>
       <MenuItemsIcons>
         <Icon as={ChevronIcon} className={hideInactive}>
