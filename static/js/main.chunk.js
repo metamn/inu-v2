@@ -1930,10 +1930,7 @@ const Menu = props => {
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Icon__WEBPACK_IMPORTED_MODULE_6__["default"], {
     as: ChevronIcon,
-    className: Object(_helpers__WEBPACK_IMPORTED_MODULE_7__["setClassName"])({
-      target: true,
-      index: activeCategoryIcon
-    }),
+    className: Object(_helpers__WEBPACK_IMPORTED_MODULE_7__["setClassName"])(true, activeCategoryIcon),
     __source: {
       fileName: _jsxFileName,
       lineNumber: 35
@@ -1948,10 +1945,7 @@ const Menu = props => {
     __self: undefined
   })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Icon__WEBPACK_IMPORTED_MODULE_6__["default"], {
     as: ChevronIcon,
-    className: Object(_helpers__WEBPACK_IMPORTED_MODULE_7__["setClassName"])({
-      target: false,
-      index: activeCategoryIcon
-    }),
+    className: Object(_helpers__WEBPACK_IMPORTED_MODULE_7__["setClassName"])(false, activeCategoryIcon),
     __source: {
       fileName: _jsxFileName,
       lineNumber: 41
@@ -2155,8 +2149,8 @@ const MenuItemCustom = props => {
       target: activeCategory,
       index: index
     }),
-    visbility: Object(_ListItem__WEBPACK_IMPORTED_MODULE_4__["setListItemVisibility"])({
-      target: true,
+    visibility: Object(_ListItem__WEBPACK_IMPORTED_MODULE_4__["setListItemVisibility"])({
+      target: false,
       index: activeCategoryIcon
     }),
     onClick: () => categoryClickHandler(index),
@@ -3532,5 +3526,5 @@ module.exports = __webpack_require__(/*! /home/cs/work/inu-v2/react-src/src/inde
 
 /***/ })
 
-},[[0,"runtime~main",0]]]);
+},[[0,"runtime~main",1]]]);
 //# sourceMappingURL=main.chunk.js.map

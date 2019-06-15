@@ -27,8 +27,8 @@ const MenuItemCustom = props => {
             target: activeCategory,
             index: index
           })}
-          visbility={setListItemVisibility({
-            target: true,
+          visibility={setListItemVisibility({
+            target: false,
             index: activeCategoryIcon
           })}
           onClick={() => categoryClickHandler(index)}

@@ -34,13 +34,13 @@ const Menu = props => {
       <MenuItemsIcons>
         <Icon
           as={ChevronIcon}
-          className={setClassName({ target: true, index: activeCategoryIcon })}
+          className={setClassName(true, activeCategoryIcon)}
         >
           <FiChevronDown onClick={() => categoryIconClickHandler()} />
         </Icon>
         <Icon
           as={ChevronIcon}
-          className={setClassName({ target: false, index: activeCategoryIcon })}
+          className={setClassName(false, activeCategoryIcon)}
         >
           <FiChevronUp onClick={() => categoryIconClickHandler()} />
         </Icon>
