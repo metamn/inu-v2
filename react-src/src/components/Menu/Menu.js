@@ -1,5 +1,5 @@
 import React from "react";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 import Categories from "../Categories";
 import MenuItemCustom from "../MenuItemCustom";
@@ -13,8 +13,6 @@ const Container = styled.section`
 const MenuItems = styled.section``;
 
 const Menu = props => {
-  const { categoryIconClickHandler, activeCategoryIcon } = props;
-
   return (
     <Container>
       <MenuItems>

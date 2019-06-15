@@ -10,7 +10,7 @@ const Container = styled.div`
   ${Media.tablet`display: none`}
 `;
 
-const MenuIcons = props => {
+const MenuToggleIcons = props => {
   return (
     <Container>
       <Icon>
@@ -23,4 +23,4 @@ const MenuIcons = props => {
   );
 };
 
-export default MenuIcons;
+export default MenuToggleIcons;

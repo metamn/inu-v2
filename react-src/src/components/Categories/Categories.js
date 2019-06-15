@@ -1,5 +1,5 @@
 import React from "react";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import gql from "graphql-tag";
 
 import { useQuery } from "./../../hooks";
@@ -29,12 +29,7 @@ const query = gql`
 
 // Putting together the markup to be rendered
 const markup = (data, props) => {
-  const {
-    activeCategory,
-    categoryClickHandler,
-    activeCategoryIcon,
-    categoryIconClickHandler
-  } = props;
+  const { activeCategory, categoryClickHandler, activeCategoryIcon } = props;
 
   // Parse categories into a list
   const items = data.categories.edges.map(edge => (

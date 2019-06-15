@@ -6,7 +6,6 @@ import { useQuery, useEventListener } from "../../hooks";
 import List from "../List";
 import Slide from "../Slide";
 import Post from "../Post";
-import Image from "../Image";
 
 const Container = styled.section`
   margin-top: calc(var(--lem) * 2);
@@ -82,7 +81,7 @@ const query = gql`
 `;
 
 const markup = (data, queryProps) => {
-  const { refs, imageClickHandler, width } = queryProps;
+  const { refs, imageClickHandler } = queryProps;
 
   const postsWithImage = data.posts.edges.filter(
     edge => edge.node.featuredImage
@@ -158,9 +157,12 @@ const Slider = props => {
   };
 
   // The bullet click handler
+  // Bullets are not displayed now ...
+  /*
   const bulletClickHandler = index => {
     setActiveSlide(index);
   };
+  */
 
   // The data hook
   const variables =
@@ -171,12 +173,7 @@ const Slider = props => {
     width: width,
     height: height
   };
-  const { slides, numberOfSlides } = useQuery(
-    query,
-    markup,
-    variables,
-    queryProps
-  );
+  const { slides } = useQuery(query, markup, variables, queryProps);
 
   return (
     <Container width={width}>

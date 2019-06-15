@@ -1,12 +1,11 @@
-import React, { useState } from "react";
-import styled, { css } from "styled-components";
+import React from "react";
+import styled from "styled-components";
 
 import Logo from "../Logo";
 import Line from "../Line";
 import Menu from "../Menu";
-import MenuIcons from "../MenuIcons";
+import MenuToggleIcons from "../MenuToggleIcons";
 import HeaderIcons from "../HeaderIcons";
-import Media from "../Media";
 
 const Container = styled.header`
   display: flex;
@@ -14,18 +13,14 @@ const Container = styled.header`
 `;
 
 const Header = props => {
-  const {
-    thumbIconClickHandler,
-    sunIconClickHandler,
-    logoClickHandler
-  } = props;
+  const { logoClickHandler } = props;
 
   return (
     <Container>
       <Logo logoClickHandler={logoClickHandler} />
       <Line />
       <Menu {...props} />
-      <MenuIcons {...props} />
+      <MenuToggleIcons {...props} />
       <HeaderIcons {...props} />
     </Container>
   );
