@@ -410,11 +410,82 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Menu__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../Menu */ "./src/components/Menu/index.js");
 /* harmony import */ var _MenuToggleIcons__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../MenuToggleIcons */ "./src/components/MenuToggleIcons/index.js");
 /* harmony import */ var _HeaderIcons__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../HeaderIcons */ "./src/components/HeaderIcons/index.js");
+/* harmony import */ var _Media__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../Media */ "./src/components/Media/index.js");
 
 var _jsxFileName = "/home/cs/work/inu-v2/react-src/src/components/Header/Header.js";
 
+function _templateObject8() {
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n\t  width: auto;\n\t  display: flex;\n\t  flex-direction: row;\n\t  "]);
+
+  _templateObject8 = function () {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject7() {
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n        display: flex;\n      "]);
+
+  _templateObject7 = function () {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject6() {
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n        display: none;\n      "]);
+
+  _templateObject6 = function () {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject5() {
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n\t  width: 100%;\n\t  flex-direction: column;\n\n\t  ", ";\n\n\t  ", ";\n\t"]);
+
+  _templateObject5 = function () {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject4() {
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  ", "\n\n  ", "\n"]);
+
+  _templateObject4 = function () {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject3() {
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n\t  \tflex-wrap: nowrap;\n\t  \tjustify-content: flex-start;\n\t  \t"]);
+
+  _templateObject3 = function () {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject2() {
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n\t  flex-wrap: wrap;\n\t  justify-content: space-between;\n\t  "]);
+
+  _templateObject2 = function () {
+    return data;
+  };
+
+  return data;
+}
+
 function _templateObject() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  display: flex;\n  align-items: flex-start;\n"]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  width: 100%;\n  display: flex;\n  align-items: flex-start;\n\n  ", "\n\n  ", "\n"]);
 
   _templateObject = function () {
     return data;
@@ -430,48 +501,58 @@ function _templateObject() {
 
 
 
-const Container = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].header(_templateObject());
+
+const Container = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].header(_templateObject(), _Media__WEBPACK_IMPORTED_MODULE_8__["default"].mobile(_templateObject2()), _Media__WEBPACK_IMPORTED_MODULE_8__["default"].tablet(_templateObject3()));
+const ContainerMenu = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject4(), _Media__WEBPACK_IMPORTED_MODULE_8__["default"].mobile(_templateObject5(), props => props.activeMenuToggleIcon === true && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject6()), props => props.activeMenuToggleIcon === false && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject7())), _Media__WEBPACK_IMPORTED_MODULE_8__["default"].tablet(_templateObject8()));
 
 const Header = props => {
-  const logoClickHandler = props.logoClickHandler;
+  const logoClickHandler = props.logoClickHandler,
+        activeMenuToggleIcon = props.activeMenuToggleIcon;
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Container, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19
+      lineNumber: 56
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Logo__WEBPACK_IMPORTED_MODULE_3__["default"], {
     logoClickHandler: logoClickHandler,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20
+      lineNumber: 57
     },
     __self: undefined
   }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Line__WEBPACK_IMPORTED_MODULE_4__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21
+      lineNumber: 58
     },
     __self: undefined
-  }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Menu__WEBPACK_IMPORTED_MODULE_5__["default"], Object.assign({}, props, {
+  }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_MenuToggleIcons__WEBPACK_IMPORTED_MODULE_6__["default"], Object.assign({}, props, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22
+      lineNumber: 59
     },
     __self: undefined
-  })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_MenuToggleIcons__WEBPACK_IMPORTED_MODULE_6__["default"], Object.assign({}, props, {
+  })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(ContainerMenu, {
+    activeMenuToggleIcon: activeMenuToggleIcon,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 23
+      lineNumber: 60
+    },
+    __self: undefined
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Menu__WEBPACK_IMPORTED_MODULE_5__["default"], Object.assign({}, props, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 61
     },
     __self: undefined
   })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_HeaderIcons__WEBPACK_IMPORTED_MODULE_7__["default"], Object.assign({}, props, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 24
+      lineNumber: 62
     },
     __self: undefined
-  })));
+  }))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Header);
@@ -3646,5 +3727,5 @@ module.exports = __webpack_require__(/*! /home/cs/work/inu-v2/react-src/src/inde
 
 /***/ })
 
-},[[0,"runtime~main",1]]]);
+},[[0,"runtime~main",0]]]);
 //# sourceMappingURL=main.chunk.js.map
