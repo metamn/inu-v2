@@ -1,11 +1,9 @@
 import React from "react";
 import styled, { css } from "styled-components";
-import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 
 import Categories from "../Categories";
 import MenuItemCustom from "../MenuItemCustom";
-import Icon from "../Icon";
-import { setClassName } from "../../helpers";
+import MenuItemsToggleIcons from "../MenuItemsToggleIcons";
 
 const Container = styled.section`
   display: flex;
@@ -13,13 +11,6 @@ const Container = styled.section`
 `;
 
 const MenuItems = styled.section``;
-const MenuItemsIcons = styled.section`
-  margin-left: var(--lem);
-`;
-
-const ChevronIcon = css`
-  align-items: center;
-`;
 
 const Menu = props => {
   const { categoryIconClickHandler, activeCategoryIcon } = props;
@@ -31,20 +22,7 @@ const Menu = props => {
         <MenuItemCustom index={-1} menuItemText="Random" {...props} />
         <MenuItemCustom index={-2} menuItemText="Contact" {...props} />
       </MenuItems>
-      <MenuItemsIcons>
-        <Icon
-          as={ChevronIcon}
-          className={setClassName(true, activeCategoryIcon)}
-        >
-          <FiChevronDown onClick={() => categoryIconClickHandler()} />
-        </Icon>
-        <Icon
-          as={ChevronIcon}
-          className={setClassName(false, activeCategoryIcon)}
-        >
-          <FiChevronUp onClick={() => categoryIconClickHandler()} />
-        </Icon>
-      </MenuItemsIcons>
+      <MenuItemsToggleIcons {...props} />
     </Container>
   );
 };
