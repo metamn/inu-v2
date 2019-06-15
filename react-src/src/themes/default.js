@@ -11,13 +11,15 @@ const themeColors = {
     text: black,
     background: white,
     gray: gray,
-    placeholder: lightgray
+    placeholder: lightgray,
+    borderColor: black
   },
   dark: {
     text: white,
     background: black,
     gray: gray,
-    placeholder: darkgray
+    placeholder: darkgray,
+    borderColor: white
   }
 };
 

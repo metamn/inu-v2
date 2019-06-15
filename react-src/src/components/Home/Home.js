@@ -1,7 +1,6 @@
 import React, { useState, useContext } from "react";
 import WebFont from "webfontloader";
 import styled from "styled-components";
-import { stringify } from "flatted";
 
 import {
   getTheme,

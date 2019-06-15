@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { FiList, FiSun } from "react-icons/fi";
 
 import Icon from "../Icon";
-import Media from "../Media";
 
 const Container = styled.div`
   display: flex;
@@ -11,8 +10,6 @@ const Container = styled.div`
 
 const HeaderIcon = styled(Icon)`
   margin-left: var(--lem);
-
-  ${Media.tablet`margin-top: calc(var(--lem) * 3);`}
 `;
 
 const HeaderIcons = props => {

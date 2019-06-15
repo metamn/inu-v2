@@ -1,5 +1,8 @@
+import React, { useContext } from "react";
 import styled, { css } from "styled-components";
+import { stringify } from "flatted";
 
+import { ThemeContext } from "../../themes/default.js";
 import { setClassName } from "../../helpers";
 
 // Sets the `active` classname for a list item
@@ -39,7 +42,12 @@ const ListItemStyleAll = css`
     props.visibility === "visible" &&
     css`
       margin-bottom: calc(var(--lem) / 2);
-      border-bottom: 1px solid lightgray;
+      padding-bottom: calc(var(--lem) / 2);
+      ${props =>
+        props.theme.colors.borderColor &&
+        css`
+          border-bottom: 1px solid ${props.theme.colors.borderColor};
+        `};
 
       &:hover {
         font-style: italic;
@@ -58,7 +66,7 @@ const ListItemStyleActiveWhenAllVisible = css`
 `;
 
 // The style of the items
-const ListItem = styled.li`
+const ListItemStyle = styled.li`
   font-size: 1.333em;
   cursor: pointer;
   width: 100%;
@@ -68,6 +76,19 @@ const ListItem = styled.li`
   ${ListItemStyleAll}
   ${ListItemStyleActiveWhenAllVisible}
 `;
+
+// The List Item component
+const ListItem = props => {
+  const { children } = props;
+  const themeContext = useContext(ThemeContext);
+  const { theme } = themeContext;
+
+  return (
+    <ListItemStyle theme={theme} {...props}>
+      {children}
+    </ListItemStyle>
+  );
+};
 
 export default ListItem;
 export { setListItemActive, setListItemVisibility };

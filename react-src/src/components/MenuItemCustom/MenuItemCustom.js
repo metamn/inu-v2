@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 import List from "../List";
 import ListItem, {
@@ -9,6 +9,15 @@ import ListItem, {
 import { getListItemVisibility } from "../Categories";
 
 const Container = styled.nav``;
+
+// Adds top margin for custom list items
+const ListItemCustom = styled(ListItem)`
+  ${props =>
+    props.className === "inactive" &&
+    css`
+      margin-top: calc(var(--lem) * 1.5);
+    `};
+`;
 
 const MenuItemCustom = props => {
   const {
@@ -23,7 +32,7 @@ const MenuItemCustom = props => {
   return (
     <Container>
       <List>
-        <ListItem
+        <ListItemCustom
           key={menuItemText}
           className={setListItemActive({
             target: activeCategory,
@@ -36,7 +45,7 @@ const MenuItemCustom = props => {
           onClick={() => categoryClickHandler(index)}
         >
           {menuItemText}
-        </ListItem>
+        </ListItemCustom>
       </List>
     </Container>
   );
