@@ -25,6 +25,12 @@ const Container = styled.section`
     margin-bottom: calc(var(--lem) * 2);
   }
 
+  h2 {
+    font-weight: bold;
+    letter-spacing: calc(var(--lem) / 3);
+    word-wrap: break-word;
+  }
+
   a {
     padding: calc(var(--lem) / 2);
     display: inline-block;

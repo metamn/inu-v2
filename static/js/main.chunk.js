@@ -142,18 +142,17 @@ const markup = (data, props) => {
         activeMenuToggleIcon = props.activeMenuToggleIcon; // Parse categories into a list
 
   const items = data.categories.edges.map(edge => {
-    const visibility = getListItemVisibility(activeMenuToggleIcon, activeCategoryIcon);
     return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_ListItem__WEBPACK_IMPORTED_MODULE_6__["default"], {
       key: edge.node.id,
       className: Object(_ListItem__WEBPACK_IMPORTED_MODULE_6__["setListItemActive"])({
         target: activeCategory,
         index: edge.node.categoryId
       }),
-      visibility: visibility,
+      visibility: getListItemVisibility(activeMenuToggleIcon, activeCategoryIcon),
       onClick: () => categoryClickHandler(edge.node.categoryId),
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 61
+        lineNumber: 56
       },
       __self: undefined
     }, edge.node.name);
@@ -166,13 +165,13 @@ const markup = (data, props) => {
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Container, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 81
+      lineNumber: 79
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_List__WEBPACK_IMPORTED_MODULE_5__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 82
+      lineNumber: 80
     },
     __self: undefined
   }, items));
@@ -262,7 +261,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_1__["default"])(["\n  width: 100%;\n  font-size: 1.33em;\n  margin: calc(var(--lem) * 3) 0;\n  ", "\n\n  ", ";\n\n  h1,\n  h2,\n  p {\n    margin-bottom: calc(var(--lem) * 2);\n  }\n\n  a {\n    padding: calc(var(--lem) / 2);\n    display: inline-block;\n\n    ", ";\n  }\n"]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_1__["default"])(["\n  width: 100%;\n  font-size: 1.33em;\n  margin: calc(var(--lem) * 3) 0;\n  ", "\n\n  ", ";\n\n  h1,\n  h2,\n  p {\n    margin-bottom: calc(var(--lem) * 2);\n  }\n\n  h2 {\n    font-weight: bold;\n    letter-spacing: calc(var(--lem) / 3);\n    word-wrap: break-word;\n  }\n\n  a {\n    padding: calc(var(--lem) / 2);\n    display: inline-block;\n\n    ", ";\n  }\n"]);
 
   _templateObject = function () {
     return data;
@@ -292,7 +291,7 @@ const markup = (data, props) => {
   }, props, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 60
+      lineNumber: 66
     },
     __self: undefined
   }));
@@ -1691,8 +1690,28 @@ __webpack_require__.r(__webpack_exports__);
 
 var _jsxFileName = "/home/cs/work/inu-v2/react-src/src/components/ListItem/ListItem.js";
 
+function _templateObject12() {
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  font-size: 1.333em;\n  cursor: pointer;\n  width: 100%;\n\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n"]);
+
+  _templateObject12 = function () {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject11() {
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n      margin-top: calc(var(--lem) * 1.5);\n    "]);
+
+  _templateObject11 = function () {
+    return data;
+  };
+
+  return data;
+}
+
 function _templateObject10() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  font-size: 1.333em;\n  cursor: pointer;\n  width: 100%;\n\n  ", "\n  ", "\n  ", "\n  ", "\n"]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  ", ";\n"]);
 
   _templateObject10 = function () {
     return data;
@@ -1817,9 +1836,12 @@ const ListItemStyleActive = Object(styled_components__WEBPACK_IMPORTED_MODULE_2_
 
 const ListItemStyleAll = Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject5(), props => props.visibility === "visible" && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject6(), props => props.theme.colors.borderColor && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject7(), props.theme.colors.borderColor))); // The style of the active item when all items are displayed
 
-const ListItemStyleActiveWhenAllVisible = Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject8(), props => props.visibility === "visible" && props.className === "active" && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject9())); // The style of the items
+const ListItemStyleActiveWhenAllVisible = Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject8(), props => props.visibility === "visible" && props.className === "active" && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject9())); // Adds a top margin to a list item
+// - usually for `Random` and `Contact`
 
-const ListItemStyle = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].li(_templateObject10(), ListItemHideInvisible, ListItemStyleActive, ListItemStyleAll, ListItemStyleActiveWhenAllVisible); // The List Item component
+const ListItemAddTopMargin = Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject10(), props => props.visibility === "visible" && props.topMargin && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject11())); // The style of the items
+
+const ListItemStyle = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].li(_templateObject12(), ListItemHideInvisible, ListItemStyleActive, ListItemStyleAll, ListItemStyleActiveWhenAllVisible, ListItemAddTopMargin); // The List Item component
 
 const ListItem = props => {
   const children = props.children;
@@ -1830,7 +1852,7 @@ const ListItem = props => {
   }, props, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 87
+      lineNumber: 99
     },
     __self: undefined
   }), children);
@@ -2131,26 +2153,6 @@ __webpack_require__.r(__webpack_exports__);
 
 var _jsxFileName = "/home/cs/work/inu-v2/react-src/src/components/MenuItemCustom/MenuItemCustom.js";
 
-function _templateObject3() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n      margin-top: calc(var(--lem) * 1.5);\n    "]);
-
-  _templateObject3 = function () {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject2() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  ", ";\n"]);
-
-  _templateObject2 = function () {
-    return data;
-  };
-
-  return data;
-}
-
 function _templateObject() {
   const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])([""]);
 
@@ -2167,8 +2169,19 @@ function _templateObject() {
 
 
 const Container = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].nav(_templateObject()); // Adds top margin for custom list items
+// NOTE: This is a Styled component bug
+// When `<ListItemCustom>` is used instead of `<ListItem>` the active item name is not displayed
+// The margin top therefore is moved into the `ListItem` component
 
-const ListItemCustom = Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["default"])(_ListItem__WEBPACK_IMPORTED_MODULE_4__["default"])(_templateObject2(), props => props.className === "inactive" && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject3()));
+/*
+const ListItemCustom = styled(ListItem)`
+  ${props =>
+    props.className === "inactive" &&
+    css`
+      margin-top: calc(var(--lem) * 1.5);
+    `};
+`;
+*/
 
 const MenuItemCustom = props => {
   const index = props.index,
@@ -2180,17 +2193,18 @@ const MenuItemCustom = props => {
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Container, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 33
+      lineNumber: 38
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_List__WEBPACK_IMPORTED_MODULE_3__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 34
+      lineNumber: 39
     },
     __self: undefined
-  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(ListItemCustom, {
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_ListItem__WEBPACK_IMPORTED_MODULE_4__["default"], {
     key: menuItemText,
+    topMargin: true,
     className: Object(_ListItem__WEBPACK_IMPORTED_MODULE_4__["setListItemActive"])({
       target: activeCategory,
       index: index
@@ -2199,7 +2213,7 @@ const MenuItemCustom = props => {
     onClick: () => categoryClickHandler(index),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35
+      lineNumber: 40
     },
     __self: undefined
   }, menuItemText)));

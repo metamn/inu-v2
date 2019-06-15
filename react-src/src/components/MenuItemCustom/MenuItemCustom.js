@@ -11,6 +11,10 @@ import { getListItemVisibility } from "../Categories";
 const Container = styled.nav``;
 
 // Adds top margin for custom list items
+// NOTE: This is a Styled component bug
+// When `<ListItemCustom>` is used instead of `<ListItem>` the active item name is not displayed
+// The margin top therefore is moved into the `ListItem` component
+/*
 const ListItemCustom = styled(ListItem)`
   ${props =>
     props.className === "inactive" &&
@@ -18,6 +22,7 @@ const ListItemCustom = styled(ListItem)`
       margin-top: calc(var(--lem) * 1.5);
     `};
 `;
+*/
 
 const MenuItemCustom = props => {
   const {
@@ -32,8 +37,9 @@ const MenuItemCustom = props => {
   return (
     <Container>
       <List>
-        <ListItemCustom
+        <ListItem
           key={menuItemText}
+          topMargin={true}
           className={setListItemActive({
             target: activeCategory,
             index: index
@@ -45,7 +51,7 @@ const MenuItemCustom = props => {
           onClick={() => categoryClickHandler(index)}
         >
           {menuItemText}
-        </ListItemCustom>
+        </ListItem>
       </List>
     </Container>
   );

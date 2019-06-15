@@ -52,11 +52,6 @@ const markup = (data, props) => {
 
   // Parse categories into a list
   const items = data.categories.edges.map(edge => {
-    const visibility = getListItemVisibility(
-      activeMenuToggleIcon,
-      activeCategoryIcon
-    );
-
     return (
       <ListItem
         key={edge.node.id}
@@ -64,7 +59,10 @@ const markup = (data, props) => {
           target: activeCategory,
           index: edge.node.categoryId
         })}
-        visibility={visibility}
+        visibility={getListItemVisibility(
+          activeMenuToggleIcon,
+          activeCategoryIcon
+        )}
         onClick={() => categoryClickHandler(edge.node.categoryId)}
       >
         {edge.node.name}

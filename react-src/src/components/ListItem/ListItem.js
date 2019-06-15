@@ -65,6 +65,17 @@ const ListItemStyleActiveWhenAllVisible = css`
     `};
 `;
 
+// Adds a top margin to a list item
+// - usually for `Random` and `Contact`
+const ListItemAddTopMargin = css`
+  ${props =>
+    props.visibility === "visible" &&
+    props.topMargin &&
+    css`
+      margin-top: calc(var(--lem) * 1.5);
+    `};
+`;
+
 // The style of the items
 const ListItemStyle = styled.li`
   font-size: 1.333em;
@@ -75,6 +86,7 @@ const ListItemStyle = styled.li`
   ${ListItemStyleActive}
   ${ListItemStyleAll}
   ${ListItemStyleActiveWhenAllVisible}
+  ${ListItemAddTopMargin}
 `;
 
 // The List Item component
