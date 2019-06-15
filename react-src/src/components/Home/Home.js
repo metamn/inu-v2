@@ -103,6 +103,12 @@ const Home = () => {
   // Click on the menu toggle icon
   const menuToggleIconClickHandler = () => {
     setActiveMenuToggleIcon(!activeMenuToggleIcon);
+
+    if (activeMenuToggleIcon) {
+      setDisplayMode(3);
+    } else {
+      setDisplayMode(0);
+    }
   };
 
   // The different display modes
