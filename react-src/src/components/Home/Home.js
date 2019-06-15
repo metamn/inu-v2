@@ -79,6 +79,7 @@ const Home = () => {
   // Click on the thumbnails icon
   const thumbIconClickHandler = () => {
     displayMode === 1 ? setDisplayMode(0) : setDisplayMode(1);
+    setActiveMenuToggleIcon(true);
   };
 
   // Click on the theme icon

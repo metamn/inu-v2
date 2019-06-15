@@ -4,10 +4,19 @@ import styled from "styled-components";
 import Categories from "../Categories";
 import MenuItemCustom from "../MenuItemCustom";
 import MenuItemsToggleIcons from "../MenuItemsToggleIcons";
+import Media from "../Media";
 
 const Container = styled.section`
   display: flex;
   flex-wrap: nowrap;
+
+  ${Media.mobile`
+	  margin-bottom: calc(var(--lem) * 2);
+	  `};
+
+  ${Media.tablet`
+	  	margin-bottom: 0;
+	  	`};
 `;
 
 const MenuItems = styled.section``;

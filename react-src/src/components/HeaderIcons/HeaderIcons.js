@@ -3,13 +3,22 @@ import styled from "styled-components";
 import { FiList, FiSun } from "react-icons/fi";
 
 import Icon from "../Icon";
+import Media from "../Media";
 
 const Container = styled.div`
   display: flex;
 `;
 
 const HeaderIcon = styled(Icon)`
-  margin-left: var(--lem);
+  ${Media.mobile`
+	margin-right: var(--lem);
+	margin-bottom: calc(var(--lem) * 2);
+	`};
+  ${Media.tablet`
+	  margin-left: var(--lem);
+	  margin-right: 0;
+	  margin-bottom: 0;
+	  `};
 `;
 
 const HeaderIcons = props => {

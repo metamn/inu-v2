@@ -493,7 +493,7 @@ function _templateObject6() {
 }
 
 function _templateObject5() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n\t  width: 100%;\n\t  flex-direction: column;\n\n\t  ", ";\n\n\t  ", ";\n\t"]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n\t  width: 100%;\n\t  flex-direction: column;\n\t  margin-top: calc(var(--lem) * 2);\n\t  \n\t  ", ";\n\n\t  ", ";\n\t"]);
 
   _templateObject5 = function () {
     return data;
@@ -559,45 +559,45 @@ const Header = props => {
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Container, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 57
+      lineNumber: 58
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Logo__WEBPACK_IMPORTED_MODULE_3__["default"], {
     logoClickHandler: logoClickHandler,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 58
+      lineNumber: 59
     },
     __self: undefined
   }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Line__WEBPACK_IMPORTED_MODULE_4__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 59
+      lineNumber: 60
     },
     __self: undefined
   }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_MenuToggleIcons__WEBPACK_IMPORTED_MODULE_6__["default"], Object.assign({}, props, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 60
+      lineNumber: 61
     },
     __self: undefined
   })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(ContainerMenu, {
     activeMenuToggleIcon: activeMenuToggleIcon,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 61
+      lineNumber: 62
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Menu__WEBPACK_IMPORTED_MODULE_5__["default"], Object.assign({}, props, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 62
+      lineNumber: 63
     },
     __self: undefined
   })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_HeaderIcons__WEBPACK_IMPORTED_MODULE_7__["default"], Object.assign({}, props, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 63
+      lineNumber: 64
     },
     __self: undefined
   }))));
@@ -638,11 +638,32 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 /* harmony import */ var react_icons_fi__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-icons/fi */ "./node_modules/react-icons/fi/index.esm.js");
 /* harmony import */ var _Icon__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../Icon */ "./src/components/Icon/index.js");
+/* harmony import */ var _Media__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../Media */ "./src/components/Media/index.js");
 
 var _jsxFileName = "/home/cs/work/inu-v2/react-src/src/components/HeaderIcons/HeaderIcons.js";
 
+function _templateObject4() {
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n\t  margin-left: var(--lem);\n\t  margin-right: 0;\n\t  margin-bottom: 0;\n\t  "]);
+
+  _templateObject4 = function () {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject3() {
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n\tmargin-right: var(--lem);\n\tmargin-bottom: calc(var(--lem) * 2);\n\t"]);
+
+  _templateObject3 = function () {
+    return data;
+  };
+
+  return data;
+}
+
 function _templateObject2() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  margin-left: var(--lem);\n"]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  ", ";\n  ", ";\n"]);
 
   _templateObject2 = function () {
     return data;
@@ -665,8 +686,9 @@ function _templateObject() {
 
 
 
+
 const Container = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject());
-const HeaderIcon = Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["default"])(_Icon__WEBPACK_IMPORTED_MODULE_4__["default"])(_templateObject2());
+const HeaderIcon = Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["default"])(_Icon__WEBPACK_IMPORTED_MODULE_4__["default"])(_templateObject2(), _Media__WEBPACK_IMPORTED_MODULE_5__["default"].mobile(_templateObject3()), _Media__WEBPACK_IMPORTED_MODULE_5__["default"].tablet(_templateObject4()));
 
 const HeaderIcons = props => {
   const thumbIconClickHandler = props.thumbIconClickHandler,
@@ -674,35 +696,35 @@ const HeaderIcons = props => {
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Container, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19
+      lineNumber: 28
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(HeaderIcon, {
     size: 1.25,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20
+      lineNumber: 29
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_icons_fi__WEBPACK_IMPORTED_MODULE_3__["FiList"], {
     onClick: () => thumbIconClickHandler(),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21
+      lineNumber: 30
     },
     __self: undefined
   })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(HeaderIcon, {
     size: 1.25,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 23
+      lineNumber: 32
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_icons_fi__WEBPACK_IMPORTED_MODULE_3__["FiSun"], {
     onClick: () => sunIconClickHandler(),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 24
+      lineNumber: 33
     },
     __self: undefined
   })));
@@ -852,6 +874,7 @@ const Home = () => {
 
   const thumbIconClickHandler = () => {
     displayMode === 1 ? setDisplayMode(0) : setDisplayMode(1);
+    setActiveMenuToggleIcon(true);
   }; // Click on the theme icon
 
 
@@ -896,7 +919,7 @@ const Home = () => {
           setActiveSlide: setActiveSlide,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 119
+            lineNumber: 120
           },
           __self: undefined
         });
@@ -909,7 +932,7 @@ const Home = () => {
           thumbClickHandler: thumbClickHandler,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 130
+            lineNumber: 131
           },
           __self: undefined
         });
@@ -918,7 +941,7 @@ const Home = () => {
         return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Contact__WEBPACK_IMPORTED_MODULE_13__["default"], {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 137
+            lineNumber: 138
           },
           __self: undefined
         });
@@ -928,7 +951,7 @@ const Home = () => {
         return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Blank__WEBPACK_IMPORTED_MODULE_12__["default"], {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 140
+            lineNumber: 141
           },
           __self: undefined
         });
@@ -938,7 +961,7 @@ const Home = () => {
   return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_2___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Reset__WEBPACK_IMPORTED_MODULE_6__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 146
+      lineNumber: 147
     },
     __self: undefined
   }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_TypographicGrid__WEBPACK_IMPORTED_MODULE_7__["default"], {
@@ -949,21 +972,21 @@ const Home = () => {
     lineColor: "#666",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 147
+      lineNumber: 148
     },
     __self: undefined
   }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_themes_default_js__WEBPACK_IMPORTED_MODULE_5__["ThemeContext"].Provider, {
     value: currentTheme,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 154
+      lineNumber: 155
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Container, {
     theme: currentTheme.theme,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 155
+      lineNumber: 156
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Header__WEBPACK_IMPORTED_MODULE_9__["default"], {
@@ -978,13 +1001,13 @@ const Home = () => {
     menuToggleIconClickHandler: menuToggleIconClickHandler,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 156
+      lineNumber: 157
     },
     __self: undefined
   }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Display, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 167
+      lineNumber: 168
     },
     __self: undefined
   }))));
@@ -2037,11 +2060,32 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Categories__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Categories */ "./src/components/Categories/index.js");
 /* harmony import */ var _MenuItemCustom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../MenuItemCustom */ "./src/components/MenuItemCustom/index.js");
 /* harmony import */ var _MenuItemsToggleIcons__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../MenuItemsToggleIcons */ "./src/components/MenuItemsToggleIcons/index.js");
+/* harmony import */ var _Media__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../Media */ "./src/components/Media/index.js");
 
 var _jsxFileName = "/home/cs/work/inu-v2/react-src/src/components/Menu/Menu.js";
 
-function _templateObject2() {
+function _templateObject4() {
   const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])([""]);
+
+  _templateObject4 = function () {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject3() {
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n\t  \tmargin-bottom: 0;\n\t  \t"]);
+
+  _templateObject3 = function () {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject2() {
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n\t  margin-bottom: calc(var(--lem) * 2);\n\t  "]);
 
   _templateObject2 = function () {
     return data;
@@ -2051,7 +2095,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  display: flex;\n  flex-wrap: nowrap;\n"]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  display: flex;\n  flex-wrap: nowrap;\n\n  ", ";\n\n  ", ";\n"]);
 
   _templateObject = function () {
     return data;
@@ -2065,26 +2109,27 @@ function _templateObject() {
 
 
 
-const Container = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].section(_templateObject());
-const MenuItems = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].section(_templateObject2());
+
+const Container = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].section(_templateObject(), _Media__WEBPACK_IMPORTED_MODULE_6__["default"].mobile(_templateObject2()), _Media__WEBPACK_IMPORTED_MODULE_6__["default"].tablet(_templateObject3()));
+const MenuItems = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].section(_templateObject4());
 
 const Menu = props => {
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Container, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 17
+      lineNumber: 26
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(MenuItems, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18
+      lineNumber: 27
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Categories__WEBPACK_IMPORTED_MODULE_3__["default"], Object.assign({}, props, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19
+      lineNumber: 28
     },
     __self: undefined
   })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_MenuItemCustom__WEBPACK_IMPORTED_MODULE_4__["default"], Object.assign({
@@ -2093,7 +2138,7 @@ const Menu = props => {
   }, props, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20
+      lineNumber: 29
     },
     __self: undefined
   })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_MenuItemCustom__WEBPACK_IMPORTED_MODULE_4__["default"], Object.assign({
@@ -2102,13 +2147,13 @@ const Menu = props => {
   }, props, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21
+      lineNumber: 30
     },
     __self: undefined
   }))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_MenuItemsToggleIcons__WEBPACK_IMPORTED_MODULE_5__["default"], Object.assign({}, props, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 23
+      lineNumber: 32
     },
     __self: undefined
   })));
@@ -3875,5 +3920,5 @@ module.exports = __webpack_require__(/*! /home/cs/work/inu-v2/react-src/src/inde
 
 /***/ })
 
-},[[0,"runtime~main",1]]]);
+},[[0,"runtime~main",0]]]);
 //# sourceMappingURL=main.chunk.js.map

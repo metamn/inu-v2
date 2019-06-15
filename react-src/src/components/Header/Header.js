@@ -28,7 +28,8 @@ const ContainerMenu = styled.div`
   ${Media.mobile`
 	  width: 100%;
 	  flex-direction: column;
-
+	  margin-top: calc(var(--lem) * 2);
+	  
 	  ${props =>
       props.activeMenuToggleIcon === true &&
       css`
