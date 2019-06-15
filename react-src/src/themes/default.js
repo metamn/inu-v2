@@ -17,7 +17,7 @@ const themeColors = {
   dark: {
     text: white,
     background: black,
-    gray: gray,
+    gray: lightgray,
     placeholder: darkgray,
     borderColor: white
   }

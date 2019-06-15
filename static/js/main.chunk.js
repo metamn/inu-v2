@@ -780,7 +780,7 @@ __webpack_require__.r(__webpack_exports__);
 var _jsxFileName = "/home/cs/work/inu-v2/react-src/src/components/Home/Home.js";
 
 function _templateObject() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_1__["default"])(["\n  background: ", ";\n  color: ", ";\n  font-family: ", ";\n  display: flex;\n  flex-wrap: wrap;\n\n  ", "\n"]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_1__["default"])(["\n  background: ", ";\n  color: ", ";\n  font-family: ", ";\n\n  display: flex;\n  flex-wrap: wrap;\n\n  min-height: 100vh;\n\n  ", "\n"]);
 
   _templateObject = function () {
     return data;
@@ -881,6 +881,11 @@ const Home = () => {
   const toggleTheme = () => {
     const newTheme = Object(_themes_default_js__WEBPACK_IMPORTED_MODULE_5__["switchThemeFrom"])(currentTheme.mode);
     setCurrentTheme(newTheme);
+
+    if (!activeMenuToggleIcon) {
+      setActiveMenuToggleIcon(true);
+      setDisplayMode(0);
+    }
   }; // Click on a thumbnail
 
 
@@ -919,7 +924,7 @@ const Home = () => {
           setActiveSlide: setActiveSlide,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 120
+            lineNumber: 128
           },
           __self: undefined
         });
@@ -932,7 +937,7 @@ const Home = () => {
           thumbClickHandler: thumbClickHandler,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 131
+            lineNumber: 139
           },
           __self: undefined
         });
@@ -941,7 +946,7 @@ const Home = () => {
         return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Contact__WEBPACK_IMPORTED_MODULE_13__["default"], {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 138
+            lineNumber: 146
           },
           __self: undefined
         });
@@ -951,7 +956,7 @@ const Home = () => {
         return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Blank__WEBPACK_IMPORTED_MODULE_12__["default"], {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 141
+            lineNumber: 149
           },
           __self: undefined
         });
@@ -961,7 +966,7 @@ const Home = () => {
   return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_2___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Reset__WEBPACK_IMPORTED_MODULE_6__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 147
+      lineNumber: 155
     },
     __self: undefined
   }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_TypographicGrid__WEBPACK_IMPORTED_MODULE_7__["default"], {
@@ -972,21 +977,21 @@ const Home = () => {
     lineColor: "#666",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 148
+      lineNumber: 156
     },
     __self: undefined
   }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_themes_default_js__WEBPACK_IMPORTED_MODULE_5__["ThemeContext"].Provider, {
     value: currentTheme,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 155
+      lineNumber: 163
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Container, {
     theme: currentTheme.theme,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 156
+      lineNumber: 164
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Header__WEBPACK_IMPORTED_MODULE_9__["default"], {
@@ -1001,13 +1006,13 @@ const Home = () => {
     menuToggleIconClickHandler: menuToggleIconClickHandler,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 157
+      lineNumber: 165
     },
     __self: undefined
   }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Display, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 168
+      lineNumber: 176
     },
     __self: undefined
   }))));
@@ -3876,7 +3881,7 @@ const themeColors = {
   dark: {
     text: white,
     background: black,
-    gray: gray,
+    gray: lightgray,
     placeholder: darkgray,
     borderColor: white
   }
@@ -3920,5 +3925,5 @@ module.exports = __webpack_require__(/*! /home/cs/work/inu-v2/react-src/src/inde
 
 /***/ })
 
-},[[0,"runtime~main",0]]]);
+},[[0,"runtime~main",1]]]);
 //# sourceMappingURL=main.chunk.js.map

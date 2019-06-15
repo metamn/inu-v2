@@ -28,8 +28,11 @@ const Container = styled.div`
   background: ${props => props.theme.colors.background};
   color: ${props => props.theme.colors.text};
   font-family: ${props => props.theme.fonts.default};
+
   display: flex;
   flex-wrap: wrap;
+
+  min-height: 100vh;
 
   ${Spacing({ property: "padding" })}
 `;
@@ -86,6 +89,11 @@ const Home = () => {
   const toggleTheme = () => {
     const newTheme = switchThemeFrom(currentTheme.mode);
     setCurrentTheme(newTheme);
+
+    if (!activeMenuToggleIcon) {
+      setActiveMenuToggleIcon(true);
+      setDisplayMode(0);
+    }
   };
 
   // Click on a thumbnail
