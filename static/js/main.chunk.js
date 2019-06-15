@@ -91,9 +91,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var graphql_tag__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! graphql-tag */ "./node_modules/graphql-tag/src/index.js");
 /* harmony import */ var graphql_tag__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(graphql_tag__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _hooks__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./../../hooks */ "./src/hooks/index.js");
-/* harmony import */ var _helpers__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../helpers */ "./src/helpers/index.js");
-/* harmony import */ var _List__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../List */ "./src/components/List/index.js");
-/* harmony import */ var _ListItem__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../ListItem */ "./src/components/ListItem/index.js");
+/* harmony import */ var _List__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../List */ "./src/components/List/index.js");
+/* harmony import */ var _ListItem__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../ListItem */ "./src/components/ListItem/index.js");
 
 var _jsxFileName = "/home/cs/work/inu-v2/react-src/src/components/Categories/Categories.js";
 
@@ -123,7 +122,6 @@ function _templateObject() {
 
 
 
-
 const Container = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].nav(_templateObject()); // The query definition
 
 const query = graphql_tag__WEBPACK_IMPORTED_MODULE_3___default()(_templateObject2()); // Putting together the markup to be rendered
@@ -132,24 +130,22 @@ const markup = (data, props) => {
   const activeCategory = props.activeCategory,
         categoryClickHandler = props.categoryClickHandler,
         activeCategoryIcon = props.activeCategoryIcon,
-        categoryIconClickHandler = props.categoryIconClickHandler; // Icon and menu statuses
+        categoryIconClickHandler = props.categoryIconClickHandler; // Parse categories into a list
 
-  const hideInactive = Object(_helpers__WEBPACK_IMPORTED_MODULE_5__["setClassName"])({
-    target: true,
-    index: activeCategoryIcon
-  }); // Parse categories into a list
-
-  const items = data.categories.edges.map(edge => react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_ListItem__WEBPACK_IMPORTED_MODULE_7__["default"], {
+  const items = data.categories.edges.map(edge => react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_ListItem__WEBPACK_IMPORTED_MODULE_6__["default"], {
     key: edge.node.id,
-    className: Object(_helpers__WEBPACK_IMPORTED_MODULE_5__["setClassName"])({
+    className: Object(_ListItem__WEBPACK_IMPORTED_MODULE_6__["setListItemActive"])({
       target: activeCategory,
       index: edge.node.categoryId
     }),
-    hideInactive: hideInactive,
+    visbility: Object(_ListItem__WEBPACK_IMPORTED_MODULE_6__["setListItemVisibility"])({
+      target: true,
+      index: activeCategoryIcon
+    }),
     onClick: () => categoryClickHandler(edge.node.categoryId),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45
+      lineNumber: 41
     },
     __self: undefined
   }, edge.node.name)); // Make sure the first category is marked active at the first load
@@ -161,13 +157,13 @@ const markup = (data, props) => {
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Container, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 64
+      lineNumber: 63
     },
     __self: undefined
-  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_List__WEBPACK_IMPORTED_MODULE_6__["default"], {
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_List__WEBPACK_IMPORTED_MODULE_5__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 65
+      lineNumber: 64
     },
     __self: undefined
   }, items));
@@ -286,99 +282,6 @@ const Contact = props => {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Contact__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Contact */ "./src/components/Contact/Contact.js");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _Contact__WEBPACK_IMPORTED_MODULE_0__["default"]; });
-
-
-
-/***/ }),
-
-/***/ "./src/components/ContactMenuItem/ContactMenuItem.js":
-/*!***********************************************************!*\
-  !*** ./src/components/ContactMenuItem/ContactMenuItem.js ***!
-  \***********************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/esm/taggedTemplateLiteral */ "./node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/esm/taggedTemplateLiteral.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-/* harmony import */ var _List__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../List */ "./src/components/List/index.js");
-/* harmony import */ var _ListItem__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../ListItem */ "./src/components/ListItem/index.js");
-/* harmony import */ var _helpers__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../helpers */ "./src/helpers/index.js");
-
-var _jsxFileName = "/home/cs/work/inu-v2/react-src/src/components/ContactMenuItem/ContactMenuItem.js";
-
-function _templateObject() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])([""]);
-
-  _templateObject = function () {
-    return data;
-  };
-
-  return data;
-}
-
-
-
-
-
-
-const Container = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].nav(_templateObject());
-
-const ContactMenuItem = props => {
-  const activeCategory = props.activeCategory,
-        activeCategoryIcon = props.activeCategoryIcon,
-        categoryClickHandler = props.categoryClickHandler; // Icon and menu statuses
-
-  const hideInactive = Object(_helpers__WEBPACK_IMPORTED_MODULE_5__["setClassName"])({
-    target: true,
-    index: activeCategoryIcon
-  });
-  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Container, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 20
-    },
-    __self: undefined
-  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_List__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 21
-    },
-    __self: undefined
-  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_ListItem__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    key: "random",
-    className: Object(_helpers__WEBPACK_IMPORTED_MODULE_5__["setClassName"])({
-      target: activeCategory,
-      index: -2
-    }),
-    hideInactive: hideInactive,
-    onClick: () => categoryClickHandler(-2),
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 22
-    },
-    __self: undefined
-  }, "Contact")));
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (ContactMenuItem);
-
-/***/ }),
-
-/***/ "./src/components/ContactMenuItem/index.js":
-/*!*************************************************!*\
-  !*** ./src/components/ContactMenuItem/index.js ***!
-  \*************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _ContactMenuItem__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ContactMenuItem */ "./src/components/ContactMenuItem/ContactMenuItem.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _ContactMenuItem__WEBPACK_IMPORTED_MODULE_0__["default"]; });
 
 
 
@@ -1616,13 +1519,16 @@ __webpack_require__.r(__webpack_exports__);
 /*!*********************************************!*\
   !*** ./src/components/ListItem/ListItem.js ***!
   \*********************************************/
-/*! exports provided: default */
+/*! exports provided: default, setListItemActive, setListItemVisibility */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setListItemActive", function() { return setListItemActive; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setListItemVisibility", function() { return setListItemVisibility; });
 /* harmony import */ var _home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/esm/taggedTemplateLiteral */ "./node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/esm/taggedTemplateLiteral.js");
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var _helpers__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../helpers */ "./src/helpers/index.js");
 
 
 function _templateObject9() {
@@ -1715,18 +1621,33 @@ function _templateObject() {
   return data;
 }
 
- // Hide inactive items
 
-const ListItemHideInactive = Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["css"])(_templateObject(), props => props.hideInactive === "active" && Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["css"])(_templateObject2())); // Style the active item
+ // Sets the `active` classname for a list item
+
+const setListItemActive = props => {
+  return Object(_helpers__WEBPACK_IMPORTED_MODULE_2__["setClassName"])(props);
+}; // Sets the visbility of a list item
+
+
+const setListItemVisibility = props => {
+  return Object(_helpers__WEBPACK_IMPORTED_MODULE_2__["setClassName"])(props, {
+    activeClassName: "visible",
+    inactiveClassName: "invisible"
+  });
+}; // Hide invisible items
+
+
+const ListItemHideInvisible = Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["css"])(_templateObject(), props => props.visbility === "invisible" && Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["css"])(_templateObject2())); // Style the active item
 
 const ListItemStyleActive = Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["css"])(_templateObject3(), props => props.className === "active" && Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["css"])(_templateObject4())); // The style of items when all of them are displayed
 
-const ListItemShowInactive = Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["css"])(_templateObject5(), props => props.hideInactive === "inactive" && Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["css"])(_templateObject6())); // The style of the active item when all items are displayed
+const ListItemStyleAll = Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["css"])(_templateObject5(), props => props.visbility === "visible" && Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["css"])(_templateObject6())); // The style of the active item when all items are displayed
 
-const ListItemStyleActiveWhenShowInactive = Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["css"])(_templateObject7(), props => props.hideInactive === "inactive" && props.className === "active" && Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["css"])(_templateObject8())); // The style of the items
+const ListItemStyleActiveWhenAllVisible = Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["css"])(_templateObject7(), props => props.visbility === "visible" && props.className === "active" && Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["css"])(_templateObject8())); // The style of the items
 
-const ListItem = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].li(_templateObject9(), ListItemHideInactive, ListItemStyleActive, ListItemShowInactive, ListItemStyleActiveWhenShowInactive);
+const ListItem = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].li(_templateObject9(), ListItemHideInvisible, ListItemStyleActive, ListItemStyleAll, ListItemStyleActiveWhenAllVisible);
 /* harmony default export */ __webpack_exports__["default"] = (ListItem);
+
 
 /***/ }),
 
@@ -1734,13 +1655,19 @@ const ListItem = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].li(_t
 /*!******************************************!*\
   !*** ./src/components/ListItem/index.js ***!
   \******************************************/
-/*! exports provided: default */
+/*! exports provided: default, setListItemActive, setListItemVisibility */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ListItem__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ListItem */ "./src/components/ListItem/ListItem.js");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _ListItem__WEBPACK_IMPORTED_MODULE_0__["default"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "setListItemActive", function() { return _ListItem__WEBPACK_IMPORTED_MODULE_0__["setListItemActive"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "setListItemVisibility", function() { return _ListItem__WEBPACK_IMPORTED_MODULE_0__["setListItemVisibility"]; });
+
+
 
 
 
@@ -1897,10 +1824,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 /* harmony import */ var react_icons_fi__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-icons/fi */ "./node_modules/react-icons/fi/index.esm.js");
 /* harmony import */ var _Categories__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../Categories */ "./src/components/Categories/index.js");
-/* harmony import */ var _Random__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../Random */ "./src/components/Random/index.js");
-/* harmony import */ var _ContactMenuItem__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../ContactMenuItem */ "./src/components/ContactMenuItem/index.js");
-/* harmony import */ var _Icon__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../Icon */ "./src/components/Icon/index.js");
-/* harmony import */ var _helpers__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../helpers */ "./src/helpers/index.js");
+/* harmony import */ var _MenuItemCustom__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../MenuItemCustom */ "./src/components/MenuItemCustom/index.js");
+/* harmony import */ var _Icon__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../Icon */ "./src/components/Icon/index.js");
+/* harmony import */ var _helpers__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../helpers */ "./src/helpers/index.js");
 
 var _jsxFileName = "/home/cs/work/inu-v2/react-src/src/components/Menu/Menu.js";
 
@@ -1951,7 +1877,6 @@ function _templateObject() {
 
 
 
-
 const Container = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].section(_templateObject());
 const MenuItems = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].section(_templateObject2());
 const MenuItemsIcons = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].section(_templateObject3());
@@ -1959,79 +1884,83 @@ const ChevronIcon = Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"]
 
 const Menu = props => {
   const categoryIconClickHandler = props.categoryIconClickHandler,
-        activeCategoryIcon = props.activeCategoryIcon; // Icon and menu statuses
-
-  const hideInactive = Object(_helpers__WEBPACK_IMPORTED_MODULE_8__["setClassName"])({
-    target: true,
-    index: activeCategoryIcon
-  });
+        activeCategoryIcon = props.activeCategoryIcon;
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Container, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35
+      lineNumber: 28
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(MenuItems, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 36
+      lineNumber: 29
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Categories__WEBPACK_IMPORTED_MODULE_4__["default"], Object.assign({}, props, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 37
+      lineNumber: 30
     },
     __self: undefined
-  })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Random__WEBPACK_IMPORTED_MODULE_5__["default"], Object.assign({}, props, {
+  })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_MenuItemCustom__WEBPACK_IMPORTED_MODULE_5__["default"], Object.assign({
+    index: -1,
+    menuItemText: "Random"
+  }, props, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38
+      lineNumber: 31
     },
     __self: undefined
-  })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_ContactMenuItem__WEBPACK_IMPORTED_MODULE_6__["default"], Object.assign({}, props, {
+  })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_MenuItemCustom__WEBPACK_IMPORTED_MODULE_5__["default"], Object.assign({
+    index: -2,
+    menuItemText: "Contact"
+  }, props, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 39
+      lineNumber: 32
     },
     __self: undefined
   }))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(MenuItemsIcons, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41
+      lineNumber: 34
     },
     __self: undefined
-  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Icon__WEBPACK_IMPORTED_MODULE_7__["default"], {
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Icon__WEBPACK_IMPORTED_MODULE_6__["default"], {
     as: ChevronIcon,
-    className: hideInactive,
+    className: Object(_helpers__WEBPACK_IMPORTED_MODULE_7__["setClassName"])({
+      target: true,
+      index: activeCategoryIcon
+    }),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 42
+      lineNumber: 35
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_icons_fi__WEBPACK_IMPORTED_MODULE_3__["FiChevronDown"], {
     onClick: () => categoryIconClickHandler(),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 43
+      lineNumber: 39
     },
     __self: undefined
-  })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Icon__WEBPACK_IMPORTED_MODULE_7__["default"], {
+  })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Icon__WEBPACK_IMPORTED_MODULE_6__["default"], {
     as: ChevronIcon,
-    className: Object(_helpers__WEBPACK_IMPORTED_MODULE_8__["setClassName"])({
+    className: Object(_helpers__WEBPACK_IMPORTED_MODULE_7__["setClassName"])({
       target: false,
       index: activeCategoryIcon
     }),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45
+      lineNumber: 41
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_icons_fi__WEBPACK_IMPORTED_MODULE_3__["FiChevronUp"], {
     onClick: () => categoryIconClickHandler(),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 49
+      lineNumber: 45
     },
     __self: undefined
   }))));
@@ -2167,6 +2096,97 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./src/components/MenuItemCustom/MenuItemCustom.js":
+/*!*********************************************************!*\
+  !*** ./src/components/MenuItemCustom/MenuItemCustom.js ***!
+  \*********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/esm/taggedTemplateLiteral */ "./node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/esm/taggedTemplateLiteral.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var _List__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../List */ "./src/components/List/index.js");
+/* harmony import */ var _ListItem__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../ListItem */ "./src/components/ListItem/index.js");
+
+var _jsxFileName = "/home/cs/work/inu-v2/react-src/src/components/MenuItemCustom/MenuItemCustom.js";
+
+function _templateObject() {
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])([""]);
+
+  _templateObject = function () {
+    return data;
+  };
+
+  return data;
+}
+
+
+
+
+
+const Container = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].nav(_templateObject());
+
+const MenuItemCustom = props => {
+  const index = props.index,
+        menuItemText = props.menuItemText,
+        activeCategory = props.activeCategory,
+        activeCategoryIcon = props.activeCategoryIcon,
+        categoryClickHandler = props.categoryClickHandler;
+  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Container, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 22
+    },
+    __self: undefined
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_List__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 23
+    },
+    __self: undefined
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_ListItem__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    key: menuItemText,
+    className: Object(_ListItem__WEBPACK_IMPORTED_MODULE_4__["setListItemActive"])({
+      target: activeCategory,
+      index: index
+    }),
+    visbility: Object(_ListItem__WEBPACK_IMPORTED_MODULE_4__["setListItemVisibility"])({
+      target: true,
+      index: activeCategoryIcon
+    }),
+    onClick: () => categoryClickHandler(index),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 24
+    },
+    __self: undefined
+  }, menuItemText)));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (MenuItemCustom);
+
+/***/ }),
+
+/***/ "./src/components/MenuItemCustom/index.js":
+/*!************************************************!*\
+  !*** ./src/components/MenuItemCustom/index.js ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _MenuItemCustom__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./MenuItemCustom */ "./src/components/MenuItemCustom/MenuItemCustom.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _MenuItemCustom__WEBPACK_IMPORTED_MODULE_0__["default"]; });
+
+
+
+/***/ }),
+
 /***/ "./src/components/Post/Post.js":
 /*!*************************************!*\
   !*** ./src/components/Post/Post.js ***!
@@ -2282,99 +2302,6 @@ const Post = props => {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Post__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Post */ "./src/components/Post/Post.js");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _Post__WEBPACK_IMPORTED_MODULE_0__["default"]; });
-
-
-
-/***/ }),
-
-/***/ "./src/components/Random/Random.js":
-/*!*****************************************!*\
-  !*** ./src/components/Random/Random.js ***!
-  \*****************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/esm/taggedTemplateLiteral */ "./node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/esm/taggedTemplateLiteral.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-/* harmony import */ var _List__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../List */ "./src/components/List/index.js");
-/* harmony import */ var _ListItem__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../ListItem */ "./src/components/ListItem/index.js");
-/* harmony import */ var _helpers__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../helpers */ "./src/helpers/index.js");
-
-var _jsxFileName = "/home/cs/work/inu-v2/react-src/src/components/Random/Random.js";
-
-function _templateObject() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])([""]);
-
-  _templateObject = function () {
-    return data;
-  };
-
-  return data;
-}
-
-
-
-
-
-
-const Container = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].nav(_templateObject());
-
-const Random = props => {
-  const activeCategory = props.activeCategory,
-        activeCategoryIcon = props.activeCategoryIcon,
-        categoryClickHandler = props.categoryClickHandler; // Icon and menu statuses
-
-  const hideInactive = Object(_helpers__WEBPACK_IMPORTED_MODULE_5__["setClassName"])({
-    target: true,
-    index: activeCategoryIcon
-  });
-  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Container, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 20
-    },
-    __self: undefined
-  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_List__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 21
-    },
-    __self: undefined
-  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_ListItem__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    key: "random",
-    className: Object(_helpers__WEBPACK_IMPORTED_MODULE_5__["setClassName"])({
-      target: activeCategory,
-      index: -1
-    }),
-    hideInactive: hideInactive,
-    onClick: () => categoryClickHandler(-1),
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 22
-    },
-    __self: undefined
-  }, "Random")));
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (Random);
-
-/***/ }),
-
-/***/ "./src/components/Random/index.js":
-/*!****************************************!*\
-  !*** ./src/components/Random/index.js ***!
-  \****************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _Random__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Random */ "./src/components/Random/Random.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _Random__WEBPACK_IMPORTED_MODULE_0__["default"]; });
 
 
 
@@ -3273,13 +3200,30 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_0__);
 // Sets a class name either to `active` or `inactive`
-const setClassName = props => {
-  const target = props.target,
-        index = props.index;
-  return index === target ? "active" : "inactive";
+// ... or to anything specified by props
+
+const Props = {
+  activeClassName: prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.string,
+  inactiveClassName: prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.string
+};
+const DefaultProps = {
+  activeClassName: "active",
+  inactiveClassName: "inactive"
 };
 
+const setClassName = props => {
+  const target = props.target,
+        index = props.index,
+        activeClassName = props.activeClassName,
+        inactiveClassName = props.inactiveClassName;
+  return index === target ? activeClassName : inactiveClassName;
+};
+
+setClassName.propTypes = Props;
+setClassName.defaultProps = DefaultProps;
 /* harmony default export */ __webpack_exports__["default"] = (setClassName);
 
 /***/ }),
@@ -3605,5 +3549,5 @@ module.exports = __webpack_require__(/*! /home/cs/work/inu-v2/react-src/src/inde
 
 /***/ })
 
-},[[0,"runtime~main",0]]]);
+},[[0,"runtime~main",1]]]);
 //# sourceMappingURL=main.chunk.js.map

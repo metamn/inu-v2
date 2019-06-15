@@ -3,8 +3,7 @@ import styled, { css } from "styled-components";
 import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 
 import Categories from "../Categories";
-import Random from "../Random";
-import ContactMenuItem from "../ContactMenuItem";
+import MenuItemCustom from "../MenuItemCustom";
 import Icon from "../Icon";
 import { setClassName } from "../../helpers";
 
@@ -25,21 +24,18 @@ const ChevronIcon = css`
 const Menu = props => {
   const { categoryIconClickHandler, activeCategoryIcon } = props;
 
-  // Icon and menu statuses
-  const hideInactive = setClassName({
-    target: true,
-    index: activeCategoryIcon
-  });
-
   return (
     <Container>
       <MenuItems>
         <Categories {...props} />
-        <Random {...props} />
-        <ContactMenuItem {...props} />
+        <MenuItemCustom index={-1} menuItemText="Random" {...props} />
+        <MenuItemCustom index={-2} menuItemText="Contact" {...props} />
       </MenuItems>
       <MenuItemsIcons>
-        <Icon as={ChevronIcon} className={hideInactive}>
+        <Icon
+          as={ChevronIcon}
+          className={setClassName({ target: true, index: activeCategoryIcon })}
+        >
           <FiChevronDown onClick={() => categoryIconClickHandler()} />
         </Icon>
         <Icon

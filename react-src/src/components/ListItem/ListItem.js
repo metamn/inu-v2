@@ -1,9 +1,24 @@
 import styled, { css } from "styled-components";
 
-// Hide inactive items
-const ListItemHideInactive = css`
+import { setClassName } from "../../helpers";
+
+// Sets the `active` classname for a list item
+const setListItemActive = props => {
+  return setClassName(props);
+};
+
+// Sets the visbility of a list item
+const setListItemVisibility = props => {
+  return setClassName(props, {
+    activeClassName: "visible",
+    inactiveClassName: "invisible"
+  });
+};
+
+// Hide invisible items
+const ListItemHideInvisible = css`
   ${props =>
-    props.hideInactive === "active" &&
+    props.visbility === "invisible" &&
     css`
       display: none;
     `};
@@ -20,9 +35,9 @@ const ListItemStyleActive = css`
 `;
 
 // The style of items when all of them are displayed
-const ListItemShowInactive = css`
+const ListItemStyleAll = css`
   ${props =>
-    props.hideInactive === "inactive" &&
+    props.visbility === "visible" &&
     css`
       margin-bottom: calc(var(--lem) / 2);
       border-bottom: 1px solid lightgray;
@@ -34,9 +49,9 @@ const ListItemShowInactive = css`
 `;
 
 // The style of the active item when all items are displayed
-const ListItemStyleActiveWhenShowInactive = css`
+const ListItemStyleActiveWhenAllVisible = css`
   ${props =>
-    props.hideInactive === "inactive" &&
+    props.visbility === "visible" &&
     props.className === "active" &&
     css`
       font-style: italic;
@@ -49,10 +64,11 @@ const ListItem = styled.li`
   cursor: pointer;
   width: 100%;
 
-  ${ListItemHideInactive}
+  ${ListItemHideInvisible}
   ${ListItemStyleActive}
-  ${ListItemShowInactive}
-  ${ListItemStyleActiveWhenShowInactive}
+  ${ListItemStyleAll}
+  ${ListItemStyleActiveWhenAllVisible}
 `;
 
 export default ListItem;
+export { setListItemActive, setListItemVisibility };

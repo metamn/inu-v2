@@ -3,10 +3,12 @@ import styled, { css } from "styled-components";
 import gql from "graphql-tag";
 
 import { useQuery } from "./../../hooks";
-import { setClassName } from "../../helpers";
 
 import List from "../List";
-import ListItem from "../ListItem";
+import ListItem, {
+  setListItemActive,
+  setListItemVisibility
+} from "../ListItem";
 
 const Container = styled.nav``;
 
@@ -34,21 +36,18 @@ const markup = (data, props) => {
     categoryIconClickHandler
   } = props;
 
-  // Icon and menu statuses
-  const hideInactive = setClassName({
-    target: true,
-    index: activeCategoryIcon
-  });
-
   // Parse categories into a list
   const items = data.categories.edges.map(edge => (
     <ListItem
       key={edge.node.id}
-      className={setClassName({
+      className={setListItemActive({
         target: activeCategory,
         index: edge.node.categoryId
       })}
-      hideInactive={hideInactive}
+      visbility={setListItemVisibility({
+        target: true,
+        index: activeCategoryIcon
+      })}
       onClick={() => categoryClickHandler(edge.node.categoryId)}
     >
       {edge.node.name}
