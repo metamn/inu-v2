@@ -4,9 +4,21 @@ import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 
 import Icon from "../Icon";
 import { setClassName } from "../../helpers";
+import Media from "../Media";
 
 const Container = styled.section`
-  margin-left: var(--lem);
+  ${Media.mobile`
+	  ${props =>
+      props.activeMenuToggleIcon === false &&
+      css`
+        display: none;
+      `};
+	`}
+
+  ${Media.tablet`
+  	  display: flex;
+	  margin-left: var(--lem);
+  	`}
 `;
 
 const ChevronIcon = css`
@@ -14,10 +26,14 @@ const ChevronIcon = css`
 `;
 
 const MenuItemsToggleIcons = props => {
-  const { categoryIconClickHandler, activeCategoryIcon } = props;
+  const {
+    categoryIconClickHandler,
+    activeCategoryIcon,
+    activeMenuToggleIcon
+  } = props;
 
   return (
-    <Container>
+    <Container activeMenuToggleIcon={activeMenuToggleIcon}>
       <Icon as={ChevronIcon} className={setClassName(true, activeCategoryIcon)}>
         <FiChevronDown onClick={() => categoryIconClickHandler()} />
       </Icon>

@@ -6,6 +6,7 @@ import ListItem, {
   setListItemActive,
   setListItemVisibility
 } from "../ListItem";
+import { getListItemVisibility } from "../Categories";
 
 const Container = styled.nav``;
 
@@ -15,7 +16,8 @@ const MenuItemCustom = props => {
     menuItemText,
     activeCategory,
     activeCategoryIcon,
-    categoryClickHandler
+    categoryClickHandler,
+    activeMenuToggleIcon
   } = props;
 
   return (
@@ -27,10 +29,10 @@ const MenuItemCustom = props => {
             target: activeCategory,
             index: index
           })}
-          visibility={setListItemVisibility({
-            target: false,
-            index: activeCategoryIcon
-          })}
+          visibility={getListItemVisibility(
+            activeMenuToggleIcon,
+            activeCategoryIcon
+          )}
           onClick={() => categoryClickHandler(index)}
         >
           {menuItemText}

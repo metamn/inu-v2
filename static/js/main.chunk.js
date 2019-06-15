@@ -79,11 +79,12 @@ __webpack_require__.r(__webpack_exports__);
 /*!*************************************************!*\
   !*** ./src/components/Categories/Categories.js ***!
   \*************************************************/
-/*! exports provided: default */
+/*! exports provided: getListItemVisibility, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getListItemVisibility", function() { return getListItemVisibility; });
 /* harmony import */ var _home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/esm/taggedTemplateLiteral */ "./node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/esm/taggedTemplateLiteral.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
@@ -124,30 +125,39 @@ function _templateObject() {
 
 const Container = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].nav(_templateObject()); // The query definition
 
-const query = graphql_tag__WEBPACK_IMPORTED_MODULE_3___default()(_templateObject2()); // Putting together the markup to be rendered
+const query = graphql_tag__WEBPACK_IMPORTED_MODULE_3___default()(_templateObject2()); // Decides if a List item (category) is visible or note
+// - when the mobile menu is active returns always `visible`
+
+const getListItemVisibility = (activeMenuToggleIcon, activeCategoryIcon) => {
+  return activeMenuToggleIcon ? Object(_ListItem__WEBPACK_IMPORTED_MODULE_6__["setListItemVisibility"])({
+    target: false,
+    index: activeCategoryIcon
+  }) : "visible";
+}; // Putting together the markup to be rendered
 
 const markup = (data, props) => {
   const activeCategory = props.activeCategory,
         categoryClickHandler = props.categoryClickHandler,
-        activeCategoryIcon = props.activeCategoryIcon; // Parse categories into a list
+        activeCategoryIcon = props.activeCategoryIcon,
+        activeMenuToggleIcon = props.activeMenuToggleIcon; // Parse categories into a list
 
-  const items = data.categories.edges.map(edge => react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_ListItem__WEBPACK_IMPORTED_MODULE_6__["default"], {
-    key: edge.node.id,
-    className: Object(_ListItem__WEBPACK_IMPORTED_MODULE_6__["setListItemActive"])({
-      target: activeCategory,
-      index: edge.node.categoryId
-    }),
-    visibility: Object(_ListItem__WEBPACK_IMPORTED_MODULE_6__["setListItemVisibility"])({
-      target: false,
-      index: activeCategoryIcon
-    }),
-    onClick: () => categoryClickHandler(edge.node.categoryId),
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 36
-    },
-    __self: undefined
-  }, edge.node.name)); // Make sure the first category is marked active at the first load
+  const items = data.categories.edges.map(edge => {
+    const visibility = getListItemVisibility(activeMenuToggleIcon, activeCategoryIcon);
+    return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_ListItem__WEBPACK_IMPORTED_MODULE_6__["default"], {
+      key: edge.node.id,
+      className: Object(_ListItem__WEBPACK_IMPORTED_MODULE_6__["setListItemActive"])({
+        target: activeCategory,
+        index: edge.node.categoryId
+      }),
+      visibility: visibility,
+      onClick: () => categoryClickHandler(edge.node.categoryId),
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 61
+      },
+      __self: undefined
+    }, edge.node.name);
+  }); // Make sure the first category is marked active at the first load
 
   if (activeCategory === 0) {
     categoryClickHandler(data.categories.edges[0].node.categoryId);
@@ -156,13 +166,13 @@ const markup = (data, props) => {
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Container, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 58
+      lineNumber: 81
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_List__WEBPACK_IMPORTED_MODULE_5__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 59
+      lineNumber: 82
     },
     __self: undefined
   }, items));
@@ -183,13 +193,16 @@ const Categories = props => {
 /*!********************************************!*\
   !*** ./src/components/Categories/index.js ***!
   \********************************************/
-/*! exports provided: default */
+/*! exports provided: default, getListItemVisibility */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Categories__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Categories */ "./src/components/Categories/Categories.js");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _Categories__WEBPACK_IMPORTED_MODULE_0__["default"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "getListItemVisibility", function() { return _Categories__WEBPACK_IMPORTED_MODULE_0__["getListItemVisibility"]; });
+
 
 
 
@@ -2057,6 +2070,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 /* harmony import */ var _List__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../List */ "./src/components/List/index.js");
 /* harmony import */ var _ListItem__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../ListItem */ "./src/components/ListItem/index.js");
+/* harmony import */ var _Categories__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../Categories */ "./src/components/Categories/index.js");
 
 var _jsxFileName = "/home/cs/work/inu-v2/react-src/src/components/MenuItemCustom/MenuItemCustom.js";
 
@@ -2074,6 +2088,7 @@ function _templateObject() {
 
 
 
+
 const Container = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].nav(_templateObject());
 
 const MenuItemCustom = props => {
@@ -2081,17 +2096,18 @@ const MenuItemCustom = props => {
         menuItemText = props.menuItemText,
         activeCategory = props.activeCategory,
         activeCategoryIcon = props.activeCategoryIcon,
-        categoryClickHandler = props.categoryClickHandler;
+        categoryClickHandler = props.categoryClickHandler,
+        activeMenuToggleIcon = props.activeMenuToggleIcon;
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Container, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22
+      lineNumber: 24
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_List__WEBPACK_IMPORTED_MODULE_3__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 23
+      lineNumber: 25
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_ListItem__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -2100,14 +2116,11 @@ const MenuItemCustom = props => {
       target: activeCategory,
       index: index
     }),
-    visibility: Object(_ListItem__WEBPACK_IMPORTED_MODULE_4__["setListItemVisibility"])({
-      target: false,
-      index: activeCategoryIcon
-    }),
+    visibility: Object(_Categories__WEBPACK_IMPORTED_MODULE_5__["getListItemVisibility"])(activeMenuToggleIcon, activeCategoryIcon),
     onClick: () => categoryClickHandler(index),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 24
+      lineNumber: 26
     },
     __self: undefined
   }, menuItemText)));
@@ -2149,11 +2162,42 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_icons_fi__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-icons/fi */ "./node_modules/react-icons/fi/index.esm.js");
 /* harmony import */ var _Icon__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../Icon */ "./src/components/Icon/index.js");
 /* harmony import */ var _helpers__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../helpers */ "./src/helpers/index.js");
+/* harmony import */ var _Media__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../Media */ "./src/components/Media/index.js");
 
 var _jsxFileName = "/home/cs/work/inu-v2/react-src/src/components/MenuItemsToggleIcons/MenuItemsToggleIcons.js";
 
-function _templateObject2() {
+function _templateObject5() {
   const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  align-items: center;\n"]);
+
+  _templateObject5 = function () {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject4() {
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  \t  display: flex;\n\t  margin-left: var(--lem);\n  \t"]);
+
+  _templateObject4 = function () {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject3() {
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n        display: none;\n      "]);
+
+  _templateObject3 = function () {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject2() {
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n\t  ", ";\n\t"]);
 
   _templateObject2 = function () {
     return data;
@@ -2163,7 +2207,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  margin-left: var(--lem);\n"]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  ", "\n\n  ", "\n"]);
 
   _templateObject = function () {
     return data;
@@ -2177,16 +2221,19 @@ function _templateObject() {
 
 
 
-const Container = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].section(_templateObject());
-const ChevronIcon = Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject2());
+
+const Container = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].section(_templateObject(), _Media__WEBPACK_IMPORTED_MODULE_6__["default"].mobile(_templateObject2(), props => props.activeMenuToggleIcon === false && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject3())), _Media__WEBPACK_IMPORTED_MODULE_6__["default"].tablet(_templateObject4()));
+const ChevronIcon = Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject5());
 
 const MenuItemsToggleIcons = props => {
   const categoryIconClickHandler = props.categoryIconClickHandler,
-        activeCategoryIcon = props.activeCategoryIcon;
+        activeCategoryIcon = props.activeCategoryIcon,
+        activeMenuToggleIcon = props.activeMenuToggleIcon;
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Container, {
+    activeMenuToggleIcon: activeMenuToggleIcon,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20
+      lineNumber: 36
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Icon__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -2194,14 +2241,14 @@ const MenuItemsToggleIcons = props => {
     className: Object(_helpers__WEBPACK_IMPORTED_MODULE_5__["setClassName"])(true, activeCategoryIcon),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21
+      lineNumber: 37
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_icons_fi__WEBPACK_IMPORTED_MODULE_3__["FiChevronDown"], {
     onClick: () => categoryIconClickHandler(),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22
+      lineNumber: 38
     },
     __self: undefined
   })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Icon__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -2209,14 +2256,14 @@ const MenuItemsToggleIcons = props => {
     className: Object(_helpers__WEBPACK_IMPORTED_MODULE_5__["setClassName"])(false, activeCategoryIcon),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 24
+      lineNumber: 40
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_icons_fi__WEBPACK_IMPORTED_MODULE_3__["FiChevronUp"], {
     onClick: () => categoryIconClickHandler(),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 28
+      lineNumber: 44
     },
     __self: undefined
   })));

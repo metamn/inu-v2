@@ -27,27 +27,50 @@ const query = gql`
   }
 `;
 
-// Putting together the markup to be rendered
-const markup = (data, props) => {
-  const { activeCategory, categoryClickHandler, activeCategoryIcon } = props;
-
-  // Parse categories into a list
-  const items = data.categories.edges.map(edge => (
-    <ListItem
-      key={edge.node.id}
-      className={setListItemActive({
-        target: activeCategory,
-        index: edge.node.categoryId
-      })}
-      visibility={setListItemVisibility({
+// Decides if a List item (category) is visible or note
+// - when the mobile menu is active returns always `visible`
+export const getListItemVisibility = (
+  activeMenuToggleIcon,
+  activeCategoryIcon
+) => {
+  return activeMenuToggleIcon
+    ? setListItemVisibility({
         target: false,
         index: activeCategoryIcon
-      })}
-      onClick={() => categoryClickHandler(edge.node.categoryId)}
-    >
-      {edge.node.name}
-    </ListItem>
-  ));
+      })
+    : "visible";
+};
+
+// Putting together the markup to be rendered
+const markup = (data, props) => {
+  const {
+    activeCategory,
+    categoryClickHandler,
+    activeCategoryIcon,
+    activeMenuToggleIcon
+  } = props;
+
+  // Parse categories into a list
+  const items = data.categories.edges.map(edge => {
+    const visibility = getListItemVisibility(
+      activeMenuToggleIcon,
+      activeCategoryIcon
+    );
+
+    return (
+      <ListItem
+        key={edge.node.id}
+        className={setListItemActive({
+          target: activeCategory,
+          index: edge.node.categoryId
+        })}
+        visibility={visibility}
+        onClick={() => categoryClickHandler(edge.node.categoryId)}
+      >
+        {edge.node.name}
+      </ListItem>
+    );
+  });
 
   // Make sure the first category is marked active at the first load
   if (activeCategory === 0) {
