@@ -138,8 +138,8 @@ const markup = (data, props) => {
       target: activeCategory,
       index: edge.node.categoryId
     }),
-    visbility: Object(_ListItem__WEBPACK_IMPORTED_MODULE_6__["setListItemVisibility"])({
-      target: true,
+    visibility: Object(_ListItem__WEBPACK_IMPORTED_MODULE_6__["setListItemVisibility"])({
+      target: false,
       index: activeCategoryIcon
     }),
     onClick: () => categoryClickHandler(edge.node.categoryId),
@@ -1625,25 +1625,26 @@ function _templateObject() {
  // Sets the `active` classname for a list item
 
 const setListItemActive = props => {
-  return Object(_helpers__WEBPACK_IMPORTED_MODULE_2__["setClassName"])(props);
+  const target = props.target,
+        index = props.index;
+  return Object(_helpers__WEBPACK_IMPORTED_MODULE_2__["setClassName"])(target, index);
 }; // Sets the visbility of a list item
 
 
 const setListItemVisibility = props => {
-  return Object(_helpers__WEBPACK_IMPORTED_MODULE_2__["setClassName"])(props, {
-    activeClassName: "visible",
-    inactiveClassName: "invisible"
-  });
+  const target = props.target,
+        index = props.index;
+  return Object(_helpers__WEBPACK_IMPORTED_MODULE_2__["setClassName"])(target, index, "visible", "invisible");
 }; // Hide invisible items
 
 
-const ListItemHideInvisible = Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["css"])(_templateObject(), props => props.visbility === "invisible" && Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["css"])(_templateObject2())); // Style the active item
+const ListItemHideInvisible = Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["css"])(_templateObject(), props => props.visibility === "invisible" && Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["css"])(_templateObject2())); // Style the active item
 
 const ListItemStyleActive = Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["css"])(_templateObject3(), props => props.className === "active" && Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["css"])(_templateObject4())); // The style of items when all of them are displayed
 
-const ListItemStyleAll = Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["css"])(_templateObject5(), props => props.visbility === "visible" && Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["css"])(_templateObject6())); // The style of the active item when all items are displayed
+const ListItemStyleAll = Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["css"])(_templateObject5(), props => props.visibility === "visible" && Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["css"])(_templateObject6())); // The style of the active item when all items are displayed
 
-const ListItemStyleActiveWhenAllVisible = Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["css"])(_templateObject7(), props => props.visbility === "visible" && props.className === "active" && Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["css"])(_templateObject8())); // The style of the items
+const ListItemStyleActiveWhenAllVisible = Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["css"])(_templateObject7(), props => props.visibility === "visible" && props.className === "active" && Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["css"])(_templateObject8())); // The style of the items
 
 const ListItem = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].li(_templateObject9(), ListItemHideInvisible, ListItemStyleActive, ListItemStyleAll, ListItemStyleActiveWhenAllVisible);
 /* harmony default export */ __webpack_exports__["default"] = (ListItem);
@@ -3200,30 +3201,12 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_0__);
 // Sets a class name either to `active` or `inactive`
 // ... or to anything specified by props
-
-const Props = {
-  activeClassName: prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.string,
-  inactiveClassName: prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.string
-};
-const DefaultProps = {
-  activeClassName: "active",
-  inactiveClassName: "inactive"
-};
-
-const setClassName = props => {
-  const target = props.target,
-        index = props.index,
-        activeClassName = props.activeClassName,
-        inactiveClassName = props.inactiveClassName;
+const setClassName = (target, index, activeClassName = "active", inactiveClassName = "inactive") => {
   return index === target ? activeClassName : inactiveClassName;
 };
 
-setClassName.propTypes = Props;
-setClassName.defaultProps = DefaultProps;
 /* harmony default export */ __webpack_exports__["default"] = (setClassName);
 
 /***/ }),
@@ -3549,5 +3532,5 @@ module.exports = __webpack_require__(/*! /home/cs/work/inu-v2/react-src/src/inde
 
 /***/ })
 
-},[[0,"runtime~main",1]]]);
+},[[0,"runtime~main",0]]]);
 //# sourceMappingURL=main.chunk.js.map

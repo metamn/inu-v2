@@ -44,8 +44,8 @@ const markup = (data, props) => {
         target: activeCategory,
         index: edge.node.categoryId
       })}
-      visbility={setListItemVisibility({
-        target: true,
+      visibility={setListItemVisibility({
+        target: false,
         index: activeCategoryIcon
       })}
       onClick={() => categoryClickHandler(edge.node.categoryId)}
