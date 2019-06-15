@@ -81,6 +81,9 @@ const Home = () => {
 
   // Click on the thumbnails icon
   const thumbIconClickHandler = () => {
+    // On `Contact` we don't handle this click
+    if (displayMode === -2) return;
+
     displayMode === 1 ? setDisplayMode(0) : setDisplayMode(1);
     setActiveMenuToggleIcon(true);
   };
