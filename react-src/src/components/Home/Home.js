@@ -40,7 +40,12 @@ const Home = () => {
   const [activeCategory, setActiveCategory] = useState(0);
 
   // Which category dropdown icon is active
+  // - true: ChevronDown
   const [activeCategoryIcon, setActiveCategoryIcon] = useState(true);
+
+  // Which menu toggle icon is active
+  // - true: Menu
+  const [activeMenuToggleIcon, setActiveMenuToggleIcon] = useState(true);
 
   // Which slide is active
   const [activeSlide, setActiveSlide] = useState(0);
@@ -95,6 +100,11 @@ const Home = () => {
     setDisplayMode(0);
   };
 
+  // Click on the menu toggle icon
+  const menuToggleIconClickHandler = () => {
+    setActiveMenuToggleIcon(!activeMenuToggleIcon);
+  };
+
   // The different display modes
   const Display = () => {
     switch (displayMode) {
@@ -145,6 +155,8 @@ const Home = () => {
             thumbIconClickHandler={thumbIconClickHandler}
             sunIconClickHandler={toggleTheme}
             logoClickHandler={logoClickHandler}
+            activeMenuToggleIcon={activeMenuToggleIcon}
+            menuToggleIconClickHandler={menuToggleIconClickHandler}
           />
           <Display />
         </Container>

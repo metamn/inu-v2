@@ -679,32 +679,40 @@ const Home = () => {
         _useState2 = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_useState, 2),
         activeCategory = _useState2[0],
         setActiveCategory = _useState2[1]; // Which category dropdown icon is active
+  // - true: ChevronDown
 
 
   const _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])(true),
         _useState4 = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_useState3, 2),
         activeCategoryIcon = _useState4[0],
-        setActiveCategoryIcon = _useState4[1]; // Which slide is active
+        setActiveCategoryIcon = _useState4[1]; // Which menu toggle icon is active
+  // - true: Menu
 
 
-  const _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])(0),
+  const _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])(true),
         _useState6 = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_useState5, 2),
-        activeSlide = _useState6[0],
-        setActiveSlide = _useState6[1]; // How to display images
+        activeMenuToggleIcon = _useState6[0],
+        setActiveMenuToggleIcon = _useState6[1]; // Which slide is active
 
 
   const _useState7 = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])(0),
         _useState8 = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_useState7, 2),
-        displayMode = _useState8[0],
-        setDisplayMode = _useState8[1]; // Theming
+        activeSlide = _useState8[0],
+        setActiveSlide = _useState8[1]; // How to display images
+
+
+  const _useState9 = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])(0),
+        _useState10 = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_useState9, 2),
+        displayMode = _useState10[0],
+        setDisplayMode = _useState10[1]; // Theming
 
 
   const themeContext = Object(react__WEBPACK_IMPORTED_MODULE_2__["useContext"])(_themes_default_js__WEBPACK_IMPORTED_MODULE_6__["ThemeContext"]);
 
-  const _useState9 = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])(themeContext),
-        _useState10 = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_useState9, 2),
-        currentTheme = _useState10[0],
-        setCurrentTheme = _useState10[1]; // Click on a category
+  const _useState11 = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])(themeContext),
+        _useState12 = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_useState11, 2),
+        currentTheme = _useState12[0],
+        setCurrentTheme = _useState12[1]; // Click on a category
 
 
   const categoryClickHandler = index => {
@@ -747,6 +755,11 @@ const Home = () => {
     setActiveCategory(0);
     setActiveSlide(0);
     setDisplayMode(0);
+  }; // Click on the menu toggle icon
+
+
+  const menuToggleIconClickHandler = () => {
+    setActiveMenuToggleIcon(!activeMenuToggleIcon);
   }; // The different display modes
 
 
@@ -761,7 +774,7 @@ const Home = () => {
           setActiveSlide: setActiveSlide,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 103
+            lineNumber: 113
           },
           __self: undefined
         });
@@ -774,7 +787,7 @@ const Home = () => {
           thumbClickHandler: thumbClickHandler,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 114
+            lineNumber: 124
           },
           __self: undefined
         });
@@ -783,7 +796,7 @@ const Home = () => {
         return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Contact__WEBPACK_IMPORTED_MODULE_14__["default"], {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 121
+            lineNumber: 131
           },
           __self: undefined
         });
@@ -793,7 +806,7 @@ const Home = () => {
         return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Blank__WEBPACK_IMPORTED_MODULE_13__["default"], {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 124
+            lineNumber: 134
           },
           __self: undefined
         });
@@ -803,7 +816,7 @@ const Home = () => {
   return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_2___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Reset__WEBPACK_IMPORTED_MODULE_7__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 130
+      lineNumber: 140
     },
     __self: undefined
   }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_TypographicGrid__WEBPACK_IMPORTED_MODULE_8__["default"], {
@@ -814,21 +827,21 @@ const Home = () => {
     lineColor: "#666",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 131
+      lineNumber: 141
     },
     __self: undefined
   }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_themes_default_js__WEBPACK_IMPORTED_MODULE_6__["ThemeContext"].Provider, {
     value: currentTheme,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 138
+      lineNumber: 148
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Container, {
     theme: currentTheme.theme,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 139
+      lineNumber: 149
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Header__WEBPACK_IMPORTED_MODULE_10__["default"], {
@@ -839,15 +852,17 @@ const Home = () => {
     thumbIconClickHandler: thumbIconClickHandler,
     sunIconClickHandler: toggleTheme,
     logoClickHandler: logoClickHandler,
+    activeMenuToggleIcon: activeMenuToggleIcon,
+    menuToggleIconClickHandler: menuToggleIconClickHandler,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 140
+      lineNumber: 150
     },
     __self: undefined
   }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Display, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 149
+      lineNumber: 161
     },
     __self: undefined
   }))));
@@ -1431,10 +1446,31 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/esm/taggedTemplateLiteral */ "./node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/esm/taggedTemplateLiteral.js");
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var _Media__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Media */ "./src/components/Media/index.js");
 
+
+function _templateObject3() {
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["display: flex"]);
+
+  _templateObject3 = function () {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject2() {
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["display: none"]);
+
+  _templateObject2 = function () {
+    return data;
+  };
+
+  return data;
+}
 
 function _templateObject() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  width: calc(var(--lem) * 8);\n  height: var(--lem);\n  border-bottom: 1px solid;\n  transform: rotate(-65deg) translateX(calc(var(--lem) * -2));\n"]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  width: calc(var(--lem) * 8);\n  height: var(--lem);\n  border-bottom: 1px solid;\n  transform: rotate(-65deg) translateX(calc(var(--lem) * -2));\n\n  ", "\n  ", "\n"]);
 
   _templateObject = function () {
     return data;
@@ -1444,7 +1480,8 @@ function _templateObject() {
 }
 
 
-const Line = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject());
+
+const Line = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject(), _Media__WEBPACK_IMPORTED_MODULE_2__["default"].mobile(_templateObject2()), _Media__WEBPACK_IMPORTED_MODULE_2__["default"].tablet(_templateObject3()));
 /* harmony default export */ __webpack_exports__["default"] = (Line);
 
 /***/ }),
@@ -2134,8 +2171,39 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_icons_fi__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-icons/fi */ "./node_modules/react-icons/fi/index.esm.js");
 /* harmony import */ var _Icon__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../Icon */ "./src/components/Icon/index.js");
 /* harmony import */ var _Media__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../Media */ "./src/components/Media/index.js");
+/* harmony import */ var _helpers__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../helpers */ "./src/helpers/index.js");
 
 var _jsxFileName = "/home/cs/work/inu-v2/react-src/src/components/MenuToggleIcons/MenuToggleIcons.js";
+
+function _templateObject6() {
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n      display: none;\n    "]);
+
+  _templateObject6 = function () {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject5() {
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n      display: flex;\n    "]);
+
+  _templateObject5 = function () {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject4() {
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  ", ";\n\n  ", ";\n"]);
+
+  _templateObject4 = function () {
+    return data;
+  };
+
+  return data;
+}
 
 function _templateObject3() {
   const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["display: none"]);
@@ -2172,37 +2240,47 @@ function _templateObject() {
 
 
 
+
 const Container = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject(), _Media__WEBPACK_IMPORTED_MODULE_5__["default"].mobile(_templateObject2()), _Media__WEBPACK_IMPORTED_MODULE_5__["default"].tablet(_templateObject3()));
+const MenuIcon = Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject4(), props => props.className === "active" && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject5()), props => props.className === "inactive" && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject6()));
 
 const MenuToggleIcons = props => {
+  const activeMenuToggleIcon = props.activeMenuToggleIcon,
+        menuToggleIconClickHandler = props.menuToggleIconClickHandler;
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Container, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 15
+      lineNumber: 32
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Icon__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    as: MenuIcon,
+    className: Object(_helpers__WEBPACK_IMPORTED_MODULE_6__["setClassName"])(true, activeMenuToggleIcon),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16
+      lineNumber: 33
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_icons_fi__WEBPACK_IMPORTED_MODULE_3__["FiMenu"], {
+    onClick: () => menuToggleIconClickHandler(),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 17
+      lineNumber: 34
     },
     __self: undefined
   })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Icon__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    as: MenuIcon,
+    className: Object(_helpers__WEBPACK_IMPORTED_MODULE_6__["setClassName"])(false, activeMenuToggleIcon),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19
+      lineNumber: 36
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_icons_fi__WEBPACK_IMPORTED_MODULE_3__["FiX"], {
+    onClick: () => menuToggleIconClickHandler(),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20
+      lineNumber: 37
     },
     __self: undefined
   })));
