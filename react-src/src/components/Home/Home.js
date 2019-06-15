@@ -60,6 +60,7 @@ const Home = () => {
   const categoryClickHandler = index => {
     setActiveCategory(index);
     setActiveCategoryIcon(true);
+    setActiveMenuToggleIcon(true);
 
     if (index === -2) {
       setDisplayMode(-2);
