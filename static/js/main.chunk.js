@@ -512,38 +512,8 @@ __webpack_require__.r(__webpack_exports__);
 
 var _jsxFileName = "/home/cs/work/inu-v2/react-src/src/components/Header/Header.js";
 
-function _templateObject4() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  display: flex;\n  align-items: flex-start;\n\n  ", "\n"]);
-
-  _templateObject4 = function () {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject3() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n\t  ", " {\n\t\t  display: none;\n\t  }\n\n\t  ", " {\n\t\t  display: none;\n\t\t  background: black;\n\t  }\n\t"]);
-
-  _templateObject3 = function () {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject2() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  ", "\n"]);
-
-  _templateObject2 = function () {
-    return data;
-  };
-
-  return data;
-}
-
 function _templateObject() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])([""]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  display: flex;\n  align-items: flex-start;\n"]);
 
   _templateObject = function () {
     return data;
@@ -560,9 +530,7 @@ function _templateObject() {
 
 
 
-const StyledHeaderIcons = Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["default"])(_HeaderIcons__WEBPACK_IMPORTED_MODULE_7__["default"])(_templateObject());
-const ContainerMobile = Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject2(), _Media__WEBPACK_IMPORTED_MODULE_8__["default"].mobile(_templateObject3(), _Line__WEBPACK_IMPORTED_MODULE_4__["default"], StyledHeaderIcons));
-const Container = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].header(_templateObject4(), ContainerMobile);
+const Container = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].header(_templateObject());
 
 const Header = props => {
   const thumbIconClickHandler = props.thumbIconClickHandler,
@@ -571,38 +539,38 @@ const Header = props => {
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Container, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41
+      lineNumber: 24
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Logo__WEBPACK_IMPORTED_MODULE_3__["default"], {
     logoClickHandler: logoClickHandler,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 42
+      lineNumber: 25
     },
     __self: undefined
   }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Line__WEBPACK_IMPORTED_MODULE_4__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 43
+      lineNumber: 26
     },
     __self: undefined
   }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Menu__WEBPACK_IMPORTED_MODULE_5__["default"], Object.assign({}, props, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 44
+      lineNumber: 27
     },
     __self: undefined
   })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_MenuIcons__WEBPACK_IMPORTED_MODULE_6__["default"], Object.assign({}, props, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45
+      lineNumber: 28
     },
     __self: undefined
   })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_HeaderIcons__WEBPACK_IMPORTED_MODULE_7__["default"], Object.assign({}, props, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 46
+      lineNumber: 29
     },
     __self: undefined
   })));
@@ -3637,5 +3605,5 @@ module.exports = __webpack_require__(/*! /home/cs/work/inu-v2/react-src/src/inde
 
 /***/ })
 
-},[[0,"runtime~main",1]]]);
+},[[0,"runtime~main",0]]]);
 //# sourceMappingURL=main.chunk.js.map
