@@ -1270,7 +1270,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  background-color: lightgray;\n  width: 150px;\n  height: 150px;\n\n  ", ";\n\n  ", ";\n\n  ", ";\n"]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  background-color: lightgray;\n  width: 150px;\n  height: 150px;\n\n  ", ";\n\n  background-color: red;\n\n  ", ";\n\n  ", ";\n"]);
 
   _templateObject = function () {
     return data;
@@ -1297,7 +1297,7 @@ const ImagePlaceholder = props => {
     backgroundColor: backgroundColor,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 39
+      lineNumber: 41
     },
     __self: undefined
   }));
@@ -1343,8 +1343,18 @@ __webpack_require__.r(__webpack_exports__);
 
 var _jsxFileName = "/home/cs/work/inu-v2/react-src/src/components/ImageResponsive/ImageResponsive.js";
 
-function _templateObject3() {
+function _templateObject4() {
   const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n      max-height: ", ";\n    "]);
+
+  _templateObject4 = function () {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject3() {
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n      max-width: ", ";\n    "]);
 
   _templateObject3 = function () {
     return data;
@@ -1354,7 +1364,7 @@ function _templateObject3() {
 }
 
 function _templateObject2() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n      max-width: ", ";\n    "]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n      color: ", ";\n    "]);
 
   _templateObject2 = function () {
     return data;
@@ -1364,7 +1374,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  width: auto;\n  height: auto;\n  cursor: pointer;\n\n  ", ";\n\n  ", ";\n"]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  width: auto;\n  height: auto;\n  cursor: pointer;\n\n  // Do not show the alt title while loading the image\n  ", ";\n\n  ", ";\n\n  ", ";\n"]);
 
   _templateObject = function () {
     return data;
@@ -1378,7 +1388,7 @@ function _templateObject() {
 
 
 
-const Image = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].img(_templateObject(), props => props.width && Object(styled_components__WEBPACK_IMPORTED_MODULE_3__["css"])(_templateObject2(), props.width), props => props.height && Object(styled_components__WEBPACK_IMPORTED_MODULE_3__["css"])(_templateObject3(), props.height));
+const Image = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].img(_templateObject(), props => props.color && Object(styled_components__WEBPACK_IMPORTED_MODULE_3__["css"])(_templateObject2(), props.color), props => props.width && Object(styled_components__WEBPACK_IMPORTED_MODULE_3__["css"])(_templateObject3(), props.width), props => props.height && Object(styled_components__WEBPACK_IMPORTED_MODULE_3__["css"])(_templateObject4(), props.height));
 
 const ImageResponsive = props => {
   const title = props.title,
@@ -1405,7 +1415,7 @@ const ImageResponsive = props => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 49
+      lineNumber: 56
     },
     __self: undefined
   }, (src, loading, srcSetData) => {
@@ -1417,7 +1427,7 @@ const ImageResponsive = props => {
       backgroundColor: backgroundColor,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 54
+        lineNumber: 61
       },
       __self: undefined
     }) : react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Image, {
@@ -1426,10 +1436,11 @@ const ImageResponsive = props => {
       alt: title,
       width: width,
       height: height,
+      color: backgroundColor,
       onClick: () => imageClickHandler(index, numberOfSlides),
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 60
+        lineNumber: 67
       },
       __self: undefined
     });
@@ -2989,10 +3000,23 @@ const Slider = props => {
         setActiveSlide = props.setActiveSlide; // Refs to each slide
 
   let refs = []; // Scroll the active slide into the view
+  // scrollTo:
+  // - ???
+  //
+  // scrollIntoView:
+  // - when `behavior` == 'smooth' things get tricky:
+  //  - indifferent how you set `block` or `inline` the slider sometimes is flicking sometimes is not
+  //  - on Chrome works differently than in Firefox
+  //  - it is perhaps better to use 'auto' instead of 'smooth'
+  //  - and do the animation in the image / placeholder
 
   Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(() => {
     if (refs && refs[activeSlide] && refs[activeSlide].current) {
-      refs[activeSlide].current.scrollIntoView();
+      refs[activeSlide].current.scrollIntoView({
+        behavior: "auto",
+        block: "start",
+        inline: "nearest"
+      });
     }
   }, [activeSlide, refs]); // Touch scroll event handler
 
@@ -3044,13 +3068,13 @@ const Slider = props => {
     width: width,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 179
+      lineNumber: 192
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Slides, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 180
+      lineNumber: 193
     },
     __self: undefined
   }, slides));
@@ -3927,5 +3951,5 @@ module.exports = __webpack_require__(/*! /home/cs/work/inu-v2/react-src/src/inde
 
 /***/ })
 
-},[[0,"runtime~main",0]]]);
+},[[0,"runtime~main",1]]]);
 //# sourceMappingURL=main.chunk.js.map

@@ -14,6 +14,8 @@ const Placeholder = styled.div`
       background-color: ${props.backgroundColor};
     `};
 
+  background-color: red;
+
   ${props =>
     props.width &&
     css`

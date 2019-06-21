@@ -10,6 +10,13 @@ const Image = styled.img`
   height: auto;
   cursor: pointer;
 
+  // Do not show the alt title while loading the image
+  ${props =>
+    props.color &&
+    css`
+      color: ${props.color};
+    `};
+
   ${props =>
     props.width &&
     css`
@@ -63,6 +70,7 @@ const ImageResponsive = props => {
             alt={title}
             width={width}
             height={height}
+            color={backgroundColor}
             onClick={() => imageClickHandler(index, numberOfSlides)}
           />
         );

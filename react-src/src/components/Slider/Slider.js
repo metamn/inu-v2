@@ -117,10 +117,23 @@ const Slider = props => {
   let refs = [];
 
   // Scroll the active slide into the view
+  // scrollTo:
+  // - ???
+  //
+  // scrollIntoView:
+  // - when `behavior` == 'smooth' things get tricky:
+  //  - indifferent how you set `block` or `inline` the slider sometimes is flicking sometimes is not
+  //  - on Chrome works differently than in Firefox
+  //  - it is perhaps better to use 'auto' instead of 'smooth'
+  //  - and do the animation in the image / placeholder
   useEffect(
     () => {
       if (refs && refs[activeSlide] && refs[activeSlide].current) {
-        refs[activeSlide].current.scrollIntoView();
+        refs[activeSlide].current.scrollIntoView({
+          behavior: "auto",
+          block: "start",
+          inline: "nearest"
+        });
       }
     },
     [activeSlide, refs]
