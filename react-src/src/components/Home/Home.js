@@ -30,7 +30,7 @@ const Container = styled.div`
   font-family: ${props => props.theme.fonts.default};
 
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
 
   min-height: 100vh;
 

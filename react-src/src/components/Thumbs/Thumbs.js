@@ -9,7 +9,7 @@ import Image from "../Image";
 
 const Container = styled.section`
   width: 100%;
-  margin-top: calc(var(--lem) * 2);
+  margin-top: calc(var(--lem) * 3);
 
   display: flex;
   flex-wrap: wrap;

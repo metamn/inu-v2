@@ -3,6 +3,7 @@ import styled, { css } from "styled-components";
 import ProgressiveImage from "react-progressive-image";
 
 import ImagePlaceholder from "../ImagePlaceholder";
+import Media from "../Media";
 
 const ImageActive = css`
   border: 1px solid;
@@ -15,11 +16,17 @@ const Image = styled.img`
 
   padding: calc(var(--lem) / 1);
   border: 1px solid transparent;
+  margin-right: 3px;
 
   ${props =>
     props.maxWidth &&
     css`
-      max-width: ${props.maxWidth};
+      ${Media.mobile`
+  	  	max-width: ${props.maxWidth};
+  	  `};
+      ${Media.tablet`
+		  max-width: calc(${props.maxWidth} + var(--lem) * 2 + 2px);
+		  `};
     `}
 
   &:hover {

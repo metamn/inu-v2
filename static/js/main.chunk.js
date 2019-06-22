@@ -780,7 +780,7 @@ __webpack_require__.r(__webpack_exports__);
 var _jsxFileName = "/home/cs/work/inu-v2/react-src/src/components/Home/Home.js";
 
 function _templateObject() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_1__["default"])(["\n  background: ", ";\n  color: ", ";\n  font-family: ", ";\n\n  display: flex;\n  flex-wrap: wrap;\n\n  min-height: 100vh;\n\n  ", "\n"]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_1__["default"])(["\n  background: ", ";\n  color: ", ";\n  font-family: ", ";\n\n  display: flex;\n  flex-direction: column;\n\n  min-height: 100vh;\n\n  ", "\n"]);
 
   _templateObject = function () {
     return data;
@@ -1484,11 +1484,32 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_progressive_image__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-progressive-image */ "./node_modules/react-progressive-image/dist.js");
 /* harmony import */ var react_progressive_image__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_progressive_image__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _ImagePlaceholder__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../ImagePlaceholder */ "./src/components/ImagePlaceholder/index.js");
+/* harmony import */ var _Media__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../Media */ "./src/components/Media/index.js");
 
 var _jsxFileName = "/home/cs/work/inu-v2/react-src/src/components/ImageThumb/ImageThumb.js";
 
-function _templateObject4() {
+function _templateObject6() {
   const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n      ", "\n      cursor: default;\n    "]);
+
+  _templateObject6 = function () {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject5() {
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n\t\t  max-width: calc(", " + var(--lem) * 2 + 2px);\n\t\t  "]);
+
+  _templateObject5 = function () {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject4() {
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  \t  \tmax-width: ", ";\n  \t  "]);
 
   _templateObject4 = function () {
     return data;
@@ -1498,7 +1519,7 @@ function _templateObject4() {
 }
 
 function _templateObject3() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n      max-width: ", ";\n    "]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n      ", ";\n      ", ";\n    "]);
 
   _templateObject3 = function () {
     return data;
@@ -1508,7 +1529,7 @@ function _templateObject3() {
 }
 
 function _templateObject2() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  width: 100%;\n  height: auto;\n  cursor: pointer;\n\n  padding: calc(var(--lem) / 1);\n  border: 1px solid transparent;\n\n  ", "\n\n  &:hover {\n    ", "\n  }\n\n  ", "\n"]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  width: 100%;\n  height: auto;\n  cursor: pointer;\n\n  padding: calc(var(--lem) / 1);\n  border: 1px solid transparent;\n  margin-right: 3px;\n\n  ", "\n\n  &:hover {\n    ", "\n  }\n\n  ", "\n"]);
 
   _templateObject2 = function () {
     return data;
@@ -1531,8 +1552,9 @@ function _templateObject() {
 
 
 
+
 const ImageActive = Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject());
-const Image = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].img(_templateObject2(), props => props.maxWidth && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject3(), props.maxWidth), ImageActive, props => props.isActive && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject4(), ImageActive));
+const Image = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].img(_templateObject2(), props => props.maxWidth && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject3(), _Media__WEBPACK_IMPORTED_MODULE_5__["default"].mobile(_templateObject4(), props.maxWidth), _Media__WEBPACK_IMPORTED_MODULE_5__["default"].tablet(_templateObject5(), props.maxWidth)), ImageActive, props => props.isActive && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject6(), ImageActive));
 
 const ImageThumb = props => {
   const title = props.title,
@@ -1552,7 +1574,7 @@ const ImageThumb = props => {
     placeholder: "",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 48
+      lineNumber: 55
     },
     __self: undefined
   }, (thumbSrc, loading) => {
@@ -1561,7 +1583,7 @@ const ImageThumb = props => {
       height: thumbHeight,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 51
+        lineNumber: 58
       },
       __self: undefined
     }) : react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Image, {
@@ -1572,7 +1594,7 @@ const ImageThumb = props => {
       isActive: thumbisActive,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 53
+        lineNumber: 60
       },
       __self: undefined
     });
@@ -3227,7 +3249,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_1__["default"])(["\n  width: 100%;\n  margin-top: calc(var(--lem) * 2);\n\n  display: flex;\n  flex-wrap: wrap;\n"]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_1__["default"])(["\n  width: 100%;\n  margin-top: calc(var(--lem) * 3);\n\n  display: flex;\n  flex-wrap: wrap;\n"]);
 
   _templateObject = function () {
     return data;
@@ -3952,5 +3974,5 @@ module.exports = __webpack_require__(/*! /home/cs/work/inu-v2/react-src/src/inde
 
 /***/ })
 
-},[[0,"runtime~main",0]]]);
+},[[0,"runtime~main",1]]]);
 //# sourceMappingURL=main.chunk.js.map
