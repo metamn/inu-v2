@@ -1,5 +1,6 @@
 import React from "react";
 import { useQuery as useQueryApollo } from "react-apollo-hooks";
+import Placeholder from "../components/Placeholder";
 
 const useQuery = (query, markup, variables = {}, queryProps = {}) => {
   const { data, error, loading } = useQueryApollo(query, {
@@ -7,7 +8,7 @@ const useQuery = (query, markup, variables = {}, queryProps = {}) => {
   });
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <Placeholder type="text" />;
   }
 
   if (error) {
