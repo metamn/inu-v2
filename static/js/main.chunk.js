@@ -1494,7 +1494,7 @@ const ImageResponsive = props => {
   const backgroundColor = theme.colors.background;
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_progressive_image__WEBPACK_IMPORTED_MODULE_2___default.a, {
     src: src,
-    placeholder: "/react-wp/wp-content/themes/inu-v2/placeholder.png",
+    placeholder: "",
     delay: 150,
     srcSetData: {
       srcSet: srcSet
@@ -1504,20 +1504,30 @@ const ImageResponsive = props => {
       lineNumber: 58
     },
     __self: undefined
-  }, (src, loading, srcSetData) => react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Image, {
-    src: src,
-    srcSet: srcSetData.srcSet,
-    alt: title,
-    width: width,
-    height: height,
-    color: backgroundColor,
-    onClick: () => imageClickHandler(index, numberOfSlides),
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 65
-    },
-    __self: undefined
-  }));
+  }, (src, loading, srcSetData) => {
+    return loading ? react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_ImagePlaceholder__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      width: width,
+      height: height,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 66
+      },
+      __self: undefined
+    }) : react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Image, {
+      src: src,
+      srcSet: srcSetData.srcSet,
+      alt: title,
+      width: width,
+      height: height,
+      color: backgroundColor,
+      onClick: () => imageClickHandler(index, numberOfSlides),
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 68
+      },
+      __self: undefined
+    });
+  });
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (ImageResponsive);
@@ -1645,24 +1655,34 @@ const ImageThumb = props => {
   const thumbisActive = index === activeSlide;
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_progressive_image__WEBPACK_IMPORTED_MODULE_3___default.a, {
     src: thumbSrc,
-    placeholder: "/react-wp/wp-content/themes/inu-v2/arrow-right.png",
+    placeholder: "",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 57
     },
     __self: undefined
-  }, (thumbSrc, loading) => react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Image, {
-    src: thumbSrc,
-    alt: title,
-    maxWidth: thumbWidth,
-    onClick: () => thumbClickHandler(index),
-    isActive: thumbisActive,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 62
-    },
-    __self: undefined
-  }));
+  }, (thumbSrc, loading) => {
+    return loading ? react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_ImagePlaceholder__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      width: thumbWidth,
+      height: thumbHeight,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 60
+      },
+      __self: undefined
+    }) : react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Image, {
+      src: thumbSrc,
+      alt: title,
+      maxWidth: thumbWidth,
+      onClick: () => thumbClickHandler(index),
+      isActive: thumbisActive,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 62
+      },
+      __self: undefined
+    });
+  });
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (ImageThumb);
@@ -4144,5 +4164,5 @@ module.exports = __webpack_require__(/*! /home/cs/work/inu-v2/react-src/src/inde
 
 /***/ })
 
-},[[0,"runtime~main",0]]]);
+},[[0,"runtime~main",1]]]);
 //# sourceMappingURL=main.chunk.js.map
