@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react";
 import WebFont from "webfontloader";
 import styled from "styled-components";
+import { Helmet } from "react-helmet";
 
 import { switchThemeFrom, ThemeContext } from "../../themes/default.js";
 
@@ -158,6 +159,9 @@ const Home = () => {
         numberOfVerticalLines={100}
         lineColor="#666"
       />
+      <Helmet>
+        <meta name="description" content="Portfolio" />
+      </Helmet>
       <ThemeContext.Provider value={currentTheme}>
         <Container theme={currentTheme.theme}>
           <Header

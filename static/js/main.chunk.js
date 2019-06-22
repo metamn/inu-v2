@@ -768,15 +768,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var webfontloader__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! webfontloader */ "./node_modules/webfontloader/webfontloader.js");
 /* harmony import */ var webfontloader__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(webfontloader__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-/* harmony import */ var _themes_default_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../themes/default.js */ "./src/themes/default.js");
-/* harmony import */ var _Reset__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../Reset */ "./src/components/Reset/index.js");
-/* harmony import */ var _TypographicGrid__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../TypographicGrid */ "./src/components/TypographicGrid/index.js");
-/* harmony import */ var _Spacing__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../Spacing */ "./src/components/Spacing/index.js");
-/* harmony import */ var _Header__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../Header */ "./src/components/Header/index.js");
-/* harmony import */ var _Slider__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../Slider */ "./src/components/Slider/index.js");
-/* harmony import */ var _Thumbs__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../Thumbs */ "./src/components/Thumbs/index.js");
-/* harmony import */ var _Blank__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../Blank */ "./src/components/Blank/index.js");
-/* harmony import */ var _Contact__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../Contact */ "./src/components/Contact/index.js");
+/* harmony import */ var react_helmet__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-helmet */ "./node_modules/react-helmet/lib/Helmet.js");
+/* harmony import */ var react_helmet__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_helmet__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _themes_default_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../themes/default.js */ "./src/themes/default.js");
+/* harmony import */ var _Reset__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../Reset */ "./src/components/Reset/index.js");
+/* harmony import */ var _TypographicGrid__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../TypographicGrid */ "./src/components/TypographicGrid/index.js");
+/* harmony import */ var _Spacing__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../Spacing */ "./src/components/Spacing/index.js");
+/* harmony import */ var _Header__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../Header */ "./src/components/Header/index.js");
+/* harmony import */ var _Slider__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../Slider */ "./src/components/Slider/index.js");
+/* harmony import */ var _Thumbs__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../Thumbs */ "./src/components/Thumbs/index.js");
+/* harmony import */ var _Blank__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../Blank */ "./src/components/Blank/index.js");
+/* harmony import */ var _Contact__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../Contact */ "./src/components/Contact/index.js");
 
 
 var _jsxFileName = "/home/cs/work/inu-v2/react-src/src/components/Home/Home.js";
@@ -803,12 +805,13 @@ function _templateObject() {
 
 
 
+
 webfontloader__WEBPACK_IMPORTED_MODULE_3___default.a.load({
   google: {
     families: ["Quicksand"]
   }
 });
-const Container = styled_components__WEBPACK_IMPORTED_MODULE_4__["default"].div(_templateObject(), props => props.theme.colors.background, props => props.theme.colors.text, props => props.theme.fonts.default, Object(_Spacing__WEBPACK_IMPORTED_MODULE_8__["default"])({
+const Container = styled_components__WEBPACK_IMPORTED_MODULE_4__["default"].div(_templateObject(), props => props.theme.colors.background, props => props.theme.colors.text, props => props.theme.fonts.default, Object(_Spacing__WEBPACK_IMPORTED_MODULE_9__["default"])({
   property: "padding"
 }));
 
@@ -846,7 +849,7 @@ const Home = () => {
         setDisplayMode = _useState10[1]; // Theming
 
 
-  const themeContext = Object(react__WEBPACK_IMPORTED_MODULE_2__["useContext"])(_themes_default_js__WEBPACK_IMPORTED_MODULE_5__["ThemeContext"]);
+  const themeContext = Object(react__WEBPACK_IMPORTED_MODULE_2__["useContext"])(_themes_default_js__WEBPACK_IMPORTED_MODULE_6__["ThemeContext"]);
 
   const _useState11 = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])(themeContext),
         _useState12 = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_useState11, 2),
@@ -883,7 +886,7 @@ const Home = () => {
 
 
   const toggleTheme = () => {
-    const newTheme = Object(_themes_default_js__WEBPACK_IMPORTED_MODULE_5__["switchThemeFrom"])(currentTheme.mode);
+    const newTheme = Object(_themes_default_js__WEBPACK_IMPORTED_MODULE_6__["switchThemeFrom"])(currentTheme.mode);
     setCurrentTheme(newTheme);
 
     if (!activeMenuToggleIcon) {
@@ -920,7 +923,7 @@ const Home = () => {
   const Display = () => {
     switch (displayMode) {
       case 0:
-        return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Slider__WEBPACK_IMPORTED_MODULE_10__["default"], {
+        return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Slider__WEBPACK_IMPORTED_MODULE_11__["default"], {
           width: "90vw",
           height: "70vh",
           category: activeCategory,
@@ -928,51 +931,51 @@ const Home = () => {
           setActiveSlide: setActiveSlide,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 127
+            lineNumber: 128
           },
           __self: undefined
         });
 
       case 1:
-        return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Thumbs__WEBPACK_IMPORTED_MODULE_11__["default"], {
+        return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Thumbs__WEBPACK_IMPORTED_MODULE_12__["default"], {
           category: activeCategory,
           activeSlide: activeSlide,
           thumbClickHandler: thumbClickHandler,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 137
+            lineNumber: 138
           },
           __self: undefined
         });
 
       case -2:
-        return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Contact__WEBPACK_IMPORTED_MODULE_13__["default"], {
+        return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Contact__WEBPACK_IMPORTED_MODULE_14__["default"], {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 144
+            lineNumber: 145
           },
           __self: undefined
         });
 
       case 2:
       default:
-        return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Blank__WEBPACK_IMPORTED_MODULE_12__["default"], {
+        return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Blank__WEBPACK_IMPORTED_MODULE_13__["default"], {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 147
+            lineNumber: 148
           },
           __self: undefined
         });
     }
   };
 
-  return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_2___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Reset__WEBPACK_IMPORTED_MODULE_6__["default"], {
+  return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_2___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Reset__WEBPACK_IMPORTED_MODULE_7__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 153
+      lineNumber: 154
     },
     __self: undefined
-  }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_TypographicGrid__WEBPACK_IMPORTED_MODULE_7__["default"], {
+  }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_TypographicGrid__WEBPACK_IMPORTED_MODULE_8__["default"], {
     displayVerticalRhytm: false,
     displayHorizontalRhytm: false,
     numberOfHorizontalLines: 100,
@@ -980,24 +983,38 @@ const Home = () => {
     lineColor: "#666",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 154
+      lineNumber: 155
     },
     __self: undefined
-  }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_themes_default_js__WEBPACK_IMPORTED_MODULE_5__["ThemeContext"].Provider, {
+  }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react_helmet__WEBPACK_IMPORTED_MODULE_5__["Helmet"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 162
+    },
+    __self: undefined
+  }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("meta", {
+    name: "description",
+    content: "Portfolio",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 163
+    },
+    __self: undefined
+  })), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_themes_default_js__WEBPACK_IMPORTED_MODULE_6__["ThemeContext"].Provider, {
     value: currentTheme,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 161
+      lineNumber: 165
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Container, {
     theme: currentTheme.theme,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 162
+      lineNumber: 166
     },
     __self: undefined
-  }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Header__WEBPACK_IMPORTED_MODULE_9__["default"], {
+  }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Header__WEBPACK_IMPORTED_MODULE_10__["default"], {
     activeCategory: activeCategory,
     categoryClickHandler: categoryClickHandler,
     activeCategoryIcon: activeCategoryIcon,
@@ -1009,13 +1026,13 @@ const Home = () => {
     menuToggleIconClickHandler: menuToggleIconClickHandler,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 163
+      lineNumber: 167
     },
     __self: undefined
   }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Display, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 174
+      lineNumber: 178
     },
     __self: undefined
   }))));
@@ -4072,5 +4089,5 @@ module.exports = __webpack_require__(/*! /home/cs/work/inu-v2/react-src/src/inde
 
 /***/ })
 
-},[[0,"runtime~main",0]]]);
+},[[0,"runtime~main",1]]]);
 //# sourceMappingURL=main.chunk.js.map
