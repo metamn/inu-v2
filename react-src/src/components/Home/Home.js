@@ -2,11 +2,7 @@ import React, { useState, useContext } from "react";
 import WebFont from "webfontloader";
 import styled from "styled-components";
 
-import {
-  getTheme,
-  switchThemeFrom,
-  ThemeContext
-} from "../../themes/default.js";
+import { switchThemeFrom, ThemeContext } from "../../themes/default.js";
 
 import Reset from "../Reset";
 import TypographicGrid from "../TypographicGrid";
@@ -136,7 +132,6 @@ const Home = () => {
             setActiveSlide={setActiveSlide}
           />
         );
-        break;
       case 1:
         return (
           <Thumbs

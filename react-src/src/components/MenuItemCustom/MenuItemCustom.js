@@ -1,11 +1,8 @@
 import React from "react";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 import List from "../List";
-import ListItem, {
-  setListItemActive,
-  setListItemVisibility
-} from "../ListItem";
+import ListItem, { setListItemActive } from "../ListItem";
 import { getListItemVisibility } from "../Categories";
 
 const Container = styled.nav``;

@@ -28,11 +28,11 @@ const Placeholder = styled.div`
 `;
 
 const ImagePlaceholder = props => {
-  let { backgroundColor } = props;
+  const themeContext = useContext(ThemeContext);
+  const { theme } = themeContext;
 
+  let { backgroundColor } = props;
   if (!backgroundColor) {
-    const themeContext = useContext(ThemeContext);
-    const { theme } = themeContext;
     backgroundColor = theme.colors.placeholder;
   }
 

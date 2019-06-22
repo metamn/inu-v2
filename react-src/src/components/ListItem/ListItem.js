@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import styled, { css } from "styled-components";
-import { stringify } from "flatted";
 
 import { ThemeContext } from "../../themes/default.js";
 import { setClassName } from "../../helpers";

@@ -7,7 +7,7 @@ import List from "../List";
 import Slide from "../Slide";
 import Post from "../Post";
 
-const Container = styled.section`
+const Container = styled.main`
   margin-top: calc(var(--lem) * 2);
 
   ${props =>

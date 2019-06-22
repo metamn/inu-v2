@@ -928,11 +928,10 @@ const Home = () => {
           setActiveSlide: setActiveSlide,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 131
+            lineNumber: 127
           },
           __self: undefined
         });
-        break;
 
       case 1:
         return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Thumbs__WEBPACK_IMPORTED_MODULE_11__["default"], {
@@ -941,7 +940,7 @@ const Home = () => {
           thumbClickHandler: thumbClickHandler,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 142
+            lineNumber: 137
           },
           __self: undefined
         });
@@ -950,7 +949,7 @@ const Home = () => {
         return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Contact__WEBPACK_IMPORTED_MODULE_13__["default"], {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 149
+            lineNumber: 144
           },
           __self: undefined
         });
@@ -960,7 +959,7 @@ const Home = () => {
         return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Blank__WEBPACK_IMPORTED_MODULE_12__["default"], {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 152
+            lineNumber: 147
           },
           __self: undefined
         });
@@ -970,7 +969,7 @@ const Home = () => {
   return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_2___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Reset__WEBPACK_IMPORTED_MODULE_6__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 158
+      lineNumber: 153
     },
     __self: undefined
   }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_TypographicGrid__WEBPACK_IMPORTED_MODULE_7__["default"], {
@@ -981,21 +980,21 @@ const Home = () => {
     lineColor: "#666",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 159
+      lineNumber: 154
     },
     __self: undefined
   }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_themes_default_js__WEBPACK_IMPORTED_MODULE_5__["ThemeContext"].Provider, {
     value: currentTheme,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 166
+      lineNumber: 161
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Container, {
     theme: currentTheme.theme,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 167
+      lineNumber: 162
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Header__WEBPACK_IMPORTED_MODULE_9__["default"], {
@@ -1010,13 +1009,13 @@ const Home = () => {
     menuToggleIconClickHandler: menuToggleIconClickHandler,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 168
+      lineNumber: 163
     },
     __self: undefined
   }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Display, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 179
+      lineNumber: 174
     },
     __self: undefined
   }))));
@@ -1287,11 +1286,11 @@ function _templateObject() {
 const Placeholder = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject(), props => props.backgroundColor && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject2(), props.backgroundColor), props => props.width && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject3(), props.width), props => props.height && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject4(), props.height));
 
 const ImagePlaceholder = props => {
+  const themeContext = Object(react__WEBPACK_IMPORTED_MODULE_1__["useContext"])(_themes_default_js__WEBPACK_IMPORTED_MODULE_3__["ThemeContext"]);
+  const theme = themeContext.theme;
   let backgroundColor = props.backgroundColor;
 
   if (!backgroundColor) {
-    const themeContext = Object(react__WEBPACK_IMPORTED_MODULE_1__["useContext"])(_themes_default_js__WEBPACK_IMPORTED_MODULE_3__["ThemeContext"]);
-    const theme = themeContext.theme;
     backgroundColor = theme.colors.placeholder;
   }
 
@@ -1750,9 +1749,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-/* harmony import */ var flatted__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! flatted */ "./node_modules/flatted/esm/index.js");
-/* harmony import */ var _themes_default_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../themes/default.js */ "./src/themes/default.js");
-/* harmony import */ var _helpers__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../helpers */ "./src/helpers/index.js");
+/* harmony import */ var _themes_default_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../themes/default.js */ "./src/themes/default.js");
+/* harmony import */ var _helpers__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../helpers */ "./src/helpers/index.js");
 
 var _jsxFileName = "/home/cs/work/inu-v2/react-src/src/components/ListItem/ListItem.js";
 
@@ -1879,20 +1877,19 @@ function _templateObject() {
 
 
 
-
  // Sets the `active` classname for a list item
 
 const setListItemActive = props => {
   const target = props.target,
         index = props.index;
-  return Object(_helpers__WEBPACK_IMPORTED_MODULE_5__["setClassName"])(target, index);
+  return Object(_helpers__WEBPACK_IMPORTED_MODULE_4__["setClassName"])(target, index);
 }; // Sets the visbility of a list item
 
 
 const setListItemVisibility = props => {
   const target = props.target,
         index = props.index;
-  return Object(_helpers__WEBPACK_IMPORTED_MODULE_5__["setClassName"])(target, index, "visible", "invisible");
+  return Object(_helpers__WEBPACK_IMPORTED_MODULE_4__["setClassName"])(target, index, "visible", "invisible");
 }; // Hide invisible items
 
 
@@ -1911,14 +1908,14 @@ const ListItemStyle = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].
 
 const ListItem = props => {
   const children = props.children;
-  const themeContext = Object(react__WEBPACK_IMPORTED_MODULE_1__["useContext"])(_themes_default_js__WEBPACK_IMPORTED_MODULE_4__["ThemeContext"]);
+  const themeContext = Object(react__WEBPACK_IMPORTED_MODULE_1__["useContext"])(_themes_default_js__WEBPACK_IMPORTED_MODULE_3__["ThemeContext"]);
   const theme = themeContext.theme;
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(ListItemStyle, Object.assign({
     theme: theme
   }, props, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 99
+      lineNumber: 98
     },
     __self: undefined
   }), children);
@@ -2281,13 +2278,13 @@ const MenuItemCustom = props => {
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Container, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38
+      lineNumber: 35
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_List__WEBPACK_IMPORTED_MODULE_3__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 39
+      lineNumber: 36
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_ListItem__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -2301,7 +2298,7 @@ const MenuItemCustom = props => {
     onClick: () => categoryClickHandler(index),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 40
+      lineNumber: 37
     },
     __self: undefined
   }, menuItemText)));
@@ -3064,7 +3061,7 @@ function _templateObject() {
 
 
 
-const Container = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].section(_templateObject(), props => props.width && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject2(), props.width)); // Original idea:
+const Container = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].main(_templateObject(), props => props.width && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject2(), props.width)); // Original idea:
 // - https://nolanlawson.com/2019/02/10/building-a-modern-carousel-with-css-scroll-snap-smooth-scrolling-and-pinch-zoom/
 
 const Slides = Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["default"])(_List__WEBPACK_IMPORTED_MODULE_5__["default"])(_templateObject3());
@@ -3882,10 +3879,17 @@ var _jsxFileName = "/home/cs/work/inu-v2/react-src/src/index.js";
 
 
 
+
+if (true) {
+  var axe = __webpack_require__(/*! react-axe */ "./node_modules/react-axe/index.js");
+
+  axe(react__WEBPACK_IMPORTED_MODULE_0___default.a, react_dom__WEBPACK_IMPORTED_MODULE_1___default.a, 1000);
+}
+
 react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_App__WEBPACK_IMPORTED_MODULE_2__["default"], {
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 6
+    lineNumber: 11
   },
   __self: undefined
 }), document.getElementById("root")); // If you want your app to work offline and load faster, you can change

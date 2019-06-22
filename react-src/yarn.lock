@@ -1892,6 +1892,10 @@ aws4@^1.8.0:
   version "1.8.0"
   resolved "https://registry.yarnpkg.com/aws4/-/aws4-1.8.0.tgz#f0e003d9ca9e7f59c7a508945d7b2ef9a04a542f"
 
+axe-core@^3.0.0:
+  version "3.2.2"
+  resolved "https://registry.yarnpkg.com/axe-core/-/axe-core-3.2.2.tgz#b06d6e9ae4636d706068843272bfaeed3fe97362"
+
 axobject-query@^2.0.2:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/axobject-query/-/axobject-query-2.0.2.tgz#ea187abe5b9002b377f925d8bf7d1c561adf38f9"
@@ -7525,6 +7529,13 @@ react-app-polyfill@^1.0.1:
     regenerator-runtime "0.13.2"
     whatwg-fetch "3.0.0"
 
+react-axe@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/react-axe/-/react-axe-3.1.0.tgz#77f920642ab34a39f971c8195ea3b44c02c05b8f"
+  dependencies:
+    axe-core "^3.0.0"
+    requestidlecallback "^0.3.0"
+
 react-dev-utils@7.0.3:
   version "7.0.3"
   resolved "https://registry.yarnpkg.com/react-dev-utils/-/react-dev-utils-7.0.3.tgz#f1316cfffd792fd41b0c28ad5db86c1d74484d6f"
@@ -7849,6 +7860,10 @@ request@^2.87.0, request@^2.88.0:
     tough-cookie "~2.4.3"
     tunnel-agent "^0.6.0"
     uuid "^3.3.2"
+
+requestidlecallback@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/requestidlecallback/-/requestidlecallback-0.3.0.tgz#6fb74e0733f90df3faa4838f9f6a2a5f9b742ac5"
 
 require-directory@^2.1.1:
   version "2.1.1"
