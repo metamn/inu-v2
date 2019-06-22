@@ -13,6 +13,7 @@
         "react-apollo-hooks": "^0.4.5",
         "react-dom": "^16.8.6",
         "react-icons": "^3.7.0",
+        "react-ideal-image": "^0.0.5",
         "react-progressive-image": "^0.6.0",
         "styled-components": "^4.2.0",
         "webfontloader": "^1.6.28"

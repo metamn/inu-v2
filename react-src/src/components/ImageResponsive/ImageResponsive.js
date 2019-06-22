@@ -53,7 +53,12 @@ const ImageResponsive = props => {
   const backgroundColor = theme.colors.background;
 
   return (
-    <ProgressiveImage src={src} placeholder="" srcSetData={{ srcSet: srcSet }}>
+    <ProgressiveImage
+      src={src}
+      placeholder=""
+      delay={150}
+      srcSetData={{ srcSet: srcSet }}
+    >
       {(src, loading, srcSetData) => {
         return loading ? (
           // The placeholder size has to be the same as the slider size.

@@ -1270,7 +1270,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  background-color: lightgray;\n  width: 150px;\n  height: 150px;\n\n  ", ";\n\n  background-color: red;\n\n  ", ";\n\n  ", ";\n"]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  background-color: lightgray;\n  width: 150px;\n  height: 150px;\n\n  ", ";\n\n  ", ";\n\n  ", ";\n"]);
 
   _templateObject = function () {
     return data;
@@ -1297,7 +1297,7 @@ const ImagePlaceholder = props => {
     backgroundColor: backgroundColor,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41
+      lineNumber: 39
     },
     __self: undefined
   }));
@@ -1410,6 +1410,7 @@ const ImageResponsive = props => {
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_progressive_image__WEBPACK_IMPORTED_MODULE_2___default.a, {
     src: src,
     placeholder: "",
+    delay: 150,
     srcSetData: {
       srcSet: srcSet
     },
@@ -1427,7 +1428,7 @@ const ImageResponsive = props => {
       backgroundColor: backgroundColor,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 61
+        lineNumber: 66
       },
       __self: undefined
     }) : react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Image, {
@@ -1440,7 +1441,7 @@ const ImageResponsive = props => {
       onClick: () => imageClickHandler(index, numberOfSlides),
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 67
+        lineNumber: 72
       },
       __self: undefined
     });
@@ -3951,5 +3952,5 @@ module.exports = __webpack_require__(/*! /home/cs/work/inu-v2/react-src/src/inde
 
 /***/ })
 
-},[[0,"runtime~main",1]]]);
+},[[0,"runtime~main",0]]]);
 //# sourceMappingURL=main.chunk.js.map
