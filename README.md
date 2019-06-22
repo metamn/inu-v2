@@ -28,3 +28,7 @@ The React version of inu.ro
 
 - [flow](https://github.com/facebook/flow) vs TypeScript because [Facebook / React is using it internally](https://twitter.com/dan_abramov/status/1135437323888406528). It also [works out-of-the-box](https://flow.org/en/docs/tools/create-react-app/) with CRA
 - it's not working ... see the `v2-flow` branch
+
+## Credits
+
+- Arrow right icon: https://icon-icons.com/nl/pictogram/ios7-pijl-dun-recht/50346

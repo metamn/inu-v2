@@ -4,11 +4,13 @@ import styled, { css } from "styled-components";
 
 import { ThemeContext } from "../../themes/default.js";
 import ImagePlaceholder from "../ImagePlaceholder";
+import { CursorPointer } from "../Cursor";
 
 const Image = styled.img`
   width: auto;
   height: auto;
-  cursor: pointer;
+
+  ${CursorPointer}
 
   // Do not show the alt title while loading the image
   ${props =>

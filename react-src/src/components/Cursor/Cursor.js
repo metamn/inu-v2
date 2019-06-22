@@ -8,7 +8,7 @@ export const CursorDefault = css`
 
 export const CursorPointer = css`
   &:hover {
-    cursor: url("/react-wp/wp-content/themes/inu-v2/brutalist_line_SVGicon_cursor1.png"),
+    cursor: url("/react-wp/wp-content/themes/inu-v2/arrow-right.png") 16 0,
       pointer;
   }
 `;

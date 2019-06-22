@@ -352,7 +352,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function _templateObject2() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  &:hover {\n    cursor: url(\"/react-wp/wp-content/themes/inu-v2/brutalist_line_SVGicon_cursor1.png\"),\n      pointer;\n  }\n"]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  &:hover {\n    cursor: url(\"/react-wp/wp-content/themes/inu-v2/arrow-right.png\") 16 0,\n      pointer;\n  }\n"]);
 
   _templateObject2 = function () {
     return data;
@@ -1423,6 +1423,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 /* harmony import */ var _themes_default_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../themes/default.js */ "./src/themes/default.js");
 /* harmony import */ var _ImagePlaceholder__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../ImagePlaceholder */ "./src/components/ImagePlaceholder/index.js");
+/* harmony import */ var _Cursor__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../Cursor */ "./src/components/Cursor/index.js");
 
 var _jsxFileName = "/home/cs/work/inu-v2/react-src/src/components/ImageResponsive/ImageResponsive.js";
 
@@ -1457,7 +1458,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  width: auto;\n  height: auto;\n  cursor: pointer;\n\n  // Do not show the alt title while loading the image\n  ", ";\n\n  ", ";\n\n  ", ";\n"]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  width: auto;\n  height: auto;\n\n  ", "\n\n  // Do not show the alt title while loading the image\n  ", ";\n\n  ", ";\n\n  ", ";\n"]);
 
   _templateObject = function () {
     return data;
@@ -1471,7 +1472,8 @@ function _templateObject() {
 
 
 
-const Image = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].img(_templateObject(), props => props.color && Object(styled_components__WEBPACK_IMPORTED_MODULE_3__["css"])(_templateObject2(), props.color), props => props.width && Object(styled_components__WEBPACK_IMPORTED_MODULE_3__["css"])(_templateObject3(), props.width), props => props.height && Object(styled_components__WEBPACK_IMPORTED_MODULE_3__["css"])(_templateObject4(), props.height));
+
+const Image = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].img(_templateObject(), _Cursor__WEBPACK_IMPORTED_MODULE_6__["CursorPointer"], props => props.color && Object(styled_components__WEBPACK_IMPORTED_MODULE_3__["css"])(_templateObject2(), props.color), props => props.width && Object(styled_components__WEBPACK_IMPORTED_MODULE_3__["css"])(_templateObject3(), props.width), props => props.height && Object(styled_components__WEBPACK_IMPORTED_MODULE_3__["css"])(_templateObject4(), props.height));
 
 const ImageResponsive = props => {
   const title = props.title,
@@ -1499,7 +1501,7 @@ const ImageResponsive = props => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 56
+      lineNumber: 58
     },
     __self: undefined
   }, (src, loading, srcSetData) => {
@@ -1511,7 +1513,7 @@ const ImageResponsive = props => {
       backgroundColor: backgroundColor,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 66
+        lineNumber: 68
       },
       __self: undefined
     }) : react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Image, {
@@ -1524,7 +1526,7 @@ const ImageResponsive = props => {
       onClick: () => imageClickHandler(index, numberOfSlides),
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 72
+        lineNumber: 74
       },
       __self: undefined
     });
@@ -4165,5 +4167,5 @@ module.exports = __webpack_require__(/*! /home/cs/work/inu-v2/react-src/src/inde
 
 /***/ })
 
-},[[0,"runtime~main",1]]]);
+},[[0,"runtime~main",0]]]);
 //# sourceMappingURL=main.chunk.js.map
