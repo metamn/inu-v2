@@ -17,6 +17,7 @@ const H2 = styled.h2`
   font-size: 100%;
   font-weight: normal;
   cursor: pointer;
+  letter-spacing: 1px;
 
   ${props =>
     props.theme.colors.gray &&

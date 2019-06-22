@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { FiList, FiSun } from "react-icons/fi";
+import { FiSun } from "react-icons/fi";
+import { MdApps } from "react-icons/md";
 
 import Icon from "../Icon";
 import Media from "../Media";
@@ -27,7 +28,7 @@ const HeaderIcons = props => {
   return (
     <Container>
       <HeaderIcon size={1.25}>
-        <FiList onClick={() => thumbIconClickHandler()} />
+        <MdApps onClick={() => thumbIconClickHandler()} />
       </HeaderIcon>
       <HeaderIcon size={1.25}>
         <FiSun onClick={() => sunIconClickHandler()} />
