@@ -14,6 +14,7 @@ import Slider from "../Slider";
 import Thumbs from "../Thumbs";
 import Blank from "../Blank";
 import Contact from "../Contact";
+import { CursorDefault, CursorPointer } from "../Cursor";
 
 WebFont.load({
   google: {
@@ -32,6 +33,12 @@ const Container = styled.div`
   min-height: 100vh;
 
   ${Spacing({ property: "padding" })}
+
+  ${CursorDefault}
+
+  a {
+    ${CursorPointer}
+  }
 `;
 
 const Home = () => {

@@ -334,6 +334,65 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./src/components/Cursor/Cursor.js":
+/*!*****************************************!*\
+  !*** ./src/components/Cursor/Cursor.js ***!
+  \*****************************************/
+/*! exports provided: CursorDefault, CursorPointer */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CursorDefault", function() { return CursorDefault; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CursorPointer", function() { return CursorPointer; });
+/* harmony import */ var _home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/esm/taggedTemplateLiteral */ "./node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/esm/taggedTemplateLiteral.js");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+
+
+function _templateObject2() {
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  &:hover {\n    cursor: url(\"/react-wp/wp-content/themes/inu-v2/brutalist_line_SVGicon_cursor1.png\"),\n      pointer;\n  }\n"]);
+
+  _templateObject2 = function () {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject() {
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  cursor: url(\"/react-wp/wp-content/themes/inu-v2/brutalist_line_SVGicon_cursor2.png\"),\n    default;\n"]);
+
+  _templateObject = function () {
+    return data;
+  };
+
+  return data;
+}
+
+
+const CursorDefault = Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["css"])(_templateObject());
+const CursorPointer = Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["css"])(_templateObject2());
+
+/***/ }),
+
+/***/ "./src/components/Cursor/index.js":
+/*!****************************************!*\
+  !*** ./src/components/Cursor/index.js ***!
+  \****************************************/
+/*! exports provided: CursorDefault, CursorPointer */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Cursor__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Cursor */ "./src/components/Cursor/Cursor.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CursorDefault", function() { return _Cursor__WEBPACK_IMPORTED_MODULE_0__["CursorDefault"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CursorPointer", function() { return _Cursor__WEBPACK_IMPORTED_MODULE_0__["CursorPointer"]; });
+
+
+
+/***/ }),
+
 /***/ "./src/components/Description/Description.js":
 /*!***************************************************!*\
   !*** ./src/components/Description/Description.js ***!
@@ -779,12 +838,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Thumbs__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../Thumbs */ "./src/components/Thumbs/index.js");
 /* harmony import */ var _Blank__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../Blank */ "./src/components/Blank/index.js");
 /* harmony import */ var _Contact__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../Contact */ "./src/components/Contact/index.js");
+/* harmony import */ var _Cursor__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../Cursor */ "./src/components/Cursor/index.js");
 
 
 var _jsxFileName = "/home/cs/work/inu-v2/react-src/src/components/Home/Home.js";
 
 function _templateObject() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_1__["default"])(["\n  background: ", ";\n  color: ", ";\n  font-family: ", ";\n\n  display: flex;\n  flex-direction: column;\n\n  min-height: 100vh;\n\n  ", "\n"]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_1__["default"])(["\n  background: ", ";\n  color: ", ";\n  font-family: ", ";\n\n  display: flex;\n  flex-direction: column;\n\n  min-height: 100vh;\n\n  ", "\n\n  ", "\n\n  a {\n    ", "\n  }\n"]);
 
   _templateObject = function () {
     return data;
@@ -806,6 +866,7 @@ function _templateObject() {
 
 
 
+
 webfontloader__WEBPACK_IMPORTED_MODULE_3___default.a.load({
   google: {
     families: ["Quicksand"]
@@ -813,7 +874,7 @@ webfontloader__WEBPACK_IMPORTED_MODULE_3___default.a.load({
 });
 const Container = styled_components__WEBPACK_IMPORTED_MODULE_4__["default"].div(_templateObject(), props => props.theme.colors.background, props => props.theme.colors.text, props => props.theme.fonts.default, Object(_Spacing__WEBPACK_IMPORTED_MODULE_9__["default"])({
   property: "padding"
-}));
+}), _Cursor__WEBPACK_IMPORTED_MODULE_15__["CursorDefault"], _Cursor__WEBPACK_IMPORTED_MODULE_15__["CursorPointer"]);
 
 const Home = () => {
   // Which category to display
@@ -931,7 +992,7 @@ const Home = () => {
           setActiveSlide: setActiveSlide,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 128
+            lineNumber: 135
           },
           __self: undefined
         });
@@ -943,7 +1004,7 @@ const Home = () => {
           thumbClickHandler: thumbClickHandler,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 138
+            lineNumber: 145
           },
           __self: undefined
         });
@@ -952,7 +1013,7 @@ const Home = () => {
         return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Contact__WEBPACK_IMPORTED_MODULE_14__["default"], {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 145
+            lineNumber: 152
           },
           __self: undefined
         });
@@ -962,7 +1023,7 @@ const Home = () => {
         return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Blank__WEBPACK_IMPORTED_MODULE_13__["default"], {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 148
+            lineNumber: 155
           },
           __self: undefined
         });
@@ -972,7 +1033,7 @@ const Home = () => {
   return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_2___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Reset__WEBPACK_IMPORTED_MODULE_7__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 154
+      lineNumber: 161
     },
     __self: undefined
   }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_TypographicGrid__WEBPACK_IMPORTED_MODULE_8__["default"], {
@@ -983,13 +1044,13 @@ const Home = () => {
     lineColor: "#666",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 155
+      lineNumber: 162
     },
     __self: undefined
   }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react_helmet__WEBPACK_IMPORTED_MODULE_5__["Helmet"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 162
+      lineNumber: 169
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("meta", {
@@ -997,21 +1058,21 @@ const Home = () => {
     content: "Portfolio",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 163
+      lineNumber: 170
     },
     __self: undefined
   })), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_themes_default_js__WEBPACK_IMPORTED_MODULE_6__["ThemeContext"].Provider, {
     value: currentTheme,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 165
+      lineNumber: 172
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Container, {
     theme: currentTheme.theme,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 166
+      lineNumber: 173
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Header__WEBPACK_IMPORTED_MODULE_10__["default"], {
@@ -1026,13 +1087,13 @@ const Home = () => {
     menuToggleIconClickHandler: menuToggleIconClickHandler,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 167
+      lineNumber: 174
     },
     __self: undefined
   }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Display, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 178
+      lineNumber: 185
     },
     __self: undefined
   }))));
@@ -2191,7 +2252,7 @@ const Menu = props => {
     __self: undefined
   })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_MenuItemCustom__WEBPACK_IMPORTED_MODULE_4__["default"], Object.assign({
     index: -1,
-    menuItemText: "Random"
+    menuItemText: "random"
   }, props, {
     __source: {
       fileName: _jsxFileName,
@@ -2200,7 +2261,7 @@ const Menu = props => {
     __self: undefined
   })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_MenuItemCustom__WEBPACK_IMPORTED_MODULE_4__["default"], Object.assign({
     index: -2,
-    menuItemText: "Contact"
+    menuItemText: "contact"
   }, props, {
     __source: {
       fileName: _jsxFileName,
@@ -4089,5 +4150,5 @@ module.exports = __webpack_require__(/*! /home/cs/work/inu-v2/react-src/src/inde
 
 /***/ })
 
-},[[0,"runtime~main",1]]]);
+},[[0,"runtime~main",0]]]);
 //# sourceMappingURL=main.chunk.js.map
