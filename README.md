@@ -7,6 +7,7 @@ The React version of inu.ro
 - [react-apollo-hooks](https://github.com/trojanowski/react-apollo-hooks) because Relay seems too complicated at this stage
 - [styled-components](https://www.styled-components.com/) vs Emotion. See http://metamn.io/mr-ui > Basics > Styling for details
 - [react-progressive-image](https://github.com/FormidableLabs/react-progressive-image) because is maintained by Formidable Labs
+- `react-ideal-image` has a nasty bug since Feb: https://github.com/stereobooster/react-ideal-image/issues/137 and can't handle onlick ....
 
 ## Limitations
 

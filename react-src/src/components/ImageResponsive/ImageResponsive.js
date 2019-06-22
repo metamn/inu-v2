@@ -57,31 +57,21 @@ const ImageResponsive = props => {
   return (
     <ProgressiveImage
       src={src}
-      placeholder=""
+      placeholder="/react-wp/wp-content/themes/inu-v2/placeholder.png"
       delay={150}
       srcSetData={{ srcSet: srcSet }}
     >
-      {(src, loading, srcSetData) => {
-        return loading ? (
-          // The placeholder size has to be the same as the slider size.
-          // Otherwise the slider won't work
-          <ImagePlaceholder
-            width={width}
-            height={height}
-            backgroundColor={backgroundColor}
-          />
-        ) : (
-          <Image
-            src={src}
-            srcSet={srcSetData.srcSet}
-            alt={title}
-            width={width}
-            height={height}
-            color={backgroundColor}
-            onClick={() => imageClickHandler(index, numberOfSlides)}
-          />
-        );
-      }}
+      {(src, loading, srcSetData) => (
+        <Image
+          src={src}
+          srcSet={srcSetData.srcSet}
+          alt={title}
+          width={width}
+          height={height}
+          color={backgroundColor}
+          onClick={() => imageClickHandler(index, numberOfSlides)}
+        />
+      )}
     </ProgressiveImage>
   );
 };

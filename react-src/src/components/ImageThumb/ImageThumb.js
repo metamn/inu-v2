@@ -54,20 +54,19 @@ const ImageThumb = props => {
   const thumbisActive = index === activeSlide;
 
   return (
-    <ProgressiveImage src={thumbSrc} placeholder="">
-      {(thumbSrc, loading) => {
-        return loading ? (
-          <ImagePlaceholder width={thumbWidth} height={thumbHeight} />
-        ) : (
-          <Image
-            src={thumbSrc}
-            alt={title}
-            maxWidth={thumbWidth}
-            onClick={() => thumbClickHandler(index)}
-            isActive={thumbisActive}
-          />
-        );
-      }}
+    <ProgressiveImage
+      src={thumbSrc}
+      placeholder="/react-wp/wp-content/themes/inu-v2/arrow-right.png"
+    >
+      {(thumbSrc, loading) => (
+        <Image
+          src={thumbSrc}
+          alt={title}
+          maxWidth={thumbWidth}
+          onClick={() => thumbClickHandler(index)}
+          isActive={thumbisActive}
+        />
+      )}
     </ProgressiveImage>
   );
 };
