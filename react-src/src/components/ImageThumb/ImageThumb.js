@@ -4,6 +4,7 @@ import ProgressiveImage from "react-progressive-image";
 
 import ImagePlaceholder from "../ImagePlaceholder";
 import Media from "../Media";
+import { CursorDefault } from "../Cursor";
 
 const ImageActive = css`
   border: 1px solid;
@@ -12,7 +13,8 @@ const ImageActive = css`
 const Image = styled.img`
   width: 100%;
   height: auto;
-  cursor: pointer;
+
+  ${CursorDefault}
 
   padding: calc(var(--lem) / 1);
   border: 1px solid transparent;

@@ -3,6 +3,7 @@ import styled from "styled-components";
 import gql from "graphql-tag";
 
 import { useQuery } from "./../../hooks";
+import { CursorDefault } from "../Cursor";
 
 import List from "../List";
 import ListItem, {
@@ -10,7 +11,9 @@ import ListItem, {
   setListItemVisibility
 } from "../ListItem";
 
-const Container = styled.nav``;
+const Container = styled.nav`
+  ${CursorDefault}
+`;
 
 // The query definition
 const query = gql`

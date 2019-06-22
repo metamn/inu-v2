@@ -12,25 +12,28 @@ const themeColors = {
     background: white,
     gray: gray,
     placeholder: lightgray,
-    borderColor: black
+    borderColor: black,
+    cursor: "brutalist_line_SVGicon_cursor2.png"
   },
   dark: {
     text: white,
     background: black,
     gray: lightgray,
     placeholder: darkgray,
-    borderColor: white
+    borderColor: white,
+    cursor: "brutalist_line_SVGicon_cursor2-black.png"
   }
 };
 
 const getThemeColors = mode =>
   mode === "light" ? themeColors.light : themeColors.dark;
 
+// When changing font also the `WebFont.load` has to be updated
 const getTheme = mode => {
   return {
     colors: getThemeColors(mode),
     fonts: {
-      default: "'Quicksand', sans-serif;"
+      default: "'Major Mono Display', sans-serif;"
     }
   };
 };

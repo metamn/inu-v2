@@ -3,6 +3,7 @@ import gql from "graphql-tag";
 import styled from "styled-components";
 
 import { useQuery } from "../../hooks";
+import { CursorDefault } from "../Cursor";
 
 import Post from "../Post";
 import Image from "../Image";
@@ -13,6 +14,8 @@ const Container = styled.section`
 
   display: flex;
   flex-wrap: wrap;
+
+  ${CursorDefault}
 `;
 
 const query = gql`

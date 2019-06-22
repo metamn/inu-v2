@@ -1,8 +1,10 @@
 import React from "react";
 import styled, { css } from "styled-components";
 
+import { CursorDefault } from "../Cursor";
+
 const Container = styled.div`
-  cursor: pointer;
+  ${CursorDefault}
 
   ${props =>
     props.size &&
