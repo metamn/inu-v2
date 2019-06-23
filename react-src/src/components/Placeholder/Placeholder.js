@@ -15,14 +15,39 @@ const Text = styled.div`
     `};
 `;
 
+const Box = styled.div`
+  ${props =>
+    props.backgroundColor &&
+    css`
+      background-color: ${props.backgroundColor};
+    `};
+
+  ${props =>
+    props.width &&
+    css`
+      width: ${props.width};
+      min-width: ${props.width};
+    `};
+
+  ${props =>
+    props.height &&
+    css`
+      height: ${props.height};
+      min-height: ${props.height};
+    `};
+`;
+
 const Placeholder = props => {
   const { type } = props;
+
   const themeContext = useContext(ThemeContext);
   const { theme } = themeContext;
 
   switch (type) {
     case "text":
       return <Text theme={theme} />;
+    case "box":
+      return <Box theme={theme} {...props} />;
     default:
       return <div>Loading...</div>;
   }

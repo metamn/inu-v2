@@ -60,7 +60,7 @@ const ImageResponsive = props => {
     <ProgressiveImage
       src={src}
       placeholder=""
-      delay={150}
+      delay={0}
       srcSetData={{ srcSet: srcSet }}
     >
       {(src, loading, srcSetData) => {

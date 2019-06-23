@@ -1496,7 +1496,7 @@ const ImageResponsive = props => {
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_progressive_image__WEBPACK_IMPORTED_MODULE_2___default.a, {
     src: src,
     placeholder: "",
-    delay: 150,
+    delay: 0,
     srcSetData: {
       srcSet: srcSet
     },
@@ -1567,7 +1567,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_progressive_image__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-progressive-image */ "./node_modules/react-progressive-image/dist.js");
 /* harmony import */ var react_progressive_image__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_progressive_image__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _themes_default_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../themes/default.js */ "./src/themes/default.js");
-/* harmony import */ var _ImagePlaceholder__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../ImagePlaceholder */ "./src/components/ImagePlaceholder/index.js");
+/* harmony import */ var _Placeholder__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../Placeholder */ "./src/components/Placeholder/index.js");
 /* harmony import */ var _Media__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../Media */ "./src/components/Media/index.js");
 /* harmony import */ var _Cursor__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../Cursor */ "./src/components/Cursor/index.js");
 
@@ -1661,7 +1661,7 @@ function _templateObject() {
 
 
 const ImageActive = Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject(), props => props.theme.colors.text && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject2(), props.theme.colors.text));
-const Image = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].img(_templateObject3(), _Cursor__WEBPACK_IMPORTED_MODULE_7__["CursorDefault"], props => props.theme.colors.background && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject4(), props.theme.colors.background), props => props.maxWidth && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject5(), _Media__WEBPACK_IMPORTED_MODULE_6__["default"].mobile(_templateObject6(), props.maxWidth, props.maxWidth), _Media__WEBPACK_IMPORTED_MODULE_6__["default"].tablet(_templateObject7(), props.maxWidth, props.maxWidth)), ImageActive, props => props.isActive && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject8(), ImageActive));
+const Image = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].img(_templateObject3(), _Cursor__WEBPACK_IMPORTED_MODULE_7__["CursorDefault"], props => props.theme.colors.background && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject4(), props.theme.colors.background), props => props.size && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject5(), _Media__WEBPACK_IMPORTED_MODULE_6__["default"].mobile(_templateObject6(), props.size, props.size), _Media__WEBPACK_IMPORTED_MODULE_6__["default"].tablet(_templateObject7(), props.size, props.size)), ImageActive, props => props.isActive && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject8(), ImageActive));
 
 const ImageThumb = props => {
   const title = props.title,
@@ -1673,8 +1673,7 @@ const ImageThumb = props => {
   const sizes = node.featuredImage.mediaDetails.sizes;
   const thumb = sizes.find(item => item.name === "thumbnail");
   const thumbSrc = thumb.sourceUrl ? thumb.sourceUrl : src;
-  const thumbWidth = thumb.width ? thumb.width + "px" : "calc(var(--lem) * 15)";
-  const thumbHeight = thumb.height ? thumb.height + "px" : "auto";
+  const thumbSize = thumb.width ? thumb.width + "px" : "calc(var(--lem) * 15)";
   const thumbisActive = index === activeSlide;
   const themeContext = Object(react__WEBPACK_IMPORTED_MODULE_1__["useContext"])(_themes_default_js__WEBPACK_IMPORTED_MODULE_4__["ThemeContext"]);
   const theme = themeContext.theme;
@@ -1683,28 +1682,29 @@ const ImageThumb = props => {
     placeholder: "",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 74
+      lineNumber: 73
     },
     __self: undefined
   }, (thumbSrc, loading) => {
-    return loading ? react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_ImagePlaceholder__WEBPACK_IMPORTED_MODULE_5__["default"], {
-      width: thumbWidth,
-      height: thumbHeight,
+    return loading ? react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Placeholder__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      type: "box",
+      width: thumbSize,
+      height: thumbSize,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 77
+        lineNumber: 76
       },
       __self: undefined
     }) : react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Image, {
       src: thumbSrc,
       alt: title,
-      maxWidth: thumbWidth,
+      size: thumbSize,
       theme: theme,
       onClick: () => thumbClickHandler(index),
       isActive: thumbisActive,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 79
+        lineNumber: 78
       },
       __self: undefined
     });
@@ -2746,6 +2746,46 @@ __webpack_require__.r(__webpack_exports__);
 
 var _jsxFileName = "/home/cs/work/inu-v2/react-src/src/components/Placeholder/Placeholder.js";
 
+function _templateObject6() {
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n      height: ", ";\n      min-height: ", ";\n    "]);
+
+  _templateObject6 = function () {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject5() {
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n      width: ", ";\n      min-width: ", ";\n    "]);
+
+  _templateObject5 = function () {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject4() {
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n      background-color: ", ";\n    "]);
+
+  _templateObject4 = function () {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject3() {
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  ", ";\n\n  ", ";\n\n  ", ";\n"]);
+
+  _templateObject3 = function () {
+    return data;
+  };
+
+  return data;
+}
+
 function _templateObject2() {
   const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n      background: ", ";\n    "]);
 
@@ -2770,6 +2810,7 @@ function _templateObject() {
 
 
 const Text = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject(), props => props.theme.colors.placeholder && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject2(), props.theme.colors.placeholder));
+const Box = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject3(), props => props.backgroundColor && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject4(), props.backgroundColor), props => props.width && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject5(), props.width, props.width), props => props.height && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject6(), props.height, props.height));
 
 const Placeholder = props => {
   const type = props.type;
@@ -2782,16 +2823,27 @@ const Placeholder = props => {
         theme: theme,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 25
+          lineNumber: 48
         },
         __self: undefined
       });
+
+    case "box":
+      return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Box, Object.assign({
+        theme: theme
+      }, props, {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 50
+        },
+        __self: undefined
+      }));
 
     default:
       return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 27
+          lineNumber: 52
         },
         __self: undefined
       }, "Loading...");

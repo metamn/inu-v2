@@ -3,7 +3,7 @@ import styled, { css } from "styled-components";
 import ProgressiveImage from "react-progressive-image";
 
 import { ThemeContext } from "../../themes/default.js";
-import ImagePlaceholder from "../ImagePlaceholder";
+import Placeholder from "../Placeholder";
 import Media from "../Media";
 import { CursorDefault } from "../Cursor";
 
@@ -33,15 +33,15 @@ const Image = styled.img`
     `};
 
   ${props =>
-    props.maxWidth &&
+    props.size &&
     css`
       ${Media.mobile`
-  	  	width: ${props.maxWidth};
-		height: ${props.maxWidth};
+  	  	width: ${props.size};
+		height: ${props.size};
   	  `};
       ${Media.tablet`
-		  width: calc(${props.maxWidth} + var(--lem) * 2 + 2px);
-		  height: calc(${props.maxWidth} + var(--lem) * 2 + 2px)
+		  width: calc(${props.size} + var(--lem) * 2 + 2px);
+		  height: calc(${props.size} + var(--lem) * 2 + 2px)
 		  `};
     `}
 
@@ -63,8 +63,7 @@ const ImageThumb = props => {
   const thumb = sizes.find(item => item.name === "thumbnail");
 
   const thumbSrc = thumb.sourceUrl ? thumb.sourceUrl : src;
-  const thumbWidth = thumb.width ? thumb.width + "px" : "calc(var(--lem) * 15)";
-  const thumbHeight = thumb.height ? thumb.height + "px" : "auto";
+  const thumbSize = thumb.width ? thumb.width + "px" : "calc(var(--lem) * 15)";
   const thumbisActive = index === activeSlide;
 
   const themeContext = useContext(ThemeContext);
@@ -74,12 +73,12 @@ const ImageThumb = props => {
     <ProgressiveImage src={thumbSrc} placeholder="">
       {(thumbSrc, loading) => {
         return loading ? (
-          <ImagePlaceholder width={thumbWidth} height={thumbHeight} />
+          <Placeholder type="box" width={thumbSize} height={thumbSize} />
         ) : (
           <Image
             src={thumbSrc}
             alt={title}
-            maxWidth={thumbWidth}
+            size={thumbSize}
             theme={theme}
             onClick={() => thumbClickHandler(index)}
             isActive={thumbisActive}
