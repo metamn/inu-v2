@@ -10,7 +10,7 @@ const Image = styled.img`
   height: auto;
 
   // A custom cursor blinks when clicking the image
-  // So we use the normal behaviour
+  // So we use the normal cursor ...
   cursor: pointer;
 
   // Do not show the alt title while loading the image
@@ -56,12 +56,7 @@ const ImageResponsive = props => {
   const backgroundColor = theme.colors.background;
 
   return (
-    <ProgressiveImage
-      src={src}
-      placeholder=""
-      delay={150}
-      srcSetData={{ srcSet: srcSet }}
-    >
+    <ProgressiveImage src={src} placeholder="" srcSetData={{ srcSet: srcSet }}>
       {(src, loading, srcSetData) => {
         return loading ? (
           <Placeholder type="box" width={width} height={height} />

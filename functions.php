@@ -1,5 +1,7 @@
 <?php
 
+// Thumbnail support
+// - the old way was getting the image associated to the post
 add_theme_support( 'post-thumbnails' );
 
 // Automatically calling the first image attached to a post as the featured image

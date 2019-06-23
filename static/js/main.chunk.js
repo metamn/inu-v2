@@ -1356,7 +1356,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  width: auto;\n  height: auto;\n\n  // A custom cursor blinks when clicking the image\n  // So we use the normal behaviour\n  cursor: pointer;\n\n  // Do not show the alt title while loading the image\n  ", ";\n\n  ", ";\n\n  ", ";\n"]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  width: auto;\n  height: auto;\n\n  // A custom cursor blinks when clicking the image\n  // So we use the normal cursor ...\n  cursor: pointer;\n\n  // Do not show the alt title while loading the image\n  ", ";\n\n  ", ";\n\n  ", ";\n"]);
 
   _templateObject = function () {
     return data;
@@ -1392,7 +1392,6 @@ const ImageResponsive = props => {
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_progressive_image__WEBPACK_IMPORTED_MODULE_2___default.a, {
     src: src,
     placeholder: "",
-    delay: 150,
     srcSetData: {
       srcSet: srcSet
     },
@@ -1408,7 +1407,7 @@ const ImageResponsive = props => {
       height: height,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 67
+        lineNumber: 62
       },
       __self: undefined
     }) : react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Image, {
@@ -1421,7 +1420,7 @@ const ImageResponsive = props => {
       onClick: () => imageClickHandler(index, numberOfSlides),
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 69
+        lineNumber: 64
       },
       __self: undefined
     });
@@ -3234,8 +3233,9 @@ const Slider = props => {
   // - when `behavior` == 'smooth' things get tricky:
   //  - indifferent how you set `block` or `inline` the slider sometimes is flicking sometimes is not
   //  - on Chrome works differently than in Firefox
-  //  - it is perhaps better to use 'auto' instead of 'smooth'
+  //  - it is better to use 'auto' instead of 'smooth'
   //  - and do the animation in the image / placeholder
+  //  - ... in other words scrollIntoView is not yet ready for prime time
 
   Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(() => {
     if (refs && refs[activeSlide] && refs[activeSlide].current) {
@@ -3295,13 +3295,13 @@ const Slider = props => {
     width: width,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 192
+      lineNumber: 193
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Slides, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 193
+      lineNumber: 194
     },
     __self: undefined
   }, slides));
