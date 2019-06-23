@@ -4,13 +4,14 @@ import styled, { css } from "styled-components";
 
 import { ThemeContext } from "../../themes/default.js";
 import Placeholder from "../Placeholder";
-import { CursorPointer } from "../Cursor";
 
 const Image = styled.img`
   width: auto;
   height: auto;
 
-  ${CursorPointer}
+  // A custom cursor blinks when clicking the image
+  // So we use the normal behaviour
+  cursor: pointer;
 
   // Do not show the alt title while loading the image
   ${props =>
