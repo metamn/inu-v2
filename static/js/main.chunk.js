@@ -3179,7 +3179,8 @@ function _templateObject() {
 const Container = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].main(_templateObject(), props => props.width && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject2(), props.width)); // Original idea:
 // - https://nolanlawson.com/2019/02/10/building-a-modern-carousel-with-css-scroll-snap-smooth-scrolling-and-pinch-zoom/
 
-const Slides = Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["default"])(_List__WEBPACK_IMPORTED_MODULE_5__["default"])(_templateObject3());
+const Slides = Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["default"])(_List__WEBPACK_IMPORTED_MODULE_5__["default"])(_templateObject3()); // The query
+
 const query = graphql_tag__WEBPACK_IMPORTED_MODULE_3___default()(_templateObject4());
 
 const markup = (data, queryProps) => {
@@ -3195,19 +3196,18 @@ const markup = (data, queryProps) => {
       ref: ref,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 97
+        lineNumber: 98
       },
       __self: undefined
     }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Post__WEBPACK_IMPORTED_MODULE_7__["default"], Object.assign({
-      node: edge.node // Click handling **MUST** go down to the smallest component, ie <img/>
-      ,
+      node: edge.node,
       index: index,
       imageClickHandler: imageClickHandler,
       numberOfSlides: numberOfSlides
     }, queryProps, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 98
+        lineNumber: 99
       },
       __self: undefined
     })));
@@ -3295,13 +3295,13 @@ const Slider = props => {
     width: width,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 193
+      lineNumber: 194
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Slides, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 194
+      lineNumber: 195
     },
     __self: undefined
   }, slides));

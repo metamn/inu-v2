@@ -1,4 +1,4 @@
-import React, { useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import styled, { css } from "styled-components";
 import gql from "graphql-tag";
 import { useQuery, useEventListener } from "../../hooks";
@@ -50,6 +50,7 @@ const Slides = styled(List)`
   }
 `;
 
+// The query
 const query = gql`
   query postsForSlider($first: Int, $category: Int) {
     posts(first: $first, where: { categoryId: $category }) {
@@ -97,7 +98,6 @@ const markup = (data, queryProps) => {
       <Slide key={edge.node.id} ref={ref}>
         <Post
           node={edge.node}
-          // Click handling **MUST** go down to the smallest component, ie <img/>
           index={index}
           imageClickHandler={imageClickHandler}
           numberOfSlides={numberOfSlides}
@@ -153,6 +153,7 @@ const Slider = props => {
           right <= window.innerWidth * 1.5
         );
       });
+
       setActiveSlide(visibleRef);
     },
     [refs, setActiveSlide]
