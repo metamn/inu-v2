@@ -130,6 +130,7 @@ const Slider = props => {
   useEffect(
     () => {
       if (refs && refs[activeSlide] && refs[activeSlide].current) {
+        refs[activeSlide].current.className += " active";
         refs[activeSlide].current.scrollIntoView({
           behavior: "auto",
           block: "start",

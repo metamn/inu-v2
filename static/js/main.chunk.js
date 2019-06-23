@@ -3064,7 +3064,7 @@ __webpack_require__.r(__webpack_exports__);
 var _jsxFileName = "/home/cs/work/inu-v2/react-src/src/components/Slide/Slide.js";
 
 function _templateObject() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  width: 100%;\n\n  @supports (scroll-snap-align: start) {\n    /* modern scroll snap points */\n    scroll-snap-align: center;\n  }\n\n  @supports not (scroll-snap-align: start) {\n    /* old scroll snap points spec */\n    scroll-snap-coordinate: 0 0;\n  }\n"]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  width: 100%;\n\n  article {\n    opacity: 0;\n    transform: translateX(100vw);\n    // On Random this transition effect is not visible since there are many images and the scrollintoview process takes more than 500ms, even more then 1500ms\n    transition: all 500ms;\n  }\n\n  &.active {\n    article {\n      opacity: 1;\n      transform: translateX(0px);\n    }\n  }\n\n  @supports (scroll-snap-align: start) {\n    /* modern scroll snap points */\n    scroll-snap-align: center;\n  }\n\n  @supports not (scroll-snap-align: start) {\n    /* old scroll snap points spec */\n    scroll-snap-coordinate: 0 0;\n  }\n"]);
 
   _templateObject = function () {
     return data;
@@ -3082,7 +3082,7 @@ const Slide = react__WEBPACK_IMPORTED_MODULE_1___default.a.forwardRef((props, re
     ref: ref,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21
+      lineNumber: 35
     },
     __self: undefined
   }, children);
@@ -3239,6 +3239,7 @@ const Slider = props => {
 
   Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(() => {
     if (refs && refs[activeSlide] && refs[activeSlide].current) {
+      refs[activeSlide].current.className += " active";
       refs[activeSlide].current.scrollIntoView({
         behavior: "auto",
         block: "start",
@@ -3295,13 +3296,13 @@ const Slider = props => {
     width: width,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 194
+      lineNumber: 195
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Slides, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 195
+      lineNumber: 196
     },
     __self: undefined
   }, slides));
@@ -4195,5 +4196,5 @@ module.exports = __webpack_require__(/*! /home/cs/work/inu-v2/react-src/src/inde
 
 /***/ })
 
-},[[0,"runtime~main",1]]]);
+},[[0,"runtime~main",0]]]);
 //# sourceMappingURL=main.chunk.js.map
