@@ -50,6 +50,8 @@ const ImageResponsive = props => {
   let srcSet = sizes.map(item => `${item.sourceUrl} ${item.width}w`);
   srcSet.push(`${featuredImage.sourceUrl} ${mediaDetails.width}w`);
 
+  console.log(srcSet);
+
   const themeContext = useContext(ThemeContext);
   const { theme } = themeContext;
   const backgroundColor = theme.colors.background;

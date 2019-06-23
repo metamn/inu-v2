@@ -1489,6 +1489,7 @@ const ImageResponsive = props => {
   const sizes = mediaDetails.sizes;
   let srcSet = sizes.map(item => "".concat(item.sourceUrl, " ").concat(item.width, "w"));
   srcSet.push("".concat(featuredImage.sourceUrl, " ").concat(mediaDetails.width, "w"));
+  console.log(srcSet);
   const themeContext = Object(react__WEBPACK_IMPORTED_MODULE_1__["useContext"])(_themes_default_js__WEBPACK_IMPORTED_MODULE_4__["ThemeContext"]);
   const theme = themeContext.theme;
   const backgroundColor = theme.colors.background;
@@ -1501,7 +1502,7 @@ const ImageResponsive = props => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 58
+      lineNumber: 60
     },
     __self: undefined
   }, (src, loading, srcSetData) => {
@@ -1510,7 +1511,7 @@ const ImageResponsive = props => {
       height: height,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 66
+        lineNumber: 68
       },
       __self: undefined
     }) : react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Image, {
@@ -1523,7 +1524,7 @@ const ImageResponsive = props => {
       onClick: () => imageClickHandler(index, numberOfSlides),
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 68
+        lineNumber: 70
       },
       __self: undefined
     });
@@ -1565,14 +1566,35 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 /* harmony import */ var react_progressive_image__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-progressive-image */ "./node_modules/react-progressive-image/dist.js");
 /* harmony import */ var react_progressive_image__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_progressive_image__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _ImagePlaceholder__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../ImagePlaceholder */ "./src/components/ImagePlaceholder/index.js");
-/* harmony import */ var _Media__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../Media */ "./src/components/Media/index.js");
-/* harmony import */ var _Cursor__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../Cursor */ "./src/components/Cursor/index.js");
+/* harmony import */ var _themes_default_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../themes/default.js */ "./src/themes/default.js");
+/* harmony import */ var _ImagePlaceholder__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../ImagePlaceholder */ "./src/components/ImagePlaceholder/index.js");
+/* harmony import */ var _Media__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../Media */ "./src/components/Media/index.js");
+/* harmony import */ var _Cursor__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../Cursor */ "./src/components/Cursor/index.js");
 
 var _jsxFileName = "/home/cs/work/inu-v2/react-src/src/components/ImageThumb/ImageThumb.js";
 
-function _templateObject6() {
+function _templateObject8() {
   const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n      ", "\n      cursor: default;\n    "]);
+
+  _templateObject8 = function () {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject7() {
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n\t\t  width: calc(", " + var(--lem) * 2 + 2px);\n\t\t  height: calc(", " + var(--lem) * 2 + 2px)\n\t\t  "]);
+
+  _templateObject7 = function () {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject6() {
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  \t  \twidth: ", ";\n\t\theight: ", ";\n  \t  "]);
 
   _templateObject6 = function () {
     return data;
@@ -1582,7 +1604,7 @@ function _templateObject6() {
 }
 
 function _templateObject5() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n\t\t  max-width: calc(", " + var(--lem) * 2 + 2px);\n\t\t  "]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n      ", ";\n      ", ";\n    "]);
 
   _templateObject5 = function () {
     return data;
@@ -1592,7 +1614,7 @@ function _templateObject5() {
 }
 
 function _templateObject4() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  \t  \tmax-width: ", ";\n  \t  "]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n      color: ", ";\n    "]);
 
   _templateObject4 = function () {
     return data;
@@ -1602,7 +1624,7 @@ function _templateObject4() {
 }
 
 function _templateObject3() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n      ", ";\n      ", ";\n    "]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  width: 100%;\n  height: auto;\n\n  ", "\n\n  padding: calc(var(--lem) / 1);\n  border: 1px solid transparent;\n  margin-right: 3px;\n\n  // Do not show the alt title while loading the image\n  ", ";\n\n  ", "\n\n  &:hover {\n    ", "\n  }\n\n  ", "\n"]);
 
   _templateObject3 = function () {
     return data;
@@ -1612,7 +1634,7 @@ function _templateObject3() {
 }
 
 function _templateObject2() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  width: 100%;\n  height: auto;\n\n  ", "\n\n  padding: calc(var(--lem) / 1);\n  border: 1px solid transparent;\n  margin-right: 3px;\n\n  ", "\n\n  &:hover {\n    ", "\n  }\n\n  ", "\n"]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n      border: 1px solid ", ";\n    "]);
 
   _templateObject2 = function () {
     return data;
@@ -1622,7 +1644,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  border: 1px solid;\n"]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  ", ";\n"]);
 
   _templateObject = function () {
     return data;
@@ -1637,8 +1659,9 @@ function _templateObject() {
 
 
 
-const ImageActive = Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject());
-const Image = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].img(_templateObject2(), _Cursor__WEBPACK_IMPORTED_MODULE_6__["CursorDefault"], props => props.maxWidth && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject3(), _Media__WEBPACK_IMPORTED_MODULE_5__["default"].mobile(_templateObject4(), props.maxWidth), _Media__WEBPACK_IMPORTED_MODULE_5__["default"].tablet(_templateObject5(), props.maxWidth)), ImageActive, props => props.isActive && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject6(), ImageActive));
+
+const ImageActive = Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject(), props => props.theme.colors.text && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject2(), props.theme.colors.text));
+const Image = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].img(_templateObject3(), _Cursor__WEBPACK_IMPORTED_MODULE_7__["CursorDefault"], props => props.theme.colors.background && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject4(), props.theme.colors.background), props => props.maxWidth && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject5(), _Media__WEBPACK_IMPORTED_MODULE_6__["default"].mobile(_templateObject6(), props.maxWidth, props.maxWidth), _Media__WEBPACK_IMPORTED_MODULE_6__["default"].tablet(_templateObject7(), props.maxWidth, props.maxWidth)), ImageActive, props => props.isActive && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject8(), ImageActive));
 
 const ImageThumb = props => {
   const title = props.title,
@@ -1653,32 +1676,35 @@ const ImageThumb = props => {
   const thumbWidth = thumb.width ? thumb.width + "px" : "calc(var(--lem) * 15)";
   const thumbHeight = thumb.height ? thumb.height + "px" : "auto";
   const thumbisActive = index === activeSlide;
+  const themeContext = Object(react__WEBPACK_IMPORTED_MODULE_1__["useContext"])(_themes_default_js__WEBPACK_IMPORTED_MODULE_4__["ThemeContext"]);
+  const theme = themeContext.theme;
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_progressive_image__WEBPACK_IMPORTED_MODULE_3___default.a, {
     src: thumbSrc,
     placeholder: "",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 57
+      lineNumber: 74
     },
     __self: undefined
   }, (thumbSrc, loading) => {
-    return loading ? react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_ImagePlaceholder__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    return loading ? react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_ImagePlaceholder__WEBPACK_IMPORTED_MODULE_5__["default"], {
       width: thumbWidth,
       height: thumbHeight,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 60
+        lineNumber: 77
       },
       __self: undefined
     }) : react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Image, {
       src: thumbSrc,
       alt: title,
       maxWidth: thumbWidth,
+      theme: theme,
       onClick: () => thumbClickHandler(index),
       isActive: thumbisActive,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 62
+        lineNumber: 79
       },
       __self: undefined
     });
@@ -4164,5 +4190,5 @@ module.exports = __webpack_require__(/*! /home/cs/work/inu-v2/react-src/src/inde
 
 /***/ })
 
-},[[0,"runtime~main",1]]]);
+},[[0,"runtime~main",0]]]);
 //# sourceMappingURL=main.chunk.js.map

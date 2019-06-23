@@ -1,13 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled, { css } from "styled-components";
 import ProgressiveImage from "react-progressive-image";
 
+import { ThemeContext } from "../../themes/default.js";
 import ImagePlaceholder from "../ImagePlaceholder";
 import Media from "../Media";
 import { CursorDefault } from "../Cursor";
 
 const ImageActive = css`
-  border: 1px solid;
+  ${props =>
+    props.theme.colors.text &&
+    css`
+      border: 1px solid ${props.theme.colors.text};
+    `};
 `;
 
 const Image = styled.img`
@@ -20,14 +25,23 @@ const Image = styled.img`
   border: 1px solid transparent;
   margin-right: 3px;
 
+  // Do not show the alt title while loading the image
+  ${props =>
+    props.theme.colors.background &&
+    css`
+      color: ${props.theme.colors.background};
+    `};
+
   ${props =>
     props.maxWidth &&
     css`
       ${Media.mobile`
-  	  	max-width: ${props.maxWidth};
+  	  	width: ${props.maxWidth};
+		height: ${props.maxWidth};
   	  `};
       ${Media.tablet`
-		  max-width: calc(${props.maxWidth} + var(--lem) * 2 + 2px);
+		  width: calc(${props.maxWidth} + var(--lem) * 2 + 2px);
+		  height: calc(${props.maxWidth} + var(--lem) * 2 + 2px)
 		  `};
     `}
 
@@ -53,6 +67,9 @@ const ImageThumb = props => {
   const thumbHeight = thumb.height ? thumb.height + "px" : "auto";
   const thumbisActive = index === activeSlide;
 
+  const themeContext = useContext(ThemeContext);
+  const { theme } = themeContext;
+
   return (
     <ProgressiveImage src={thumbSrc} placeholder="">
       {(thumbSrc, loading) => {
@@ -63,6 +80,7 @@ const ImageThumb = props => {
             src={thumbSrc}
             alt={title}
             maxWidth={thumbWidth}
+            theme={theme}
             onClick={() => thumbClickHandler(index)}
             isActive={thumbisActive}
           />
