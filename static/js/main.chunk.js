@@ -1305,107 +1305,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./src/components/ImagePlaceholder/ImagePlaceholder.js":
-/*!*************************************************************!*\
-  !*** ./src/components/ImagePlaceholder/ImagePlaceholder.js ***!
-  \*************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/esm/taggedTemplateLiteral */ "./node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/esm/taggedTemplateLiteral.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-/* harmony import */ var _themes_default_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../themes/default.js */ "./src/themes/default.js");
-
-var _jsxFileName = "/home/cs/work/inu-v2/react-src/src/components/ImagePlaceholder/ImagePlaceholder.js";
-
-function _templateObject4() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n      height: ", ";\n    "]);
-
-  _templateObject4 = function () {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject3() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n      width: ", ";\n    "]);
-
-  _templateObject3 = function () {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject2() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n      background-color: ", ";\n    "]);
-
-  _templateObject2 = function () {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  background-color: lightgray;\n  width: 150px;\n  height: 150px;\n\n  ", ";\n\n  ", ";\n\n  ", ";\n"]);
-
-  _templateObject = function () {
-    return data;
-  };
-
-  return data;
-}
-
-
-
-
-const Placeholder = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject(), props => props.backgroundColor && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject2(), props.backgroundColor), props => props.width && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject3(), props.width), props => props.height && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject4(), props.height));
-
-const ImagePlaceholder = props => {
-  const themeContext = Object(react__WEBPACK_IMPORTED_MODULE_1__["useContext"])(_themes_default_js__WEBPACK_IMPORTED_MODULE_3__["ThemeContext"]);
-  const theme = themeContext.theme;
-  let backgroundColor = props.backgroundColor;
-
-  if (!backgroundColor) {
-    backgroundColor = theme.colors.placeholder;
-  }
-
-  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Placeholder, Object.assign({}, props, {
-    backgroundColor: backgroundColor,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 39
-    },
-    __self: undefined
-  }));
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (ImagePlaceholder);
-
-/***/ }),
-
-/***/ "./src/components/ImagePlaceholder/index.js":
-/*!**************************************************!*\
-  !*** ./src/components/ImagePlaceholder/index.js ***!
-  \**************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _ImagePlaceholder__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ImagePlaceholder */ "./src/components/ImagePlaceholder/ImagePlaceholder.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _ImagePlaceholder__WEBPACK_IMPORTED_MODULE_0__["default"]; });
-
-
-
-/***/ }),
-
 /***/ "./src/components/ImageResponsive/ImageResponsive.js":
 /*!***********************************************************!*\
   !*** ./src/components/ImageResponsive/ImageResponsive.js ***!
@@ -1422,7 +1321,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_progressive_image__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_progressive_image__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 /* harmony import */ var _themes_default_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../themes/default.js */ "./src/themes/default.js");
-/* harmony import */ var _ImagePlaceholder__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../ImagePlaceholder */ "./src/components/ImagePlaceholder/index.js");
+/* harmony import */ var _Placeholder__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../Placeholder */ "./src/components/Placeholder/index.js");
 /* harmony import */ var _Cursor__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../Cursor */ "./src/components/Cursor/index.js");
 
 var _jsxFileName = "/home/cs/work/inu-v2/react-src/src/components/ImageResponsive/ImageResponsive.js";
@@ -1489,29 +1388,29 @@ const ImageResponsive = props => {
   const sizes = mediaDetails.sizes;
   let srcSet = sizes.map(item => "".concat(item.sourceUrl, " ").concat(item.width, "w"));
   srcSet.push("".concat(featuredImage.sourceUrl, " ").concat(mediaDetails.width, "w"));
-  console.log(srcSet);
   const themeContext = Object(react__WEBPACK_IMPORTED_MODULE_1__["useContext"])(_themes_default_js__WEBPACK_IMPORTED_MODULE_4__["ThemeContext"]);
   const theme = themeContext.theme;
   const backgroundColor = theme.colors.background;
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_progressive_image__WEBPACK_IMPORTED_MODULE_2___default.a, {
     src: src,
     placeholder: "",
-    delay: 0,
+    delay: 150,
     srcSetData: {
       srcSet: srcSet
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 60
+      lineNumber: 58
     },
     __self: undefined
   }, (src, loading, srcSetData) => {
-    return loading ? react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_ImagePlaceholder__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    return loading ? react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Placeholder__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      type: "box",
       width: width,
       height: height,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 68
+        lineNumber: 66
       },
       __self: undefined
     }) : react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Image, {
@@ -1524,7 +1423,7 @@ const ImageResponsive = props => {
       onClick: () => imageClickHandler(index, numberOfSlides),
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 70
+        lineNumber: 68
       },
       __self: undefined
     });
@@ -1687,9 +1586,10 @@ const ImageThumb = props => {
     __self: undefined
   }, (thumbSrc, loading) => {
     return loading ? react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Placeholder__WEBPACK_IMPORTED_MODULE_5__["default"], {
-      type: "box",
+      type: "image",
       width: thumbSize,
       height: thumbSize,
+      color: theme.colors.background,
       __source: {
         fileName: _jsxFileName,
         lineNumber: 76
@@ -1704,7 +1604,7 @@ const ImageThumb = props => {
       isActive: thumbisActive,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 78
+        lineNumber: 83
       },
       __self: undefined
     });
@@ -2746,8 +2646,48 @@ __webpack_require__.r(__webpack_exports__);
 
 var _jsxFileName = "/home/cs/work/inu-v2/react-src/src/components/Placeholder/Placeholder.js";
 
+function _templateObject10() {
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  ", "\n  ", "\n"]);
+
+  _templateObject10 = function () {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject9() {
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  ", "\n  ", "\n"]);
+
+  _templateObject9 = function () {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject8() {
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n      background-color: ", ";\n    "]);
+
+  _templateObject8 = function () {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject7() {
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n      background-color: ", ";\n    "]);
+
+  _templateObject7 = function () {
+    return data;
+  };
+
+  return data;
+}
+
 function _templateObject6() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n      height: ", ";\n      min-height: ", ";\n    "]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  ", ";\n\n  ", ";\n"]);
 
   _templateObject6 = function () {
     return data;
@@ -2757,7 +2697,7 @@ function _templateObject6() {
 }
 
 function _templateObject5() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n      width: ", ";\n      min-width: ", ";\n    "]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n      height: ", ";\n      min-height: ", ";\n    "]);
 
   _templateObject5 = function () {
     return data;
@@ -2767,7 +2707,7 @@ function _templateObject5() {
 }
 
 function _templateObject4() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n      background-color: ", ";\n    "]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n      width: ", ";\n      min-width: ", ";\n    "]);
 
   _templateObject4 = function () {
     return data;
@@ -2777,7 +2717,7 @@ function _templateObject4() {
 }
 
 function _templateObject3() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  ", ";\n\n  ", ";\n\n  ", ";\n"]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  ", ";\n\n  ", ";\n"]);
 
   _templateObject3 = function () {
     return data;
@@ -2810,7 +2750,11 @@ function _templateObject() {
 
 
 const Text = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject(), props => props.theme.colors.placeholder && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject2(), props.theme.colors.placeholder));
-const Box = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject3(), props => props.backgroundColor && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject4(), props.backgroundColor), props => props.width && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject5(), props.width, props.width), props => props.height && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject6(), props.height, props.height));
+const BoxDimensions = Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject3(), props => props.width && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject4(), props.width, props.width), props => props.height && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject5(), props.height, props.height));
+const BoxColors = Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject6(), props => props.theme.colors.placeholder && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject7(), props.theme.colors.placeholder), props => props.color && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject8(), props.color));
+const Box = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject9(), BoxDimensions, BoxColors); // For images thi seems to be better ...
+
+const Image = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].img(_templateObject10(), BoxDimensions, BoxColors);
 
 const Placeholder = props => {
   const type = props.type;
@@ -2823,7 +2767,7 @@ const Placeholder = props => {
         theme: theme,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 48
+          lineNumber: 67
         },
         __self: undefined
       });
@@ -2834,7 +2778,18 @@ const Placeholder = props => {
       }, props, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 50
+          lineNumber: 69
+        },
+        __self: undefined
+      }));
+
+    case "image":
+      return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Image, Object.assign({
+        theme: theme
+      }, props, {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 71
         },
         __self: undefined
       }));
@@ -2843,7 +2798,7 @@ const Placeholder = props => {
       return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 52
+          lineNumber: 73
         },
         __self: undefined
       }, "Loading...");
@@ -4189,7 +4144,7 @@ const themeColors = {
     text: black,
     background: white,
     gray: gray,
-    placeholder: lightgray,
+    placeholder: white,
     borderColor: black,
     cursor: "brutalist_line_SVGicon_cursor2.png"
   },
@@ -4197,7 +4152,7 @@ const themeColors = {
     text: white,
     background: black,
     gray: lightgray,
-    placeholder: darkgray,
+    placeholder: black,
     borderColor: white,
     cursor: "brutalist_line_SVGicon_cursor2-black.png"
   }

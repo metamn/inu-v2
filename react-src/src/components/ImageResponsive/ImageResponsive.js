@@ -3,7 +3,7 @@ import ProgressiveImage from "react-progressive-image";
 import styled, { css } from "styled-components";
 
 import { ThemeContext } from "../../themes/default.js";
-import ImagePlaceholder from "../ImagePlaceholder";
+import Placeholder from "../Placeholder";
 import { CursorPointer } from "../Cursor";
 
 const Image = styled.img`
@@ -50,8 +50,6 @@ const ImageResponsive = props => {
   let srcSet = sizes.map(item => `${item.sourceUrl} ${item.width}w`);
   srcSet.push(`${featuredImage.sourceUrl} ${mediaDetails.width}w`);
 
-  console.log(srcSet);
-
   const themeContext = useContext(ThemeContext);
   const { theme } = themeContext;
   const backgroundColor = theme.colors.background;
@@ -60,12 +58,12 @@ const ImageResponsive = props => {
     <ProgressiveImage
       src={src}
       placeholder=""
-      delay={0}
+      delay={150}
       srcSetData={{ srcSet: srcSet }}
     >
       {(src, loading, srcSetData) => {
         return loading ? (
-          <ImagePlaceholder width={width} height={height} />
+          <Placeholder type="box" width={width} height={height} />
         ) : (
           <Image
             src={src}

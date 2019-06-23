@@ -15,13 +15,7 @@ const Text = styled.div`
     `};
 `;
 
-const Box = styled.div`
-  ${props =>
-    props.backgroundColor &&
-    css`
-      background-color: ${props.backgroundColor};
-    `};
-
+const BoxDimensions = css`
   ${props =>
     props.width &&
     css`
@@ -37,6 +31,31 @@ const Box = styled.div`
     `};
 `;
 
+const BoxColors = css`
+  ${props =>
+    props.theme.colors.placeholder &&
+    css`
+      background-color: ${props.theme.colors.placeholder};
+    `};
+
+  ${props =>
+    props.color &&
+    css`
+      background-color: ${props.color};
+    `};
+`;
+
+const Box = styled.div`
+  ${BoxDimensions}
+  ${BoxColors}
+`;
+
+// For images thi seems to be better ...
+const Image = styled.img`
+  ${BoxDimensions}
+  ${BoxColors}
+`;
+
 const Placeholder = props => {
   const { type } = props;
 
@@ -48,6 +67,8 @@ const Placeholder = props => {
       return <Text theme={theme} />;
     case "box":
       return <Box theme={theme} {...props} />;
+    case "image":
+      return <Image theme={theme} {...props} />;
     default:
       return <div>Loading...</div>;
   }
