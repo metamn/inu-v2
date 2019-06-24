@@ -125,7 +125,7 @@ function _templateObject() {
 
 
 
-const Container = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].nav(_templateObject(), _Cursor__WEBPACK_IMPORTED_MODULE_5__["CursorDefault"]); // The query definition
+const Container = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].nav(_templateObject(), _Cursor__WEBPACK_IMPORTED_MODULE_5__["CursorPointer"]); // The query definition
 
 const query = graphql_tag__WEBPACK_IMPORTED_MODULE_3___default()(_templateObject2()); // Decides if a List item (category) is visible or note
 // - when the mobile menu is active returns always `visible`
@@ -340,26 +340,15 @@ __webpack_require__.r(__webpack_exports__);
 /*!*****************************************!*\
   !*** ./src/components/Cursor/Cursor.js ***!
   \*****************************************/
-/*! exports provided: CursorDefault, CursorPointer */
+/*! exports provided: CursorPointer */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CursorDefault", function() { return CursorDefault; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CursorPointer", function() { return CursorPointer; });
 /* harmony import */ var _home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/esm/taggedTemplateLiteral */ "./node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/esm/taggedTemplateLiteral.js");
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 
-
-function _templateObject2() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  &:hover {\n    cursor: url(\"/react-wp/wp-content/themes/inu-v2/arrow-right.png\") 16 0,\n      pointer;\n  }\n"]);
-
-  _templateObject2 = function () {
-    return data;
-  };
-
-  return data;
-}
 
 function _templateObject() {
   const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  cursor: url(\"/react-wp/wp-content/themes/inu-v2/brutalist_line_SVGicon_cursor2.png\")\n      31 0,\n    default;\n"]);
@@ -372,8 +361,7 @@ function _templateObject() {
 }
 
 
-const CursorDefault = Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["css"])(_templateObject());
-const CursorPointer = Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["css"])(_templateObject2());
+const CursorPointer = Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["css"])(_templateObject());
 
 /***/ }),
 
@@ -381,14 +369,12 @@ const CursorPointer = Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["css
 /*!****************************************!*\
   !*** ./src/components/Cursor/index.js ***!
   \****************************************/
-/*! exports provided: CursorDefault, CursorPointer */
+/*! exports provided: CursorPointer */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Cursor__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Cursor */ "./src/components/Cursor/Cursor.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CursorDefault", function() { return _Cursor__WEBPACK_IMPORTED_MODULE_0__["CursorDefault"]; });
-
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CursorPointer", function() { return _Cursor__WEBPACK_IMPORTED_MODULE_0__["CursorPointer"]; });
 
 
@@ -455,7 +441,7 @@ function _templateObject() {
 
 
 const query = graphql_tag__WEBPACK_IMPORTED_MODULE_4___default()(_templateObject());
-const H2 = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].h2(_templateObject2(), _Cursor__WEBPACK_IMPORTED_MODULE_7__["CursorDefault"], props => props.theme.colors.gray && Object(styled_components__WEBPACK_IMPORTED_MODULE_3__["css"])(_templateObject3(), props.theme.colors.gray));
+const H2 = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].h2(_templateObject2(), _Cursor__WEBPACK_IMPORTED_MODULE_7__["CursorPointer"], props => props.theme.colors.gray && Object(styled_components__WEBPACK_IMPORTED_MODULE_3__["css"])(_templateObject3(), props.theme.colors.gray));
 
 const markup = (data, queryProps) => {
   const description = data.generalSettings.description;
@@ -1021,12 +1007,13 @@ const Home = () => {
     if (displayMode === -2) return; // Change the display mode
 
     const newDisplayMode = displayMode === 1 ? 0 : 1;
-    setDisplayMode(newDisplayMode); // ???
+    setDisplayMode(newDisplayMode); // Save the current display mode
 
-    setActiveMenuToggleIcon(true); // Save the current display mode
+    setPreviousDisplayMode(newDisplayMode); // Hide the category menu
 
-    setPreviousDisplayMode(newDisplayMode);
-    console.log("newDisplayMode:" + newDisplayMode);
+    setActiveCategoryIcon(true); // ???
+
+    setActiveMenuToggleIcon(true);
   }; // Click on a thumbnail
 
 
@@ -1077,7 +1064,7 @@ const Home = () => {
           setActiveSlide: setActiveSlide,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 151
+            lineNumber: 153
           },
           __self: undefined
         });
@@ -1089,7 +1076,7 @@ const Home = () => {
           thumbClickHandler: thumbClickHandler,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 161
+            lineNumber: 163
           },
           __self: undefined
         });
@@ -1098,7 +1085,7 @@ const Home = () => {
         return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Contact__WEBPACK_IMPORTED_MODULE_14__["default"], {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 168
+            lineNumber: 170
           },
           __self: undefined
         });
@@ -1108,7 +1095,7 @@ const Home = () => {
         return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Blank__WEBPACK_IMPORTED_MODULE_13__["default"], {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 171
+            lineNumber: 173
           },
           __self: undefined
         });
@@ -1118,7 +1105,7 @@ const Home = () => {
   return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_2___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Reset__WEBPACK_IMPORTED_MODULE_7__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 177
+      lineNumber: 179
     },
     __self: undefined
   }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_TypographicGrid__WEBPACK_IMPORTED_MODULE_8__["default"], {
@@ -1129,13 +1116,13 @@ const Home = () => {
     lineColor: "#666",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 178
+      lineNumber: 180
     },
     __self: undefined
   }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react_helmet__WEBPACK_IMPORTED_MODULE_5__["Helmet"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 185
+      lineNumber: 187
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("meta", {
@@ -1143,21 +1130,21 @@ const Home = () => {
     content: "Portfolio",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 186
+      lineNumber: 188
     },
     __self: undefined
   })), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_themes_default_js__WEBPACK_IMPORTED_MODULE_6__["ThemeContext"].Provider, {
     value: currentTheme,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 188
+      lineNumber: 190
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Container, {
     theme: currentTheme.theme,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 189
+      lineNumber: 191
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Header__WEBPACK_IMPORTED_MODULE_10__["default"], {
@@ -1172,13 +1159,13 @@ const Home = () => {
     menuToggleIconClickHandler: menuToggleIconClickHandler,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 190
+      lineNumber: 192
     },
     __self: undefined
   }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Display, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 201
+      lineNumber: 203
     },
     __self: undefined
   }))));
@@ -1278,7 +1265,7 @@ function _templateObject() {
 
 
 
-const Container = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].div(_templateObject(), _Cursor__WEBPACK_IMPORTED_MODULE_5__["CursorDefault"], props => props.size && Object(styled_components__WEBPACK_IMPORTED_MODULE_3__["css"])(_templateObject2(), props.size, props.size, props.size), props => props.className === "active" && Object(styled_components__WEBPACK_IMPORTED_MODULE_3__["css"])(_templateObject3()), props => props.className === "inactive" && props.theme.colors.inactive && Object(styled_components__WEBPACK_IMPORTED_MODULE_3__["css"])(_templateObject4(), props.theme.colors.inactive), props => props.className === "hidden" && Object(styled_components__WEBPACK_IMPORTED_MODULE_3__["css"])(_templateObject5()));
+const Container = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].div(_templateObject(), _Cursor__WEBPACK_IMPORTED_MODULE_5__["CursorPointer"], props => props.size && Object(styled_components__WEBPACK_IMPORTED_MODULE_3__["css"])(_templateObject2(), props.size, props.size, props.size), props => props.className === "active" && Object(styled_components__WEBPACK_IMPORTED_MODULE_3__["css"])(_templateObject3()), props => props.className === "inactive" && props.theme.colors.inactive && Object(styled_components__WEBPACK_IMPORTED_MODULE_3__["css"])(_templateObject4(), props.theme.colors.inactive), props => props.className === "hidden" && Object(styled_components__WEBPACK_IMPORTED_MODULE_3__["css"])(_templateObject5()));
 
 const Icon = props => {
   const defaults = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({
@@ -1736,7 +1723,7 @@ function _templateObject() {
 
 
 const ImageActive = Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject(), props => props.theme.colors.text && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject2(), props.theme.colors.text));
-const Image = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].img(_templateObject3(), _Cursor__WEBPACK_IMPORTED_MODULE_7__["CursorDefault"], props => props.theme.colors.background && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject4(), props.theme.colors.background), props => props.size && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject5(), _Media__WEBPACK_IMPORTED_MODULE_6__["default"].mobile(_templateObject6(), props.size, props.size), _Media__WEBPACK_IMPORTED_MODULE_6__["default"].tablet(_templateObject7(), props.size, props.size)), ImageActive, props => props.isActive && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject8(), ImageActive));
+const Image = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].img(_templateObject3(), _Cursor__WEBPACK_IMPORTED_MODULE_7__["CursorPointer"], props => props.theme.colors.background && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject4(), props.theme.colors.background), props => props.size && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject5(), _Media__WEBPACK_IMPORTED_MODULE_6__["default"].mobile(_templateObject6(), props.size, props.size), _Media__WEBPACK_IMPORTED_MODULE_6__["default"].tablet(_templateObject7(), props.size, props.size)), ImageActive, props => props.isActive && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject8(), ImageActive));
 
 const ImageThumb = props => {
   const title = props.title,
@@ -2091,7 +2078,7 @@ const ListItemStyleActiveWhenAllVisible = Object(styled_components__WEBPACK_IMPO
 
 const ListItemAddTopMargin = Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject10(), props => props.visibility === "visible" && props.topMargin && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject11())); // The style of the items
 
-const ListItemStyle = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].li(_templateObject12(), _Cursor__WEBPACK_IMPORTED_MODULE_5__["CursorDefault"], ListItemHideInvisible, ListItemStyleActive, ListItemStyleAll, ListItemStyleActiveWhenAllVisible, ListItemAddTopMargin); // The List Item component
+const ListItemStyle = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].li(_templateObject12(), _Cursor__WEBPACK_IMPORTED_MODULE_5__["CursorPointer"], ListItemHideInvisible, ListItemStyleActive, ListItemStyleAll, ListItemStyleActiveWhenAllVisible, ListItemAddTopMargin); // The List Item component
 
 const ListItem = props => {
   const children = props.children;
@@ -3379,7 +3366,7 @@ function _templateObject() {
 
 
 
-const Container = styled_components__WEBPACK_IMPORTED_MODULE_4__["default"].section(_templateObject(), _Cursor__WEBPACK_IMPORTED_MODULE_6__["CursorDefault"]);
+const Container = styled_components__WEBPACK_IMPORTED_MODULE_4__["default"].section(_templateObject(), _Cursor__WEBPACK_IMPORTED_MODULE_6__["CursorPointer"]);
 const query = graphql_tag__WEBPACK_IMPORTED_MODULE_3___default()(_templateObject2(), _Image__WEBPACK_IMPORTED_MODULE_8__["default"].fragments.mediaDetails);
 
 const markup = (data, queryProps) => {
@@ -3495,7 +3482,7 @@ function _templateObject() {
 
 
 const query = graphql_tag__WEBPACK_IMPORTED_MODULE_3___default()(_templateObject());
-const H1 = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].h1(_templateObject2(), _Cursor__WEBPACK_IMPORTED_MODULE_5__["CursorDefault"]);
+const H1 = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].h1(_templateObject2(), _Cursor__WEBPACK_IMPORTED_MODULE_5__["CursorPointer"]);
 
 const markup = (data, queryProps) => {
   const title = data.generalSettings.title;
@@ -4106,5 +4093,5 @@ module.exports = __webpack_require__(/*! /home/cs/work/inu-v2/react-src/src/inde
 
 /***/ })
 
-},[[0,"runtime~main",1]]]);
+},[[0,"runtime~main",0]]]);
 //# sourceMappingURL=main.chunk.js.map

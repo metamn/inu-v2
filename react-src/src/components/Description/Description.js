@@ -4,7 +4,7 @@ import gql from "graphql-tag";
 import { useQuery } from "./../../hooks";
 
 import { ThemeContext } from "../../themes/default.js";
-import { CursorDefault } from "../Cursor";
+import { CursorPointer } from "../Cursor";
 
 const query = gql`
   query siteDescription {
@@ -19,7 +19,7 @@ const H2 = styled.h2`
   font-weight: normal;
   letter-spacing: 1px;
 
-  ${CursorDefault}
+  ${CursorPointer}
 
   ${props =>
     props.theme.colors.gray &&

@@ -3,7 +3,7 @@ import styled from "styled-components";
 import gql from "graphql-tag";
 import { useQuery } from "./../../hooks";
 
-import { CursorDefault } from "../Cursor";
+import { CursorPointer } from "../Cursor";
 
 const query = gql`
   query siteTitle {
@@ -17,7 +17,7 @@ const H1 = styled.h1`
   font-size: 1.5em;
   font-weight: normal;
 
-  ${CursorDefault}
+  ${CursorPointer}
 `;
 
 const markup = (data, queryProps) => {

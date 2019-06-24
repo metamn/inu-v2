@@ -5,7 +5,7 @@ import ProgressiveImage from "react-progressive-image";
 import { ThemeContext } from "../../themes/default.js";
 import Placeholder from "../Placeholder";
 import Media from "../Media";
-import { CursorDefault } from "../Cursor";
+import { CursorPointer } from "../Cursor";
 
 const ImageActive = css`
   ${props =>
@@ -19,7 +19,7 @@ const Image = styled.img`
   width: 100%;
   height: auto;
 
-  ${CursorDefault}
+  ${CursorPointer}
 
   padding: calc(var(--lem) / 1);
   border: 1px solid transparent;

@@ -3,7 +3,7 @@ import styled, { css } from "styled-components";
 
 import { ThemeContext } from "../../themes/default.js";
 import { setClassName } from "../../helpers";
-import { CursorDefault } from "../Cursor";
+import { CursorPointer } from "../Cursor";
 
 // Sets the `active` classname for a list item
 const setListItemActive = props => {
@@ -81,7 +81,7 @@ const ListItemStyle = styled.li`
   font-size: 1.333em;
   width: 100%;
 
-  ${CursorDefault}
+  ${CursorPointer}
   ${ListItemHideInvisible}
   ${ListItemStyleActive}
   ${ListItemStyleAll}

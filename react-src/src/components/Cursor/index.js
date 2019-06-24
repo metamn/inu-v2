@@ -1,1 +1,1 @@
-export { CursorDefault, CursorPointer } from "./Cursor";
+export { CursorPointer } from "./Cursor";

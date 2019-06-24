@@ -99,12 +99,14 @@ const Home = () => {
     const newDisplayMode = displayMode === 1 ? 0 : 1;
     setDisplayMode(newDisplayMode);
 
-    // ???
-    setActiveMenuToggleIcon(true);
-
     // Save the current display mode
     setPreviousDisplayMode(newDisplayMode);
-    console.log("newDisplayMode:" + newDisplayMode);
+
+    // Hide the category menu
+    setActiveCategoryIcon(true);
+
+    // ???
+    setActiveMenuToggleIcon(true);
   };
 
   // Click on a thumbnail

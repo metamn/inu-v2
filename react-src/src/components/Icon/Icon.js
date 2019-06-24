@@ -2,10 +2,10 @@ import React, { useContext } from "react";
 import styled, { css } from "styled-components";
 
 import { ThemeContext } from "../../themes/default.js";
-import { CursorDefault } from "../Cursor";
+import { CursorPointer } from "../Cursor";
 
 const Container = styled.div`
-  ${CursorDefault}
+  ${CursorPointer}
 
   ${props =>
     props.size &&
