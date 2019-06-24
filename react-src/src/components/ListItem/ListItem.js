@@ -43,6 +43,7 @@ const ListItemStyleAll = css`
     css`
       margin-bottom: calc(var(--lem) / 2);
       padding-bottom: calc(var(--lem) / 2);
+
       ${props =>
         props.theme.colors.borderColor &&
         css`
@@ -50,7 +51,7 @@ const ListItemStyleAll = css`
         `};
 
       &:hover {
-        font-style: italic;
+        text-decoration: line-through;
       }
     `};
 `;
@@ -61,7 +62,7 @@ const ListItemStyleActiveWhenAllVisible = css`
     props.visibility === "visible" &&
     props.className === "active" &&
     css`
-      font-style: italic;
+      text-decoration: line-through;
     `};
 `;
 

@@ -25,7 +25,7 @@ const Container = styled.header`
 	  	`}
 `;
 
-const ContainerMenu = styled.div`
+const MenuContainer = styled.div`
   ${Media.mobile`
 	  width: 100%;
 	  flex-direction: column;
@@ -52,7 +52,7 @@ const ContainerMenu = styled.div`
 	  `}
 `;
 
-const IconToggleContainer = styled.div`
+const MenuToggleIcons = styled.div`
   ${Media.mobile`display: flex`}
   ${Media.tablet`display: none`}
 `;
@@ -71,17 +71,17 @@ const Header = props => {
     <Container>
       <Logo logoClickHandler={logoClickHandler} />
       <Line />
-      <IconToggleContainer>
+      <MenuToggleIcons>
         <IconToggle
           setClassNameCondition={activeMenuToggleIcon}
           icon1={icon1}
           icon2={icon2}
         />
-      </IconToggleContainer>
-      <ContainerMenu activeMenuToggleIcon={activeMenuToggleIcon}>
+      </MenuToggleIcons>
+      <MenuContainer activeMenuToggleIcon={activeMenuToggleIcon}>
         <Menu {...props} />
         <HeaderIcons {...props} />
-      </ContainerMenu>
+      </MenuContainer>
     </Container>
   );
 };

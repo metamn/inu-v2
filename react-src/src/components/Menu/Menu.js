@@ -13,14 +13,23 @@ const Container = styled.section`
 
   ${Media.mobile`
 	  margin-bottom: calc(var(--lem) * 2);
+	  order: 2;
 	  `};
 
   ${Media.tablet`
 	  	margin-bottom: 0;
+		order: 0;
 	  	`};
 `;
 
-const MenuItems = styled.section``;
+const MenuItems = styled.section`
+  font-weight: bold;
+`;
+
+const IconToggleContainer = styled.div`
+  ${Media.mobile`display: none`}
+  ${Media.tablet`display: flex`}
+`;
 
 const Menu = props => {
   const { categoryIconClickHandler, activeCategoryIcon } = props;
@@ -35,11 +44,13 @@ const Menu = props => {
         <MenuItemCustom index={-1} menuItemText="random" {...props} />
         <MenuItemCustom index={-2} menuItemText="contact" {...props} />
       </MenuItems>
-      <IconToggle
-        setClassNameCondition={activeCategoryIcon}
-        icon1={icon1}
-        icon2={icon2}
-      />
+      <IconToggleContainer>
+        <IconToggle
+          setClassNameCondition={activeCategoryIcon}
+          icon1={icon1}
+          icon2={icon2}
+        />
+      </IconToggleContainer>
     </Container>
   );
 };

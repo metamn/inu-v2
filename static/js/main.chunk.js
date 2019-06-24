@@ -351,7 +351,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function _templateObject() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  cursor: url(\"/react-wp/wp-content/themes/inu-v2/brutalist_line_SVGicon_cursor2.png\")\n      31 0,\n    default;\n"]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  cursor: url(\"/react-wp/wp-content/themes/inu-v2/brutalist_line_SVGicon_cursor2.png\")\n      31 0,\n    pointer;\n"]);
 
   _templateObject = function () {
     return data;
@@ -632,8 +632,8 @@ function _templateObject() {
 
 
 const Container = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].header(_templateObject(), _Media__WEBPACK_IMPORTED_MODULE_9__["default"].mobile(_templateObject2()), _Media__WEBPACK_IMPORTED_MODULE_9__["default"].tablet(_templateObject3()));
-const ContainerMenu = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject4(), _Media__WEBPACK_IMPORTED_MODULE_9__["default"].mobile(_templateObject5(), props => props.activeMenuToggleIcon === true && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject6()), props => props.activeMenuToggleIcon === false && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject7())), _Media__WEBPACK_IMPORTED_MODULE_9__["default"].tablet(_templateObject8()));
-const IconToggleContainer = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject9(), _Media__WEBPACK_IMPORTED_MODULE_9__["default"].mobile(_templateObject10()), _Media__WEBPACK_IMPORTED_MODULE_9__["default"].tablet(_templateObject11()));
+const MenuContainer = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject4(), _Media__WEBPACK_IMPORTED_MODULE_9__["default"].mobile(_templateObject5(), props => props.activeMenuToggleIcon === true && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject6()), props => props.activeMenuToggleIcon === false && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject7())), _Media__WEBPACK_IMPORTED_MODULE_9__["default"].tablet(_templateObject8()));
+const MenuToggleIcons = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject9(), _Media__WEBPACK_IMPORTED_MODULE_9__["default"].mobile(_templateObject10()), _Media__WEBPACK_IMPORTED_MODULE_9__["default"].tablet(_templateObject11()));
 
 const Header = props => {
   const logoClickHandler = props.logoClickHandler,
@@ -674,7 +674,7 @@ const Header = props => {
       lineNumber: 73
     },
     __self: undefined
-  }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(IconToggleContainer, {
+  }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(MenuToggleIcons, {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 74
@@ -689,7 +689,7 @@ const Header = props => {
       lineNumber: 75
     },
     __self: undefined
-  })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(ContainerMenu, {
+  })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(MenuContainer, {
     activeMenuToggleIcon: activeMenuToggleIcon,
     __source: {
       fileName: _jsxFileName,
@@ -1958,7 +1958,7 @@ function _templateObject10() {
 }
 
 function _templateObject9() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n      font-style: italic;\n    "]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n      text-decoration: line-through;\n    "]);
 
   _templateObject9 = function () {
     return data;
@@ -1988,7 +1988,7 @@ function _templateObject7() {
 }
 
 function _templateObject6() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n      margin-bottom: calc(var(--lem) / 2);\n      padding-bottom: calc(var(--lem) / 2);\n      ", ";\n\n      &:hover {\n        font-style: italic;\n      }\n    "]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n      margin-bottom: calc(var(--lem) / 2);\n      padding-bottom: calc(var(--lem) / 2);\n\n      ", ";\n\n      &:hover {\n        text-decoration: line-through;\n      }\n    "]);
 
   _templateObject6 = function () {
     return data;
@@ -2089,7 +2089,7 @@ const ListItem = props => {
   }, props, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 99
+      lineNumber: 100
     },
     __self: undefined
   }), children);
@@ -2279,8 +2279,38 @@ __webpack_require__.r(__webpack_exports__);
 
 var _jsxFileName = "/home/cs/work/inu-v2/react-src/src/components/Menu/Menu.js";
 
+function _templateObject7() {
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["display: flex"]);
+
+  _templateObject7 = function () {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject6() {
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["display: none"]);
+
+  _templateObject6 = function () {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject5() {
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  ", "\n  ", "\n"]);
+
+  _templateObject5 = function () {
+    return data;
+  };
+
+  return data;
+}
+
 function _templateObject4() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])([""]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  font-weight: bold;\n"]);
 
   _templateObject4 = function () {
     return data;
@@ -2290,7 +2320,7 @@ function _templateObject4() {
 }
 
 function _templateObject3() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n\t  \tmargin-bottom: 0;\n\t  \t"]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n\t  \tmargin-bottom: 0;\n\t\torder: 0;\n\t  \t"]);
 
   _templateObject3 = function () {
     return data;
@@ -2300,7 +2330,7 @@ function _templateObject3() {
 }
 
 function _templateObject2() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n\t  margin-bottom: calc(var(--lem) * 2);\n\t  "]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n\t  margin-bottom: calc(var(--lem) * 2);\n\t  order: 2;\n\t  "]);
 
   _templateObject2 = function () {
     return data;
@@ -2328,6 +2358,7 @@ function _templateObject() {
 
 const Container = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].section(_templateObject(), _Media__WEBPACK_IMPORTED_MODULE_7__["default"].mobile(_templateObject2()), _Media__WEBPACK_IMPORTED_MODULE_7__["default"].tablet(_templateObject3()));
 const MenuItems = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].section(_templateObject4());
+const IconToggleContainer = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject5(), _Media__WEBPACK_IMPORTED_MODULE_7__["default"].mobile(_templateObject6()), _Media__WEBPACK_IMPORTED_MODULE_7__["default"].tablet(_templateObject7()));
 
 const Menu = props => {
   const categoryIconClickHandler = props.categoryIconClickHandler,
@@ -2336,7 +2367,7 @@ const Menu = props => {
     onClick: () => categoryIconClickHandler(),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 28
+      lineNumber: 37
     },
     __self: undefined
   });
@@ -2344,26 +2375,26 @@ const Menu = props => {
     onClick: () => categoryIconClickHandler(),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 29
+      lineNumber: 38
     },
     __self: undefined
   });
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Container, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 32
+      lineNumber: 41
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(MenuItems, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 33
+      lineNumber: 42
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Categories__WEBPACK_IMPORTED_MODULE_4__["default"], Object.assign({}, props, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 34
+      lineNumber: 43
     },
     __self: undefined
   })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_MenuItemCustom__WEBPACK_IMPORTED_MODULE_5__["default"], Object.assign({
@@ -2372,7 +2403,7 @@ const Menu = props => {
   }, props, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35
+      lineNumber: 44
     },
     __self: undefined
   })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_MenuItemCustom__WEBPACK_IMPORTED_MODULE_5__["default"], Object.assign({
@@ -2381,19 +2412,25 @@ const Menu = props => {
   }, props, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 36
+      lineNumber: 45
     },
     __self: undefined
-  }))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_IconToggle__WEBPACK_IMPORTED_MODULE_6__["default"], {
+  }))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(IconToggleContainer, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 47
+    },
+    __self: undefined
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_IconToggle__WEBPACK_IMPORTED_MODULE_6__["default"], {
     setClassNameCondition: activeCategoryIcon,
     icon1: icon1,
     icon2: icon2,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38
+      lineNumber: 48
     },
     __self: undefined
-  }));
+  })));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Menu);
