@@ -19,20 +19,21 @@ const Container = styled.div`
     `}
 
   ${props =>
-    props.className === "active" &&
+    props.className.includes("active") &&
     css`
       display: flex;
     `};
 
   ${props =>
-    props.className === "inactive" &&
+    props.className.includes("inactive") &&
     props.theme.colors.inactive &&
     css`
       color: ${props.theme.colors.inactive};
+      cursor: default;
     `};
 
   ${props =>
-    props.className === "hidden" &&
+    props.className.includes("hidden") &&
     css`
       display: none;
     `};

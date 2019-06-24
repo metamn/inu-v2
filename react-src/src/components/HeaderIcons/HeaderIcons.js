@@ -23,11 +23,15 @@ const HeaderIcon = styled(Icon)`
 `;
 
 const HeaderIcons = props => {
-  const { thumbIconClickHandler, sunIconClickHandler } = props;
+  const { thumbIconClickHandler, sunIconClickHandler, activeCategory } = props;
+
+  const thumbIconStatus = [-1, -2].includes(activeCategory)
+    ? "inactive"
+    : "active";
 
   return (
     <Container>
-      <HeaderIcon size={1.25}>
+      <HeaderIcon size={1.25} className={thumbIconStatus}>
         <MdApps onClick={() => thumbIconClickHandler()} />
       </HeaderIcon>
       <HeaderIcon size={1.25}>

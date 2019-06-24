@@ -182,7 +182,7 @@ const Slider = props => {
 
   // The data hook
   const variables =
-    category === -1 ? { first: 1000 } : { first: 1000, category: category };
+    category === -1 ? { first: 100 } : { first: 100, category: category };
   const queryProps = {
     refs: refs,
     imageClickHandler: imageClickHandler,

@@ -70,6 +70,7 @@ const Home = () => {
     setPreviousDisplayMode(0);
 
     if (index === -2) {
+      // Contact
       setDisplayMode(-2);
     } else {
       setActiveSlide(0);
