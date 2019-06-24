@@ -52,6 +52,12 @@ const Home = () => {
   // How to display images
   const [displayMode, setDisplayMode] = useState(0);
 
+  // Previous image display mode
+  // - this is used in the category icon click
+  // - if restores either the thumb view or the slider view ...
+  // - ...as it were before the click
+  const [previousDisplayMode, setPreviousDisplayMode] = useState(0);
+
   // Theming
   const themeContext = useContext(ThemeContext);
   const [currentTheme, setCurrentTheme] = useState(themeContext);
@@ -61,6 +67,7 @@ const Home = () => {
     setActiveCategory(index);
     setActiveCategoryIcon(true);
     setActiveMenuToggleIcon(true);
+    setPreviousDisplayMode(0);
 
     if (index === -2) {
       setDisplayMode(-2);
@@ -70,10 +77,17 @@ const Home = () => {
     }
   };
 
-  // Click on the category icon
+  // Click on the category dropdown icon
   const categoryIconClickHandler = () => {
     setActiveCategoryIcon(!activeCategoryIcon);
-    setDisplayMode(2);
+
+    if (activeCategoryIcon) {
+      // ChevronDown clicked ...
+      setDisplayMode(2);
+    } else {
+      // ChevronUp clicked ...
+      setDisplayMode(previousDisplayMode);
+    }
   };
 
   // Click on the thumbnails icon
@@ -81,8 +95,23 @@ const Home = () => {
     // On `Contact` we don't handle this click
     if (displayMode === -2) return;
 
-    displayMode === 1 ? setDisplayMode(0) : setDisplayMode(1);
+    // Change the display mode
+    const newDisplayMode = displayMode === 1 ? 0 : 1;
+    setDisplayMode(newDisplayMode);
+
+    // ???
     setActiveMenuToggleIcon(true);
+
+    // Save the current display mode
+    setPreviousDisplayMode(newDisplayMode);
+    console.log("newDisplayMode:" + newDisplayMode);
+  };
+
+  // Click on a thumbnail
+  const thumbClickHandler = index => {
+    setDisplayMode(0);
+    setActiveSlide(index);
+    setPreviousDisplayMode(0);
   };
 
   // Click on the theme icon
@@ -94,12 +123,6 @@ const Home = () => {
       setActiveMenuToggleIcon(true);
       setDisplayMode(0);
     }
-  };
-
-  // Click on a thumbnail
-  const thumbClickHandler = index => {
-    setDisplayMode(0);
-    setActiveSlide(index);
   };
 
   // Click on the logo
