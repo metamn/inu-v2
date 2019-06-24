@@ -34,12 +34,15 @@ const MenuItemsToggleIcons = props => {
 
   return (
     <Container activeMenuToggleIcon={activeMenuToggleIcon}>
-      <Icon as={ChevronIcon} className={setClassName(true, activeCategoryIcon)}>
+      <Icon
+        as={ChevronIcon}
+        className={setClassName(true, activeCategoryIcon, "active", "hidden")}
+      >
         <FiChevronDown onClick={() => categoryIconClickHandler()} />
       </Icon>
       <Icon
         as={ChevronIcon}
-        className={setClassName(false, activeCategoryIcon)}
+        className={setClassName(false, activeCategoryIcon, "active", "hidden")}
       >
         <FiChevronUp onClick={() => categoryIconClickHandler()} />
       </Icon>

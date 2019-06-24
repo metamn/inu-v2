@@ -2439,7 +2439,7 @@ const MenuItemsToggleIcons = props => {
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Icon__WEBPACK_IMPORTED_MODULE_4__["default"], {
     as: ChevronIcon,
-    className: Object(_helpers__WEBPACK_IMPORTED_MODULE_5__["setClassName"])(true, activeCategoryIcon),
+    className: Object(_helpers__WEBPACK_IMPORTED_MODULE_5__["setClassName"])(true, activeCategoryIcon, "active", "hidden"),
     __source: {
       fileName: _jsxFileName,
       lineNumber: 37
@@ -2449,22 +2449,22 @@ const MenuItemsToggleIcons = props => {
     onClick: () => categoryIconClickHandler(),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38
+      lineNumber: 41
     },
     __self: undefined
   })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Icon__WEBPACK_IMPORTED_MODULE_4__["default"], {
     as: ChevronIcon,
-    className: Object(_helpers__WEBPACK_IMPORTED_MODULE_5__["setClassName"])(false, activeCategoryIcon),
+    className: Object(_helpers__WEBPACK_IMPORTED_MODULE_5__["setClassName"])(false, activeCategoryIcon, "active", "hidden"),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 40
+      lineNumber: 43
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_icons_fi__WEBPACK_IMPORTED_MODULE_3__["FiChevronUp"], {
     onClick: () => categoryIconClickHandler(),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 44
+      lineNumber: 47
     },
     __self: undefined
   })));
@@ -2590,7 +2590,7 @@ const MenuToggleIcons = props => {
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Icon__WEBPACK_IMPORTED_MODULE_4__["default"], {
     as: MenuIcon,
-    className: Object(_helpers__WEBPACK_IMPORTED_MODULE_6__["setClassName"])(true, activeMenuToggleIcon),
+    className: Object(_helpers__WEBPACK_IMPORTED_MODULE_6__["setClassName"])(true, activeMenuToggleIcon, "active", "hidden"),
     __source: {
       fileName: _jsxFileName,
       lineNumber: 33
@@ -2600,22 +2600,22 @@ const MenuToggleIcons = props => {
     onClick: () => menuToggleIconClickHandler(),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 34
+      lineNumber: 37
     },
     __self: undefined
   })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Icon__WEBPACK_IMPORTED_MODULE_4__["default"], {
     as: MenuIcon,
-    className: Object(_helpers__WEBPACK_IMPORTED_MODULE_6__["setClassName"])(false, activeMenuToggleIcon),
+    className: Object(_helpers__WEBPACK_IMPORTED_MODULE_6__["setClassName"])(false, activeMenuToggleIcon, "active", "hidden"),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 36
+      lineNumber: 39
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_icons_fi__WEBPACK_IMPORTED_MODULE_3__["FiX"], {
     onClick: () => menuToggleIconClickHandler(),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 37
+      lineNumber: 48
     },
     __self: undefined
   })));
@@ -4213,5 +4213,5 @@ module.exports = __webpack_require__(/*! /home/cs/work/inu-v2/react-src/src/inde
 
 /***/ })
 
-},[[0,"runtime~main",1]]]);
+},[[0,"runtime~main",0]]]);
 //# sourceMappingURL=main.chunk.js.map

@@ -30,10 +30,21 @@ const MenuToggleIcons = props => {
 
   return (
     <Container>
-      <Icon as={MenuIcon} className={setClassName(true, activeMenuToggleIcon)}>
+      <Icon
+        as={MenuIcon}
+        className={setClassName(true, activeMenuToggleIcon, "active", "hidden")}
+      >
         <FiMenu onClick={() => menuToggleIconClickHandler()} />
       </Icon>
-      <Icon as={MenuIcon} className={setClassName(false, activeMenuToggleIcon)}>
+      <Icon
+        as={MenuIcon}
+        className={setClassName(
+          false,
+          activeMenuToggleIcon,
+          "active",
+          "hidden"
+        )}
+      >
         <FiX onClick={() => menuToggleIconClickHandler()} />
       </Icon>
     </Container>
