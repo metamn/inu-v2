@@ -1135,13 +1135,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-/* harmony import */ var _Cursor__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../Cursor */ "./src/components/Cursor/index.js");
+/* harmony import */ var _themes_default_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../themes/default.js */ "./src/themes/default.js");
+/* harmony import */ var _Cursor__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../Cursor */ "./src/components/Cursor/index.js");
 
 
 var _jsxFileName = "/home/cs/work/inu-v2/react-src/src/components/Icon/Icon.js";
 
-function _templateObject4() {
+function _templateObject5() {
   const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_1__["default"])(["\n      display: none;\n    "]);
+
+  _templateObject5 = function () {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject4() {
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_1__["default"])(["\n      color: ", ";\n    "]);
 
   _templateObject4 = function () {
     return data;
@@ -1171,7 +1182,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_1__["default"])(["\n  ", "\n\n  ", "\n\n  ", ";\n\n  ", ";\n"]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_1__["default"])(["\n  ", "\n\n  ", "\n\n  ", ";\n\n  ", ";\n\n  ", ";\n"]);
 
   _templateObject = function () {
     return data;
@@ -1183,7 +1194,8 @@ function _templateObject() {
 
 
 
-const Container = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].div(_templateObject(), _Cursor__WEBPACK_IMPORTED_MODULE_4__["CursorDefault"], props => props.size && Object(styled_components__WEBPACK_IMPORTED_MODULE_3__["css"])(_templateObject2(), props.size, props.size, props.size), props => props.className === "active" && Object(styled_components__WEBPACK_IMPORTED_MODULE_3__["css"])(_templateObject3()), props => props.className === "inactive" && Object(styled_components__WEBPACK_IMPORTED_MODULE_3__["css"])(_templateObject4()));
+
+const Container = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].div(_templateObject(), _Cursor__WEBPACK_IMPORTED_MODULE_5__["CursorDefault"], props => props.size && Object(styled_components__WEBPACK_IMPORTED_MODULE_3__["css"])(_templateObject2(), props.size, props.size, props.size), props => props.className === "active" && Object(styled_components__WEBPACK_IMPORTED_MODULE_3__["css"])(_templateObject3()), props => props.className === "inactive" && props.theme.colors.inactive && Object(styled_components__WEBPACK_IMPORTED_MODULE_3__["css"])(_templateObject4(), props.theme.colors.inactive), props => props.className === "hidden" && Object(styled_components__WEBPACK_IMPORTED_MODULE_3__["css"])(_templateObject5()));
 
 const Icon = props => {
   const defaults = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({
@@ -1193,12 +1205,15 @@ const Icon = props => {
   const children = defaults.children,
         className = defaults.className,
         size = defaults.size;
+  const themeContext = Object(react__WEBPACK_IMPORTED_MODULE_2__["useContext"])(_themes_default_js__WEBPACK_IMPORTED_MODULE_4__["ThemeContext"]);
+  const theme = themeContext.theme;
   return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Container, {
     size: size,
     className: className,
+    theme: theme,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38
+      lineNumber: 49
     },
     __self: undefined
   }, children);
@@ -4145,7 +4160,8 @@ const themeColors = {
     gray: gray,
     placeholder: white,
     borderColor: black,
-    cursor: "brutalist_line_SVGicon_cursor2.png"
+    cursor: "brutalist_line_SVGicon_cursor2.png",
+    inactive: lightgray
   },
   dark: {
     text: white,
@@ -4153,7 +4169,8 @@ const themeColors = {
     gray: lightgray,
     placeholder: black,
     borderColor: white,
-    cursor: "brutalist_line_SVGicon_cursor2-black.png"
+    cursor: "brutalist_line_SVGicon_cursor2-black.png",
+    inactive: darkgray
   }
 };
 
@@ -4196,5 +4213,5 @@ module.exports = __webpack_require__(/*! /home/cs/work/inu-v2/react-src/src/inde
 
 /***/ })
 
-},[[0,"runtime~main",0]]]);
+},[[0,"runtime~main",1]]]);
 //# sourceMappingURL=main.chunk.js.map

@@ -13,7 +13,8 @@ const themeColors = {
     gray: gray,
     placeholder: white,
     borderColor: black,
-    cursor: "brutalist_line_SVGicon_cursor2.png"
+    cursor: "brutalist_line_SVGicon_cursor2.png",
+    inactive: lightgray
   },
   dark: {
     text: white,
@@ -21,7 +22,8 @@ const themeColors = {
     gray: lightgray,
     placeholder: black,
     borderColor: white,
-    cursor: "brutalist_line_SVGicon_cursor2-black.png"
+    cursor: "brutalist_line_SVGicon_cursor2-black.png",
+    inactive: darkgray
   }
 };
 
