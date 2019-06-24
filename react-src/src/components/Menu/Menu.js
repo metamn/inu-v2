@@ -1,9 +1,10 @@
 import React from "react";
 import styled from "styled-components";
+import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 
 import Categories from "../Categories";
 import MenuItemCustom from "../MenuItemCustom";
-import MenuItemsToggleIcons from "../MenuItemsToggleIcons";
+import IconToggle from "../IconToggle";
 import Media from "../Media";
 
 const Container = styled.section`
@@ -22,6 +23,11 @@ const Container = styled.section`
 const MenuItems = styled.section``;
 
 const Menu = props => {
+  const { categoryIconClickHandler, activeCategoryIcon } = props;
+
+  const icon1 = <FiChevronDown onClick={() => categoryIconClickHandler()} />;
+  const icon2 = <FiChevronUp onClick={() => categoryIconClickHandler()} />;
+
   return (
     <Container>
       <MenuItems>
@@ -29,7 +35,11 @@ const Menu = props => {
         <MenuItemCustom index={-1} menuItemText="random" {...props} />
         <MenuItemCustom index={-2} menuItemText="contact" {...props} />
       </MenuItems>
-      <MenuItemsToggleIcons {...props} />
+      <IconToggle
+        setClassNameCondition={activeCategoryIcon}
+        icon1={icon1}
+        icon2={icon2}
+      />
     </Container>
   );
 };
