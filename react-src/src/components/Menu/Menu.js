@@ -29,6 +29,7 @@ const MenuItems = styled.section`
 const IconToggleContainer = styled.div`
   ${Media.mobile`display: none`}
   ${Media.tablet`display: flex`}
+  margin-left: calc(var(--lem) / 2);
 `;
 
 const Menu = props => {

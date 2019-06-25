@@ -96,8 +96,6 @@ const Home = () => {
     // On `Contact` and `Random` we don't handle this click
     if ([-1, -2].includes(activeCategory)) return;
 
-    console.log("displayMode:" + displayMode);
-
     // Change the display mode
     const newDisplayMode = displayMode === 1 ? 0 : 1;
     setDisplayMode(newDisplayMode);

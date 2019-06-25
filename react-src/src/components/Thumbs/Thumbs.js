@@ -63,12 +63,14 @@ const Thumbs = props => {
   const { category } = props;
 
   const variables =
-    category === -1 ? { first: 1000 } : { first: 1000, category: category };
+    category === -1 ? { first: 100 } : { first: 100, category: category };
 
   const queryProps = {
     postType: "thumb",
     ...props
   };
+
+  console.log("x");
 
   const { posts } = useQuery(query, markup, variables, queryProps);
 

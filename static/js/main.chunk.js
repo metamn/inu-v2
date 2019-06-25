@@ -1008,8 +1008,7 @@ const Home = () => {
 
   const thumbIconClickHandler = () => {
     // On `Contact` and `Random` we don't handle this click
-    if ([-1, -2].includes(activeCategory)) return;
-    console.log("displayMode:" + displayMode); // Change the display mode
+    if ([-1, -2].includes(activeCategory)) return; // Change the display mode
 
     const newDisplayMode = displayMode === 1 ? 0 : 1;
     setDisplayMode(newDisplayMode); // Save the current display mode
@@ -1069,7 +1068,7 @@ const Home = () => {
           setActiveSlide: setActiveSlide,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 156
+            lineNumber: 154
           },
           __self: undefined
         });
@@ -1081,7 +1080,7 @@ const Home = () => {
           thumbClickHandler: thumbClickHandler,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 166
+            lineNumber: 164
           },
           __self: undefined
         });
@@ -1090,7 +1089,7 @@ const Home = () => {
         return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Contact__WEBPACK_IMPORTED_MODULE_14__["default"], {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 173
+            lineNumber: 171
           },
           __self: undefined
         });
@@ -1100,7 +1099,7 @@ const Home = () => {
         return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Blank__WEBPACK_IMPORTED_MODULE_13__["default"], {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 176
+            lineNumber: 174
           },
           __self: undefined
         });
@@ -1110,7 +1109,7 @@ const Home = () => {
   return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_2___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Reset__WEBPACK_IMPORTED_MODULE_7__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 182
+      lineNumber: 180
     },
     __self: undefined
   }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_TypographicGrid__WEBPACK_IMPORTED_MODULE_8__["default"], {
@@ -1121,13 +1120,13 @@ const Home = () => {
     lineColor: "#666",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 183
+      lineNumber: 181
     },
     __self: undefined
   }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react_helmet__WEBPACK_IMPORTED_MODULE_5__["Helmet"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 190
+      lineNumber: 188
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("meta", {
@@ -1135,21 +1134,21 @@ const Home = () => {
     content: "Portfolio",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 191
+      lineNumber: 189
     },
     __self: undefined
   })), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_themes_default_js__WEBPACK_IMPORTED_MODULE_6__["ThemeContext"].Provider, {
     value: currentTheme,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 193
+      lineNumber: 191
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Container, {
     theme: currentTheme.theme,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 194
+      lineNumber: 192
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Header__WEBPACK_IMPORTED_MODULE_10__["default"], {
@@ -1164,13 +1163,13 @@ const Home = () => {
     menuToggleIconClickHandler: menuToggleIconClickHandler,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 195
+      lineNumber: 193
     },
     __self: undefined
   }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Display, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 206
+      lineNumber: 204
     },
     __self: undefined
   }))));
@@ -2305,7 +2304,7 @@ function _templateObject6() {
 }
 
 function _templateObject5() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  ", "\n  ", "\n"]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  ", "\n  ", "\n  margin-left: calc(var(--lem) / 2);\n"]);
 
   _templateObject5 = function () {
     return data;
@@ -2372,7 +2371,7 @@ const Menu = props => {
     onClick: () => categoryIconClickHandler(),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 37
+      lineNumber: 38
     },
     __self: undefined
   });
@@ -2380,26 +2379,26 @@ const Menu = props => {
     onClick: () => categoryIconClickHandler(),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38
+      lineNumber: 39
     },
     __self: undefined
   });
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Container, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41
+      lineNumber: 42
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(MenuItems, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 42
+      lineNumber: 43
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Categories__WEBPACK_IMPORTED_MODULE_4__["default"], Object.assign({}, props, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 43
+      lineNumber: 44
     },
     __self: undefined
   })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_MenuItemCustom__WEBPACK_IMPORTED_MODULE_5__["default"], Object.assign({
@@ -2408,7 +2407,7 @@ const Menu = props => {
   }, props, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 44
+      lineNumber: 45
     },
     __self: undefined
   })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_MenuItemCustom__WEBPACK_IMPORTED_MODULE_5__["default"], Object.assign({
@@ -2417,13 +2416,13 @@ const Menu = props => {
   }, props, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45
+      lineNumber: 46
     },
     __self: undefined
   }))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(IconToggleContainer, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 47
+      lineNumber: 48
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_IconToggle__WEBPACK_IMPORTED_MODULE_6__["default"], {
@@ -2432,7 +2431,7 @@ const Menu = props => {
     icon2: icon2,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 48
+      lineNumber: 49
     },
     __self: undefined
   })));
@@ -3436,9 +3435,9 @@ const markup = (data, queryProps) => {
 const Thumbs = props => {
   const category = props.category;
   const variables = category === -1 ? {
-    first: 1000
+    first: 100
   } : {
-    first: 1000,
+    first: 100,
     category: category
   };
 
@@ -3446,13 +3445,15 @@ const Thumbs = props => {
     postType: "thumb"
   }, props);
 
+  console.log("x");
+
   const _useQuery = Object(_hooks__WEBPACK_IMPORTED_MODULE_5__["useQuery"])(query, markup, variables, queryProps),
         posts = _useQuery.posts;
 
   return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Container, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 75
+      lineNumber: 77
     },
     __self: undefined
   }, posts);
