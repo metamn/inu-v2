@@ -3220,7 +3220,7 @@ const Slider = props => {
   // The data hook
 
   const variables = category === -1 ? {
-    first: 100
+    first: 10
   } : {
     first: 100,
     category: category
@@ -3242,7 +3242,9 @@ const Slider = props => {
 
     if (slideshowActive) {
       interval = setInterval(() => {
-        imageClickHandler(activeSlide + 1, numberOfSlides);
+        const numbers = Array.from(Array(numberOfSlides).keys()).filter(i => i != activeSlide);
+        const random = numbers[Math.floor(Math.random() * numbers.length)];
+        setActiveSlide(random);
       }, 2500);
     } else {
       clearInterval(interval);
@@ -3254,13 +3256,13 @@ const Slider = props => {
     width: width,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 231
+      lineNumber: 235
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Slides, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 232
+      lineNumber: 236
     },
     __self: undefined
   }, slides));
@@ -4158,5 +4160,5 @@ module.exports = __webpack_require__(/*! /home/cs/work/inu-v2/react-src/src/inde
 
 /***/ })
 
-},[[0,"runtime~main",0]]]);
+},[[0,"runtime~main",1]]]);
 //# sourceMappingURL=main.chunk.js.map

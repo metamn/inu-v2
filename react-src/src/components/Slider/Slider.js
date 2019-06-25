@@ -189,7 +189,7 @@ const Slider = props => {
 
   // The data hook
   const variables =
-    category === -1 ? { first: 100 } : { first: 100, category: category };
+    category === -1 ? { first: 10 } : { first: 100, category: category };
   const queryProps = {
     refs: refs,
     imageClickHandler: imageClickHandler,
@@ -210,7 +210,11 @@ const Slider = props => {
 
       if (slideshowActive) {
         interval = setInterval(() => {
-          imageClickHandler(activeSlide + 1, numberOfSlides);
+          const numbers = Array.from(Array(numberOfSlides).keys()).filter(
+            i => i != activeSlide
+          );
+          const random = numbers[Math.floor(Math.random() * numbers.length)];
+          setActiveSlide(random);
         }, 2500);
       } else {
         clearInterval(interval);
