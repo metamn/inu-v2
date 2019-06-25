@@ -54,7 +54,7 @@ const Home = () => {
 
   // Previous image display mode
   // - this is used in the category icon click
-  // - if restores either the thumb view or the slider view ...
+  // - it restores either the thumb view or the slider view ...
   // - ...as it were before the click
   const [previousDisplayMode, setPreviousDisplayMode] = useState(0);
 
@@ -93,8 +93,10 @@ const Home = () => {
 
   // Click on the thumbnails icon
   const thumbIconClickHandler = () => {
-    // On `Contact` we don't handle this click
-    if (displayMode === -2) return;
+    // On `Contact` and `Random` we don't handle this click
+    if ([-1, -2].includes(activeCategory)) return;
+
+    console.log("displayMode:" + displayMode);
 
     // Change the display mode
     const newDisplayMode = displayMode === 1 ? 0 : 1;
