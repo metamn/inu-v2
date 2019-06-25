@@ -13,6 +13,13 @@ const Image = styled.img`
   // So we use the normal cursor ...
   cursor: pointer;
 
+  // Sometimes the click is disabled
+  ${props =>
+    props.category === -1 &&
+    css`
+      cursor: default;
+    `};
+
   // Do not show the alt title while loading the image
   ${props =>
     props.color &&
@@ -42,7 +49,8 @@ const ImageResponsive = props => {
     numberOfSlides,
     node,
     width,
-    height
+    height,
+    category
   } = props;
   const { featuredImage } = node;
   const { mediaDetails } = featuredImage;
@@ -68,6 +76,7 @@ const ImageResponsive = props => {
             width={width}
             height={height}
             color={backgroundColor}
+            category={category}
             onClick={() => imageClickHandler(index, numberOfSlides)}
           />
         );

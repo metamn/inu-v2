@@ -172,6 +172,9 @@ const Slider = props => {
 
   // The image click handler
   const imageClickHandler = useCallback((index, numberOfSlides) => {
+    // No clicks on `Random`
+    if (category === -1) return;
+
     if (index + 1 < numberOfSlides) {
       setActiveSlide(index + 1);
     } else {
@@ -190,12 +193,15 @@ const Slider = props => {
   // The data hook
   const variables =
     category === -1 ? { first: 10 } : { first: 100, category: category };
+
   const queryProps = {
     refs: refs,
     imageClickHandler: imageClickHandler,
     width: width,
-    height: height
+    height: height,
+    category: category
   };
+
   const { slides, numberOfSlides } = useQuery(
     query,
     markup,

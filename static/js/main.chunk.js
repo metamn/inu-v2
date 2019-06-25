@@ -1482,8 +1482,18 @@ __webpack_require__.r(__webpack_exports__);
 
 var _jsxFileName = "/home/cs/work/inu-v2/react-src/src/components/ImageResponsive/ImageResponsive.js";
 
-function _templateObject4() {
+function _templateObject5() {
   const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n      max-height: ", ";\n    "]);
+
+  _templateObject5 = function () {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject4() {
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n      max-width: ", ";\n    "]);
 
   _templateObject4 = function () {
     return data;
@@ -1493,7 +1503,7 @@ function _templateObject4() {
 }
 
 function _templateObject3() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n      max-width: ", ";\n    "]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n      color: ", ";\n    "]);
 
   _templateObject3 = function () {
     return data;
@@ -1503,7 +1513,7 @@ function _templateObject3() {
 }
 
 function _templateObject2() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n      color: ", ";\n    "]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n      cursor: default;\n    "]);
 
   _templateObject2 = function () {
     return data;
@@ -1513,7 +1523,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  width: auto;\n  height: auto;\n\n  // A custom cursor blinks when clicking the image\n  // So we use the normal cursor ...\n  cursor: pointer;\n\n  // Do not show the alt title while loading the image\n  ", ";\n\n  ", ";\n\n  ", ";\n"]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  width: auto;\n  height: auto;\n\n  // A custom cursor blinks when clicking the image\n  // So we use the normal cursor ...\n  cursor: pointer;\n\n  // Sometimes the click is disabled\n  ", ";\n\n  // Do not show the alt title while loading the image\n  ", ";\n\n  ", ";\n\n  ", ";\n"]);
 
   _templateObject = function () {
     return data;
@@ -1527,7 +1537,7 @@ function _templateObject() {
 
 
 
-const Image = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].img(_templateObject(), props => props.color && Object(styled_components__WEBPACK_IMPORTED_MODULE_3__["css"])(_templateObject2(), props.color), props => props.width && Object(styled_components__WEBPACK_IMPORTED_MODULE_3__["css"])(_templateObject3(), props.width), props => props.height && Object(styled_components__WEBPACK_IMPORTED_MODULE_3__["css"])(_templateObject4(), props.height));
+const Image = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].img(_templateObject(), props => props.category === -1 && Object(styled_components__WEBPACK_IMPORTED_MODULE_3__["css"])(_templateObject2()), props => props.color && Object(styled_components__WEBPACK_IMPORTED_MODULE_3__["css"])(_templateObject3(), props.color), props => props.width && Object(styled_components__WEBPACK_IMPORTED_MODULE_3__["css"])(_templateObject4(), props.width), props => props.height && Object(styled_components__WEBPACK_IMPORTED_MODULE_3__["css"])(_templateObject5(), props.height));
 
 const ImageResponsive = props => {
   const title = props.title,
@@ -1537,7 +1547,8 @@ const ImageResponsive = props => {
         numberOfSlides = props.numberOfSlides,
         node = props.node,
         width = props.width,
-        height = props.height;
+        height = props.height,
+        category = props.category;
   const featuredImage = node.featuredImage;
   const mediaDetails = featuredImage.mediaDetails;
   const sizes = mediaDetails.sizes;
@@ -1554,7 +1565,7 @@ const ImageResponsive = props => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 59
+      lineNumber: 67
     },
     __self: undefined
   }, (src, loading, srcSetData) => {
@@ -1564,7 +1575,7 @@ const ImageResponsive = props => {
       height: height,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 62
+        lineNumber: 70
       },
       __self: undefined
     }) : react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Image, {
@@ -1574,10 +1585,11 @@ const ImageResponsive = props => {
       width: width,
       height: height,
       color: backgroundColor,
+      category: category,
       onClick: () => imageClickHandler(index, numberOfSlides),
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 64
+        lineNumber: 72
       },
       __self: undefined
     });
@@ -3204,6 +3216,9 @@ const Slider = props => {
   Object(_hooks__WEBPACK_IMPORTED_MODULE_4__["useEventListener"])("touchend", touchScrollHandler); // The image click handler
 
   const imageClickHandler = Object(react__WEBPACK_IMPORTED_MODULE_1__["useCallback"])((index, numberOfSlides) => {
+    // No clicks on `Random`
+    if (category === -1) return;
+
     if (index + 1 < numberOfSlides) {
       setActiveSlide(index + 1);
     } else {
@@ -3229,7 +3244,8 @@ const Slider = props => {
     refs: refs,
     imageClickHandler: imageClickHandler,
     width: width,
-    height: height
+    height: height,
+    category: category
   };
 
   const _useQuery = Object(_hooks__WEBPACK_IMPORTED_MODULE_4__["useQuery"])(query, markup, variables, queryProps),
@@ -3256,13 +3272,13 @@ const Slider = props => {
     width: width,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 229
+      lineNumber: 235
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Slides, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 230
+      lineNumber: 236
     },
     __self: undefined
   }, slides));
