@@ -42,7 +42,7 @@ const Menu = props => {
     <Container>
       <MenuItems>
         <Categories {...props} />
-        <MenuItemCustom index={-1} menuItemText="random" {...props} />
+        <MenuItemCustom index={-1} menuItemText="random slideshow" {...props} />
         <MenuItemCustom index={-2} menuItemText="contact" {...props} />
       </MenuItems>
       <IconToggleContainer>

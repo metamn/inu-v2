@@ -8,11 +8,11 @@ import { switchThemeFrom, ThemeContext } from "../../themes/default.js";
 import Reset from "../Reset";
 import TypographicGrid from "../TypographicGrid";
 import Spacing from "../Spacing";
+import Placeholder from "../Placeholder";
 
 import Header from "../Header";
 import Slider from "../Slider";
 import Thumbs from "../Thumbs";
-import Blank from "../Blank";
 import Contact from "../Contact";
 
 WebFont.load({
@@ -185,7 +185,7 @@ const Home = () => {
         return <Contact />;
       case 2:
       default:
-        return <Blank />;
+        return <Placeholder type="blank" />;
     }
   };
 

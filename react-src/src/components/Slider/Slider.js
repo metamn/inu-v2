@@ -211,7 +211,7 @@ const Slider = props => {
       if (slideshowActive) {
         interval = setInterval(() => {
           imageClickHandler(activeSlide + 1, numberOfSlides);
-        }, 2000);
+        }, 2500);
       } else {
         clearInterval(interval);
       }

@@ -50,11 +50,13 @@ const Box = styled.div`
   ${BoxColors}
 `;
 
-// For images thi seems to be better ...
+// For images this seems to be better ...
 const Image = styled.img`
   ${BoxDimensions}
   ${BoxColors}
 `;
+
+const Blank = styled.div``;
 
 const Placeholder = props => {
   const { type } = props;
@@ -69,6 +71,8 @@ const Placeholder = props => {
       return <Box theme={theme} {...props} />;
     case "image":
       return <Image theme={theme} {...props} />;
+    case "blank":
+      return <Blank />;
     default:
       return <div>Loading...</div>;
   }

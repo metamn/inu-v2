@@ -42,39 +42,6 @@ const App = () => react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(rea
 
 /***/ }),
 
-/***/ "./src/components/Blank/Blank.js":
-/*!***************************************!*\
-  !*** ./src/components/Blank/Blank.js ***!
-  \***************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-const Blank = () => {
-  return "";
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (Blank);
-
-/***/ }),
-
-/***/ "./src/components/Blank/index.js":
-/*!***************************************!*\
-  !*** ./src/components/Blank/index.js ***!
-  \***************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _Blank__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Blank */ "./src/components/Blank/Blank.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _Blank__WEBPACK_IMPORTED_MODULE_0__["default"]; });
-
-
-
-/***/ }),
-
 /***/ "./src/components/Categories/Categories.js":
 /*!*************************************************!*\
   !*** ./src/components/Categories/Categories.js ***!
@@ -885,10 +852,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Reset__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../Reset */ "./src/components/Reset/index.js");
 /* harmony import */ var _TypographicGrid__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../TypographicGrid */ "./src/components/TypographicGrid/index.js");
 /* harmony import */ var _Spacing__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../Spacing */ "./src/components/Spacing/index.js");
-/* harmony import */ var _Header__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../Header */ "./src/components/Header/index.js");
-/* harmony import */ var _Slider__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../Slider */ "./src/components/Slider/index.js");
-/* harmony import */ var _Thumbs__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../Thumbs */ "./src/components/Thumbs/index.js");
-/* harmony import */ var _Blank__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../Blank */ "./src/components/Blank/index.js");
+/* harmony import */ var _Placeholder__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../Placeholder */ "./src/components/Placeholder/index.js");
+/* harmony import */ var _Header__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../Header */ "./src/components/Header/index.js");
+/* harmony import */ var _Slider__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../Slider */ "./src/components/Slider/index.js");
+/* harmony import */ var _Thumbs__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../Thumbs */ "./src/components/Thumbs/index.js");
 /* harmony import */ var _Contact__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../Contact */ "./src/components/Contact/index.js");
 
 
@@ -1078,7 +1045,7 @@ const Home = () => {
   const Display = () => {
     switch (displayMode) {
       case 0:
-        return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Slider__WEBPACK_IMPORTED_MODULE_11__["default"], {
+        return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Slider__WEBPACK_IMPORTED_MODULE_12__["default"], {
           width: "90vw",
           height: "70vh",
           category: activeCategory,
@@ -1093,7 +1060,7 @@ const Home = () => {
         });
 
       case 1:
-        return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Thumbs__WEBPACK_IMPORTED_MODULE_12__["default"], {
+        return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Thumbs__WEBPACK_IMPORTED_MODULE_13__["default"], {
           category: activeCategory,
           activeSlide: activeSlide,
           thumbClickHandler: thumbClickHandler,
@@ -1115,7 +1082,8 @@ const Home = () => {
 
       case 2:
       default:
-        return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Blank__WEBPACK_IMPORTED_MODULE_13__["default"], {
+        return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Placeholder__WEBPACK_IMPORTED_MODULE_10__["default"], {
+          type: "blank",
           __source: {
             fileName: _jsxFileName,
             lineNumber: 188
@@ -1170,7 +1138,7 @@ const Home = () => {
       lineNumber: 206
     },
     __self: undefined
-  }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Header__WEBPACK_IMPORTED_MODULE_10__["default"], {
+  }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Header__WEBPACK_IMPORTED_MODULE_11__["default"], {
     activeCategory: activeCategory,
     categoryClickHandler: categoryClickHandler,
     activeCategoryIcon: activeCategoryIcon,
@@ -2422,7 +2390,7 @@ const Menu = props => {
     __self: undefined
   })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_MenuItemCustom__WEBPACK_IMPORTED_MODULE_5__["default"], Object.assign({
     index: -1,
-    menuItemText: "random"
+    menuItemText: "random slideshow"
   }, props, {
     __source: {
       fileName: _jsxFileName,
@@ -2598,6 +2566,16 @@ __webpack_require__.r(__webpack_exports__);
 
 var _jsxFileName = "/home/cs/work/inu-v2/react-src/src/components/Placeholder/Placeholder.js";
 
+function _templateObject11() {
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])([""]);
+
+  _templateObject11 = function () {
+    return data;
+  };
+
+  return data;
+}
+
 function _templateObject10() {
   const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  ", "\n  ", "\n"]);
 
@@ -2704,9 +2682,10 @@ function _templateObject() {
 const Text = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject(), props => props.theme.colors.placeholder && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject2(), props.theme.colors.placeholder));
 const BoxDimensions = Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject3(), props => props.width && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject4(), props.width, props.width), props => props.height && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject5(), props.height, props.height));
 const BoxColors = Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject6(), props => props.theme.colors.placeholder && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject7(), props.theme.colors.placeholder), props => props.color && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject8(), props.color));
-const Box = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject9(), BoxDimensions, BoxColors); // For images thi seems to be better ...
+const Box = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject9(), BoxDimensions, BoxColors); // For images this seems to be better ...
 
 const Image = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].img(_templateObject10(), BoxDimensions, BoxColors);
+const Blank = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject11());
 
 const Placeholder = props => {
   const type = props.type;
@@ -2719,7 +2698,7 @@ const Placeholder = props => {
         theme: theme,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 67
+          lineNumber: 69
         },
         __self: undefined
       });
@@ -2730,7 +2709,7 @@ const Placeholder = props => {
       }, props, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 69
+          lineNumber: 71
         },
         __self: undefined
       }));
@@ -2741,16 +2720,25 @@ const Placeholder = props => {
       }, props, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 71
+          lineNumber: 73
         },
         __self: undefined
       }));
+
+    case "blank":
+      return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Blank, {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 75
+        },
+        __self: undefined
+      });
 
     default:
       return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 73
+          lineNumber: 77
         },
         __self: undefined
       }, "Loading...");
@@ -3255,7 +3243,7 @@ const Slider = props => {
     if (slideshowActive) {
       interval = setInterval(() => {
         imageClickHandler(activeSlide + 1, numberOfSlides);
-      }, 2000);
+      }, 2500);
     } else {
       clearInterval(interval);
     }
