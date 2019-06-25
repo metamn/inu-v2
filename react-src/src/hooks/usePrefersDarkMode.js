@@ -1,8 +1,10 @@
-import { useMedia } from "./useMedia";
+import useMedia from "./useMedia";
 
 // From https://usehooks.com/
 function usePrefersDarkMode() {
-  return useMedia(["(prefers-color-scheme: dark)"], [true], false);
+  const prefers = useMedia(["(prefers-color-scheme: dark)"], [true], false);
+  console.log("prefers:" + prefers);
+  return prefers;
 }
 
 export default usePrefersDarkMode;

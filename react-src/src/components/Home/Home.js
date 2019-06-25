@@ -142,6 +142,7 @@ const Home = () => {
         ? currentThemeSaved
         : currentTheme.colorScheme;
 
+    console.log("currentColorScheme:" + currentColorScheme);
     const newTheme = switchThemeFrom(currentColorScheme);
 
     setCurrentTheme(newTheme);
