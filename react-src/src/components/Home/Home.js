@@ -63,12 +63,33 @@ const Home = () => {
   const [previousDisplayMode, setPreviousDisplayMode] = useState(0);
 
   // Theming
-  const themeContext = useContext(ThemeContext);
-  const [currentTheme, setCurrentTheme] = useState(themeContext);
+
   // Use the `useLocalStorage` hook to persist theme through a page refresh.
   const [currentThemeSaved, setCurrentThemeSaved] = useLocalStorage(
     "current-theme"
   );
+
+  console.log("currentThemeSaved:" + currentThemeSaved);
+
+  // Check if the user prefers dark mode
+  const prefersDarkMode = usePrefersDarkMode();
+  console.log("prefersDarkMode:" + prefersDarkMode);
+
+  // The starter color scheme
+  const starterColorScheme =
+    typeof currentThemeSaved !== "undefined"
+      ? currentThemeSaved
+      : prefersDarkMode
+      ? "light"
+      : "dark";
+  console.log("starterColorScheme:" + starterColorScheme);
+
+  // Set up the theme context
+  let themeContext = useContext(ThemeContext);
+  themeContext = switchThemeFrom(starterColorScheme);
+
+  // Use the theme
+  const [currentTheme, setCurrentTheme] = useState(themeContext);
 
   // Click on a category
   const categoryClickHandler = index => {
@@ -137,16 +158,10 @@ const Home = () => {
 
   // Click on the theme icon
   const toggleTheme = () => {
-    const currentColorScheme =
-      typeof currentThemeSaved !== "undefined"
-        ? currentThemeSaved
-        : currentTheme.colorScheme;
-
-    console.log("currentColorScheme:" + currentColorScheme);
-    const newTheme = switchThemeFrom(currentColorScheme);
+    const newTheme = switchThemeFrom(currentTheme.colorScheme);
 
     setCurrentTheme(newTheme);
-    setCurrentThemeSaved(currentColorScheme);
+    setCurrentThemeSaved(currentTheme.colorScheme);
 
     if (!activeMenuToggleIcon) {
       setActiveMenuToggleIcon(true);

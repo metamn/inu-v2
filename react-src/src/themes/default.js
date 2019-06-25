@@ -1,5 +1,4 @@
 import React from "react";
-import { usePrefersDarkMode } from "../hooks";
 
 // Definitions
 const white = "white";
@@ -52,13 +51,7 @@ const switchThemeFrom = colorScheme => {
     : { colorScheme: "light", theme: getTheme("light") };
 };
 
-// Check if the user prefers a dark scheme
-const prefersDarkMode = usePrefersDarkMode();
-
-// Set up the default color scheme
-const defaultColorScheme = prefersDarkMode ? "light" : "dark";
-
 // Create a theme context
-const ThemeContext = React.createContext(switchThemeFrom(defaultColorScheme));
+const ThemeContext = React.createContext(switchThemeFrom("dark"));
 
 export { getTheme, switchThemeFrom, ThemeContext };
