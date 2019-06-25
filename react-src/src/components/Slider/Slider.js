@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useEffect, useCallback } from "react";
 import styled, { css } from "styled-components";
 import gql from "graphql-tag";
 import { useQuery, useEventListener } from "../../hooks";
@@ -211,7 +211,7 @@ const Slider = props => {
       if (slideshowActive) {
         interval = setInterval(() => {
           const numbers = Array.from(Array(numberOfSlides).keys()).filter(
-            i => i != activeSlide
+            i => i !== activeSlide
           );
           const random = numbers[Math.floor(Math.random() * numbers.length)];
           setActiveSlide(random);
@@ -222,13 +222,7 @@ const Slider = props => {
 
       return () => clearInterval(interval);
     },
-    [
-      activeSlide,
-      imageClickHandler,
-      numberOfSlides,
-      setActiveSlide,
-      slideshowActive
-    ]
+    [activeSlide, numberOfSlides, setActiveSlide, slideshowActive]
   );
 
   return (

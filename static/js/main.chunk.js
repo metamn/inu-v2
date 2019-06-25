@@ -3242,7 +3242,7 @@ const Slider = props => {
 
     if (slideshowActive) {
       interval = setInterval(() => {
-        const numbers = Array.from(Array(numberOfSlides).keys()).filter(i => i != activeSlide);
+        const numbers = Array.from(Array(numberOfSlides).keys()).filter(i => i !== activeSlide);
         const random = numbers[Math.floor(Math.random() * numbers.length)];
         setActiveSlide(random);
       }, 2500);
@@ -3251,18 +3251,18 @@ const Slider = props => {
     }
 
     return () => clearInterval(interval);
-  }, [activeSlide, imageClickHandler, numberOfSlides, setActiveSlide, slideshowActive]);
+  }, [activeSlide, numberOfSlides, setActiveSlide, slideshowActive]);
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Container, {
     width: width,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 235
+      lineNumber: 229
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Slides, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 236
+      lineNumber: 230
     },
     __self: undefined
   }, slides));
