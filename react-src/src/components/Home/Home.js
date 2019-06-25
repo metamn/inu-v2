@@ -49,6 +49,9 @@ const Home = () => {
   // Which slide is active
   const [activeSlide, setActiveSlide] = useState(0);
 
+  // Is the slideshow active?
+  const [slideshowActive, setSlideshowActive] = useState(false);
+
   // How to display images
   const [displayMode, setDisplayMode] = useState(0);
 
@@ -69,12 +72,22 @@ const Home = () => {
     setActiveMenuToggleIcon(true);
     setPreviousDisplayMode(0);
 
-    if (index === -2) {
-      // Contact
-      setDisplayMode(-2);
-    } else {
-      setActiveSlide(0);
-      setDisplayMode(0);
+    switch (index) {
+      case -2:
+        // Contact
+        setSlideshowActive(false);
+        setDisplayMode(-2);
+        break;
+      case -1:
+        // Random
+        setSlideshowActive(true);
+        setActiveSlide(0);
+        setDisplayMode(0);
+        break;
+      default:
+        setSlideshowActive(false);
+        setActiveSlide(0);
+        setDisplayMode(0);
     }
   };
 
@@ -157,6 +170,7 @@ const Home = () => {
             category={activeCategory}
             activeSlide={activeSlide}
             setActiveSlide={setActiveSlide}
+            slideshowActive={slideshowActive}
           />
         );
       case 1:

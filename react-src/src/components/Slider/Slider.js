@@ -111,7 +111,14 @@ const markup = (data, queryProps) => {
 };
 
 const Slider = props => {
-  const { width, height, category, activeSlide, setActiveSlide } = props;
+  const {
+    width,
+    height,
+    category,
+    activeSlide,
+    setActiveSlide,
+    slideshowActive
+  } = props;
 
   // Refs to each slide
   let refs = [];
@@ -164,13 +171,13 @@ const Slider = props => {
   useEventListener("touchend", touchScrollHandler);
 
   // The image click handler
-  const imageClickHandler = (index, numberOfSlides) => {
+  const imageClickHandler = useCallback((index, numberOfSlides) => {
     if (index + 1 < numberOfSlides) {
       setActiveSlide(index + 1);
     } else {
       setActiveSlide(0);
     }
-  };
+  });
 
   // The bullet click handler
   // Bullets are not displayed now ...
@@ -189,7 +196,36 @@ const Slider = props => {
     width: width,
     height: height
   };
-  const { slides } = useQuery(query, markup, variables, queryProps);
+  const { slides, numberOfSlides } = useQuery(
+    query,
+    markup,
+    variables,
+    queryProps
+  );
+
+  // The slideshow
+  useEffect(
+    () => {
+      let interval = null;
+
+      if (slideshowActive) {
+        interval = setInterval(() => {
+          imageClickHandler(activeSlide + 1, numberOfSlides);
+        }, 2000);
+      } else {
+        clearInterval(interval);
+      }
+
+      return () => clearInterval(interval);
+    },
+    [
+      activeSlide,
+      imageClickHandler,
+      numberOfSlides,
+      setActiveSlide,
+      slideshowActive
+    ]
+  );
 
   return (
     <Container width={width}>

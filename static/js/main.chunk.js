@@ -951,30 +951,36 @@ const Home = () => {
   const _useState7 = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])(0),
         _useState8 = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_useState7, 2),
         activeSlide = _useState8[0],
-        setActiveSlide = _useState8[1]; // How to display images
+        setActiveSlide = _useState8[1]; // Is the slideshow active?
 
 
-  const _useState9 = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])(0),
+  const _useState9 = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])(false),
         _useState10 = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_useState9, 2),
-        displayMode = _useState10[0],
-        setDisplayMode = _useState10[1]; // Previous image display mode
+        slideshowActive = _useState10[0],
+        setSlideshowActive = _useState10[1]; // How to display images
+
+
+  const _useState11 = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])(0),
+        _useState12 = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_useState11, 2),
+        displayMode = _useState12[0],
+        setDisplayMode = _useState12[1]; // Previous image display mode
   // - this is used in the category icon click
   // - it restores either the thumb view or the slider view ...
   // - ...as it were before the click
 
 
-  const _useState11 = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])(0),
-        _useState12 = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_useState11, 2),
-        previousDisplayMode = _useState12[0],
-        setPreviousDisplayMode = _useState12[1]; // Theming
+  const _useState13 = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])(0),
+        _useState14 = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_useState13, 2),
+        previousDisplayMode = _useState14[0],
+        setPreviousDisplayMode = _useState14[1]; // Theming
 
 
   const themeContext = Object(react__WEBPACK_IMPORTED_MODULE_2__["useContext"])(_themes_default_js__WEBPACK_IMPORTED_MODULE_6__["ThemeContext"]);
 
-  const _useState13 = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])(themeContext),
-        _useState14 = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_useState13, 2),
-        currentTheme = _useState14[0],
-        setCurrentTheme = _useState14[1]; // Click on a category
+  const _useState15 = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])(themeContext),
+        _useState16 = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_useState15, 2),
+        currentTheme = _useState16[0],
+        setCurrentTheme = _useState16[1]; // Click on a category
 
 
   const categoryClickHandler = index => {
@@ -983,12 +989,24 @@ const Home = () => {
     setActiveMenuToggleIcon(true);
     setPreviousDisplayMode(0);
 
-    if (index === -2) {
-      // Contact
-      setDisplayMode(-2);
-    } else {
-      setActiveSlide(0);
-      setDisplayMode(0);
+    switch (index) {
+      case -2:
+        // Contact
+        setSlideshowActive(false);
+        setDisplayMode(-2);
+        break;
+
+      case -1:
+        // Random
+        setSlideshowActive(true);
+        setActiveSlide(0);
+        setDisplayMode(0);
+        break;
+
+      default:
+        setSlideshowActive(false);
+        setActiveSlide(0);
+        setDisplayMode(0);
     }
   }; // Click on the category dropdown icon
 
@@ -1066,9 +1084,10 @@ const Home = () => {
           category: activeCategory,
           activeSlide: activeSlide,
           setActiveSlide: setActiveSlide,
+          slideshowActive: slideshowActive,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 154
+            lineNumber: 167
           },
           __self: undefined
         });
@@ -1080,7 +1099,7 @@ const Home = () => {
           thumbClickHandler: thumbClickHandler,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 164
+            lineNumber: 178
           },
           __self: undefined
         });
@@ -1089,7 +1108,7 @@ const Home = () => {
         return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Contact__WEBPACK_IMPORTED_MODULE_14__["default"], {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 171
+            lineNumber: 185
           },
           __self: undefined
         });
@@ -1099,7 +1118,7 @@ const Home = () => {
         return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Blank__WEBPACK_IMPORTED_MODULE_13__["default"], {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 174
+            lineNumber: 188
           },
           __self: undefined
         });
@@ -1109,7 +1128,7 @@ const Home = () => {
   return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_2___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Reset__WEBPACK_IMPORTED_MODULE_7__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 180
+      lineNumber: 194
     },
     __self: undefined
   }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_TypographicGrid__WEBPACK_IMPORTED_MODULE_8__["default"], {
@@ -1120,13 +1139,13 @@ const Home = () => {
     lineColor: "#666",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 181
+      lineNumber: 195
     },
     __self: undefined
   }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react_helmet__WEBPACK_IMPORTED_MODULE_5__["Helmet"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 188
+      lineNumber: 202
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("meta", {
@@ -1134,21 +1153,21 @@ const Home = () => {
     content: "Portfolio",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 189
+      lineNumber: 203
     },
     __self: undefined
   })), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_themes_default_js__WEBPACK_IMPORTED_MODULE_6__["ThemeContext"].Provider, {
     value: currentTheme,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 191
+      lineNumber: 205
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Container, {
     theme: currentTheme.theme,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 192
+      lineNumber: 206
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Header__WEBPACK_IMPORTED_MODULE_10__["default"], {
@@ -1163,13 +1182,13 @@ const Home = () => {
     menuToggleIconClickHandler: menuToggleIconClickHandler,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 193
+      lineNumber: 207
     },
     __self: undefined
   }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Display, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 204
+      lineNumber: 218
     },
     __self: undefined
   }))));
@@ -3159,7 +3178,8 @@ const Slider = props => {
         height = props.height,
         category = props.category,
         activeSlide = props.activeSlide,
-        setActiveSlide = props.setActiveSlide; // Refs to each slide
+        setActiveSlide = props.setActiveSlide,
+        slideshowActive = props.slideshowActive; // Refs to each slide
 
   let refs = []; // Scroll the active slide into the view
   // scrollTo:
@@ -3195,13 +3215,13 @@ const Slider = props => {
 
   Object(_hooks__WEBPACK_IMPORTED_MODULE_4__["useEventListener"])("touchend", touchScrollHandler); // The image click handler
 
-  const imageClickHandler = (index, numberOfSlides) => {
+  const imageClickHandler = Object(react__WEBPACK_IMPORTED_MODULE_1__["useCallback"])((index, numberOfSlides) => {
     if (index + 1 < numberOfSlides) {
       setActiveSlide(index + 1);
     } else {
       setActiveSlide(0);
     }
-  }; // The bullet click handler
+  }); // The bullet click handler
   // Bullets are not displayed now ...
 
   /*
@@ -3210,7 +3230,6 @@ const Slider = props => {
   };
   */
   // The data hook
-
 
   const variables = category === -1 ? {
     first: 100
@@ -3226,19 +3245,34 @@ const Slider = props => {
   };
 
   const _useQuery = Object(_hooks__WEBPACK_IMPORTED_MODULE_4__["useQuery"])(query, markup, variables, queryProps),
-        slides = _useQuery.slides;
+        slides = _useQuery.slides,
+        numberOfSlides = _useQuery.numberOfSlides; // The slideshow
 
+
+  Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(() => {
+    let interval = null;
+
+    if (slideshowActive) {
+      interval = setInterval(() => {
+        imageClickHandler(activeSlide + 1, numberOfSlides);
+      }, 2000);
+    } else {
+      clearInterval(interval);
+    }
+
+    return () => clearInterval(interval);
+  }, [activeSlide, imageClickHandler, numberOfSlides, setActiveSlide, slideshowActive]);
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Container, {
     width: width,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 195
+      lineNumber: 231
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Slides, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 196
+      lineNumber: 232
     },
     __self: undefined
   }, slides));
@@ -4136,5 +4170,5 @@ module.exports = __webpack_require__(/*! /home/cs/work/inu-v2/react-src/src/inde
 
 /***/ })
 
-},[[0,"runtime~main",1]]]);
+},[[0,"runtime~main",0]]]);
 //# sourceMappingURL=main.chunk.js.map
