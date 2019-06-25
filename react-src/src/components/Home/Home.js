@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { Helmet } from "react-helmet";
 
 import { switchThemeFrom, ThemeContext } from "../../themes/default.js";
+import { useLocalStorage, usePrefersDarkMode } from "../../hooks";
 
 import Reset from "../Reset";
 import TypographicGrid from "../TypographicGrid";
@@ -64,6 +65,10 @@ const Home = () => {
   // Theming
   const themeContext = useContext(ThemeContext);
   const [currentTheme, setCurrentTheme] = useState(themeContext);
+  // Use the `useLocalStorage` hook to persist theme through a page refresh.
+  const [currentThemeSaved, setCurrentThemeSaved] = useLocalStorage(
+    "current-theme"
+  );
 
   // Click on a category
   const categoryClickHandler = index => {
@@ -132,8 +137,15 @@ const Home = () => {
 
   // Click on the theme icon
   const toggleTheme = () => {
-    const newTheme = switchThemeFrom(currentTheme.mode);
+    const currentColorScheme =
+      typeof currentThemeSaved !== "undefined"
+        ? currentThemeSaved
+        : currentTheme.colorScheme;
+
+    const newTheme = switchThemeFrom(currentColorScheme);
+
     setCurrentTheme(newTheme);
+    setCurrentThemeSaved(currentColorScheme);
 
     if (!activeMenuToggleIcon) {
       setActiveMenuToggleIcon(true);

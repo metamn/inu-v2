@@ -1,12 +1,14 @@
 import React from "react";
 
+// Definitions
 const white = "white";
 const black = "black";
 const gray = "#666";
 const lightgray = "lightgray";
 const darkgray = "#333";
 
-const themeColors = {
+// Color schemes
+const colorSchemes = {
   light: {
     text: black,
     background: white,
@@ -27,25 +29,29 @@ const themeColors = {
   }
 };
 
-const getThemeColors = mode =>
-  mode === "light" ? themeColors.light : themeColors.dark;
+// Get a color scheme
+const getColorScheme = colorScheme =>
+  colorScheme === "light" ? colorSchemes.light : colorSchemes.dark;
 
+// Get a full theme with colors, fonts etc
 // When changing font also the `WebFont.load` has to be updated
-const getTheme = mode => {
+const getTheme = colorScheme => {
   return {
-    colors: getThemeColors(mode),
+    colors: getColorScheme(colorScheme),
     fonts: {
       default: "'Major Mono Display', sans-serif;"
     }
   };
 };
 
-const switchThemeFrom = mode => {
-  return mode === "light"
-    ? { mode: "dark", theme: getTheme("dark") }
-    : { mode: "light", theme: getTheme("light") };
+// Switch from a color scheme to another
+const switchThemeFrom = colorScheme => {
+  return colorScheme === "light"
+    ? { colorScheme: "dark", theme: getTheme("dark") }
+    : { colorScheme: "light", theme: getTheme("light") };
 };
 
+// Create a theme context
 const ThemeContext = React.createContext(switchThemeFrom("dark"));
 
 export { getTheme, switchThemeFrom, ThemeContext };

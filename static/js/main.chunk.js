@@ -849,14 +849,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_helmet__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-helmet */ "./node_modules/react-helmet/lib/Helmet.js");
 /* harmony import */ var react_helmet__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_helmet__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var _themes_default_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../themes/default.js */ "./src/themes/default.js");
-/* harmony import */ var _Reset__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../Reset */ "./src/components/Reset/index.js");
-/* harmony import */ var _TypographicGrid__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../TypographicGrid */ "./src/components/TypographicGrid/index.js");
-/* harmony import */ var _Spacing__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../Spacing */ "./src/components/Spacing/index.js");
-/* harmony import */ var _Placeholder__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../Placeholder */ "./src/components/Placeholder/index.js");
-/* harmony import */ var _Header__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../Header */ "./src/components/Header/index.js");
-/* harmony import */ var _Slider__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../Slider */ "./src/components/Slider/index.js");
-/* harmony import */ var _Thumbs__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../Thumbs */ "./src/components/Thumbs/index.js");
-/* harmony import */ var _Contact__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../Contact */ "./src/components/Contact/index.js");
+/* harmony import */ var _hooks__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../hooks */ "./src/hooks/index.js");
+/* harmony import */ var _Reset__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../Reset */ "./src/components/Reset/index.js");
+/* harmony import */ var _TypographicGrid__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../TypographicGrid */ "./src/components/TypographicGrid/index.js");
+/* harmony import */ var _Spacing__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../Spacing */ "./src/components/Spacing/index.js");
+/* harmony import */ var _Placeholder__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../Placeholder */ "./src/components/Placeholder/index.js");
+/* harmony import */ var _Header__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../Header */ "./src/components/Header/index.js");
+/* harmony import */ var _Slider__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../Slider */ "./src/components/Slider/index.js");
+/* harmony import */ var _Thumbs__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../Thumbs */ "./src/components/Thumbs/index.js");
+/* harmony import */ var _Contact__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../Contact */ "./src/components/Contact/index.js");
 
 
 var _jsxFileName = "/home/cs/work/inu-v2/react-src/src/components/Home/Home.js";
@@ -884,12 +885,13 @@ function _templateObject() {
 
 
 
+
 webfontloader__WEBPACK_IMPORTED_MODULE_3___default.a.load({
   google: {
     families: ["Major+Mono+Display"]
   }
 });
-const Container = styled_components__WEBPACK_IMPORTED_MODULE_4__["default"].div(_templateObject(), props => props.theme.colors.background, props => props.theme.colors.text, props => props.theme.fonts.default, Object(_Spacing__WEBPACK_IMPORTED_MODULE_9__["default"])({
+const Container = styled_components__WEBPACK_IMPORTED_MODULE_4__["default"].div(_templateObject(), props => props.theme.colors.background, props => props.theme.colors.text, props => props.theme.fonts.default, Object(_Spacing__WEBPACK_IMPORTED_MODULE_10__["default"])({
   property: "padding"
 }));
 
@@ -947,7 +949,13 @@ const Home = () => {
   const _useState15 = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])(themeContext),
         _useState16 = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_useState15, 2),
         currentTheme = _useState16[0],
-        setCurrentTheme = _useState16[1]; // Click on a category
+        setCurrentTheme = _useState16[1]; // Use the `useLocalStorage` hook to persist theme through a page refresh.
+
+
+  const _useLocalStorage = Object(_hooks__WEBPACK_IMPORTED_MODULE_7__["useLocalStorage"])("current-theme"),
+        _useLocalStorage2 = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_useLocalStorage, 2),
+        currentThemeSaved = _useLocalStorage2[0],
+        setCurrentThemeSaved = _useLocalStorage2[1]; // Click on a category
 
 
   const categoryClickHandler = index => {
@@ -1014,8 +1022,10 @@ const Home = () => {
 
 
   const toggleTheme = () => {
-    const newTheme = Object(_themes_default_js__WEBPACK_IMPORTED_MODULE_6__["switchThemeFrom"])(currentTheme.mode);
+    const currentColorScheme = typeof currentThemeSaved !== "undefined" ? currentThemeSaved : currentTheme.colorScheme;
+    const newTheme = Object(_themes_default_js__WEBPACK_IMPORTED_MODULE_6__["switchThemeFrom"])(currentColorScheme);
     setCurrentTheme(newTheme);
+    setCurrentThemeSaved(currentColorScheme);
 
     if (!activeMenuToggleIcon) {
       setActiveMenuToggleIcon(true);
@@ -1045,7 +1055,7 @@ const Home = () => {
   const Display = () => {
     switch (displayMode) {
       case 0:
-        return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Slider__WEBPACK_IMPORTED_MODULE_12__["default"], {
+        return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Slider__WEBPACK_IMPORTED_MODULE_13__["default"], {
           width: "90vw",
           height: "70vh",
           category: activeCategory,
@@ -1054,52 +1064,52 @@ const Home = () => {
           slideshowActive: slideshowActive,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 167
+            lineNumber: 179
           },
           __self: undefined
         });
 
       case 1:
-        return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Thumbs__WEBPACK_IMPORTED_MODULE_13__["default"], {
+        return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Thumbs__WEBPACK_IMPORTED_MODULE_14__["default"], {
           category: activeCategory,
           activeSlide: activeSlide,
           thumbClickHandler: thumbClickHandler,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 178
+            lineNumber: 190
           },
           __self: undefined
         });
 
       case -2:
-        return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Contact__WEBPACK_IMPORTED_MODULE_14__["default"], {
+        return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Contact__WEBPACK_IMPORTED_MODULE_15__["default"], {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 185
+            lineNumber: 197
           },
           __self: undefined
         });
 
       case 2:
       default:
-        return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Placeholder__WEBPACK_IMPORTED_MODULE_10__["default"], {
+        return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Placeholder__WEBPACK_IMPORTED_MODULE_11__["default"], {
           type: "blank",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 188
+            lineNumber: 200
           },
           __self: undefined
         });
     }
   };
 
-  return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_2___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Reset__WEBPACK_IMPORTED_MODULE_7__["default"], {
+  return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_2___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Reset__WEBPACK_IMPORTED_MODULE_8__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 194
+      lineNumber: 206
     },
     __self: undefined
-  }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_TypographicGrid__WEBPACK_IMPORTED_MODULE_8__["default"], {
+  }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_TypographicGrid__WEBPACK_IMPORTED_MODULE_9__["default"], {
     displayVerticalRhytm: false,
     displayHorizontalRhytm: false,
     numberOfHorizontalLines: 100,
@@ -1107,13 +1117,13 @@ const Home = () => {
     lineColor: "#666",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 195
+      lineNumber: 207
     },
     __self: undefined
   }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react_helmet__WEBPACK_IMPORTED_MODULE_5__["Helmet"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 202
+      lineNumber: 214
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("meta", {
@@ -1121,24 +1131,24 @@ const Home = () => {
     content: "Portfolio",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 203
+      lineNumber: 215
     },
     __self: undefined
   })), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_themes_default_js__WEBPACK_IMPORTED_MODULE_6__["ThemeContext"].Provider, {
     value: currentTheme,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 205
+      lineNumber: 217
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Container, {
     theme: currentTheme.theme,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 206
+      lineNumber: 218
     },
     __self: undefined
-  }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Header__WEBPACK_IMPORTED_MODULE_11__["default"], {
+  }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Header__WEBPACK_IMPORTED_MODULE_12__["default"], {
     activeCategory: activeCategory,
     categoryClickHandler: categoryClickHandler,
     activeCategoryIcon: activeCategoryIcon,
@@ -1150,13 +1160,13 @@ const Home = () => {
     menuToggleIconClickHandler: menuToggleIconClickHandler,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 207
+      lineNumber: 219
     },
     __self: undefined
   }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Display, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 218
+      lineNumber: 230
     },
     __self: undefined
   }))));
@@ -3842,7 +3852,7 @@ const setClassName = (target, index, activeClassName = "active", inactiveClassNa
 /*!****************************!*\
   !*** ./src/hooks/index.js ***!
   \****************************/
-/*! exports provided: useQuery, useEventListener */
+/*! exports provided: useQuery, useEventListener, useMedia, usePrefersDarkMode, useLocalStorage, useDarkMode */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3853,8 +3863,64 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _useEventListener__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./useEventListener */ "./src/hooks/useEventListener.js");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "useEventListener", function() { return _useEventListener__WEBPACK_IMPORTED_MODULE_1__["default"]; });
 
+/* harmony import */ var _useMedia__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./useMedia */ "./src/hooks/useMedia.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "useMedia", function() { return _useMedia__WEBPACK_IMPORTED_MODULE_2__["default"]; });
+
+/* harmony import */ var _usePrefersDarkMode__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./usePrefersDarkMode */ "./src/hooks/usePrefersDarkMode.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "usePrefersDarkMode", function() { return _usePrefersDarkMode__WEBPACK_IMPORTED_MODULE_3__["default"]; });
+
+/* harmony import */ var _useLocalStorage__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./useLocalStorage */ "./src/hooks/useLocalStorage.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "useLocalStorage", function() { return _useLocalStorage__WEBPACK_IMPORTED_MODULE_4__["default"]; });
+
+/* harmony import */ var _useDarkMode__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./useDarkMode */ "./src/hooks/useDarkMode.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "useDarkMode", function() { return _useDarkMode__WEBPACK_IMPORTED_MODULE_5__["default"]; });
 
 
+
+
+
+
+
+
+/***/ }),
+
+/***/ "./src/hooks/useDarkMode.js":
+/*!**********************************!*\
+  !*** ./src/hooks/useDarkMode.js ***!
+  \**********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/esm/slicedToArray */ "./node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/esm/slicedToArray.js");
+/* harmony import */ var _useLocalStorage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./useLocalStorage */ "./src/hooks/useLocalStorage.js");
+/* harmony import */ var _usePrefersDarkMode__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./usePrefersDarkMode */ "./src/hooks/usePrefersDarkMode.js");
+
+
+ // Inspired by https://usehooks.com/
+
+function useDarkMode() {
+  // Use the `useLocalStorage` hook to persist state through a page refresh.
+  const _useLocalStorage = Object(_useLocalStorage__WEBPACK_IMPORTED_MODULE_1__["useLocalStorage"])("dark-mode-enabled"),
+        _useLocalStorage2 = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_useLocalStorage, 2),
+        enabledState = _useLocalStorage2[0],
+        setEnabledState = _useLocalStorage2[1]; // See if user has set a browser or OS preference for dark mode.
+
+
+  const prefersDarkMode = Object(_usePrefersDarkMode__WEBPACK_IMPORTED_MODULE_2__["usePrefersDarkMode"])(); // If enabledState is defined use it, otherwise fallback to prefersDarkMode.
+  // This allows user to override OS level setting.
+
+  const enabled = typeof enabledState !== "undefined" ? enabledState : prefersDarkMode; // Fire off effect that changes theme mode
+
+  useEffect(() => {//
+  }, [enabled] // Only re-call effect when value changes
+  ); // Return enabled state and setter
+
+  return [enabled, setEnabledState];
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (useDarkMode);
 
 /***/ }),
 
@@ -3869,7 +3935,7 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* WEBPACK VAR INJECTION */(function(global) {/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-
+ // From https://usehooks.com/
 
 function useEventListener(eventName, handler, element = global) {
   // Create a ref that stores handler
@@ -3900,6 +3966,132 @@ function useEventListener(eventName, handler, element = global) {
 
 /* harmony default export */ __webpack_exports__["default"] = (useEventListener);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../node_modules/webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js")))
+
+/***/ }),
+
+/***/ "./src/hooks/useLocalStorage.js":
+/*!**************************************!*\
+  !*** ./src/hooks/useLocalStorage.js ***!
+  \**************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/esm/slicedToArray */ "./node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/esm/slicedToArray.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+
+ // From https://usehooks.com/
+
+function useLocalStorage(key, initialValue) {
+  // State to store our value
+  // Pass initial state function to useState so logic is only executed once
+  const _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(() => {
+    try {
+      // Get from local storage by key
+      const item = window.localStorage.getItem(key); // Parse stored json or if none return initialValue
+
+      return item ? JSON.parse(item) : initialValue;
+    } catch (error) {
+      // If error also return initialValue
+      console.log(error);
+      return initialValue;
+    }
+  }),
+        _useState2 = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_useState, 2),
+        storedValue = _useState2[0],
+        setStoredValue = _useState2[1]; // Return a wrapped version of useState's setter function that ...
+  // ... persists the new value to localStorage.
+
+
+  const setValue = value => {
+    try {
+      // Allow value to be a function so we have same API as useState
+      const valueToStore = value instanceof Function ? value(storedValue) : value; // Save state
+
+      setStoredValue(valueToStore); // Save to local storage
+
+      window.localStorage.setItem(key, JSON.stringify(valueToStore));
+    } catch (error) {
+      // A more advanced implementation would handle the error case
+      console.log(error);
+    }
+  };
+
+  return [storedValue, setValue];
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (useLocalStorage);
+
+/***/ }),
+
+/***/ "./src/hooks/useMedia.js":
+/*!*******************************!*\
+  !*** ./src/hooks/useMedia.js ***!
+  \*******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/esm/slicedToArray */ "./node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/esm/slicedToArray.js");
+
+
+// From https://usehooks.com/
+// Used (only) to check if user prefers dark theme
+function useMedia(queries, values, defaultValue) {
+  // Array containing a media query list for each query
+  const mediaQueryLists = queries.map(q => window.matchMedia(q)); // Function that gets value based on matching media query
+
+  const getValue = useCallback(() => {
+    // Get index of first media query that matches
+    const index = mediaQueryLists.findIndex(mql => mql.matches); // Return related value or defaultValue if none
+
+    return typeof values[index] !== "undefined" ? values[index] : defaultValue;
+  }); // State and setter for matched value
+
+  const _useState = useState(getValue),
+        _useState2 = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_useState, 2),
+        value = _useState2[0],
+        setValue = _useState2[1];
+
+  useEffect(() => {
+    // Event listener callback
+    // Note: By defining getValue outside of useEffect we ensure that it has ...
+    // ... current values of hook args (as this hook callback is created once on mount).
+    const handler = () => setValue(getValue); // Set a listener for each media query with above handler as callback.
+
+
+    mediaQueryLists.forEach(mql => mql.addListener(handler)); // Remove listeners on cleanup
+
+    return () => mediaQueryLists.forEach(mql => mql.removeListener(handler));
+  }, [getValue, mediaQueryLists] // Empty array ensures effect is only run on mount and unmount
+  );
+  return value;
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (useMedia);
+
+/***/ }),
+
+/***/ "./src/hooks/usePrefersDarkMode.js":
+/*!*****************************************!*\
+  !*** ./src/hooks/usePrefersDarkMode.js ***!
+  \*****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _useMedia__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./useMedia */ "./src/hooks/useMedia.js");
+ // From https://usehooks.com/
+
+function usePrefersDarkMode() {
+  return Object(_useMedia__WEBPACK_IMPORTED_MODULE_0__["useMedia"])(["(prefers-color-scheme: dark)"], [true], false);
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (usePrefersDarkMode);
 
 /***/ }),
 
@@ -4110,13 +4302,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ThemeContext", function() { return ThemeContext; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+ // Definitions
 
 const white = "white";
 const black = "black";
 const gray = "#666";
 const lightgray = "lightgray";
-const darkgray = "#333";
-const themeColors = {
+const darkgray = "#333"; // Color schemes
+
+const colorSchemes = {
   light: {
     text: black,
     background: white,
@@ -4135,29 +4329,32 @@ const themeColors = {
     cursor: "brutalist_line_SVGicon_cursor2-black.png",
     inactive: darkgray
   }
-};
+}; // Get a color scheme
 
-const getThemeColors = mode => mode === "light" ? themeColors.light : themeColors.dark; // When changing font also the `WebFont.load` has to be updated
+const getColorScheme = colorScheme => colorScheme === "light" ? colorSchemes.light : colorSchemes.dark; // Get a full theme with colors, fonts etc
+// When changing font also the `WebFont.load` has to be updated
 
 
-const getTheme = mode => {
+const getTheme = colorScheme => {
   return {
-    colors: getThemeColors(mode),
+    colors: getColorScheme(colorScheme),
     fonts: {
       default: "'Major Mono Display', sans-serif;"
     }
   };
-};
+}; // Switch from a color scheme to another
 
-const switchThemeFrom = mode => {
-  return mode === "light" ? {
-    mode: "dark",
+
+const switchThemeFrom = colorScheme => {
+  return colorScheme === "light" ? {
+    colorScheme: "dark",
     theme: getTheme("dark")
   } : {
-    mode: "light",
+    colorScheme: "light",
     theme: getTheme("light")
   };
-};
+}; // Create a theme context
+
 
 const ThemeContext = react__WEBPACK_IMPORTED_MODULE_0___default.a.createContext(switchThemeFrom("dark"));
 
@@ -4176,5 +4373,5 @@ module.exports = __webpack_require__(/*! /home/cs/work/inu-v2/react-src/src/inde
 
 /***/ })
 
-},[[0,"runtime~main",1]]]);
+},[[0,"runtime~main",0]]]);
 //# sourceMappingURL=main.chunk.js.map
