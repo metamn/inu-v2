@@ -3094,9 +3094,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var graphql_tag__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! graphql-tag */ "./node_modules/graphql-tag/src/index.js");
 /* harmony import */ var graphql_tag__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(graphql_tag__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _hooks__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../hooks */ "./src/hooks/index.js");
-/* harmony import */ var _List__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../List */ "./src/components/List/index.js");
-/* harmony import */ var _Slide__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../Slide */ "./src/components/Slide/index.js");
-/* harmony import */ var _Post__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../Post */ "./src/components/Post/index.js");
+/* harmony import */ var flatted__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! flatted */ "./node_modules/flatted/esm/index.js");
+/* harmony import */ var _List__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../List */ "./src/components/List/index.js");
+/* harmony import */ var _Slide__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../Slide */ "./src/components/Slide/index.js");
+/* harmony import */ var _Post__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../Post */ "./src/components/Post/index.js");
 
 var _jsxFileName = "/home/cs/work/inu-v2/react-src/src/components/Slider/Slider.js";
 
@@ -3147,10 +3148,11 @@ function _templateObject() {
 
 
 
+
 const Container = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].main(_templateObject(), props => props.width && Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["css"])(_templateObject2(), props.width)); // Original idea:
 // - https://nolanlawson.com/2019/02/10/building-a-modern-carousel-with-css-scroll-snap-smooth-scrolling-and-pinch-zoom/
 
-const Slides = Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["default"])(_List__WEBPACK_IMPORTED_MODULE_5__["default"])(_templateObject3()); // The query
+const Slides = Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["default"])(_List__WEBPACK_IMPORTED_MODULE_6__["default"])(_templateObject3()); // The query
 
 const query = graphql_tag__WEBPACK_IMPORTED_MODULE_3___default()(_templateObject4());
 
@@ -3162,15 +3164,15 @@ const markup = (data, queryProps) => {
   const slides = postsWithImage.map((edge, index) => {
     const ref = react__WEBPACK_IMPORTED_MODULE_1___default.a.createRef();
     refs[index] = ref;
-    return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Slide__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Slide__WEBPACK_IMPORTED_MODULE_7__["default"], {
       key: edge.node.id,
       ref: ref,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 102
+        lineNumber: 103
       },
       __self: undefined
-    }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Post__WEBPACK_IMPORTED_MODULE_7__["default"], Object.assign({
+    }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Post__WEBPACK_IMPORTED_MODULE_8__["default"], Object.assign({
       node: edge.node,
       index: index,
       imageClickHandler: imageClickHandler,
@@ -3178,7 +3180,7 @@ const markup = (data, queryProps) => {
     }, queryProps, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 103
+        lineNumber: 104
       },
       __self: undefined
     })));
@@ -3251,7 +3253,7 @@ const Slider = props => {
   // The data hook
 
   const variables = category === -1 ? {
-    first: 10
+    first: 5
   } : {
     first: 100,
     category: category
@@ -3267,56 +3269,45 @@ const Slider = props => {
   const _useQuery = Object(_hooks__WEBPACK_IMPORTED_MODULE_4__["useQuery"])(query, markup, variables, queryProps),
         slides = _useQuery.slides,
         numberOfSlides = _useQuery.numberOfSlides,
-        fetchMore = _useQuery.fetchMore; // The slideshow
+        fetchMore = _useQuery.fetchMore;
 
+  const _useQuery2 = Object(_hooks__WEBPACK_IMPORTED_MODULE_4__["useQuery2"])(query, variables),
+        data = _useQuery2.data,
+        loadMore = _useQuery2.loadMore; //console.log("data:" + stringify(data));
+
+
+  console.log("slider reloaded"); // The slideshow
 
   Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(() => {
     let interval = null;
 
     if (slideshowActive) {
       interval = setInterval(() => {
-        const slideNumbers = Array.from(Array(numberOfSlides).keys());
-        const slideNumbersWithoutTheCurrentSlide = slides.filter(i => i !== activeSlide);
-        const random = slideNumbersWithoutTheCurrentSlide[Math.floor(Math.random() * slideNumbersWithoutTheCurrentSlide.length)];
+        const slideNumbers = Array.from(Array(numberOfSlides).keys()).filter(i => i !== activeSlide);
+        const random = slideNumbers[Math.floor(Math.random() * slideNumbers.length)];
+        console.log("random:" + random);
         setActiveSlide(random);
-        slides = fetchMore({
-          variables: {
-            cursor: posts.pageInfo.endCursor
-          },
-          updateQuery: (previousResult, {
-            fetchMoreResult
-          }) => {
-            const newEdges = fetchMoreResult.posts.edges;
-            const pageInfo = fetchMoreResult.posts.pageInfo;
-            return newEdges.length ? {
-              // Put the new comments at the end of the list and update `pageInfo`
-              // so we have the new `endCursor` and `hasNextPage` values
-              posts: {
-                __typename: previousResult.posts.__typename,
-                edges: [...previousResult.posts.edges, ...newEdges],
-                pageInfo
-              }
-            } : previousResult;
-          }
-        });
+
+        if (random === 0) {//loadMore();
+        }
       }, 2500);
     } else {
       clearInterval(interval);
     }
 
     return () => clearInterval(interval);
-  }, [activeSlide, fetchMore, numberOfSlides, setActiveSlide, slideshowActive]);
+  }, [activeSlide, fetchMore, loadMore, numberOfSlides, setActiveSlide, slides, slideshowActive]);
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Container, {
     width: width,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 267
+      lineNumber: 260
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Slides, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 268
+      lineNumber: 261
     },
     __self: undefined
   }, slides));
@@ -3880,7 +3871,7 @@ const setClassName = (target, index, activeClassName = "active", inactiveClassNa
 /*!****************************!*\
   !*** ./src/hooks/index.js ***!
   \****************************/
-/*! exports provided: useQuery, useEventListener, useMedia, usePrefersDarkMode, useLocalStorage, useDarkMode */
+/*! exports provided: useQuery, useQuery2, useEventListener, useMedia, usePrefersDarkMode, useLocalStorage, useDarkMode */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3888,20 +3879,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _useQuery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./useQuery */ "./src/hooks/useQuery.js");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "useQuery", function() { return _useQuery__WEBPACK_IMPORTED_MODULE_0__["default"]; });
 
-/* harmony import */ var _useEventListener__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./useEventListener */ "./src/hooks/useEventListener.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "useEventListener", function() { return _useEventListener__WEBPACK_IMPORTED_MODULE_1__["default"]; });
+/* harmony import */ var _useQuery2__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./useQuery2 */ "./src/hooks/useQuery2.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "useQuery2", function() { return _useQuery2__WEBPACK_IMPORTED_MODULE_1__["default"]; });
 
-/* harmony import */ var _useMedia__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./useMedia */ "./src/hooks/useMedia.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "useMedia", function() { return _useMedia__WEBPACK_IMPORTED_MODULE_2__["default"]; });
+/* harmony import */ var _useEventListener__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./useEventListener */ "./src/hooks/useEventListener.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "useEventListener", function() { return _useEventListener__WEBPACK_IMPORTED_MODULE_2__["default"]; });
 
-/* harmony import */ var _usePrefersDarkMode__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./usePrefersDarkMode */ "./src/hooks/usePrefersDarkMode.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "usePrefersDarkMode", function() { return _usePrefersDarkMode__WEBPACK_IMPORTED_MODULE_3__["default"]; });
+/* harmony import */ var _useMedia__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./useMedia */ "./src/hooks/useMedia.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "useMedia", function() { return _useMedia__WEBPACK_IMPORTED_MODULE_3__["default"]; });
 
-/* harmony import */ var _useLocalStorage__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./useLocalStorage */ "./src/hooks/useLocalStorage.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "useLocalStorage", function() { return _useLocalStorage__WEBPACK_IMPORTED_MODULE_4__["default"]; });
+/* harmony import */ var _usePrefersDarkMode__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./usePrefersDarkMode */ "./src/hooks/usePrefersDarkMode.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "usePrefersDarkMode", function() { return _usePrefersDarkMode__WEBPACK_IMPORTED_MODULE_4__["default"]; });
 
-/* harmony import */ var _useDarkMode__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./useDarkMode */ "./src/hooks/useDarkMode.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "useDarkMode", function() { return _useDarkMode__WEBPACK_IMPORTED_MODULE_5__["default"]; });
+/* harmony import */ var _useLocalStorage__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./useLocalStorage */ "./src/hooks/useLocalStorage.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "useLocalStorage", function() { return _useLocalStorage__WEBPACK_IMPORTED_MODULE_5__["default"]; });
+
+/* harmony import */ var _useDarkMode__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./useDarkMode */ "./src/hooks/useDarkMode.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "useDarkMode", function() { return _useDarkMode__WEBPACK_IMPORTED_MODULE_6__["default"]; });
+
 
 
 
@@ -4153,6 +4148,82 @@ const useQuery = (query, markup, variables = {}, queryProps = {}) => {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (useQuery);
+
+/***/ }),
+
+/***/ "./src/hooks/useQuery2.js":
+/*!********************************!*\
+  !*** ./src/hooks/useQuery2.js ***!
+  \********************************/
+/*! exports provided: useLoadMore, default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useLoadMore", function() { return useLoadMore; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return useQuery2; });
+/* harmony import */ var _home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/esm/objectWithoutProperties */ "./node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/esm/objectWithoutProperties.js");
+/* harmony import */ var _home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/esm/objectSpread */ "./node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/esm/objectSpread.js");
+/* harmony import */ var _home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/esm/slicedToArray */ "./node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/esm/slicedToArray.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var react_apollo_hooks__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-apollo-hooks */ "./node_modules/react-apollo-hooks/es/index.js");
+
+
+
+
+
+function useLoadMore(fetchMore, data, variables) {
+  const _useState = Object(react__WEBPACK_IMPORTED_MODULE_3__["useState"])(false),
+        _useState2 = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_2__["default"])(_useState, 2),
+        isLoadingMore = _useState2[0],
+        setIsLoadingMore = _useState2[1];
+
+  function loadMore() {
+    setIsLoadingMore(true);
+    fetchMore({
+      variables: Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_1__["default"])({}, variables, {
+        //skip: data.list.length,
+        cursor: data.posts.pageInfo.endCursor
+      }),
+      updateQuery: (previousResult, {
+        fetchMoreResult
+      }) => {
+        setIsLoadingMore(false);
+
+        if (!fetchMoreResult) {
+          return previousResult;
+        }
+
+        return Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_1__["default"])({}, fetchMoreResult, {
+          edges: [...previousResult.edges, ...fetchMoreResult.edges]
+        });
+      }
+    });
+  }
+
+  return [isLoadingMore, loadMore];
+}
+function useQuery2(schema, variables, options) {
+  const _useQuery2 = Object(react_apollo_hooks__WEBPACK_IMPORTED_MODULE_4__["useQuery"])(schema, Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_1__["default"])({
+    variables
+  }, options)),
+        fetchMore = _useQuery2.fetchMore,
+        data = _useQuery2.data,
+        other = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_0__["default"])(_useQuery2, ["fetchMore", "data"]);
+
+  const _useLoadMore = useLoadMore(fetchMore, data, variables),
+        _useLoadMore2 = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_2__["default"])(_useLoadMore, 2),
+        isLoadingMore = _useLoadMore2[0],
+        loadMore = _useLoadMore2[1];
+
+  return Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_1__["default"])({
+    isLoadingMore,
+    loadMore,
+    fetchMore,
+    data
+  }, other);
+}
 
 /***/ }),
 

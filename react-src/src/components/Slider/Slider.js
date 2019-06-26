@@ -1,7 +1,8 @@
 import React, { useEffect, useCallback } from "react";
 import styled, { css } from "styled-components";
 import gql from "graphql-tag";
-import { useQuery, useEventListener } from "../../hooks";
+import { useQuery, useQuery2, useEventListener } from "../../hooks";
+import { stringify } from "flatted";
 
 import List from "../List";
 import Slide from "../Slide";
@@ -196,7 +197,7 @@ const Slider = props => {
 
   // The data hook
   const variables =
-    category === -1 ? { first: 10 } : { first: 100, category: category };
+    category === -1 ? { first: 5 } : { first: 100, category: category };
 
   const queryProps = {
     refs: refs,
@@ -213,6 +214,11 @@ const Slider = props => {
     queryProps
   );
 
+  const { data, loadMore } = useQuery2(query, variables);
+  //console.log("data:" + stringify(data));
+
+  console.log("slider reloaded");
+
   // The slideshow
   useEffect(
     () => {
@@ -220,39 +226,18 @@ const Slider = props => {
 
       if (slideshowActive) {
         interval = setInterval(() => {
-          const slideNumbers = Array.from(Array(numberOfSlides).keys());
-          const slideNumbersWithoutTheCurrentSlide = slides.filter(
+          const slideNumbers = Array.from(Array(numberOfSlides).keys()).filter(
             i => i !== activeSlide
           );
           const random =
-            slideNumbersWithoutTheCurrentSlide[
-              Math.floor(
-                Math.random() * slideNumbersWithoutTheCurrentSlide.length
-              )
-            ];
+            slideNumbers[Math.floor(Math.random() * slideNumbers.length)];
+
+          console.log("random:" + random);
           setActiveSlide(random);
 
-          slides = fetchMore({
-            variables: {
-              cursor: posts.pageInfo.endCursor
-            },
-            updateQuery: (previousResult, { fetchMoreResult }) => {
-              const newEdges = fetchMoreResult.posts.edges;
-              const pageInfo = fetchMoreResult.posts.pageInfo;
-
-              return newEdges.length
-                ? {
-                    // Put the new comments at the end of the list and update `pageInfo`
-                    // so we have the new `endCursor` and `hasNextPage` values
-                    posts: {
-                      __typename: previousResult.posts.__typename,
-                      edges: [...previousResult.posts.edges, ...newEdges],
-                      pageInfo
-                    }
-                  }
-                : previousResult;
-            }
-          });
+          if (random === 0) {
+            //loadMore();
+          }
         }, 2500);
       } else {
         clearInterval(interval);
@@ -260,7 +245,15 @@ const Slider = props => {
 
       return () => clearInterval(interval);
     },
-    [activeSlide, fetchMore, numberOfSlides, setActiveSlide, slideshowActive]
+    [
+      activeSlide,
+      fetchMore,
+      loadMore,
+      numberOfSlides,
+      setActiveSlide,
+      slides,
+      slideshowActive
+    ]
   );
 
   return (
