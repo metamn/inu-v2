@@ -942,6 +942,7 @@ const Home = () => {
         _useState14 = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_useState13, 2),
         previousDisplayMode = _useState14[0],
         setPreviousDisplayMode = _useState14[1]; // Theming
+  //
   // Use the `useLocalStorage` hook to persist theme through a page refresh.
 
 
@@ -951,13 +952,12 @@ const Home = () => {
         setCurrentThemeSaved = _useLocalStorage2[1]; // Check if the user prefers dark mode
 
 
-  const prefersDarkMode = Object(_hooks__WEBPACK_IMPORTED_MODULE_7__["usePrefersDarkMode"])();
-  console.log("prefersDarkMode:" + prefersDarkMode); // The starter color scheme
+  const prefersDarkMode = Object(_hooks__WEBPACK_IMPORTED_MODULE_7__["usePrefersDarkMode"])(); // Get the starter color scheme
 
-  const starterColorScheme = typeof currentThemeSaved !== "undefined" ? currentThemeSaved : prefersDarkMode ? "light" : "dark"; // Set up the theme context
+  const starterColorScheme = typeof currentThemeSaved !== "undefined" ? currentThemeSaved : prefersDarkMode ? "dark" : "light"; // Set up the theme context
 
   let themeContext = Object(react__WEBPACK_IMPORTED_MODULE_2__["useContext"])(_themes_default_js__WEBPACK_IMPORTED_MODULE_6__["ThemeContext"]);
-  themeContext = Object(_themes_default_js__WEBPACK_IMPORTED_MODULE_6__["switchThemeFrom"])(starterColorScheme); // Use the theme
+  themeContext = Object(_themes_default_js__WEBPACK_IMPORTED_MODULE_6__["switchThemeTo"])(starterColorScheme); // Use the theme
 
   const _useState15 = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])(themeContext),
         _useState16 = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_useState15, 2),
@@ -1031,7 +1031,7 @@ const Home = () => {
   const toggleTheme = () => {
     const newTheme = Object(_themes_default_js__WEBPACK_IMPORTED_MODULE_6__["switchThemeFrom"])(currentTheme.colorScheme);
     setCurrentTheme(newTheme);
-    setCurrentThemeSaved(currentTheme.colorScheme);
+    setCurrentThemeSaved(newTheme.colorScheme);
 
     if (!activeMenuToggleIcon) {
       setActiveMenuToggleIcon(true);
@@ -1070,7 +1070,7 @@ const Home = () => {
           slideshowActive: slideshowActive,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 192
+            lineNumber: 195
           },
           __self: undefined
         });
@@ -1082,7 +1082,7 @@ const Home = () => {
           thumbClickHandler: thumbClickHandler,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 203
+            lineNumber: 206
           },
           __self: undefined
         });
@@ -1091,7 +1091,7 @@ const Home = () => {
         return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Contact__WEBPACK_IMPORTED_MODULE_15__["default"], {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 210
+            lineNumber: 213
           },
           __self: undefined
         });
@@ -1102,7 +1102,7 @@ const Home = () => {
           type: "blank",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 213
+            lineNumber: 216
           },
           __self: undefined
         });
@@ -1112,7 +1112,7 @@ const Home = () => {
   return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_2___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Reset__WEBPACK_IMPORTED_MODULE_8__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 219
+      lineNumber: 222
     },
     __self: undefined
   }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_TypographicGrid__WEBPACK_IMPORTED_MODULE_9__["default"], {
@@ -1123,13 +1123,13 @@ const Home = () => {
     lineColor: "#666",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 220
+      lineNumber: 223
     },
     __self: undefined
   }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react_helmet__WEBPACK_IMPORTED_MODULE_5__["Helmet"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 227
+      lineNumber: 230
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("meta", {
@@ -1137,21 +1137,21 @@ const Home = () => {
     content: "Portfolio",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 228
+      lineNumber: 231
     },
     __self: undefined
   })), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_themes_default_js__WEBPACK_IMPORTED_MODULE_6__["ThemeContext"].Provider, {
     value: currentTheme,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 230
+      lineNumber: 233
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Container, {
     theme: currentTheme.theme,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 231
+      lineNumber: 234
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Header__WEBPACK_IMPORTED_MODULE_12__["default"], {
@@ -1166,13 +1166,13 @@ const Home = () => {
     menuToggleIconClickHandler: menuToggleIconClickHandler,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 232
+      lineNumber: 235
     },
     __self: undefined
   }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Display, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 243
+      lineNumber: 246
     },
     __self: undefined
   }))));
@@ -4277,13 +4277,14 @@ function unregister() {
 /*!*******************************!*\
   !*** ./src/themes/default.js ***!
   \*******************************/
-/*! exports provided: getTheme, switchThemeFrom, ThemeContext */
+/*! exports provided: getTheme, switchThemeFrom, switchThemeTo, ThemeContext */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTheme", function() { return getTheme; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "switchThemeFrom", function() { return switchThemeFrom; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "switchThemeTo", function() { return switchThemeTo; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ThemeContext", function() { return ThemeContext; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
@@ -4338,10 +4339,18 @@ const switchThemeFrom = colorScheme => {
     colorScheme: "light",
     theme: getTheme("light")
   };
+}; // Switch to a color scheme
+
+
+const switchThemeTo = colorScheme => {
+  return {
+    colorScheme: colorScheme,
+    theme: getTheme(colorScheme)
+  };
 }; // Create a theme context
 
 
-const ThemeContext = react__WEBPACK_IMPORTED_MODULE_0___default.a.createContext(switchThemeFrom("dark"));
+const ThemeContext = react__WEBPACK_IMPORTED_MODULE_0___default.a.createContext(switchThemeTo("light"));
 
 
 /***/ }),
@@ -4358,5 +4367,5 @@ module.exports = __webpack_require__(/*! /home/cs/work/inu-v2/react-src/src/inde
 
 /***/ })
 
-},[[0,"runtime~main",1]]]);
+},[[0,"runtime~main",0]]]);
 //# sourceMappingURL=main.chunk.js.map

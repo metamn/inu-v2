@@ -51,7 +51,12 @@ const switchThemeFrom = colorScheme => {
     : { colorScheme: "light", theme: getTheme("light") };
 };
 
-// Create a theme context
-const ThemeContext = React.createContext(switchThemeFrom("dark"));
+// Switch to a color scheme
+const switchThemeTo = colorScheme => {
+  return { colorScheme: colorScheme, theme: getTheme(colorScheme) };
+};
 
-export { getTheme, switchThemeFrom, ThemeContext };
+// Create a theme context
+const ThemeContext = React.createContext(switchThemeTo("light"));
+
+export { getTheme, switchThemeFrom, switchThemeTo, ThemeContext };

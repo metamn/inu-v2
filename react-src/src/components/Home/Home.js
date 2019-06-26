@@ -3,7 +3,11 @@ import WebFont from "webfontloader";
 import styled from "styled-components";
 import { Helmet } from "react-helmet";
 
-import { switchThemeFrom, ThemeContext } from "../../themes/default.js";
+import {
+  ThemeContext,
+  switchThemeFrom,
+  switchThemeTo
+} from "../../themes/default.js";
 import { useLocalStorage, usePrefersDarkMode } from "../../hooks";
 
 import Reset from "../Reset";
@@ -63,7 +67,7 @@ const Home = () => {
   const [previousDisplayMode, setPreviousDisplayMode] = useState(0);
 
   // Theming
-
+  //
   // Use the `useLocalStorage` hook to persist theme through a page refresh.
   const [currentThemeSaved, setCurrentThemeSaved] = useLocalStorage(
     "current-theme"
@@ -71,19 +75,18 @@ const Home = () => {
 
   // Check if the user prefers dark mode
   const prefersDarkMode = usePrefersDarkMode();
-  console.log("prefersDarkMode:" + prefersDarkMode);
 
-  // The starter color scheme
+  // Get the starter color scheme
   const starterColorScheme =
     typeof currentThemeSaved !== "undefined"
       ? currentThemeSaved
       : prefersDarkMode
-      ? "light"
-      : "dark";
+      ? "dark"
+      : "light";
 
   // Set up the theme context
   let themeContext = useContext(ThemeContext);
-  themeContext = switchThemeFrom(starterColorScheme);
+  themeContext = switchThemeTo(starterColorScheme);
 
   // Use the theme
   const [currentTheme, setCurrentTheme] = useState(themeContext);
@@ -158,7 +161,7 @@ const Home = () => {
     const newTheme = switchThemeFrom(currentTheme.colorScheme);
 
     setCurrentTheme(newTheme);
-    setCurrentThemeSaved(currentTheme.colorScheme);
+    setCurrentThemeSaved(newTheme.colorScheme);
 
     if (!activeMenuToggleIcon) {
       setActiveMenuToggleIcon(true);
