@@ -3101,7 +3101,7 @@ __webpack_require__.r(__webpack_exports__);
 var _jsxFileName = "/home/cs/work/inu-v2/react-src/src/components/Slider/Slider.js";
 
 function _templateObject4() {
-  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  query postsForSlider($first: Int, $category: Int) {\n    posts(first: $first, where: { categoryId: $category }) {\n      edges {\n        node {\n          id\n          title\n          featuredImage {\n            id\n            sourceUrl\n            mediaDetails {\n              file\n              height\n              width\n              sizes {\n                file\n                height\n                mimeType\n                name\n                sourceUrl\n                width\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n"]);
+  const data = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  query postsForSlider($first: Int, $category: Int) {\n    posts(first: $first, where: { categoryId: $category }) {\n      pageInfo {\n        hasNextPage\n        endCursor\n      }\n      edges {\n        node {\n          id\n          title\n          featuredImage {\n            id\n            sourceUrl\n            mediaDetails {\n              file\n              height\n              width\n              sizes {\n                file\n                height\n                mimeType\n                name\n                sourceUrl\n                width\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n"]);
 
   _templateObject4 = function () {
     return data;
@@ -3167,7 +3167,7 @@ const markup = (data, queryProps) => {
       ref: ref,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 98
+        lineNumber: 102
       },
       __self: undefined
     }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Post__WEBPACK_IMPORTED_MODULE_7__["default"], Object.assign({
@@ -3178,7 +3178,7 @@ const markup = (data, queryProps) => {
     }, queryProps, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 99
+        lineNumber: 103
       },
       __self: undefined
     })));
@@ -3266,7 +3266,8 @@ const Slider = props => {
 
   const _useQuery = Object(_hooks__WEBPACK_IMPORTED_MODULE_4__["useQuery"])(query, markup, variables, queryProps),
         slides = _useQuery.slides,
-        numberOfSlides = _useQuery.numberOfSlides; // The slideshow
+        numberOfSlides = _useQuery.numberOfSlides,
+        fetchMore = _useQuery.fetchMore; // The slideshow
 
 
   Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(() => {
@@ -3274,28 +3275,48 @@ const Slider = props => {
 
     if (slideshowActive) {
       interval = setInterval(() => {
-        const slides = Array.from(Array(numberOfSlides).keys());
-        const slidesWithoutTheCurrentSlide = slides.filter(i => i !== activeSlide);
-        const random = slidesWithoutTheCurrentSlide[Math.floor(Math.random() * slidesWithoutTheCurrentSlide.length)];
+        const slideNumbers = Array.from(Array(numberOfSlides).keys());
+        const slideNumbersWithoutTheCurrentSlide = slides.filter(i => i !== activeSlide);
+        const random = slideNumbersWithoutTheCurrentSlide[Math.floor(Math.random() * slideNumbersWithoutTheCurrentSlide.length)];
         setActiveSlide(random);
+        slides = fetchMore({
+          variables: {
+            cursor: posts.pageInfo.endCursor
+          },
+          updateQuery: (previousResult, {
+            fetchMoreResult
+          }) => {
+            const newEdges = fetchMoreResult.posts.edges;
+            const pageInfo = fetchMoreResult.posts.pageInfo;
+            return newEdges.length ? {
+              // Put the new comments at the end of the list and update `pageInfo`
+              // so we have the new `endCursor` and `hasNextPage` values
+              posts: {
+                __typename: previousResult.posts.__typename,
+                edges: [...previousResult.posts.edges, ...newEdges],
+                pageInfo
+              }
+            } : previousResult;
+          }
+        });
       }, 2500);
     } else {
       clearInterval(interval);
     }
 
     return () => clearInterval(interval);
-  }, [activeSlide, numberOfSlides, setActiveSlide, slideshowActive]);
+  }, [activeSlide, fetchMore, numberOfSlides, setActiveSlide, slideshowActive]);
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Container, {
     width: width,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 239
+      lineNumber: 267
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Slides, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 240
+      lineNumber: 268
     },
     __self: undefined
   }, slides));

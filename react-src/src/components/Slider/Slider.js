@@ -54,6 +54,10 @@ const Slides = styled(List)`
 const query = gql`
   query postsForSlider($first: Int, $category: Int) {
     posts(first: $first, where: { categoryId: $category }) {
+      pageInfo {
+        hasNextPage
+        endCursor
+      }
       edges {
         node {
           id
@@ -202,7 +206,7 @@ const Slider = props => {
     category: category
   };
 
-  const { slides, numberOfSlides } = useQuery(
+  const { slides, numberOfSlides, fetchMore } = useQuery(
     query,
     markup,
     variables,
@@ -216,15 +220,39 @@ const Slider = props => {
 
       if (slideshowActive) {
         interval = setInterval(() => {
-          const slides = Array.from(Array(numberOfSlides).keys());
-          const slidesWithoutTheCurrentSlide = slides.filter(
+          const slideNumbers = Array.from(Array(numberOfSlides).keys());
+          const slideNumbersWithoutTheCurrentSlide = slides.filter(
             i => i !== activeSlide
           );
           const random =
-            slidesWithoutTheCurrentSlide[
-              Math.floor(Math.random() * slidesWithoutTheCurrentSlide.length)
+            slideNumbersWithoutTheCurrentSlide[
+              Math.floor(
+                Math.random() * slideNumbersWithoutTheCurrentSlide.length
+              )
             ];
           setActiveSlide(random);
+
+          slides = fetchMore({
+            variables: {
+              cursor: posts.pageInfo.endCursor
+            },
+            updateQuery: (previousResult, { fetchMoreResult }) => {
+              const newEdges = fetchMoreResult.posts.edges;
+              const pageInfo = fetchMoreResult.posts.pageInfo;
+
+              return newEdges.length
+                ? {
+                    // Put the new comments at the end of the list and update `pageInfo`
+                    // so we have the new `endCursor` and `hasNextPage` values
+                    posts: {
+                      __typename: previousResult.posts.__typename,
+                      edges: [...previousResult.posts.edges, ...newEdges],
+                      pageInfo
+                    }
+                  }
+                : previousResult;
+            }
+          });
         }, 2500);
       } else {
         clearInterval(interval);
@@ -232,7 +260,7 @@ const Slider = props => {
 
       return () => clearInterval(interval);
     },
-    [activeSlide, numberOfSlides, setActiveSlide, slideshowActive]
+    [activeSlide, fetchMore, numberOfSlides, setActiveSlide, slideshowActive]
   );
 
   return (
