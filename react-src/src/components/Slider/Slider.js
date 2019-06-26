@@ -216,10 +216,14 @@ const Slider = props => {
 
       if (slideshowActive) {
         interval = setInterval(() => {
-          const numbers = Array.from(Array(numberOfSlides).keys()).filter(
+          const slides = Array.from(Array(numberOfSlides).keys());
+          const slidesWithoutTheCurrentSlide = slides.filter(
             i => i !== activeSlide
           );
-          const random = numbers[Math.floor(Math.random() * numbers.length)];
+          const random =
+            slidesWithoutTheCurrentSlide[
+              Math.floor(Math.random() * slidesWithoutTheCurrentSlide.length)
+            ];
           setActiveSlide(random);
         }, 2500);
       } else {

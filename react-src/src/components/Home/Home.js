@@ -69,8 +69,6 @@ const Home = () => {
     "current-theme"
   );
 
-  console.log("currentThemeSaved:" + currentThemeSaved);
-
   // Check if the user prefers dark mode
   const prefersDarkMode = usePrefersDarkMode();
   console.log("prefersDarkMode:" + prefersDarkMode);
@@ -82,7 +80,6 @@ const Home = () => {
       : prefersDarkMode
       ? "light"
       : "dark";
-  console.log("starterColorScheme:" + starterColorScheme);
 
   // Set up the theme context
   let themeContext = useContext(ThemeContext);

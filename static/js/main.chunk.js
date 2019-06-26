@@ -948,15 +948,13 @@ const Home = () => {
   const _useLocalStorage = Object(_hooks__WEBPACK_IMPORTED_MODULE_7__["useLocalStorage"])("current-theme"),
         _useLocalStorage2 = Object(_home_cs_work_inu_v2_react_src_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_useLocalStorage, 2),
         currentThemeSaved = _useLocalStorage2[0],
-        setCurrentThemeSaved = _useLocalStorage2[1];
+        setCurrentThemeSaved = _useLocalStorage2[1]; // Check if the user prefers dark mode
 
-  console.log("currentThemeSaved:" + currentThemeSaved); // Check if the user prefers dark mode
 
   const prefersDarkMode = Object(_hooks__WEBPACK_IMPORTED_MODULE_7__["usePrefersDarkMode"])();
   console.log("prefersDarkMode:" + prefersDarkMode); // The starter color scheme
 
-  const starterColorScheme = typeof currentThemeSaved !== "undefined" ? currentThemeSaved : prefersDarkMode ? "light" : "dark";
-  console.log("starterColorScheme:" + starterColorScheme); // Set up the theme context
+  const starterColorScheme = typeof currentThemeSaved !== "undefined" ? currentThemeSaved : prefersDarkMode ? "light" : "dark"; // Set up the theme context
 
   let themeContext = Object(react__WEBPACK_IMPORTED_MODULE_2__["useContext"])(_themes_default_js__WEBPACK_IMPORTED_MODULE_6__["ThemeContext"]);
   themeContext = Object(_themes_default_js__WEBPACK_IMPORTED_MODULE_6__["switchThemeFrom"])(starterColorScheme); // Use the theme
@@ -1072,7 +1070,7 @@ const Home = () => {
           slideshowActive: slideshowActive,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 195
+            lineNumber: 192
           },
           __self: undefined
         });
@@ -1084,7 +1082,7 @@ const Home = () => {
           thumbClickHandler: thumbClickHandler,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 206
+            lineNumber: 203
           },
           __self: undefined
         });
@@ -1093,7 +1091,7 @@ const Home = () => {
         return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Contact__WEBPACK_IMPORTED_MODULE_15__["default"], {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 213
+            lineNumber: 210
           },
           __self: undefined
         });
@@ -1104,7 +1102,7 @@ const Home = () => {
           type: "blank",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 216
+            lineNumber: 213
           },
           __self: undefined
         });
@@ -1114,7 +1112,7 @@ const Home = () => {
   return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_2___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Reset__WEBPACK_IMPORTED_MODULE_8__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 222
+      lineNumber: 219
     },
     __self: undefined
   }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_TypographicGrid__WEBPACK_IMPORTED_MODULE_9__["default"], {
@@ -1125,13 +1123,13 @@ const Home = () => {
     lineColor: "#666",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 223
+      lineNumber: 220
     },
     __self: undefined
   }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react_helmet__WEBPACK_IMPORTED_MODULE_5__["Helmet"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 230
+      lineNumber: 227
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("meta", {
@@ -1139,21 +1137,21 @@ const Home = () => {
     content: "Portfolio",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 231
+      lineNumber: 228
     },
     __self: undefined
   })), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_themes_default_js__WEBPACK_IMPORTED_MODULE_6__["ThemeContext"].Provider, {
     value: currentTheme,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 233
+      lineNumber: 230
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Container, {
     theme: currentTheme.theme,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 234
+      lineNumber: 231
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Header__WEBPACK_IMPORTED_MODULE_12__["default"], {
@@ -1168,13 +1166,13 @@ const Home = () => {
     menuToggleIconClickHandler: menuToggleIconClickHandler,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 235
+      lineNumber: 232
     },
     __self: undefined
   }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Display, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 246
+      lineNumber: 243
     },
     __self: undefined
   }))));
@@ -3276,8 +3274,9 @@ const Slider = props => {
 
     if (slideshowActive) {
       interval = setInterval(() => {
-        const numbers = Array.from(Array(numberOfSlides).keys()).filter(i => i !== activeSlide);
-        const random = numbers[Math.floor(Math.random() * numbers.length)];
+        const slides = Array.from(Array(numberOfSlides).keys());
+        const slidesWithoutTheCurrentSlide = slides.filter(i => i !== activeSlide);
+        const random = slidesWithoutTheCurrentSlide[Math.floor(Math.random() * slidesWithoutTheCurrentSlide.length)];
         setActiveSlide(random);
       }, 2500);
     } else {
@@ -3290,13 +3289,13 @@ const Slider = props => {
     width: width,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 235
+      lineNumber: 239
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Slides, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 236
+      lineNumber: 240
     },
     __self: undefined
   }, slides));
